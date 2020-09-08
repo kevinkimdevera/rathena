@@ -87,9 +87,12 @@ har_in01,17,74,7	script	Contraband Processor#pa	4_DR_SOLDIER,{
 			close;
 		}
 		if (.@part == EQI_ACC_R)
-			.@chance_of_breaking_on_reset = 45;
+			// .@chance_of_breaking_on_reset = 45;
+			.@chance_of_breaking_on_reset = 0;
 		else
-			.@chance_of_breaking_on_reset = 30;
+			// .@chance_of_breaking_on_reset = 30;
+			.@chance_of_breaking_on_reset = 0;
+
 		.@card[1] = .@card[2] = .@card[3] = 0;
 		break;
 	case FALSE:
@@ -109,53 +112,53 @@ har_in01,17,74,7	script	Contraband Processor#pa	4_DR_SOLDIER,{
 				.@enchant_slot = 1;
 			if (.@refine >= 9) {
 				setarray .@enchant_list[0],
-					4701,	// Strength2
-					4711,	// Inteligence2
-					4721,	// Dexterity2
-					4731,	// Agility2
-					4892,	// Mdef5
-					29026,	// Def20
-					4940,	// Cricital3
-					4762,	// Evasion6
-					4832,	// Expert_Archer1
-					4833,	// Expert_Archer2
-					4834,	// Expert_Archer3
+					// 4701,	// Strength2
+					// 4711,	// Inteligence2
+					// 4721,	// Dexterity2
+					// 4731,	// Agility2
+					// 4892,	// Mdef5
+					// 29026,	// Def20
+					// 4940,	// Cricital3
+					// 4762,	// Evasion6
+					// 4832,	// Expert_Archer1
+					// 4833,	// Expert_Archer2
+					// 4834,	// Expert_Archer3
 					4835,	// Expert_Archer4
-					4863,	// Fatal1
-					4864,	// Fatal2
-					4865,	// Fatal3
+					// 4863,	// Fatal1
+					// 4864,	// Fatal2
+					// 4865,	// Fatal3
 					4866,	// Fatal4
 					4812,	// Spell4
-					4813,	// Spell3
-					4814,	// Spell2
-					4815,	// Spell1
-					4869,	// Attack_Delay_1
+					// 4813,	// Spell3
+					// 4814,	// Spell2
+					// 4815,	// Spell1
+					// 4869,	// Attack_Delay_1
 					4872;	// Attack_Delay_2
 			}
 			else {
 				setarray .@enchant_list[0],
-					4700,	// Strength1
+					// 4700,	// Strength1
 					4701,	// Strength2
-					4710,	// Inteligence1
+					// 4710,	// Inteligence1
 					4711,	// Inteligence2
-					4720,	// Dexterity1
+					// 4720,	// Dexterity1
 					4721,	// Dexterity2
-					4730,	// Agility1
+					// 4730,	// Agility1
 					4731,	// Agility2
-					4786,	// Mdef2
+					// 4786,	// Mdef2
 					4892,	// Mdef5
 					4893,	// Def15
 					29026,	// Def20
-					4926,	// Critical1
+					// 4926,	// Critical1
 					4940,	// Critical3
-					4860,	// Evasion3
+					// 4860,	// Evasion3
 					4762,	// Evasion6
-					4832,	// Expert_Archer1
+					// 4832,	// Expert_Archer1
 					4833,	// Expert_Archer2
-					4863,	// Fatal1
+					// 4863,	// Fatal1
 					4864,	// Fatal2
-					4814,	// Spell2
-					4815;	// Spell1
+					4814;	// Spell2
+					// 4815;	// Spell1
 			}
 			break;
 		case EQI_ACC_R:
@@ -169,21 +172,21 @@ har_in01,17,74,7	script	Contraband Processor#pa	4_DR_SOLDIER,{
 			else
 				.@enchant_slot = 2;
 			setarray .@enchant_list[0],
-				4700,	// Strength1
+				// 4700,	// Strength1
 				4701,	// Strength2
-				4730,	// Agility1
+				// 4730,	// Agility1
 				4731,	// Agility2
-				4740,	// Vitality1
+				// 4740,	// Vitality1
 				4741,	// Vitality2
-				4710,	// Inteligence1
+				// 4710,	// Inteligence1
 				4711,	// Inteligence2
-				4720,	// Dexterity1
+				// 4720,	// Dexterity1
 				4721,	// Dexterity2
-				4750,	// Luck1
+				// 4750,	// Luck1
 				4751,	// Luck2
-				4795,	// HP100
+				// 4795,	// HP100
 				4796,	// HP200
-				4800,	// SP50
+				// 4800,	// SP50
 				4801,	// SP100
 				4832,	// Expert_Archer1
 				4815,	// Spell1

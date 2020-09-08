@@ -1,0 +1,389 @@
+function	script	shadowrefine	{
+    // disable_items;
+    // mes "["+ getarg(0) +"]";
+    // mes "I am the best forger of all time!";
+    // mes "I will not refine any current equipment.";
+    // mes "I will only refine Shadow equipment.";
+    // next;
+    // mes "["+ getarg(0) +"]";
+    // mes "If you want me to provide my services, you must first have a shadow equipment equipped.";
+    // mes "What do you want me to refine??";
+    // next;
+
+    // setarray .@posicion$[1],"Shadow Armor","Shadow Weapon","Shadow Shield","Shadow Shoes","Shadow Earing","Shadow Pendant";
+    // .@smenu$ = "";
+    // for(.@it = 1; .@it<=20; .@it++) {
+    //     if (getequipisequiped(.@it>=15 && .@int <=20)) {
+    //         .@smenu$ += .@posicion$[.@it] + "-" + "[" + getequipname(.@it) + "]";
+    //         .@equipado = 1;
+    //     }
+    //     .@smenu$ += ":";
+    // }
+    // if (.@equipado == 0) {
+    //     mes "[Shadow Refiner]";
+    //     mes "You do not have any shadow equipment equipped at this time.";
+    //     close;
+    // }
+    // .@parte = select(.@smenu$);
+
+    // if (!getequipisequiped(.@parte)) {
+    //     mes "[Shadow Refiner]";
+    //     mes "You have nothing equipped";
+    //     mes "Come back once you have equipped the equipment.";
+    //     emotion e_an;
+    //     close;
+    // }
+    // if (!getequipisenableref(.@parte)) {
+    //     mes "[Shadow Refiner]";
+    //     mes "I dont think i can";
+    //     mes "Refine this item after all..";
+    //     close;
+    // }
+
+    // if (getequiprefinerycnt(.@parte) >= 10) {
+    //     mes "["+ getarg(0) +"]";
+    //     mes "I can not refine this";
+    //     mes "anymore. its reached";
+    //     mes "Its maximum level!";
+    //     close;
+    // }
+    // .@refineitemid = getequipid(.@parte);
+    // .@refinerycnt = getequiprefinerycnt(.@parte);
+    //     .@type$ = "Armor";
+    //     .@material = 6223; //Carnium
+    //     .@price = 100000;
+    //     .@safe = 4;
+    //     mes "["+ getarg(0) +"]";
+    //     mes "Hmm a Shadow gear.";
+    //     mes "Do you want me to refine it?,";
+    //     mes "I will need 1 ^003366Carnium^000000 y 100,000 zeny.";
+    // next;
+    // mes "Are you sure you want to?";
+    // next;
+    // if(select("Yes:No") == 2){
+    //     mes "["+ getarg(0) +"]";
+    //     mes "Hmm ... what do you think? ... right? ...";
+    //     close;
+    // }
+    // if (getarg(1) != 1) {
+    //     if (getequippercentrefinery(.@parte) < 100) {
+    //         mes "["+ getarg(0) +"]";
+    //         mes "This "+.@type$+" has been refined many times.";
+    //         mes "There is a chance it will break if we try again.";
+    //         mes "I am sure to break it, but there is a possibility.";
+    //         next;
+    //         mes "["+ getarg(0) +"]";
+    //         mes "But it may happen that ^FF0000Decrease the level of refining^000000 of the "+.@type$+",";
+    //         next;
+    //         mes "["+ getarg(0) +"]";
+    //         mes "Do you want me to refine it yet?";
+    //         mes "Ive warned you what can happen.";
+    //         next;
+    //         if(select("Yes.:No.") == 2) {
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Well, there is no challenge in that...";
+    //             mes "No risk... nothing is lost.";
+    //             close;
+    //         }
+    //     }
+    //     if (countitem(.@material) < 1 || Zeny < .@price) {
+    //         mes "["+ getarg(0) +"]";
+    //         mes "Hmm, seem you do not have enough zeny or "+getitemname(.@material)+".";
+    //         mes "Return when you gather the items needed.";
+    //         close;
+    //     }
+    //     Zeny -= .@price;
+    //     delitem .@material,1;
+
+    //     //custom checks
+    //     if (getequipisequiped(.@parte) == 0) {
+    //         mes "[Shadow Refiner]";
+    //         mes "Look at this, you dont have the items.";
+    //         close;
+    //     }
+    //     if (getequiprefinerycnt(.@parte) != .@refinerycnt || getequipid(.@parte) != .@refineitemid) {
+    //         mes "[Shadow Refiner]";
+    //         emotion e_an;
+    //         mes "Wait a minute.";
+    //         mes "Do you think im stupid!?!";
+    //         mes "You changed the items when I did not look at you! Get out of here!";
+    //         close;
+    //     }
+
+    //     if (getequippercentrefinery(.@parte) > rand(100)) {
+    //         mes "Clang! Clang! Clang! Clang!";
+    //         successrefitem .@parte;
+    //         next;
+    //         emotion e_no1;
+    //         mes "["+ getarg(0) +"]";
+    //         mes "Excellent! I achieved it!";
+    //         mes "I am the best smith out!.";
+    //         close;
+    //     } else {
+    //         if (rand(100) < 80) {
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Clang! Clang! Clang! Clang!";
+    //             downrefitem .@parte, 3;
+    //             next;
+    //             emotion (!rand(5))?e_cash:e_omg;
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Waaahhh!!!";
+    //             next;
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Oh no!";
+    //             mes "The level of low refining.";
+    //         } else {
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Clang! Clang! Clang!";
+    //             failedrefitem .@parte;
+    //             next;
+    //             emotion (!rand(5))?e_cash:e_omg;
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Hmmm!";
+    //             next;
+    //             mes "["+ getarg(0) +"]";
+    //             mes "Oh no! It failed to refine.";
+    //             mes "I cannot belive this!";
+    //         }
+    //         mes "There must be a mistake, I'm the best forger of all time.";
+    //         mes "This cannot be happening!";
+    //         next;
+    //         mes "["+ getarg(0) +"]";
+    //         mes "I promise the next time i will do a better job! You can be sure of that!";
+    //         close;
+    //     }
+    // }
+		disable_items;
+	mes "[Shadow Blacksmith]";
+	mes "I'm the Armsmith.";
+	mes "I can refine all kinds of weapons, armor and equipment, so let me";
+	mes "know what you want me to refine.";
+	next;
+
+	setarray .@position$[1], "Costume Head Low", "", "Costume Head Top", "Costume Head Garment", "Shadow Armor", "Shadow Weapon", "Shadow Shield", "Shadow Shoes", "Shadow Earring", "Shadow Pendant";
+	.@menu$ = "";
+	for(.@i = 1; .@i <= getarraysize(.@position$); ++.@i) {
+		.@pos = .@i + 10;
+
+		if(.@i >= 12)
+			.@pos++;
+
+		if(getequipisequiped(.@pos)) {
+			.@menu$ += .@position$[.@i] + "-" + "[" + getequipname(.@pos) + "]";
+			.@equipped = 1;
+		}
+		.@menu$ += ":";
+	}
+	if (.@equipped == 0) {
+		mes "[Shadow Blacksmith]";
+		mes "I don't think I can refine any items you have...";
+		close;
+	}
+	.@part = select(.@menu$) + 10;
+
+	if(!getequipisequiped(.@part)) { //custom check
+		mes "[Shadow Blacksmith]";
+		mes "You're not wearing";
+		mes "anything there that";
+		mes "I can refine.";
+		emotion e_an;
+		close;
+	}
+	//Check if the item is refinable...
+	if(!getequipisenableref(.@part)) {
+		mes "[Shadow Blacksmith]";
+		mes "I don't think I can";
+		mes "refine this item at all...";
+		close;
+	}
+	//Check to see if the items is already +10
+	if(getequiprefinerycnt(.@part) >= 10) {
+		mes "[Shadow Blacksmith]";
+		mes "I can't refine this";
+		mes "any more. This is as";
+		mes "refined as it gets!";
+		close;
+	}
+	.@refineitemid = getequipid(.@part); // save id of the item
+	.@refinerycnt = getequiprefinerycnt(.@part); //save refinery count
+	switch(getequipweaponlv(.@part)){
+	case 0:         //Refine Armor
+		.@price = 2000;
+		.@material = 7619;
+		.@safe = 4;
+		break;
+	case 1:         //Refine Level 1 Weapon
+		.@price = 50;
+		.@material = 7620;
+		.@safe = 7;
+		break;
+	case 2:         //Refine Level 2 Weapon
+		.@price = 200;
+		.@material = 7620;
+		.@safe = 6;
+		break;
+	case 3:         //Refine Level 3 Weapon
+		.@price = 5000;
+		.@material =7620;
+		.@safe = 5;
+		break;
+	case 4:         //Refine Level 4 Weapon
+		.@price = 20000;
+		.@material =7620;
+		.@safe = 4;
+		break;
+	case 5:         //Refine other stuff?
+		.@price = 2000;
+		.@material = 7169;
+		.@safe = 4;
+		break;
+	}
+
+	mes "[Shadow Blacksmith]";
+	mes "To refine this I need";
+	mes "one ^003366"+getitemname(.@material)+"^000000 and";
+	mes "a service fee of " + .@price + " Zeny.";
+	mes "Do you really wish to continue?";
+	next;
+	if(select("Yes:No") == 2){
+		mes "[Shadow Blacksmith]";
+		mes "Yeah...";
+		mes "There's no need to";
+		mes "rush. Take your time.";
+		close;
+	}
+	if(getequippercentrefinery(.@part) < 100) {
+		mes "[Shadow Blacksmith]";
+		mes "Oh no! If I continue to";
+		mes "refine this, there's a risk it could";
+		switch(.@material) {
+		case 985:
+			mes "be destroyed! That means that ^FF0000this equipment^000000, and ^FF0000any cards^000000 or special properties added to this armor, ^FF0000will be gone^000000.";
+			break;
+		default:
+			mes "be destroyed, and you'd ^FF0000lose the weapon^000000, any ^FF0000cards in the weapon^000000,";
+			mes "or any added special properties.";
+			break;
+		}
+		next;
+		mes "[Shadow Blacksmith]";
+		mes "I can't make it any clearer.";
+		mes "Once a weapon is destroyed,";
+		mes "there's no getting it back.";
+		mes "You really have a chance to";
+		mes "^FF0000lose this weapon^000000 forever.";
+		mes "Do you still want to refine?";
+		next;
+		if(select("Yes:No") == 2){
+			mes "[Shadow Blacksmith]";
+			mes "I completely agree...";
+			mes "I might be a great refiner, but sometimes even I make mistakes.";
+			close;
+		}
+	}
+	if((countitem(.@material) < 1) || (Zeny < .@price)) {
+		mes "[Shadow Blacksmith]";
+		mes "You don't seem to have";
+		mes "enough Zeny or "+getitemname(.@material)+"...";
+		mes "Go get some more. I'll be";
+		mes "here all day if you need me.";
+		close;
+	}
+	Zeny -= .@price;
+	delitem .@material,1;
+
+	//custom checks
+	if(getequipisequiped(.@part) == 0) { // hacker has removed the item (not changed, why?)
+		mes "[Shadow Blacksmith]";
+		mes "Look here... you don't have any Items on...";
+		close;
+	}
+	if(getequiprefinerycnt(.@part) != .@refinerycnt || getequipid(.@part) != .@refineitemid) { // hacker has changed the item
+		mes "[Shadow Blacksmith]";
+		emotion e_an;
+		mes "Wait a second...";
+		mes "Do you think I'm stupid?!";
+		mes "You switched the item while I wasn't looking! Get out of here!";
+		close;
+	}
+
+	if(getequippercentrefinery(.@part) > rand(100) || getequippercentrefinery(.@part) > rand(100)) {
+		mes "[Shadow Blacksmith]";
+		successrefitem .@part;
+		emotion e_heh;
+		.@win = rand(1,3);
+		if (.@win == 1) {
+			mes "Perfect!";
+			mes "Heh heh!";
+			mes "Once again,";
+			mes "flawless work";
+			mes "from the master~";
+		} else if(.@win == 2) {
+			mes "Success...!";
+			mes "Yet again, my amazing";
+			mes "talent truly dazzles";
+			mes "and shines today.";
+		} else {
+			mes "Heh heh!";
+			mes "I'm all done.";
+			mes "No doubt, my work is";
+			mes "to your satisfaction.";
+			mes "Sheer, utter perfection~";
+		}
+		close;
+	}
+
+	//2nd Chance
+	if(getequippercentrefinery(.@part) > rand(100) || getequippercentrefinery(.@part) > rand(100)) {
+		mes "[Shadow Blacksmith]";
+		successrefitem .@part;
+		emotion e_heh;
+		.@win = rand(1,3);
+		if (.@win == 1) {
+			mes "Perfect!";
+			mes "Heh heh!";
+			mes "Once again,";
+			mes "flawless work";
+			mes "from the master~";
+		} else if(.@win == 2) {
+			mes "Success...!";
+			mes "Yet again, my amazing";
+			mes "talent truly dazzles";
+			mes "and shines today.";
+		} else {
+			mes "Heh heh!";
+			mes "I'm all done.";
+			mes "No doubt, my work is";
+			mes "to your satisfaction.";
+			mes "Sheer, utter perfection~";
+		}
+		close;
+	}
+
+	failedrefitem .@part;
+	mes "[Shadow Blacksmith]";
+	emotion (!rand(5))?e_cash:e_omg;
+	.@lose = rand(1,3);
+	if (.@lose == 1) {
+		mes "OH! MY GOD!";
+		mes "Damn it! Not again!";
+		mes "I'm terribly sorry, but you know practice does make perfect.";
+		mes "Um, right? Heh heh...";
+	} else if(.@lose == 2) {
+		mes "Nooooooo!";
+		mes "It broke!";
+		mes "I-I'm sorry!";
+	} else {
+		mes "Crap!";
+		mes "It couldn't take";
+		mes "much more tempering!";
+		mes "Sorry about this...";
+	}
+	close;
+}
+
+prontera,147,174,4	script	Shadow Refiner#prt	1_M_SMITH,{
+    callfunc "shadowrefine","Shadow Refiner",0;
+    end;
+}
+

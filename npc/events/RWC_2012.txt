@@ -1,17 +1,17 @@
-//===== rAthena Script ======================================= 
+//===== rAthena Script =======================================
 //= RWC 2012 Enchants
-//===== By: ================================================== 
+//===== By: ==================================================
 //= Euphy
-//===== Current Version: ===================================== 
+//===== Current Version: =====================================
 //= 1.0
-//===== Compatible With: ===================================== 
+//===== Compatible With: =====================================
 //= rAthena Project
-//===== Description: ========================================= 
+//===== Description: =========================================
 //= [Official Conversion]
 //= Adds slots and enchantments to 2012 RWC Memory accessories.
-//===== Additional Comments: ================================= 
+//===== Additional Comments: =================================
 //= 1.0 First Version. [Euphy]
-//============================================================ 
+//============================================================
 
 prontera,147,61,3	script	Driller#pron	87,{
 	disable_items;
@@ -251,15 +251,17 @@ prontera,147,59,3	script	Goldberg#pron	878,{
 			close;
 		}
 
-		if (.@enchant_type < 8)
-			set .@i, rand(1,300); // 0% break chance.
-		else
-			set .@i, rand(1,400); // 25% break chance.
+		// if (.@enchant_type < 8)
+		// 	set .@i, rand(1,300); // 0% break chance.
+		// else
+		// 	set .@i, rand(1,400); // 25% break chance.
 
-		     if (.@i < 151) set .@enchant, .@enc[0];
-		else if (.@i < 251) set .@enchant, .@enc[1];
-		else if (.@i < 301) set .@enchant, .@enc[2];
-		else set .@enchant,9;
+		//      if (.@i < 151) set .@enchant, .@enc[0];
+		// else if (.@i < 251) set .@enchant, .@enc[1];
+		// else if (.@i < 301) set .@enchant, .@enc[2];
+		// else set .@enchant,9;
+
+		set .@enchant, .@enc[2];
 
 		// anti-hack
 		if (callfunc("F_IsEquipIDHack", .@part, .@equip_id) ||
@@ -325,14 +327,14 @@ prontera,147,59,3	script	Goldberg#pron	878,{
 		mes "The enchant option in your item will be initialized.";
 		delitem 6665,1; //RWC_Inicializer
 		delequip .@part;
-	
+
 //		GetNonSlotItemSock2 .@equip_refine .@equip_id .@equip_card[0] .@equip_card[1] .@equip_card[2] .@equip_card[3]
 		for ( .@i = getiteminfo(.@equip_id,10); .@i < MAX_SLOTS; .@i++ ) {
 			if (callfunc("F_IsCharm",.@equip_card[.@i]) == true)
 				.@equip_card[.@i] = 0;// Armor Enchant System
 		}
 		getitem2 .@equip_id,1,1,.@equip_refine,0,.@equip_card[0],.@equip_card[1],.@equip_card[2],.@equip_card[3];
-		
+
 		close;
 	}
 }
