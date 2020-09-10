@@ -108,7 +108,9 @@ glast_01,212,273,4	script	Hugin's Magician#pa0829	1_F_01,{
 	mes "[Hugin's Magician]";
 	mes "So you came to enchant the Temporal Boots. Be aware that Boots with sockets cannot be enchanted, and this upgrade is only possible for the boots you are wearing.";
 	next;
-	if (select( "How does the enchanting work?", "Give effect to my Temporal Boots" ) == 1) {
+	//if (select( "How does the enchanting work?", "Give effect to my Temporal Boots" ) == 1) {
+	switch( select( "How does the enchanting work?", "Give effect to my Temporal Boots", "Reset my Temporal Boots Enchant" ) ) {
+	case 1:
 		mes "[Hugin's Magician]";
 		mes "You can keep obtain ^0000FFCoagulated Spell^000000 through your travel times.";
 		next;
@@ -136,6 +138,52 @@ glast_01,212,273,4	script	Hugin's Magician#pa0829	1_F_01,{
 		mes "[Hugin's Magician]";
 		mes "Phew...";
 		mes "Anyways, that's all for basic enchant information. Now you should see for yourself.";
+		close;
+
+		//RESET ENCHANTMENTS
+	case 3:
+		mes "[Hugin's Magician]";
+		mes "I will reset your Temporal Boots enchantments. It will cost 5 ^0000FFCoagulated Spells^000000";
+		next;
+		if (select( "I'll come back later.", "Please, continue." ) == 1) {
+			mes "[Hugin's Magician]";
+			mes "Ok. If you change your mind, come back again.";
+			close;
+		}
+		if (countitem(6608) < 5) {
+			mes "[Hugin's Magician]";
+			mes "I'm sorry. You don't have enough materials.";
+			close;
+		}
+		if (!getequipisequiped(EQI_SHOES)) {
+			mes "[Hugin's Magician]";
+			mes "Are you wearing the item?";
+			close;
+		}
+		.@equip_id = getequipid(EQI_SHOES);
+
+		setarray .@card[0],
+			getequipcardid(EQI_SHOES,0),
+			getequipcardid(EQI_SHOES,1),
+			getequipcardid(EQI_SHOES,2),
+			getequipcardid(EQI_SHOES,3);
+		copyarray .@equip_card[0], .@card[0], 4;	// for final check
+		.@equip_refine = getequiprefinerycnt(EQI_SHOES);
+
+		if (.@card[3] == 0) {
+			mes "[Hugin's Magician]";
+			mes "These boots are not yet enchanted.";
+			close;
+		}
+
+
+		specialeffect2 EF_REPAIRWEAPON;
+		mes "[Hugin's Magician]";
+		mes "These boots' enchantments are removed.";
+		delequip EQI_SHOES;
+		delitem 6608,5;	// Silvervine
+
+		getitem2 .@equip_id,1,1,.@equip_refine,0,.@card[0],.@card[1],0,0;
 		close;
 	}
 	if (!getequipisequiped(EQI_SHOES)) {
