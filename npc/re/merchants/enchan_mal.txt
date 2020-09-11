@@ -585,7 +585,8 @@ L_Socket:
 			// else if (.@i < 551) .@enchant = 4837;	// Expert_Archer6
 			// else if (.@i < 556) .@enchant = 4807;	// Atk_Speed1
 			// else .@enchant = 9;
-			if (.@i < 551) .@enchant = 4837;	// Expert_Archer6
+			if (.@i < 431) .@enchant = 4844;	// Sharp5
+			else if (.@i < 551) .@enchant = 4837;	// Expert_Archer6
 			else if (.@i < 556) .@enchant = 4807;	// Atk_Speed1
 			break;
 		case 1:	// Anger_Seagod - Short Range
@@ -603,7 +604,8 @@ L_Socket:
 			// else if (.@i < 551) .@enchant = 4823;	// Fighting_Spirit8
 			// else if (.@i < 556) .@enchant = 4807;	// Atk_Speed1
 			// else .@enchant = 9;
-			if (.@i < 551) .@enchant = 4823;	// Fighting_Spirit8
+			if (.@i < 431) .@enchant = 4844;	// Sharp5
+			else if (.@i < 551) .@enchant = 4823;	// Fighting_Spirit8
 			else if (.@i < 556) .@enchant = 4807;	// Atk_Speed1
 			break;
 		default:
