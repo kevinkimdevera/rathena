@@ -4,6 +4,7 @@
 #ifndef ITEMDB_HPP
 #define ITEMDB_HPP
 
+#include <map>
 #include <vector>
 
 #include "../common/database.hpp"
@@ -86,7 +87,9 @@ enum item_itemid : t_itemid
 	ITEMID_ANGRA_MANYU					= 1599,
 	ITEMID_PAINT_BRUSH					= 6122,
 	ITEMID_MAGIC_GEAR_FUEL				= 6146,
+	ITEMID_NEW_INSURANCE				= 6413,
 	ITEMID_STRANGE_EMBRYO				= 6415,
+	ITEMID_BLACKSMITH_BLESSING			= 6635,
 	ITEMID_STONE						= 7049,
 	ITEMID_FIRE_BOTTLE					= 7135,
 	ITEMID_ACID_BOTTLE					= 7136,
@@ -225,6 +228,10 @@ enum e_item_job : uint16
 	ITEMJ_THIRD_UPPER = 0x10,
 	ITEMJ_THIRD_BABY  = 0x20,
 	ITEMJ_MAX         = 0xFF,
+
+	ITEMJ_ALL_UPPER = ITEMJ_UPPER | ITEMJ_THIRD_UPPER,
+	ITEMJ_ALL_BABY = ITEMJ_BABY | ITEMJ_THIRD_BABY,
+	ITEMJ_ALL_THIRD = ITEMJ_THIRD | ITEMJ_THIRD_UPPER | ITEMJ_THIRD_BABY,
 
 #ifdef RENEWAL
 	ITEMJ_ALL = ITEMJ_NORMAL | ITEMJ_UPPER | ITEMJ_BABY | ITEMJ_THIRD | ITEMJ_THIRD_UPPER | ITEMJ_THIRD_BABY,
@@ -754,12 +761,31 @@ enum e_itemshop_restrictions {
 enum e_item_drop_effect : uint16 {
 	DROPEFFECT_NONE = 0,
 	DROPEFFECT_CLIENT,
+#if PACKETVER < 20200304
 	DROPEFFECT_WHITE_PILLAR,
+#endif
 	DROPEFFECT_BLUE_PILLAR,
 	DROPEFFECT_YELLOW_PILLAR,
 	DROPEFFECT_PURPLE_PILLAR,
+#if PACKETVER < 20200304
 	DROPEFFECT_ORANGE_PILLAR,
-	DROPEFFECT_MAX
+#else
+	DROPEFFECT_GREEN_PILLAR,
+#endif
+#if PACKETVER >= 20200304
+	DROPEFFECT_RED_PILLAR,
+#endif
+	DROPEFFECT_MAX,
+#if PACKETVER >= 20200304
+	// White was removed in 2020-03-04
+	DROPEFFECT_WHITE_PILLAR,
+	// Orange was replaced by green in 2020-03-04
+	DROPEFFECT_ORANGE_PILLAR,
+#else
+	// Not supported before 2020-03-04
+	DROPEFFECT_GREEN_PILLAR,
+	DROPEFFECT_RED_PILLAR,
+#endif
 };
 
 /// Enum for items with delayed consumption
@@ -828,7 +854,6 @@ struct item_data
 	t_itemid nameid;
 	std::string name, ename;
 
-	//Do not add stuff between value_buy and view_id (see how getiteminfo works)
 	uint32 value_buy;
 	uint32 value_sell;
 	item_types type;
@@ -919,29 +944,71 @@ struct item_data
 // Struct for item random option [Secret]
 struct s_random_opt_data
 {
-	unsigned short id;
-	struct script_code *script;
-};
+	uint16 id;
+	std::string name;
+	script_code *script;
 
-/// Enum for Random Option Groups
-enum Random_Option_Group {
-	RDMOPTG_None = 0,
-	RDMOPTG_Crimson_Weapon,
+	~s_random_opt_data() {
+		if (script)
+			script_free_code(script);
+	}
 };
 
 /// Struct for random option group entry
 struct s_random_opt_group_entry {
-	struct s_item_randomoption option[MAX_ITEM_RDM_OPT];
+	uint16 id;
+	int16 min_value, max_value;
+	int8 param;
+	uint16 chance;
 };
 
 /// Struct for Random Option Group
 struct s_random_opt_group {
-	uint8 id;
-	struct s_random_opt_group_entry *entries;
-	uint16 total;
+	uint16 id;
+	std::string name;
+	std::map<uint16, std::vector<std::shared_ptr<s_random_opt_group_entry>>> slots;
+	uint16 max_random;
+	std::vector<std::shared_ptr<s_random_opt_group_entry>> random_options;
 };
 
+class RandomOptionDatabase : public TypesafeYamlDatabase<uint16, s_random_opt_data> {
+public:
+	RandomOptionDatabase() : TypesafeYamlDatabase("RANDOM_OPTION_DB", 1) {
+
+	}
+
+	const std::string getDefaultLocation();
+	uint64 parseBodyNode(const YAML::Node &node);
+	void loadingFinished();
+
+	// Additional
+	bool option_exists(std::string name);
+	bool option_get_id(std::string name, uint16 &id);
+};
+
+extern RandomOptionDatabase random_option_db;
+
+class RandomOptionGroupDatabase : public TypesafeYamlDatabase<uint16, s_random_opt_group> {
+public:
+	RandomOptionGroupDatabase() : TypesafeYamlDatabase("RANDOM_OPTION_GROUP", 1) {
+
+	}
+
+	const std::string getDefaultLocation();
+	uint64 parseBodyNode(const YAML::Node &node);
+
+	// Additional
+	bool add_option(const YAML::Node &node, std::shared_ptr<s_random_opt_group_entry> &entry);
+	bool option_exists(std::string name);
+	bool option_get_id(std::string name, uint16 &id);
+};
+
+extern RandomOptionGroupDatabase random_option_group;
+
 class ItemDatabase : public TypesafeCachedYamlDatabase<t_itemid, item_data> {
+private:
+	e_sex defaultGender( const YAML::Node &node, std::shared_ptr<item_data> id );
+
 public:
 	ItemDatabase() : TypesafeCachedYamlDatabase("ITEM_DB", 1) {
 
@@ -949,6 +1016,7 @@ public:
 
 	const std::string getDefaultLocation();
 	uint64 parseBodyNode(const YAML::Node& node);
+	void loadingFinished();
 };
 
 extern ItemDatabase item_db;
@@ -1023,9 +1091,6 @@ int16 itemdb_group_item_exists_pc(struct map_session_data *sd, unsigned short gr
 char itemdb_pc_get_itemgroup(uint16 group_id, bool identify, struct map_session_data *sd);
 
 bool itemdb_parse_roulette_db(void);
-
-struct s_random_opt_data *itemdb_randomopt_exists(short id);
-struct s_random_opt_group *itemdb_randomopt_group_exists(int id);
 
 void itemdb_reload(void);
 
