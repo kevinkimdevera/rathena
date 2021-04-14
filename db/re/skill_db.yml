@@ -10449,30 +10449,21 @@ Body:
     TargetType: Attack
     DamageFlags:
       Critical: true
+      Splash: true
     Flags:
       TargetTrap: true
-    Range: 9
+    Range: 11
     Hit: Multi_Hit
     HitCount: 1
     Element: Weapon
-    SplashArea: 1
+    SplashArea: 5
     ActiveInstance: 14
     CastCancel: true
     CastTime: 500
     AfterCastActDelay: 500
     FixedCastTime: 500
     Requires:
-      SpCost:
-        - Level: 1
-          Amount: 18
-        - Level: 2
-          Amount: 21
-        - Level: 3
-          Amount: 24
-        - Level: 4
-          Amount: 27
-        - Level: 5
-          Amount: 30
+      SpCost: 24
       Weapon:
         Bow: true
       Ammo:
@@ -17626,8 +17617,8 @@ Body:
     CopyFlags:
       Skill:
         Reproduce: true
-    AfterCastActDelay: 1000
-    Cooldown: 2000
+    AfterCastActDelay: 500
+    Cooldown: 1750
     Requires:
       SpCost:
         - Level: 1
@@ -17773,7 +17764,7 @@ Body:
     CopyFlags:
       Skill:
         Reproduce: true
-    AfterCastActDelay: 1000
+    AfterCastActDelay: 500
     Cooldown:
       - Level: 1
         Time: 800
@@ -17784,19 +17775,19 @@ Body:
       - Level: 4
         Time: 350
       - Level: 5
-        Time: 200
+        Time: 300
     Requires:
       SpCost:
         - Level: 1
-          Amount: 34
+          Amount: 23
         - Level: 2
-          Amount: 38
+          Amount: 26
         - Level: 3
-          Amount: 42
+          Amount: 29
         - Level: 4
-          Amount: 46
+          Amount: 32
         - Level: 5
-          Amount: 50
+          Amount: 35
       Weapon:
         Dagger: true
         1hSword: true
@@ -20510,100 +20501,41 @@ Body:
     Hit: Multi_Hit
     HitCount: -3
     Element: Weapon
-    SplashArea:
-      - Level: 1
-        Area: 3
-      - Level: 2
-        Area: 3
-      - Level: 3
-        Area: 3
-      - Level: 4
-        Area: 3
-      - Level: 5
-        Area: 3
-      - Level: 6
-        Area: 4
-      - Level: 7
-        Area: 4
-      - Level: 8
-        Area: 4
-      - Level: 9
-        Area: 4
-      - Level: 10
-        Area: 5
+    SplashArea: 9
     CopyFlags:
       Skill:
         Reproduce: true
     CastCancel: true
-    CastTime:
-      - Level: 1
-        Time: 2000
-      - Level: 2
-        Time: 2200
-      - Level: 3
-        Time: 2400
-      - Level: 4
-        Time: 2600
-      - Level: 5
-        Time: 2800
-      - Level: 6
-        Time: 3000
-      - Level: 7
-        Time: 3200
-      - Level: 8
-        Time: 3400
-      - Level: 9
-        Time: 3600
-      - Level: 10
-        Time: 3800
-    Cooldown:
-      - Level: 1
-        Time: 5000
-      - Level: 2
-        Time: 4800
-      - Level: 3
-        Time: 4600
-      - Level: 4
-        Time: 4400
-      - Level: 5
-        Time: 4200
-      - Level: 6
-        Time: 4000
-      - Level: 7
-        Time: 3800
-      - Level: 8
-        Time: 3600
-      - Level: 9
-        Time: 3400
-      - Level: 10
-        Time: 3200
+    FixedCastTime: 300
+    CastTime: 2000
+    Cooldown: 3200
     Requires:
       SpCost:
         - Level: 1
-          Amount: 30
+          Amount: 24
         - Level: 2
-          Amount: 32
+          Amount: 28
         - Level: 3
-          Amount: 34
+          Amount: 32
         - Level: 4
           Amount: 36
         - Level: 5
-          Amount: 38
-        - Level: 6
           Amount: 40
-        - Level: 7
-          Amount: 42
-        - Level: 8
+        - Level: 6
           Amount: 44
-        - Level: 9
-          Amount: 46
-        - Level: 10
+        - Level: 7
           Amount: 48
+        - Level: 8
+          Amount: 52
+        - Level: 9
+          Amount: 56
+        - Level: 10
+          Amount: 60
       Weapon:
         Bow: true
       Ammo:
         Arrow: true
-      AmmoAmount: 10
+      AmmoAmount: 5
   - Id: 2234
     Name: RA_FEARBREEZE
     Description: Fear Breeze
@@ -20674,7 +20606,7 @@ Body:
         Bow: true
       Ammo:
         Arrow: true
-      AmmoAmount: 1
+      AmmoAmount: 3
   - Id: 2237
     Name: RA_DETONATOR
     Description: Detonator
@@ -21192,27 +21124,27 @@ Body:
     Element: Weapon
     CastTime:
       - Level: 1
-        Time: 200
+        Time: 500
       - Level: 2
-        Time: 400
+        Time: 500
       - Level: 3
-        Time: 600
+        Time: 500
       - Level: 4
-        Time: 800
+        Time: 500
       - Level: 5
-        Time: 1000
+        Time: 500
     Requires:
       SpCost:
         - Level: 1
-          Amount: 3
+          Amount: 5
         - Level: 2
-          Amount: 6
+          Amount: 10
         - Level: 3
-          Amount: 9
-        - Level: 4
-          Amount: 12
-        - Level: 5
           Amount: 15
+        - Level: 4
+          Amount: 20
+        - Level: 5
+          Amount: 25
       State: Mado
   - Id: 2257
     Name: NC_PILEBUNKER
@@ -21252,21 +21184,28 @@ Body:
     HitCount: 1
     Element: Weapon
     SplashArea: 1
-    AfterCastActDelay:
+    CastTime:
       - Level: 1
-        Time: 300
+        Time: 200
       - Level: 2
         Time: 200
+      - Level: 3
+        Time: 200
+    AfterCastActDelay:
+      - Level: 1
+        Time: 100
+      - Level: 2
+        Time: 100
       - Level: 3
         Time: 100
     Requires:
       SpCost:
         - Level: 1
-          Amount: 2
+          Amount: 9
         - Level: 2
-          Amount: 4
+          Amount: 12
         - Level: 3
-          Amount: 6
+          Amount: 15
       State: Mado
       ItemCost:
         - Item: Vulcan_Bullet
@@ -21378,25 +21317,25 @@ Body:
       - Level: 2
         Size: 9
       - Level: 3
-        Size: 11
+        Size: 9
       - Level: 4
-        Size: 11
+        Size: 9
       - Level: 5
-        Size: 13
+        Size: 9
     Hit: Single
     HitCount: 1
     Element: Weapon
     SplashArea:
       - Level: 1
-        Area: 1
-      - Level: 2
-        Area: 1
-      - Level: 3
-        Area: 2
-      - Level: 4
-        Area: 2
-      - Level: 5
         Area: 3
+      - Level: 2
+        Area: 3
+      - Level: 3
+        Area: 3
+      - Level: 4
+        Area: 5
+      - Level: 5
+        Area: 5
     CastTime:
       - Level: 1
         Time: 1400
@@ -21407,7 +21346,7 @@ Body:
       - Level: 4
         Time: 2000
       - Level: 5
-        Time: 2200
+        Time: 2000
     AfterCastActDelay: 1000
     Cooldown:
       - Level: 1
@@ -21419,7 +21358,7 @@ Body:
       - Level: 4
         Time: 450
       - Level: 5
-        Time: 650 
+        Time: 300
     FixedCastTime:
       - Level: 1
         Time: 600
@@ -21430,7 +21369,7 @@ Body:
       - Level: 4
         Time: 200
       - Level: 5
-        Time: 200
+        Time: 100
     Requires:
       SpCost:
         - Level: 1
@@ -22041,28 +21980,17 @@ Body:
       - Level: 5
         Time: 2000
     Requires:
-      HpCost:
-        - Level: 1
-          Amount: 20
-        - Level: 2
-          Amount: 40
-        - Level: 3
-          Amount: 60
-        - Level: 4
-          Amount: 80
-        - Level: 5
-          Amount: 100
       SpCost:
         - Level: 1
-          Amount: 18
+          Amount: 45
         - Level: 2
-          Amount: 20
+          Amount: 45
         - Level: 3
-          Amount: 22
+          Amount: 45
         - Level: 4
-          Amount: 24
+          Amount: 45
         - Level: 5
-          Amount: 26
+          Amount: 45
       Weapon:
         1hAxe: true
         2hAxe: true
@@ -22445,8 +22373,8 @@ Body:
       Skill:
         Reproduce: true
     CastCancel: true
-    CastTime: 1000
-    AfterCastActDelay: 500
+    Cooldown: 200
+    AfterCastActDelay: 350
     Requires:
       SpCost:
         - Level: 1
@@ -23134,11 +23062,24 @@ Body:
     MaxLevel: 5
     Type: Weapon
     TargetType: Attack
+    DamageFlags:
+      Critical: true
+      Splash: true
     Range: 11
     Hit: Multi_Hit
     HitCount: 1
     Element: Weapon
-    SplashArea: 1
+    SplashArea:
+      - Level: 1
+        Area: 3
+      - Level: 2
+        Area: 3
+      - Level: 3
+        Area: 3
+      - Level: 4
+        Area: 5
+      - Level: 5
+        Area: 5
     ActiveInstance: 11
     Cooldown: 2000
     Requires:
@@ -23875,7 +23816,7 @@ Body:
     MaxLevel: 10
     Type: Weapon
     TargetType: Attack
-    Range: 1
+    Range: 2
     Hit: Multi_Hit
     HitCount: -2
     Element: Weapon
@@ -23997,7 +23938,7 @@ Body:
     TargetType: Self
     Flags:
       NoTargetSelf: true
-    Range: 1
+    Range: 2
     Hit: Multi_Hit
     HitCount: -2
     Element: Weapon
@@ -24070,7 +24011,7 @@ Body:
     Description: Tiger Cannon
     MaxLevel: 10
     Type: Weapon
-    TargetType: Attack
+    TargetType: Self
     DamageFlags:
       Splash: true
       IgnoreFlee: true
@@ -24080,27 +24021,7 @@ Body:
     Hit: Single
     HitCount: 1
     Element: Weapon
-    SplashArea:
-      - Level: 1
-        Area: 1
-      - Level: 2
-        Area: 1
-      - Level: 3
-        Area: 1
-      - Level: 4
-        Area: 1
-      - Level: 5
-        Area: 1
-      - Level: 6
-        Area: 2
-      - Level: 7
-        Area: 2
-      - Level: 8
-        Area: 2
-      - Level: 9
-        Area: 2
-      - Level: 10
-        Area: 2
+    SplashArea: 7
     CopyFlags:
       Skill:
         Reproduce: true
@@ -24127,7 +24048,7 @@ Body:
       - Level: 10
         Time: 2000
     AfterCastActDelay: 1000
-    Cooldown: 5000
+    Cooldown: 3000
     Requires:
       SpCost:
         - Level: 1
@@ -24205,7 +24126,7 @@ Body:
       SpCost: 100
       Status:
         Explosionspirits: true
-      SpiritSphereCost: 5
+      SpiritSphereCost: 3
   - Id: 2333
     Name: SR_CRESCENTELBOW
     Description: Crescent Elbow
@@ -24461,25 +24382,25 @@ Body:
     AfterCastActDelay: 1000
     Duration1:
       - Level: 1
-        Time: 30000
-      - Level: 2
-        Time: 45000
-      - Level: 3
-        Time: 60000
-      - Level: 4
-        Time: 75000
-      - Level: 5
-        Time: 90000
-      - Level: 6
-        Time: 105000
-      - Level: 7
         Time: 120000
+      - Level: 2
+        Time: 140000
+      - Level: 3
+        Time: 160000
+      - Level: 4
+        Time: 180000
+      - Level: 5
+        Time: 200000
+      - Level: 6
+        Time: 220000
+      - Level: 7
+        Time: 240000
       - Level: 8
-        Time: 135000
+        Time: 260000
       - Level: 9
-        Time: 150000
+        Time: 280000
       - Level: 10
-        Time: 165000
+        Time: 300000
     Cooldown: 30000
     Requires:
       SpCost: 120
@@ -24841,28 +24762,8 @@ Body:
     Cooldown: 10000
     FixedCastTime: 500
     Requires:
-      SpCost:
-        - Level: 1
-          Amount: 80
-        - Level: 2
-          Amount: 90
-        - Level: 3
-          Amount: 100
-        - Level: 4
-          Amount: 110
-        - Level: 5
-          Amount: 120
-      SpiritSphereCost:
-        - Level: 1
-          Amount: 1
-        - Level: 2
-          Amount: 2
-        - Level: 3
-          Amount: 3
-        - Level: 4
-          Amount: 4
-        - Level: 5
-          Amount: 5
+      SpCost: 70
+      SpiritSphereCost: 3
   - Id: 2518
     Name: SR_RIDEINLIGHTNING
     Description: Ride In Lightening
@@ -24889,18 +24790,8 @@ Body:
     CopyFlags:
       Skill:
         Reproduce: true
-    CastTime:
-      - Level: 1
-        Time: 1000
-      - Level: 2
-        Time: 2000
-      - Level: 3
-        Time: 3000
-      - Level: 4
-        Time: 4000
-      - Level: 5
-        Time: 5000
-    Cooldown: 1000
+    CastTime: 1000
+    Cooldown: 500
     Requires:
       SpCost:
         - Level: 1
@@ -24913,17 +24804,7 @@ Body:
           Amount: 70
         - Level: 5
           Amount: 80
-      SpiritSphereCost:
-        - Level: 1
-          Amount: 1
-        - Level: 2
-          Amount: 2
-        - Level: 3
-          Amount: 3
-        - Level: 4
-          Amount: 4
-        - Level: 5
-          Amount: 5
+      SpiritSphereCost: 2
   - Id: 2350
     Name: WA_SWING_DANCE
     Description: Swing Dance
@@ -25192,17 +25073,7 @@ Body:
     Range: 9
     Hit: Multi_Hit
     HitCount: -10
-    SplashArea:
-      - Level: 1
-        Area: 2
-      - Level: 2
-        Area: 2
-      - Level: 3
-        Area: 2
-      - Level: 4
-        Area: 3
-      - Level: 5
-        Area: 3
+    SplashArea: 5
     CopyFlags:
       Skill:
         Reproduce: true
@@ -25214,18 +25085,18 @@ Body:
     Requires:
       SpCost:
         - Level: 1
-          Amount: 28
+          Amount: 56
         - Level: 2
-          Amount: 32
+          Amount: 62
         - Level: 3
-          Amount: 38
+          Amount: 68
         - Level: 4
-          Amount: 42
+          Amount: 74
         - Level: 5
-          Amount: 48
+          Amount: 80
       Ammo:
         Arrow: true
-      AmmoAmount: 10
+      AmmoAmount: 5
   - Id: 2415 # Removed on kRO
     Name: WM_REVERBERATION_MELEE
     Description: Reverberation Melee
@@ -25326,7 +25197,7 @@ Body:
         Whip: true
       Ammo:
         Arrow: true
-      AmmoAmount: 20
+      AmmoAmount: 10
     Unit:
       Id: Severe_Rainstorm
       Range: 5
@@ -26295,25 +26166,25 @@ Body:
     AfterCastActDelay: 1000
     Duration1:
       - Level: 1
-        Time: 15000
-      - Level: 2
-        Time: 20000
-      - Level: 3
-        Time: 25000
-      - Level: 4
-        Time: 30000
-      - Level: 5
-        Time: 35000
-      - Level: 6
-        Time: 40000
-      - Level: 7
         Time: 45000
-      - Level: 8
-        Time: 50000
-      - Level: 9
-        Time: 55000
-      - Level: 10
+      - Level: 2
         Time: 60000
+      - Level: 3
+        Time: 75000
+      - Level: 4
+        Time: 90000
+      - Level: 5
+        Time: 105000
+      - Level: 6
+        Time: 120000
+      - Level: 7
+        Time: 135000
+      - Level: 8
+        Time: 150000
+      - Level: 9
+        Time: 165000
+      - Level: 10
+        Time: 180000
     Requires:
       SpCost:
         - Level: 1
@@ -26735,7 +26606,7 @@ Body:
     CastCancel: true
     CastTime: 1000
     AfterCastActDelay: 1000
-    Duration1: 60000
+    Duration1: 90000
     Cooldown: 2000
     Requires:
       SpCost:
@@ -31668,7 +31539,7 @@ Body:
     Hit: Single
     HitCount: 1
     AfterCastActDelay: 500
-    Duration1: 60000
+    Duration1: 150000
     Cooldown: 300000
     FixedCastTime: 1000
     Requires:
@@ -31962,17 +31833,7 @@ Body:
     HitCount: 1
     AfterCastActDelay: 1000
     Duration1: 3000
-    Cooldown:
-      - Level: 1
-        Time: 12000
-      - Level: 2
-        Time: 10000
-      - Level: 3
-        Time: 8000
-      - Level: 4
-        Time: 6000
-      - Level: 5
-        Time: 4000
+    Cooldown: 3000
     Requires:
       SpCost: 65
       SpiritSphereCost:
@@ -35822,11 +35683,11 @@ Body:
       Critical: true
     Flags:
       TargetTrap: true
-    Range: 9
+    Range: 11
     Hit: Multi_Hit
     HitCount: 1
     Element: Weapon
-    SplashArea: 1
+    SplashArea: 5
     ActiveInstance: 14
     CastCancel: true
     CastTime: 1000
