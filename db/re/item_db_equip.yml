@@ -132352,7 +132352,7 @@ Body:
       bonus2 bSkillAtk,"NC_AXETORNADO",10*(.@r/3);
       if (.@r>=7) {
          bonus2 bSkillAtk,"NC_AXEBOOMERANG",40;
-         bonus2 bSkillCooldown,"NC_AXEBOOMERANG",-1000;
+         bonus2 bSkillCooldown,"NC_AXETORNADO",-1000;
       }
       if (.@r>=9) {
          bonus2 bAddSize,Size_All,15;

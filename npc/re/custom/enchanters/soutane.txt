@@ -1,0 +1,145 @@
+prontera,108,191,4	script	Soutane Enchanter	101,{
+	disable_items;
+
+	mes .n$;
+	mes "Hello, "+strcharinfo(0)+"!";
+	mes "What can I do for you?";
+	next;
+	set .@choice, select("Enchant:Nevermind");
+
+	switch(.@choice) {
+		case 1:
+		mes .n$;
+			mes .n$;
+			mes "Enchant!";
+			break;
+		default:
+			mes .n$;
+			mes "See you!";
+			close;
+	}
+	next;
+
+	mes .n$;
+	mes "You need Angel's Dream to perform enchantments.";
+	mes "Soutanes with +9 or higher refine will get better enchants.";
+	next;
+
+	set .@part,EQI_ARMOR; // Save equip location
+	set .@armor, getequipid(.@part);
+
+	mes .n$;
+
+	if(.@armor == -1) {
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	switch(.@armor) {
+		case 15397:
+		case 15398:
+		case 15399:
+		case 15400:
+		case 15401:
+		case 15402:
+			break;
+		default:
+			mes "This is not a soutane...";
+			close;
+	}
+	next;
+
+	// GET CARDS
+	setarray .@card[0], getequipcardid(EQI_ARMOR,0), getequipcardid(EQI_ARMOR,1), getequipcardid(EQI_ARMOR,2), getequipcardid(EQI_ARMOR,3);
+	// GET REFINE
+	.@refine = getequiprefinerycnt(EQI_ARMOR);
+
+	if (.@card[3] == 0) {
+		.@slot = 3;
+	}
+	else if (.@card[2] == 0) {
+		.@slot = 2;
+	}
+	else if (.@card[1] == 0) {
+		.@slot = 1;
+	}
+	else {
+		mes "Select the slot to enchant.";
+		set .@slot, (select(
+				"Slot 1 [" + getitemname(.@card[1]) +  "]",
+				"Slot 2 [" + getitemname(.@card[2]) +  "]",
+				"Slot 3 [" + getitemname(.@card[3]) +  "]",
+				"Cancel"));
+	}
+
+	switch(.@slot) {
+		case 3:
+		case 2:
+			set .@rand, rand(getarraysize(getd(".low")));
+			set @enc, getd(".low["+ .@rand +"]");
+			break;
+		case 1:
+			if (.@refine >= 9) {
+				set .@rand, rand(getarraysize(getd(".high")));
+				set @enc, getd(".high["+ .@rand +"]");
+			}
+			else {
+				set .@rand, rand(getarraysize(getd(".low")));
+				set @enc, getd(".low["+ .@rand +"]");
+			}
+			break;
+		default:
+			close;
+	}
+
+	.@card[.@slot] = @enc;
+
+	delequip EQI_ARMOR;
+	getitem2 .@armor,1,1,.@refine,0,.@card[0],.@card[1],.@card[2],.@card[3];
+	close;
+
+	end;
+
+	OnInit:
+	set .n$,"[Soutane Enchanter]";
+
+	setarray .low, 4706, // STR + 7
+						4707, // STR + 8
+						4736, // AGI + 7
+						4737, // AGI + 8
+						4726, // DEX + 7
+						4727, // DEX + 8
+						4746, // VIT + 7
+						4747, // VIT + 8
+						4716, // INT + 7
+						4717, // INT + 8
+						4756, // LUK + 7
+						4757, // LUK + 8
+						4900, // HP+5%
+						4802, // SP+150
+						29241, // CRI + 10
+						29238, // FLEE + 10
+						4903, // DEF21
+						4790; // MDEF10
+
+	setarray .high, 4820, // FS5
+						 4821, // FS6
+						 4812, // SPELL4
+						 4826, // SPELL5
+						 4835, // EA5
+						 4836, // EA6
+						 4843, // SHARP4
+						 4844, // SHARP5
+						 4873, // DELAY4
+						 4881, // DELAY5
+						 310076, // STR BLESSING
+						 310077, // AGI BLESSING
+						 310078, // VIT BLESSING
+						 310079, // DEX BLESSING
+						 310080, // INT BLESSING
+						 310081; // LUK BLESSING
+
+	// Required Items
+	set .key, 9551;
+	set .cost, 1;
+}

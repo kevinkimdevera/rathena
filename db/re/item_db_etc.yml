@@ -35250,6 +35250,30 @@ Body:
     Type: Etc
     Buy: 20
     Weight: 100
+  - Id: 1000296
+    AegisName: RuneknightStone_Robe2
+    Name: Rune Knight Stone II (Garment)
+    Type: Etc
+    Buy: 20
+    Weight: 100
+  - Id: 1000297
+    AegisName: RuneknightStone_Top2
+    Name: Rune Knight Stone II (Top)
+    Type: Etc
+    Buy: 20
+    Weight: 100
+  - Id: 1000298
+    AegisName: RuneknightStone_Middle2
+    Name: Rune Knight Stone II (Middle)
+    Type: Etc
+    Buy: 20
+    Weight: 100
+  - Id: 1000299
+    AegisName: RuneknightStone_Bottom2
+    Name: Rune Knight Stone II (Bottom)
+    Type: Etc
+    Buy: 20
+    Weight: 100
   - Id: 25449
     AegisName: GeneticStone_Robe
     Name: Genetic Stone (Garment)

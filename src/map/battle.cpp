@@ -4460,7 +4460,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			// 	case SZ_MEDIUM: skillratio += 200 + 350 * skill_lv; break;// Medium
 			// 	case SZ_BIG: skillratio += 200 + 300 * skill_lv; break;// Large
 			// }
-			skillratio += 400 + 300 * skill_lv;
+			skillratio += -100 + 400 + 300 * skill_lv;
 			//RE_LVL_DMOD(120);
 			RE_LVL_DMOD(100);
 			break;
@@ -4476,7 +4476,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case NC_POWERSWING: // According to current sources, only the str + dex gets modified by level [Akinari]
 			//skillratio += -100 + status_get_str(src) + status_get_dex(src);
-			skillratio += 100 + (100 * skill_lv) + (status_get_str(src) / 2) + (status_get_dex(src) / 2) * status_get_lv(src);
+			skillratio += -100 + (200 + (100 * skill_lv) + (status_get_str(src) / 2) + (status_get_dex(src) / 2) / 100) * status_get_lv(src);
 			RE_LVL_DMOD(100);
 			// skillratio += 300 + 100 * skill_lv;
 			break;

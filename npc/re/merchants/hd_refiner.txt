@@ -340,7 +340,7 @@ lhz_in02,280,19,3	duplicate(MightyHammer)	Mighty Hammer#lhz	4_M_DWARF
 	if (callfunc("F_IsEquipIDHack", .@part, .@refineitemid) || callfunc("F_IsEquipCardHack", .@part, .@card[0], .@card[1], .@card[2], .@card[3]) ||
 		callfunc("F_IsEquipRefineHack", .@part, .@refinerycnt)) {
 		mes "[Basta]";
-		emotion ET_FRET;
+	emotion ET_FRET;
 		mes "Wait a second...";
 		mes "Do you think I'm stupid?!";
 		mes "You switched the item while I wasn't looking! Get out of here!";

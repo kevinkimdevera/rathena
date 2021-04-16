@@ -1,0 +1,92 @@
+prontera,106,191,4	script	Temporal Enchanter	101,{
+	disable_items;
+
+	mes .n$;
+	mes "Hello, "+strcharinfo(0)+"!";
+	mes "What can I do for you?";
+	if(select("Enchant:Nevermind") - 1) close;
+	next;
+	mes .n$;
+	mes "To apply an random properity to a Temporal Manteau, you need to have it equipped.";
+	mes "And i need Seal of Time Keys to perform enchantments.";
+	mes "Also be warned, that what you get and with which value is completely random!";
+	next;
+	set .@part,EQI_GARMENT; // Save equip location
+	mes .n$;
+
+	if(getequipid(.@part) == -1) {
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	switch(getequipid(.@part)) {
+		20963:
+		20964:
+		20965:
+		20966:
+		20967:
+		20968:
+		break;
+
+		default:
+		mes "This is not an Temporal Manteau, please be sure to equip one and come back again.";
+		close;
+	}
+
+	next;
+
+
+	if (.cost > countitem(.key)){
+		mes .n$;
+		mes "Hmm, you are missing Seal of Time Keys.";
+		close;
+	}
+
+	set .@Enchant, rand(getarraysize(getd(".Opt")));
+	set .@Value, rand(getd(".Min["+ .@Enchant +"]"), getd(".Max["+ .@Enchant +"]"));
+
+	// APPLY
+	setrandomoption(.@part,0, getd(".Opt[" + .@Enchant + "]"), .@Value, 0);
+	delitem .key,.cost;
+
+	mes .n$;
+	mes "Random bonus properities have been applied on your \""+getitemname(getequipid(.@part))+"\" successfully.";
+	end;
+
+	end;
+
+	OnInit:
+	set .n$,"[Temporal Enchanter]";
+
+	// Required Items
+	set .key, 9551;
+	set .cost, 1;
+
+
+	// Options
+	setarray .Opt, RDMOPT_VAR_ATTPOWER,
+								RDMOPT_VAR_ATKPERCENT,
+								RDMOPT_VAR_ATTMPOWER,
+								RDMOPT_VAR_MAGICATKPERCENT,
+								RDMOPT_VAR_MAXHPAMOUNT,
+								RDMOPT_VAR_MAXHPPERCENT,
+								RDMOPT_VAR_MAXSPAMOUNT,
+								RDMOPT_VAR_MAXSPPERCENT,
+								RDMOPT_VAR_HITSUCCESSVALUE,
+								RDMOPT_VAR_AVOIDSUCCESSVALUE,
+								RDMOPT_VAR_CRITICALSUCCESSVALUE,
+								RDMOPT_VAR_PLUSASPDPERCENT,
+								RDMOPT_DEC_SPELL_CAST_TIME,
+								RDMOPT_DAMAGE_CRI_TARGET,
+								RDMOPT_HEAL_MODIFY_PERCENT,
+								RDMOPT_RANGE_ATTACK_DAMAGE_TARGET,
+								RDMOPT_DEC_SPELL_DELAY_TIME;
+
+	// Min Values
+	setarray .Min, 5,1,5,1,500,3,50,3,3,10,3,3,3,3,3,3,3;
+
+	// Max Values
+	setarray .Max, 40,6,40,6,2000,10,1000,10,10,50,10,10,10,10,10,10,15;
+
+	end;
+}
