@@ -52113,7 +52113,7 @@ Body:
       BardDancer: true
     Classes:
       All_Third: true
-    Gender: Female
+    Gender: Male
     Locations:
       Head_Top: true
     EquipLevelMin: 100
@@ -68969,7 +68969,7 @@ Body:
     Range: 5
     Slots: 2
     Jobs:
-      Hunter: true
+      BardDancer: true
       Rogue: true
     Classes:
       All_Third: true
@@ -86584,16 +86584,6 @@ Body:
       Costume_Head_Top: true
     EquipLevelMin: 1
     View: 1117
-    Trade:
-      Override: 100
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
   - Id: 20136
     AegisName: C_12_Anniversary_Elf_Ears
     Name: Costume 12 Anniversary Elf Ears
@@ -86602,16 +86592,6 @@ Body:
       Costume_Head_Mid: true
     EquipLevelMin: 1
     View: 875
-    Trade:
-      Override: 100
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
   - Id: 20137
     AegisName: C_Bomb_Wick
     Name: Costume Bomb Wick
@@ -130882,7 +130862,7 @@ Body:
          bonus2 bSkillAtk,"WM_METALICSOUND",10;
       }
       if (.@r>=9) {
-         bonus2 bSkillFixedCast,WM_REVERBERATION,-500;
+         bonus2 bSkillFixedCast,"WM_REVERBERATION",-500;
       }
       if (.@r>=11) {
          bonus bMatkRate,7;
@@ -133237,7 +133217,7 @@ Body:
     Range: 5
     Slots: 2
     Jobs:
-      Hunter: true
+      BardDancer: true
       Rogue: true
     Classes:
       All_Third: true

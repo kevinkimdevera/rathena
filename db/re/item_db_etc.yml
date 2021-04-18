@@ -38513,7 +38513,7 @@ Body:
     Buy: 20
     Weight: 10
     Locations:
-      Right_Accessory: true
+      Both_Accessory: true
     Flags:
       DropEffect: CLIENT
     Script: |
@@ -38525,7 +38525,7 @@ Body:
     Buy: 20
     Weight: 10
     Locations:
-      Left_Accessory: true
+      Both_Accessory: true
     Flags:
       DropEffect: CLIENT
     Script: |
@@ -39090,7 +39090,7 @@ Body:
     Buy: 20
     Weight: 10
     Locations:
-      Left_Accessory: true
+      Both_Accessory: true
     Flags:
       DropEffect: CLIENT
     Script: |
@@ -39103,7 +39103,7 @@ Body:
     Buy: 20
     Weight: 10
     Locations:
-      Right_Accessory: true
+      Both_Accessory: true
     Flags:
       DropEffect: CLIENT
     Script: |

@@ -4138,7 +4138,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 		case MA_SHARPSHOOTING:
 #ifdef RENEWAL
 			// skillratio += 50 + 200 * skill_lv;
-			skillratio += 300 + 300 * skill_lv;
+			skillratio += -100 + 300 + 300 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += 100 + 50 * skill_lv;
@@ -4409,12 +4409,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 		case RA_ARROWSTORM:
 		case NPC_ARROWSTORM:
 			// skillratio += 900 + 80 * skill_lv;
-			skillratio += 200 + (180 + ((sc && sc->data[SC_FEARBREEZE]) ? 70 : 0)) * skill_lv;
+			skillratio += -100 + 200 + (180 + ((sc && sc->data[SC_FEARBREEZE]) ? 70 : 0)) * skill_lv;
 			RE_LVL_DMOD(100);
 			break;
 		case RA_AIMEDBOLT:
 			// skillratio += 100 + 20 * skill_lv + 500;
-			skillratio += 800 + 35 * skill_lv;
+			skillratio += -100 + 800 + 35 * skill_lv;
 			RE_LVL_DMOD(100);
 			break;
 		case RA_CLUSTERBOMB:
@@ -4493,12 +4493,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			// break;
 		case SC_FATALMENACE:
 			// skillratio += 100 * skill_lv;
-			skillratio += 120 * skill_lv * status_get_agi(src);
+			skillratio += -100 + 120 * skill_lv * status_get_agi(src);
 			RE_LVL_DMOD(100);
 			break;
 		case SC_TRIANGLESHOT:
 			// skillratio += 200 + (skill_lv - 1) * status_get_agi(src) / 2;
-			skillratio += 230 * skill_lv;
+			skillratio += -100 + 230 * skill_lv;
 			// RE_LVL_DMOD(120);
 			RE_LVL_DMOD(100);
 			break;
@@ -4512,7 +4512,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case LG_BANISHINGPOINT:
 			//skillratio += -100 + (50 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
-			skillratio += (80 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
+			skillratio += -100 + (80 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
 			RE_LVL_DMOD(100);
 			break;
 		case LG_SHIELDPRESS:
@@ -4552,7 +4552,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case LG_OVERBRAND:
 			// skillratio += -100 + 400 * skill_lv + ((sd) ? pc_checkskill(sd,CR_SPEARQUICKEN) * 50 : 0);
-			skillratio += -100 + 400 * skill_lv + ((sd) ? pc_checkskill(sd,CR_SPEARQUICKEN) * 50 : 0);
+			skillratio += -100 + 300 * skill_lv + ((sd) ? pc_checkskill(sd,CR_SPEARQUICKEN) * 50 : 0);
 			RE_LVL_DMOD(100);
 			break;
 		case LG_OVERBRAND_BRANDISH:
@@ -4566,8 +4566,10 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			if (sd) {
 				short index = sd->equip_index[EQI_HAND_L];
 
-				if (index >= 0 && sd->inventory_data[index] && sd->inventory_data[index]->type == IT_ARMOR)
-					skillratio += -100 + (skill_lv + 1) * sd->inventory_data[index]->weight / 10;
+				if (index >= 0 && sd->inventory_data[index] && sd->inventory_data[index]->type == IT_ARMOR) {
+					//skillratio += -100 + (skill_lv + 1) * sd->inventory_data[index]->weight / 10;
+					skillratio += -100 + (380 * skill_lv) + status_get_str(src) + status_get_vit(src);
+				}
 			}
 			RE_LVL_DMOD(100);
 			break;
@@ -4689,7 +4691,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 		case WM_SEVERE_RAINSTORM_MELEE:
 			//ATK [{(Caster DEX + AGI) x (Skill Level / 5)} x Caster Base Level / 100] %
 			// skillratio = (status_get_dex(src) + status_get_agi(src)) * skill_lv / 5;
-			skillratio = (100 + ((wd->miscflag&4) ? 20 : 0)) * skill_lv;
+			skillratio += -100 + (100 + ((sd && (sd->status.weapon == W_MUSICAL || sd->status.weapon == W_WHIP)) ? 20 : 0)) * skill_lv;
 			//if (wd->miscflag&4) // Whip/Instrument equipped
 				// skillratio += 100; // !TODO: What's the weapon bonus?
 				//skillratio += 120; // !TODO: What's the weapon bonus?

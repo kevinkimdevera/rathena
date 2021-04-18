@@ -1,4 +1,4 @@
-//===== rAthena Script ======================================= 
+//===== rAthena Script =======================================
 //= Renewal Refining NPCs
 //===== By: ==================================================
 //= rAthena Dev Team
@@ -29,7 +29,7 @@ prt_in,90,72,5	script	Vestri#prt	4_M_DWARF,{
 		refineui();
 		end;
 	}else{
-		callfunc "refinenew","Vestri",0;
+		callfunc "refinenew","Vestri",1;
 		end;
 	}
 }
@@ -116,7 +116,7 @@ function	script	refinenew	{
 		.@article$ = "an";
 		.@type$ = "armor";
 	}
-	
+
 	mes "["+ .@npc_name$ +"]";
 	mes "Hmm " + .@article$ + " " + .@type$ + ", is that ok?";
 	mes "If you want to refine this armor,";
@@ -222,7 +222,7 @@ function	script	refinenew	{
 	} else
 		.@menu2 = 2;
 	switch(.@menu2){
-	case 1: 
+	case 1:
 		.@refinecnt = .@safe - .@refinerycnt;
 		break;
 	case 2:
@@ -450,12 +450,12 @@ malangdo,224,172,6	script	Clink#mal_normal	544,{
 		mes "Perfect refining. Did I do this for you?";
 		close;
 	}
-	
+
 	.@refineitemid = getequipid(.@part); // save id of the item
 	setarray .@card[0], getequipcardid(.@part,0), getequipcardid(.@part,1), getequipcardid(.@part,2), getequipcardid(.@part,3);
 	.@price = getequiprefinecost(.@part, REFINE_COST_NORMAL, REFINE_ZENY_COST);
 	.@material = getequiprefinecost(.@part, REFINE_COST_NORMAL, REFINE_MATERIAL_ID);
-	
+
 	mes "[Clink]";
 	switch(getequipweaponlv(.@part)) {
 	default:

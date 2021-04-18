@@ -1192,7 +1192,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25490,29477, // Stalker 1
 			1000222,29521, //Assassin Cross 2
 			25800,29613, //Champion 2
-			1000305,310226, //Performer 2
+			1000305,310266, //Performer 2
 			1000301,310262, //Creator 2
 			1000016,310008, //High Priest 2
 			1000214,310181, //High Wizard 2
@@ -1254,7 +1254,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25491,29478, // Stalker 1
 			1000223,29522, //Assassin Cross 2
 			25799,29612, //Champion 2
-			1000306,310227, //Performer 2
+			1000306,310267, //Performer 2
 			1000302,310263, //Creator 2
 			1000017,310009, //High Priest 2
 			1000215,310182, //High Wizard 2
@@ -1319,7 +1319,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25492,29479, // Stalker 1
 			1000224,29523, //Assassin Cross 2
 			25798,29611, //Champion 2
-			1000307,310228, //Performer 2
+			1000307,310268, //Performer 2
 			1000303,310264, //Creator 2
 			1000018,310010, //High Priest 2
 			1000216,310183, //High Wizard 2
@@ -1428,29 +1428,29 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 	}
 
 	// costume garment list allowed (incomplete)
-	switch(.@equip_id) {
-	case 20502:	// C_Devil_Wing
-	case 20504:	// C_Cupid_Wing_Pink
-	case 20505:	// C_Cupid_Wing_Skyblue
-	case 20506:	// C_Invisible_Manteau
-	case 20507:	// C_Poring_Bag
-	case 20509:	// C_Wings_of_Uriel
-	case 20510:	// C_SwordWing
-	case 20511:	// C_Blue_Fairy_Wing
-	case 20727:	// Brilliant_Golden_Wings
-	case 20737:	// C_Kirin_Wing
-	case 20746:	// C_Rudra_Wing
-	case 20761:	// C_Wing_Of_Happiness
-	case 20762:	// C_GreatDevilWing
-	case 20763:	// C_Amistr_Bag
-	case 20764:	// C_Fallen_Angel_Wing
-	case 20765:	// C_Archangel_Wing
-		break;
-	default:
-		mes "[Lace La Zard]";
-		mes "I need to have a look at it to check for upgrading posibility..";// custom
-		close;
-	}
+	// switch(.@equip_id) {
+	// case 20502:	// C_Devil_Wing
+	// case 20504:	// C_Cupid_Wing_Pink
+	// case 20505:	// C_Cupid_Wing_Skyblue
+	// case 20506:	// C_Invisible_Manteau
+	// case 20507:	// C_Poring_Bag
+	// case 20509:	// C_Wings_of_Uriel
+	// case 20510:	// C_SwordWing
+	// case 20511:	// C_Blue_Fairy_Wing
+	// case 20727:	// Brilliant_Golden_Wings
+	// case 20737:	// C_Kirin_Wing
+	// case 20746:	// C_Rudra_Wing
+	// case 20761:	// C_Wing_Of_Happiness
+	// case 20762:	// C_GreatDevilWing
+	// case 20763:	// C_Amistr_Bag
+	// case 20764:	// C_Fallen_Angel_Wing
+	// case 20765:	// C_Archangel_Wing
+	// 	break;
+	// default:
+	// 	mes "[Lace La Zard]";
+	// 	mes "I need to have a look at it to check for upgrading posibility..";// custom
+	// 	close;
+	// }
 
 	.@equip_refine = getequiprefinerycnt(.@part);
 	setarray .@card[0], getequipcardid(.@part, 0), getequipcardid(.@part, 1), getequipcardid(.@part, 2), getequipcardid(.@part, 3);
@@ -1489,6 +1489,7 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 		25412,29426,"Sura Stone",
 		25797,29427,"Sura Stone II",
 		25501,29488,"Wanderer Minstrel Stone",
+		1000304,310265,"Wanderer Minstrel Stone",
 		25456,29471,"Warlock Stone",
 		1000213,310180,"Warlock Stone II"
 		;

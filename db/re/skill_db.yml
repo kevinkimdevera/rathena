@@ -10449,14 +10449,13 @@ Body:
     TargetType: Attack
     DamageFlags:
       Critical: true
-      Splash: true
     Flags:
       TargetTrap: true
     Range: 11
     Hit: Multi_Hit
     HitCount: 1
     Element: Weapon
-    SplashArea: 5
+    SplashArea: 1
     ActiveInstance: 14
     CastCancel: true
     CastTime: 500
@@ -23639,7 +23638,6 @@ Body:
       TargetHidden: true
     Hit: Multi_Hit
     HitCount: -5
-    Element: Earth
     SplashArea:
       - Level: 1
         Area: 1

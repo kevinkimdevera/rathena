@@ -309,8 +309,32 @@ xmas,240,294,3	script	Black Beard Joe#pa0829	4_M_05,{
 			mes "The second enchantment. I will buff one of the previous states. There also is no failure, so don't worry, kukuku";// custom
 		}
 		else {
-			mes "Ho~ This has already reached the peak. It is impossible to higher enchant, so be content and use it well.";// custom
+			// RESET ENCHANTS
+			mes "Ho~ This has already reached the peak. I can reset your equipment enchants. It will cost 1 Bloody Letter and 1 Unsent Letter.";// custom
+			next;
+
+			if (select( "I'll come back later.", "Please, continue." ) == 1) {
+				mes "Ok. If you change your mind, come back again.";
+				close;
+			}
+
+			if (countitem(7643) < 1 && countitem(7644) < 1) {
+				mes "[Hugin's Magician]";
+				mes "I'm sorry. You don't have enough materials.";
+				close;
+			}
+
+			delitem 7643, 1; // bloody letter
+			delitem 7644, 1; // unsent letter
+
+			delequip .@eq_num;
+			getitem2 .@item_id,1,1,.@refine,0,.@card[0],0,0,0;
+
+			mes "Enchantments removed.";// custom
 			close;
+
+			//mes "Ho~ This has already reached the peak. It is impossible to higher enchant, so be content and use it well.";// custom
+			//close;
 		}
 		.@string$ = "You blow hot and cold, this fickle friend.!";
 		break;
@@ -463,13 +487,14 @@ xmas,240,294,3	script	Black Beard Joe#pa0829	4_M_05,{
 		if (callfunc("F_IsEquipIDHack", .@eq_num, .@item_id) || callfunc("F_IsEquipCardHack", .@eq_num, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@eq_num, .@refine))
 			close;
 
-		delequip .@eq_num;
 		if (.@enchant == 0) {
 			mes "Ouch! Poor you, the enchantment has failed and your gear is broken, Geez!";
 			close2;
 			specialeffect2 EF_LORD;
 			end;
 		}
+
+		delequip .@eq_num;
 		.@card[ .@index_slot ] = .@enchant;
 		getitem2 .@item_id,1,1,.@refine,0,.@card[0],.@card[1],.@card[2],.@card[3];
 		mes "Hmm.. It was successful. Take a look at it.";

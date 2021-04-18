@@ -1198,6 +1198,7 @@ void initChangeTables(void)
 	set_sc( RA_FIRINGTRAP       , SC_BURNING        , EFST_BURNT          , SCB_MDEF );
 	set_sc_with_vfx( RA_ICEBOUNDTRAP, SC_FREEZING		, EFST_FROSTMISTY		, SCB_SPEED|SCB_ASPD|SCB_DEF );
 	// set_sc( RA_UNLIMIT		, SC_UNLIMIT		, EFST_UNLIMIT		, SCB_DEF|SCB_DEF2|SCB_MDEF|SCB_MDEF2 );
+	set_sc( RA_UNLIMIT		, SC_UNLIMIT		, EFST_UNLIMIT		, SCB_NONE );
 
 	/* Mechanic */
 	set_sc( NC_ACCELERATION		, SC_ACCELERATION	, EFST_ACCELERATION	, SCB_SPEED );
@@ -1218,7 +1219,8 @@ void initChangeTables(void)
 	set_sc( LG_PRESTIGE		, SC_PRESTIGE		, EFST_PRESTIGE		, SCB_DEF );
 	set_sc( LG_BANDING		, SC_BANDING		, EFST_BANDING		, SCB_DEF|SCB_WATK|SCB_REGEN );
 	set_sc( LG_PIETY		, SC_BENEDICTIO		, EFST_BENEDICTIO		, SCB_DEF_ELE );
-	set_sc( LG_EARTHDRIVE		, SC_EARTHDRIVE		, EFST_EARTHDRIVE		, SCB_DEF|SCB_ASPD );
+	// set_sc( LG_EARTHDRIVE		, SC_EARTHDRIVE		, EFST_EARTHDRIVE		, SCB_DEF|SCB_ASPD );
+	set_sc( LG_EARTHDRIVE		, SC_EARTHDRIVE		, EFST_EARTHDRIVE		, SCB_NONE );
 	set_sc( LG_INSPIRATION		, SC_INSPIRATION	, EFST_INSPIRATION	, SCB_WATK|SCB_STR|SCB_AGI|SCB_VIT|SCB_INT|SCB_DEX|SCB_LUK|SCB_HIT|SCB_MAXHP);
 	set_sc( LG_KINGS_GRACE		, SC_KINGS_GRACE	, EFST_KINGS_GRACE	, SCB_NONE );
 
@@ -7420,8 +7422,8 @@ static defType status_calc_def(struct block_list *bl, struct status_change *sc, 
 		def += (5 + sc->data[SC_BANDING]->val1) * sc->data[SC_BANDING]->val2 / 10;
 	if( sc->data[SC_ECHOSONG] )
 		def += sc->data[SC_ECHOSONG]->val3;
-	if( sc->data[SC_EARTHDRIVE] )
-		def -= def * 25 / 100;
+	// if( sc->data[SC_EARTHDRIVE] )
+	// 	def -= def * 25 / 100;
 	if( sc->data[SC_CAMOUFLAGE] )
 		def -= def * 5 * sc->data[SC_CAMOUFLAGE]->val3 / 100;
 	if( sc->data[SC_SOLID_SKIN_OPTION] )
@@ -7921,8 +7923,8 @@ static short status_calc_aspd(struct block_list *bl, struct status_change *sc, b
 			bonus += sc->data[SC_DANCEWITHWUG]->val3;
 		if (sc->data[SC_GLOOMYDAY])
 			bonus -= sc->data[SC_GLOOMYDAY]->val3;
-		if (sc->data[SC_EARTHDRIVE])
-			bonus -= 25;
+		// if (sc->data[SC_EARTHDRIVE])
+		// 	bonus -= 25;
 		if (sc->data[SC_GT_CHANGE])
 			bonus += sc->data[SC_GT_CHANGE]->val3;
 		if (sc->data[SC_MELON_BOMB])
@@ -8126,8 +8128,8 @@ static short status_calc_aspd_rate(struct block_list *bl, struct status_change *
 		aspd_rate -= sc->data[SC_DANCEWITHWUG]->val3 * 10;
 	if( sc->data[SC_GLOOMYDAY] )
 		aspd_rate += sc->data[SC_GLOOMYDAY]->val3 * 10;
-	if( sc->data[SC_EARTHDRIVE] )
-		aspd_rate += 250;
+	// if( sc->data[SC_EARTHDRIVE] )
+	// 	aspd_rate += 250;
 	if( sc->data[SC_GT_CHANGE] )
 		aspd_rate -= sc->data[SC_GT_CHANGE]->val3 * 10;
 	if( sc->data[SC_MELON_BOMB] )
@@ -12194,8 +12196,8 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			break;
 		case SC_UNLIMIT:
 			val2 = 50 * val1;
-			status_change_start(bl, bl, SC_DEFSET, 10000, 1, 0, 0, 0, tick, SCSTART_NOTICKDEF);
-			status_change_start(bl, bl, SC_MDEFSET, 10000, 1, 0, 0, 0, tick, SCSTART_NOTICKDEF);
+			//status_change_start(bl, bl, SC_DEFSET, 10000, 1, 0, 0, 0, tick, SCSTART_NOTICKDEF);
+			//status_change_start(bl, bl, SC_MDEFSET, 10000, 1, 0, 0, 0, tick, SCSTART_NOTICKDEF);
 			break;
 		case SC_MONSTER_TRANSFORM:
 		case SC_ACTIVE_MONSTER_TRANSFORM:
