@@ -670,7 +670,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 16
-            Bonus: 3300
+            Bonus: 4800
             RandomBonus: 2700
             Chances:
               - Type: Normal
@@ -689,7 +689,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 17
-            Bonus: 3600
+            Bonus: 5100
             RandomBonus: 3000
             Chances:
               - Type: Normal
@@ -708,7 +708,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 18
-            Bonus: 3900
+            Bonus: 5400
             RandomBonus: 3300
             Chances:
               - Type: Normal
@@ -727,7 +727,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 19
-            Bonus: 4500
+            Bonus: 5700
             RandomBonus: 3600
             Chances:
               - Type: Normal
@@ -746,7 +746,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 20
-            Bonus: 4800
+            Bonus: 6000
             RandomBonus: 3900
             Chances:
               - Type: Normal
@@ -1034,7 +1034,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 16
-            Bonus: 5100
+            Bonus: 8000
             RandomBonus: 5000
             Chances:
               - Type: Normal
@@ -1053,7 +1053,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 17
-            Bonus: 5700
+            Bonus: 8500
             RandomBonus: 5500
             Chances:
               - Type: Normal
@@ -1072,7 +1072,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 18
-            Bonus: 6300
+            Bonus: 9000
             RandomBonus: 6000
             Chances:
               - Type: Normal
@@ -1091,7 +1091,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 19
-            Bonus: 6900
+            Bonus: 9500
             RandomBonus: 6500
             Chances:
               - Type: Normal
@@ -1110,7 +1110,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 20
-            Bonus: 7500
+            Bonus: 10000
             RandomBonus: 7000
             Chances:
               - Type: Normal
@@ -1398,7 +1398,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 16
-            Bonus: 8400
+            Bonus: 11200
             RandomBonus: 8800
             Chances:
               - Type: Normal
@@ -1417,7 +1417,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 17
-            Bonus: 9300
+            Bonus: 11900
             RandomBonus: 9600
             Chances:
               - Type: Normal
@@ -1436,7 +1436,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 18
-            Bonus: 10200
+            Bonus: 12600
             RandomBonus: 10400
             Chances:
               - Type: Normal
@@ -1455,7 +1455,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 19
-            Bonus: 11100
+            Bonus: 13300
             RandomBonus: 11200
             Chances:
               - Type: Normal
@@ -1474,7 +1474,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 20
-            Bonus: 12000
+            Bonus: 14000
             RandomBonus: 12000
             Chances:
               - Type: Normal
@@ -1770,7 +1770,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 16
-            Bonus: 11700
+            Bonus: 16000
             RandomBonus: 16800
             Chances:
               - Type: Normal
@@ -1789,7 +1789,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 17
-            Bonus: 12900
+            Bonus: 17000
             RandomBonus: 18200
             Chances:
               - Type: Normal
@@ -1808,7 +1808,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 18
-            Bonus: 14100
+            Bonus: 18000
             RandomBonus: 19600
             Chances:
               - Type: Normal
@@ -1827,7 +1827,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 19
-            Bonus: 15300
+            Bonus: 19000
             RandomBonus: 21000
             Chances:
               - Type: Normal
@@ -1846,7 +1846,7 @@ Body:
                 Price: 100000
                 Material: Limited_High_Density_Bradium
           - Level: 20
-            Bonus: 16500
+            Bonus: 20000
             RandomBonus: 22400
             Chances:
               - Type: Normal
