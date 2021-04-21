@@ -21940,6 +21940,7 @@ void clif_parse_refineui_refine( int fd, struct map_session_data* sd ){
 		// Blacksmith blessings were used to prevent breaking and downgrading
 		if( blacksmith_amount > 0 ){
 			clif_refine( fd, 3, index, item->refine );
+			clif_refineui_info(sd, index);
 		// Delete the item if it is breakable
 		}else if( cost->breaking_rate > 0 && ( rnd() % 10000 ) < cost->breaking_rate ){
 			clif_refine( fd, 1, index, item->refine );
@@ -21952,6 +21953,7 @@ void clif_parse_refineui_refine( int fd, struct map_session_data* sd ){
 		// Only show failure, but dont do anything
 		}else{
 			clif_refine( fd, 3, index, item->refine );
+			clif_refineui_info(sd, index);
 		}
 
 		clif_misceffect( &sd->bl, 2 );

@@ -1227,11 +1227,15 @@ Body:
   - Id: 984
     AegisName: Oridecon
     Name: Oridecon
-    Type: Etc
+    Type: Usable
     Buy: 1100
     Weight: 200
     Flags:
       BuyingStore: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 985
     AegisName: Elunium
     Name: Elunium
@@ -1240,6 +1244,10 @@ Body:
     Weight: 200
     Flags:
       BuyingStore: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 986
     AegisName: Anvil
     Name: Anvil
@@ -17367,11 +17375,15 @@ Body:
   - Id: 6223
     AegisName: Carnium
     Name: Carnium
-    Type: Etc
+    Type: Usable
     Buy: 2000
     Weight: 150
     Flags:
       BuyingStore: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6224
     AegisName: Bradium
     Name: Bradium
@@ -17380,10 +17392,14 @@ Body:
     Weight: 150
     Flags:
       BuyingStore: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6225
     AegisName: HD_Carnium
     Name: HD Carnium
-    Type: Etc
+    Type: Usable
     Weight: 10
     Trade:
       Override: 100
@@ -17394,10 +17410,14 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6226
     AegisName: HD_Bradium
     Name: HD Bradium
-    Type: Etc
+    Type: Usable
     Weight: 10
     Trade:
       Override: 100
@@ -17408,6 +17428,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6228
     AegisName: Guarantee_Weapon_9Up
     Name: +9 Weapon Refine Ticket
@@ -17568,7 +17592,7 @@ Body:
   - Id: 6240
     AegisName: HD_Oridecon
     Name: HD Oridecon
-    Type: Etc
+    Type: Usable
     Buy: 20
     Weight: 10
     Trade:
@@ -17580,6 +17604,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6241
     AegisName: HD_Elunium
     Name: HD Elunium
@@ -17595,6 +17623,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6242
     AegisName: Midgard_Coin
     Name: Midgard Coin
@@ -18343,7 +18375,7 @@ Body:
   - Id: 6327
     AegisName: Limited_High_Density_Bradium
     Name: (Limited)High Density Bradium
-    Type: Etc
+    Type: Usable
     Buy: 20
     Weight: 10
     Trade:
@@ -18355,6 +18387,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6328
     AegisName: Calender_January
     Name: Calender January
@@ -23152,7 +23188,7 @@ Body:
   - Id: 6906
     AegisName: Limited_High_Density_Kalunium
     Name: (Limited)High Density Kalunium
-    Type: Etc
+    Type: Usable
     Buy: 20
     Weight: 10
     Trade:
@@ -23164,6 +23200,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 6907
     AegisName: Piece_Of_Soul_Horse
     Name: Piece Of Soul Horse
@@ -29050,7 +29090,7 @@ Body:
   - Id: 7619
     AegisName: Enriched_Elunium
     Name: Enriched Elunium
-    Type: Etc
+    Type: Usable
     Buy: 2
     Weight: 10
     Trade:
@@ -29062,10 +29102,14 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 7620
     AegisName: Enriched_Oridecon
     Name: Enriched Oridecon
-    Type: Etc
+    Type: Usable
     Buy: 2
     Weight: 10
     Trade:
@@ -29077,6 +29121,10 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+    Script: |
+      callfunc "F_RefineUI";
+    Flags:
+      NoConsume: true
   - Id: 7621
     AegisName: Token_Of_Siegfried
     Name: Token Of Siegfried

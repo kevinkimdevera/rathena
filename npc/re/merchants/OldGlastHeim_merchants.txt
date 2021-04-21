@@ -467,7 +467,7 @@ if(.enchant_reset) {
 		// Note: You can put as many as you want
 		setarray .reset_cost[0],
 		// 			Format: <Item ID>,<Cost>
-								6607,5,	 // Temporal Crystal
+								//6607,5,	 // Temporal Crystal
 								6755,10, // Coagulated Spell
 								6608,10; // Contaminated Magic
 }
