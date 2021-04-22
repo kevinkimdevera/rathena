@@ -1,0 +1,327 @@
+//============================================================
+//====== start npc
+//============================================================
+yuno,210,340,3	script	Lavian	105,{
+	setArray .@weapons[0],21051,21052,32023,1333,16092,28138,28765,28766,28044,28042,26158,2055,2056,26161,16095,18185,18187,18186,32350,32024,32025,32351,16093,16094,28767,28768,18184,28633,26159,26160,1865,1866,16096,18188,26212,26213,32107,32108;
+	setArray .@enchant1[0],4832,4833,4834,4808,4820,4821,4818,4817,4816,4863,4864,4865,4815,4814,4813;
+	setArray .@enchant2[0],29594,29595,29596,29598,29599,29600,29601,29602,29603,29604,29605,29606,29607;
+
+	.@isEdda = 0;
+
+	mes "[Edda bio enchants]";
+	.@weap = getequipid(EQI_HAND_R);
+	.@refine = getequiprefinerycnt(EQI_HAND_R);
+	.@card0 = getequipcardid(EQI_HAND_R,0);
+	.@card1 = getequipcardid(EQI_HAND_R,1);
+	.@card2 = getequipcardid(EQI_HAND_R,2);
+	.@card3 = getequipcardid(EQI_HAND_R,3);
+
+
+
+	for(.@i = 0; .@i < 38; .@i++) {
+		if(.@weapons[.@i] == .@weap){
+			.@isEdda = 1;
+		}
+	}
+	if(.@isEdda == 0) {
+		mes "Come on you need an edda weapon @.@";
+
+		end;
+	}
+
+	// RE-ROLL ENCHANTS
+	if(.@card2 != 0 && .@card3 != 0){
+		mes "Do you want to reroll the enchantments of your weapon?";
+
+		switch(select("Re-roll 3rd Slot", "Re-roll 4th Slot", "Cancel")) {
+			// SLOT 3
+			case 1:
+				mes "General Enchant will cost you 50 Biological Research Document and 50 Biological Experiment Fragment and has a 5% of break your weapon when the enchant fails.";
+				next;
+				mes "Advanced Enchant will cost you 500 Biological Research Document and 500 Biological Experiment Fragment.";
+				next;
+				mes "Determined Enchants for the  will cost you 2000 Biological Research Document and 2000 Biological Experiment Fragment.";
+
+				switch(select("General Enchant", "Advanced Enchant", "Determined Enchant", "Cancel")) {
+					case 1:
+						.@priceFragment = 50; // 25787
+						.@priceDocument = 50; // 25786
+						.@safe = 0;
+						break;
+					case 2:
+						.@priceFragment = 500; // 25787
+						.@priceDocument = 500; // 25786
+						.@safe = 1;
+						break;
+					case 3:
+						.@priceFragment = 2000; // 25787
+						.@priceDocument = 2000; // 25786
+						.@safe = 2;
+						break;
+					default:
+						mes "Please come back again.";
+						end;
+				}
+
+				if(countitem(25786) < .@priceDocument && countitem(25787) < .@priceFragment){
+					mes "You don't have the enought materials.";
+					end;
+				}
+
+				delitem 25786,.@priceDocument; // Document
+				delitem 25787,.@priceFragment; // Fragment
+
+				if (.@safe == 0) {
+					// 30% Chance of failing
+					if(rand(10) <= 3) {
+						// 5% of the player loses the weapon;
+						if(rand(20) == 1){
+							delequip EQI_HAND_R;
+							mes "Too bad your weapon is destroyed...";
+						}
+						else {
+							mes "The enchantment has failed...";
+						}
+						end;
+					}
+				}
+
+				if (.@safe == 2) {
+					mes "Please select your desired enchant.";
+
+					.@selected = select("Seyren's Memory", "Howard's Memory", "Eremes' Memory", "Kathryne's Memory",
+						"Margaretha's Memory", "Cecil's Memory", "Randel's Memory", "Flamel's Memory", "Gertie's Memory",
+						"Celia's Memory", "Chen's Memory", "Trentini's Memory", "Alphoccio's Memory"
+					);
+
+					.@card2 = .@enchant2[.@selected - 1];
+				}
+				else {
+					.@card2 = .@enchant2[rand(13)];
+				}
+				break;
+
+			// SLOT 4
+			case 2:
+				mes "General Enchant will cost you 50 Biological Research Document and 50 Biological Experiment Fragment";
+				mes "with 5% of break your weapon!";
+				next;
+				mes "Advanced Enchant will cost you 500 Biological Research Document and 500 Biological Experiment Fragment";
+				mes "with no chance of break your weapon!";
+
+				switch(select("General Enchant", "Advanced Enchant", "Cancel")){
+					case 1:
+						.@priceFragment = 50;
+						.@priceDocument = 50;
+						.@safe = 0;
+						break;
+					case 2:
+						.@priceFragment = 500;
+						.@priceDocument = 500;
+						.@safe = 1;
+						break;
+					default: end;
+				}
+
+				if(countitem(25786) < .@priceDocument && countitem(25787) < .@priceFragment){
+					mes "You don't have the enought materials.";
+					end;
+				}
+
+				delitem 25786,.@priceDocument; // Document
+				delitem 25787,.@priceFragment; // Fragment
+
+				if (.@safe == 0) {
+					// 30% Chance of failing
+					if(rand(10) <= 3) {
+						// 5% of the player loses the weapon;
+						if(rand(20) == 1){
+							delequip EQI_HAND_R;
+							mes "Too bad your weapon is destroyed...";
+						}
+						else {
+							mes "The enchantment has failed...";
+						}
+						end;
+					}
+				}
+
+				.@card3 = .@enchant1[rand(15)];
+				break;
+
+			case 3: end;
+		}
+
+		delequip EQI_HAND_R;
+		getitem2 .@weap,1,1,.@refine,0,.@card0,.@card1,.@card2,.@card3;
+		end;
+	}
+	//@item 2056
+
+	// START ENCHANT
+	switch(select("Enchant my weapon","Cancel")) {
+		case 1:
+			// SLOT 4
+			if(.@card3 == 0) {
+				switch(select("General Enchant", "Advanced Enchant", "Cancel")) {
+					case 1:
+						.@priceFragment = 50;
+						.@priceDocument = 50;
+						.@safe = 0;
+						break;
+					case 2:
+						.@priceFragment = 500;
+						.@priceDocument = 500;
+						.@safe = 1;
+						break;
+					case 3: end;
+				}
+
+				mes "This will cost " + .@priceDocument + " Biological Research Documents and " + .@priceFragment + " Biological Experiment Fragments.";
+				if(.@safe == 0) {
+					mes "There is also a low chance to break your weapon.";
+				}
+				next;
+				mes "Do you want to continue?";
+				next;
+				if (select("Start enchant","Cancel") == 2){
+					mes "Ok...";
+					end;
+				}
+
+				if(countitem(25786) < .@priceDocument && countitem(25787) < .@priceFragment){
+					mes "You don't have the enought materials.";
+					end;
+				}
+
+				delitem 25786,.@priceDocument; // Document
+				delitem 25787,.@priceFragment; // Fragment
+
+				if (.@safe == 0) {
+					// 30% Chance of failing
+					if(rand(10) <= 3) {
+						// 5% of the player loses the weapon;
+						if(rand(20) == 1){
+							delequip EQI_HAND_R;
+							mes "Too bad your weapon is destroyed...";
+						}
+						else {
+							mes "The enchantment has failed...";
+						}
+						end;
+					}
+				}
+				else {
+					// 10% Chance of failing
+					if(rand(10) <= 1) {
+						mes "The enchantment has failed...";
+						end;
+					}
+				}
+
+				.@card3 = .@enchant1[rand(15)];
+				break;
+			}
+
+			// SLOT 3
+			if(.@card2 == 0) {
+				switch(select("General Enchant", "Advanced Enchant", "Determined Enchant", "Cancel")){
+					case 1:
+						.@priceFragment = 50;
+						.@priceDocument = 50;
+						.@safe = 0;
+						break;
+					case 2:
+						.@priceFragment = 500;
+						.@priceDocument = 500;
+						.@safe = 1;
+						break;
+					case 3:
+						.@priceFragment = 5000;
+						.@priceDocument = 0;
+						.@safe = 2;
+						break;
+					case 4: end;
+				}
+
+				if(.@safe == 2) {
+					mes "This will cost " + .@priceFragment + " Biological Experiment Fragments.";
+				}
+				else {
+					mes "This will cost " + .@priceDocument + " Biological Research Documents and " + .@priceFragment + " Biological Experiment Fragment.";
+				}
+				next;
+
+				if (select("Start enchant","Cancel") == 2){
+					mes "Ok...";
+					end;
+				}
+
+				if(countitem(25786) < .@priceDocument && countitem(25787) < .@priceFragment){
+					mes "You don't have the enought materials.";
+					end;
+				}
+
+				if (.@safe == 0) {
+					// 50% Chance of Failing
+					if (rand(2) == 1) {
+						// 20% Chance of destroying weapon
+						if(rand(10) <= 2){
+							delequip EQI_HAND_R;
+							mes "Too bad your weapon is destroyed...";
+						}
+						else {
+							mes "The enchantment has failed...";
+						}
+					}
+				}
+				else if (.@safe == 1) {
+					// 30% Chance of Failing
+					if (rand(10) <= 3) {
+						mes "The enchantment has failed...";
+					}
+				}
+
+				// SELECT DESIRED ENCHANT
+				if (.@safe == 2) {
+					mes "Please select your desired enchant.";
+
+					.@selected = select("Seyren's Memory", "Howard's Memory", "Eremes' Memory", "Kathryne's Memory",
+						"Margaretha's Memory", "Cecil's Memory", "Randel's Memory", "Flamel's Memory", "Gertie's Memory",
+						"Celia's Memory", "Chen's Memory", "Trentini's Memory", "Alphoccio's Memory"
+					);
+
+					.@card2 = .@enchant2[.@selected - 1];
+				}
+				else {
+					.@card2 = .@enchant2[rand(13)];
+				}
+				delitem 25786,.@priceDocument; // Document
+				delitem 25787,.@priceFragment; // Fragment
+				break;
+			}
+			end;
+		case 2:
+			mes "Ok...";
+			end;
+	}
+
+	delequip EQI_HAND_R;
+	getitem2 .@weap,1,1,.@refine,0,.@card0,.@card1,.@card2,.@card3;
+	end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

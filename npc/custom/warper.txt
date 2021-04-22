@@ -462,7 +462,7 @@ G8: Restrict("RE");
 // --------------------------------------------------
 menu	"Bakonawa Lake",I1, "Bangungot Hospital 2F",I2, "Buwaya Cave",I3,
 		"Central Laboratory", IC1, "Charleston Crisis", IC2,
-		"Devil Tower",I4, "Eclage Interior",I5, "Endless Tower",I6,
+		"Devil Tower",I4, "Eclage Interior",I5, "Endless Tower",I6, "EDDA Biolabs", IC8,
 		"Faceworms Nest",I7, "Geffen Magic Tournament",I8, "Ghost Palace",I9,
 		"Hazy Forest",I10, "Horror Toy Factory",I11, "Malangdo Culvert",I12,
 		"Isle of Bios", IC3, "Last Room", IC4, "Morse Cave", IC5, "Nightmarish Jitterbug", IC6,
@@ -520,6 +520,8 @@ IC6: Restrict("RE");
 	Go("moc_para01",26,91);
 IC7: Restrict("RE");
 	Go("prt_q",243,82);
+IC8: Restrict("RE");
+	Go("yuno",213,344);
 
 // --------------------------------------------------
 	Special:

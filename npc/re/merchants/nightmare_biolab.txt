@@ -629,6 +629,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 	mes "I need... grudge's... grudge's... strong... power... It will help... both me... and you... all... Kkk...";
 	next;
 	switch( select( "Old Helmet enchant", "Old Helmet reset", "Old Helmet enchant description" ) ) {
+	// ENCHANT
 	case 1:
 		npctalk "Hand over... grudge... grudge...", "", bc_self;
 		mes "[Wandering Mind]";
@@ -660,11 +661,11 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 				close;
 		}
 		mes "[Wandering Mind]";
-	
+
 		.@requirement = 10;	// 10 Cursed Fragments by default
 		setarray .@card[0], getequipcardid(EQI_HEAD_TOP,0), getequipcardid(EQI_HEAD_TOP,1), getequipcardid(EQI_HEAD_TOP,2), getequipcardid(EQI_HEAD_TOP,3);
 		.@refine = getequiprefinerycnt(EQI_HEAD_TOP);
-	
+
 		if (.@card[3] == 0) {
 			.@slot = 3;
 			mes "How about... we begin... lightly?... Test... your luck... Kr..hehe...";
@@ -680,6 +681,14 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			mes "Kr... hehe... Whether there will be... a door... to acquire... a much stronger power... will be... decided... now...";
 			mes "^FF0000*Attempts enchantment to 2nd slot.";
 			mes "Once you succeed in Mettle, Magic Essence, Acute, Master Archer, Adamantine, Affection enchantments, it can be reinforced.*^000000";
+
+			.@type = select("Select Enchant", "Random Enchant");
+
+			if (.@type == 1) {
+				.@selected = select("Ambition", "Magic Essence", "Acute", "Master Archer", "Adamantine", "Affection");
+				.@requirement = 200;
+			}
+
 		}
 		else {
 			// enchant leveling
@@ -691,9 +700,20 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			case 29101:	// Steel1Lv
 			case 29111:	// Mercy1Lv
 				mes "Kr... he... he... You are... lucky... I wish... you all the success!... Only then... will you come and visit me... with more grudges... I suppose...";
-				.@requirement = 20;
+
+				.@levelType = select("Safe Enchant", "Unsafe Enchant");
+
+				if (.@levelType == 1) {
+					.@requirement = 100;
+					.@enchant_rate = 100;
+				}
+				else {
+					.@requirement = 20;
+					.@enchant_rate = 80;
+				}
+
 				.@enchant_level = 1;
-				.@enchant_rate = 80;
+
 				break;
 			case 29062:	// Ambition2Lv
 			case 29072:	// Tab2Lv
@@ -702,9 +722,19 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			case 29102:	// Steel2Lv
 			case 29112:	// Mercy2Lv
 				mes "3rd... level... reinforcement?... If you succeed... you will... gain... much stronger powers... but if you fail... you'll lose the powers... that you've gathered... so far...";
-				.@requirement = 40;
+
+				.@levelType = select("Safe Enchant", "Unsafe Enchant");
+
+				if (.@levelType == 1) {
+					.@requirement = 200;
+					.@enchant_rate = 100;
+				}
+				else {
+					.@requirement = 40;
+					.@enchant_rate = 70;
+				}
 				.@enchant_level = 2;
-				.@enchant_rate = 70;
+
 				break;
 			case 29063:	// Ambition3Lv
 			case 29073:	// Tab3Lv
@@ -713,9 +743,19 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			case 29103:	// Steel3Lv
 			case 29113:	// Mercy3Lv
 				mes "4th... level... reinforcement?... If you succeed... you will... gain... much stronger powers... but if you fail... you'll lose the powers... that you've gathered... so far...";
-				.@requirement = 50;
+
+				.@levelType = select("Safe Enchant", "Unsafe Enchant");
+
+				if (.@levelType == 1) {
+					.@requirement = 250;
+					.@enchant_rate = 100;
+				}
+				else {
+					.@requirement = 50;
+					.@enchant_rate = 50;
+				}
 				.@enchant_level = 3;
-				.@enchant_rate = 50;
+
 				break;
 			case 29064:	// Ambition4Lv
 			case 29074:	// Tab4Lv
@@ -724,9 +764,19 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			case 29104:	// Steel4Lv
 			case 29114:	// Mercy4Lv
 				mes "5th... level... reinforcement?... Are you... ready... to control... such huge... powers?... but if you fail... the result will be... worth... seeing...";
-				.@requirement = 70;
+
+				.@levelType = select("Safe Enchant", "Unsafe Enchant");
+
+				if (.@levelType == 1) {
+					.@requirement = 350;
+					.@enchant_rate = 100;
+				}
+				else {
+					.@requirement = 70;
+					.@enchant_rate = 40;
+				}
 				.@enchant_level = 4;
-				.@enchant_rate = 20;
+
 				break;
 			case 29065:	// Ambition5Lv
 			case 29075:	// Tab5Lv
@@ -737,7 +787,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 				mes "6th... level... reinforcement?... Are you... ready... to control... such huge... powers?... but if you fail... the result will be... worth... seeing...";
 				.@requirement = 100;
 				.@enchant_level = 5;
-				.@enchant_rate = 20;	// unknown rates
+				.@enchant_rate = 40;	// unknown rates
 				break;
 			case 29066:	// Ambition6Lv
 			case 29076:	// Tab6Lv
@@ -749,7 +799,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 				mes "7th... level... reinforcement?... Are you... ready... to control... such huge... powers?... but if you fail... the result will be... worth... seeing...";
 				.@requirement = 150;
 				.@enchant_level = 6;
-				.@enchant_rate = 20;	// unknown rates
+				.@enchant_rate = 30;	// unknown rates
 				break;
 			case 29067:	// Ambition7Lv
 			case 29077:	// Tab7Lv
@@ -761,7 +811,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 				mes "8th... level... reinforcement?... Are you... ready... to control... such huge... powers?... but if you fail... the result will be... worth... seeing...";
 				.@requirement = 250;
 				.@enchant_level = 7;
-				.@enchant_rate = 20;	// unknown rates
+				.@enchant_rate = 30;	// unknown rates
 				break;
 			case 29068:	// Ambition8Lv
 			case 29078:	// Tab8Lv
@@ -810,6 +860,7 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		mes "Cursed... Fragments..." + .@requirement + " are... needed... I wonder... whether... you can afford... them?... kk... kk...";
 		mes "^FF0000*In enchantment, " + .@requirement + " Cursed Fragment(s) is(are) required.*^000000";
 		next;
+
 		if (select( "Pay fee.", "Do not pay fee." ) == 2) {
 			mes "[Wandering Mind]";
 			mes "K...kk... It seems... you're not... ready to accept... such a huge power... yet...";
@@ -875,26 +926,40 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			.@card[.@slot] = .@enchant[ rand( getarraysize(.@enchant) ) ];	// unknown rates
 			break;
 		case 1:
-			setarray .@enchant[0],
-				4703,	// Strength4
-				4704,	// Strength5
-				4713,	// Inteligence4
-				4714,	// Inteligence5
-				4723,	// Dexterity4
-				4724,	// Dexterity5
-				4733,	// Agility4
-				4734,	// Agility5
-				4743,	// Vitality4
-				4744,	// Vitality5
-				4753,	// Luck4
-				4754,	// Luck5
-				29061,	// Ambition1Lv
-				29071,	// Tab1Lv
-				29081,	// Expect1Lv
-				29091,	// ArchLine1Lv
-				29101,	// Steel1Lv
-				29111;	// Mercy1Lv
-			.@card[1] = .@enchant[ rand( getarraysize(.@enchant) ) ];	// unknown rates
+			if (.@type == 1) {
+				setarray .@enchant[0],
+					29061,	// Ambition1Lv
+					29071,	// Tab1Lv
+					29081,	// Expect1Lv
+					29091,	// ArchLine1Lv
+					29101,	// Steel1Lv
+					29111;	// Mercy1Lv
+
+				.@card[1] = .@enchant[ .@selected - 1 ];	// unknown rates
+			}
+			else {
+				setarray .@enchant[0],
+					4703,	// Strength4
+					4704,	// Strength5
+					4713,	// Inteligence4
+					4714,	// Inteligence5
+					4723,	// Dexterity4
+					4724,	// Dexterity5
+					4733,	// Agility4
+					4734,	// Agility5
+					4743,	// Vitality4
+					4744,	// Vitality5
+					4753,	// Luck4
+					4754,	// Luck5
+					29061,	// Ambition1Lv
+					29071,	// Tab1Lv
+					29081,	// Expect1Lv
+					29091,	// ArchLine1Lv
+					29101,	// Steel1Lv
+					29111;	// Mercy1Lv
+
+				.@card[1] = .@enchant[ rand( getarraysize(.@enchant) ) ];	// unknown rates
+			}
 			break;
 		case 999:
 			// enchant leveling
@@ -936,6 +1001,8 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		mes "It... is a success. I can sense that the power of the grudge has become stronger.";
 		mes "^FF0000*Congratulation. You've succeeded in enchantment.*^000000";
 		close;
+
+	// RESET
 	case 2:
 		.@equip_id = getequipid(EQI_HEAD_TOP);
 		switch(.@equip_id) {
@@ -1006,6 +1073,8 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		mes "[Wandering Mind]";
 		mes "K..kk... The power... of a strong grudge... has been... absorbed... Things I've lost... K.. aargh...";
 		close;
+
+	// INFO
 	case 3:
 		for ( .@i = 18971; .@i <= 18984; ++.@i ) {
 			if (.@i < 18977)
@@ -1037,7 +1106,9 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 	}
 }
 
-lhz_dun_n,143,269,4	script	Victimized Soul's Mind#1	4_M_DEATH2,{
+
+
+lhz_dun_n,164,236,4	script	Victimized Soul's Mind#1	4_M_DEATH2,{
 	disable_items;
 	.@r = rand(5);
 	if (.@r == 0)
@@ -1720,7 +1791,7 @@ OnTouch:
 OnTimer1000:
 	.@npc_name$ = strnpcinfo(0);
 	if (.@npc_name$ == "#Alphoccio_Basil_A1") {
-		.@talker_name$ = "#lhz_dun_talk_A23"; 
+		.@talker_name$ = "#lhz_dun_talk_A23";
 		switch (rand(5)) {
 			case 0:	 .@msg$ = "It was my mistake to think that this will be just traveling..."; break;
 			case 1:	 .@msg$ = "Hah... And so what?.. I listen to my wife..."; break;
