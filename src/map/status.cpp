@@ -1221,12 +1221,12 @@ void initChangeTables(void)
 	set_sc( LG_PIETY		, SC_BENEDICTIO		, EFST_BENEDICTIO		, SCB_DEF_ELE );
 	// set_sc( LG_EARTHDRIVE		, SC_EARTHDRIVE		, EFST_EARTHDRIVE		, SCB_DEF|SCB_ASPD );
 	set_sc( LG_EARTHDRIVE		, SC_EARTHDRIVE		, EFST_EARTHDRIVE		, SCB_NONE );
-	set_sc( LG_INSPIRATION		, SC_INSPIRATION	, EFST_INSPIRATION	, SCB_WATK|SCB_STR|SCB_AGI|SCB_VIT|SCB_INT|SCB_DEX|SCB_LUK|SCB_HIT|SCB_MAXHP);
+	set_sc( LG_INSPIRATION		, SC_INSPIRATION	, EFST_INSPIRATION	, SCB_WATK|SCB_MATK|SCB_STR|SCB_AGI|SCB_VIT|SCB_INT|SCB_DEX|SCB_LUK|SCB_HIT|SCB_MAXHP);
 	set_sc( LG_KINGS_GRACE		, SC_KINGS_GRACE	, EFST_KINGS_GRACE	, SCB_NONE );
 
 	/* Shadow Chaser */
 	set_sc( SC_REPRODUCE		, SC__REPRODUCE		, EFST_REPRODUCE		, SCB_NONE );
-	set_sc( SC_AUTOSHADOWSPELL	, SC__AUTOSHADOWSPELL	, EFST_AUTOSHADOWSPELL	, SCB_NONE );
+	set_sc( SC_AUTOSHADOWSPELL	, SC__AUTOSHADOWSPELL	, EFST_AUTOSHADOWSPELL	, SCB_MATK);
 	set_sc( SC_SHADOWFORM		, SC__SHADOWFORM	, EFST_SHADOWFORM		, SCB_NONE );
 	set_sc( SC_BODYPAINT		, SC__BODYPAINT		, EFST_BODYPAINT		, SCB_ASPD );
 	set_sc( SC_INVISIBILITY		, SC__INVISIBILITY	, EFST_INVISIBILITY	, SCB_ASPD|SCB_CRI|SCB_ATK_ELE );
@@ -3699,8 +3699,8 @@ static int status_get_hpbonus(struct block_list *bl, enum e_status_bonus type) {
 				bonus += 500;
 			if (sc->data[SC_PROMOTE_HEALTH_RESERCH])
 				bonus += sc->data[SC_PROMOTE_HEALTH_RESERCH]->val3;
-			if(sc->data[SC_INSPIRATION])
-				bonus += (600 * sc->data[SC_INSPIRATION]->val1);
+			// if(sc->data[SC_INSPIRATION])
+			// 	bonus += (600 * sc->data[SC_INSPIRATION]->val1);
 			if(sc->data[SC_SOLID_SKIN_OPTION])
 				bonus += 2000;
 			if(sc->data[SC_MTF_MHP])
@@ -3747,7 +3747,8 @@ static int status_get_hpbonus(struct block_list *bl, enum e_status_bonus type) {
 			if(sc->data[SC_FORCEOFVANGUARD])
 				bonus += (3 * sc->data[SC_FORCEOFVANGUARD]->val1);
 			if(sc->data[SC_INSPIRATION])
-				bonus += (5 * sc->data[SC_INSPIRATION]->val1);
+				// bonus += (5 * sc->data[SC_INSPIRATION]->val1);
+				bonus += (4 * sc->data[SC_INSPIRATION]->val1);
 			if(sc->data[SC_RAISINGDRAGON])
 				bonus += (2 + sc->data[SC_RAISINGDRAGON]->val1);
 			if(sc->data[SC_GT_REVITALIZE])
@@ -5486,8 +5487,8 @@ void status_calc_regen_rate(struct block_list *bl, struct regen_data *regen, str
 		} else
 			regen->flag &= ~sce->val4; // Remove regen as specified by val4
 	}
-	if (sc->data[SC_BANDING] && sc->data[SC_BANDING]->val2 > 1)
-		regen->hp += cap_value(regen->hp * 50 / 100, 1, SHRT_MAX);
+	// if (sc->data[SC_BANDING] && sc->data[SC_BANDING]->val2 > 1)
+	// 	regen->hp += cap_value(regen->hp * 50 / 100, 1, SHRT_MAX);
 	if(sc->data[SC_GT_REVITALIZE]) {
 		regen->hp += cap_value(regen->hp * sc->data[SC_GT_REVITALIZE]->val3/100, 1, SHRT_MAX);
 		regen->state.walk = 1;
@@ -6917,10 +6918,11 @@ static unsigned short status_calc_watk(struct block_list *bl, struct status_chan
 		watk += sc->data[SC_FIGHTINGSPIRIT]->val1;
 	if(sc->data[SC_SHIELDSPELL_DEF] && sc->data[SC_SHIELDSPELL_DEF]->val1 == 3)
 		watk += sc->data[SC_SHIELDSPELL_DEF]->val2;
-	if(sc->data[SC_BANDING] && sc->data[SC_BANDING]->val2 > 1)
-		watk += (10 + 10 * sc->data[SC_BANDING]->val1) * sc->data[SC_BANDING]->val2;
+	// if(sc->data[SC_BANDING] && sc->data[SC_BANDING]->val2 > 1)
+	// 	watk += (10 + 10 * sc->data[SC_BANDING]->val1) * sc->data[SC_BANDING]->val2;
 	if(sc->data[SC_INSPIRATION])
-		watk += 40 * sc->data[SC_INSPIRATION]->val1 + 3 * sc->data[SC_INSPIRATION]->val2;
+		// watk += 40 * sc->data[SC_INSPIRATION]->val1 + 3 * sc->data[SC_INSPIRATION]->val2;
+		watk += sc->data[SC_INSPIRATION]->val2;
 	if(sc->data[SC_GT_CHANGE])
 		watk += sc->data[SC_GT_CHANGE]->val2;
 	if(sc->data[SC__ENERVATION])
@@ -7019,6 +7021,10 @@ static unsigned short status_calc_ematk(struct block_list *bl, struct status_cha
 		matk += sc->data[SC_DORAM_MATK]->val1;
 	if (sc->data[SC_SOULFAIRY])
 		matk += sc->data[SC_SOULFAIRY]->val2;
+	if(sc->data[SC_INSPIRATION])
+		matk += sc->data[SC_INSPIRATION]->val2;
+	if(sc->data[SC__AUTOSHADOWSPELL])
+		matk += sc->data[SC__AUTOSHADOWSPELL]->val2;
 
 	return (unsigned short)cap_value(matk,0,USHRT_MAX);
 }
@@ -7084,6 +7090,10 @@ static unsigned short status_calc_matk(struct block_list *bl, struct status_chan
 		matk += matk * sc->data[SC_SHRIMP]->val2 / 100;
 	if (sc->data[SC_VOLCANO])
 		matk += sc->data[SC_VOLCANO]->val2;
+	if (sc->data[SC_INSPIRATION])
+		matk += sc->data[SC_INSPIRATION]->val2;
+	if (sc->data[SC__AUTOSHADOWSPELL])
+		matk += sc->data[SC__AUTOSHADOWSPELL]->val2;
 #ifdef RENEWAL
 	if (sc->data[SC_NIBELUNGEN] && sc->data[SC_NIBELUNGEN]->val2 == RINGNBL_MATKRATE)
 		matk += matk * 20 / 100;
@@ -7118,8 +7128,8 @@ static signed short status_calc_critical(struct block_list *bl, struct status_ch
 		critical += sc->data[SC_TRUESIGHT]->val2;
 	if (sc->data[SC_CLOAKING])
 		critical += critical;
-	if (sc->data[SC_STRIKING])
-		critical += critical * sc->data[SC_STRIKING]->val1 / 100;
+	// if (sc->data[SC_STRIKING])
+	// 	critical += critical * sc->data[SC_STRIKING]->val1 / 100;
 #ifdef RENEWAL
 	if (sc->data[SC_SPEARQUICKEN])
 		critical += 3*sc->data[SC_SPEARQUICKEN]->val1*10;
@@ -7161,7 +7171,8 @@ static signed short status_calc_hit(struct block_list *bl, struct status_change 
 	if(sc->data[SC_CONCENTRATION])
 		hit += sc->data[SC_CONCENTRATION]->val3;
 	if(sc->data[SC_INSPIRATION])
-		hit += 5 * sc->data[SC_INSPIRATION]->val1 + sc->data[SC_INSPIRATION]->val2 / 2;
+		// hit += 5 * sc->data[SC_INSPIRATION]->val1 + sc->data[SC_INSPIRATION]->val2 / 2;
+		hit += 12 * sc->data[SC_INSPIRATION]->val1;
 	if(sc->data[SC_ADJUSTMENT])
 		hit -= 30;
 	if(sc->data[SC_INCREASING])
@@ -7419,7 +7430,8 @@ static defType status_calc_def(struct block_list *bl, struct status_change *sc, 
 	if( sc->data[SC_PRESTIGE] )
 		def += sc->data[SC_PRESTIGE]->val3;
 	if( sc->data[SC_BANDING] && sc->data[SC_BANDING]->val2 > 1 )
-		def += (5 + sc->data[SC_BANDING]->val1) * sc->data[SC_BANDING]->val2 / 10;
+		// def += (5 + sc->data[SC_BANDING]->val1) * sc->data[SC_BANDING]->val2 / 10;
+		def += (6 * sc->data[SC_BANDING]->val1) * sc->data[SC_BANDING]->val2;
 	if( sc->data[SC_ECHOSONG] )
 		def += sc->data[SC_ECHOSONG]->val3;
 	// if( sc->data[SC_EARTHDRIVE] )
@@ -7714,8 +7726,8 @@ static unsigned short status_calc_speed(struct block_list *bl, struct status_cha
 				val = max( val, 20 );
 			if( sc->data[SC__LAZINESS] )
 				val = max( val, 25 );
-			if( sc->data[SC_BANDING_DEFENCE] )
-				val = max( val, sc->data[SC_BANDING_DEFENCE]->val1 ); // +90% walking speed.
+			// if( sc->data[SC_BANDING_DEFENCE] )
+			// 	val = max( val, sc->data[SC_BANDING_DEFENCE]->val1 ); // +90% walking speed.
 			if( sc->data[SC_ROCK_CRUSHER_ATK] )
 				val = max( val, sc->data[SC_ROCK_CRUSHER_ATK]->val2 );
 			if( sc->data[SC_POWER_OF_GAIA] )
@@ -10316,6 +10328,9 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 	case SC_BANDING:
 		status_change_end(bl, SC_PRESTIGE, INVALID_TIMER);
 		break;
+	case SC_PRESTIGE:
+		status_change_end(bl, SC_BANDING, INVALID_TIMER);
+		break;
 	case SC_GT_CHANGE:
 		status_change_end(bl, SC_GT_REVITALIZE, INVALID_TIMER);
 		break;
@@ -10658,7 +10673,8 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			// val1: Skill lv
 			val2 = 1; // Lasts 1 invocation
 #ifdef RENEWAL
-			val3 = 10 * val1; // Matk% increase
+			//val3 = 10 * val1; // Matk% increase
+			val3 = 5 * val1; // Matk% increase
 #else
 			val3 = 5 * val1; // Matk% increase
 #endif
@@ -11693,6 +11709,9 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			if (!sd)
 				val2 = 20;
 			break;
+		case SC__AUTOSHADOWSPELL:
+			val2 = val1 * 5; // MATK Increase
+			break;
 		case SC__INVISIBILITY:
 			val2 = 50 - 10 * val1; // ASPD
 			val3 = 20 * val1; // CRITICAL
@@ -11884,8 +11903,10 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			val4 = tick / tick_time;
 			break;
 		case SC_INSPIRATION:
-			val2 = (sd?sd->status.job_level:50);
-			val3 = status_get_lv(bl) / 10 + val2 / 5; //All stat bonus
+			//val2 = (sd?sd->status.job_level:50);
+			//val3 = status_get_lv(bl) / 10 + val2 / 5; //All stat bonus
+			val2 = val1 * 40; // ATK and MATK
+			val3 = val1 * 6; //All stat bonus
 			val4 = tick / 5000;
 			tick_time = 5000; // [GodLesZ] tick time
 			//status_change_clear_buffs(bl, SCCB_BUFFS|SCCB_DEBUFFS); // Remove buffs/debuffs

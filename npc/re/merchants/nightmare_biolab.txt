@@ -670,11 +670,25 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 			.@slot = 3;
 			mes "How about... we begin... lightly?... Test... your luck... Kr..hehe...";
 			mes "^FF0000*Attempts enchantment to 4th slot. One of 6 statuses is randomly enchanted.*^000000";
+
+			.@statType = select("Select Status", "Random Status");
+
+			if (.@statType == 1) {
+				.@selectedStat = select("Strength", "Agility", "Vitality", "Dexterity", "Intelligence", "Luck");
+				.@requirement = 100;
+			}
 		}
 		else if (.@card[2] == 0) {
 			.@slot = 2;
 			mes "Kr... hehe... Do... you like... your... first... enchantment?...";
 			mes "^FF0000*Attempts enchantment to 3rd slot. One of 6 statuses is randomly enchanted.*^000000";
+
+			.@statType = select("Select Status", "Random Status");
+
+			if (.@statType == 1) {
+				.@selectedStat = select("Strength", "Agility", "Vitality", "Dexterity", "Intelligence", "Luck");
+				.@requirement = 100;
+			}
 		}
 		else if (.@card[1] == 0) {
 			.@slot = 1;
@@ -892,38 +906,106 @@ lhz_dun_n,134,265,2	script	Wandering Mind#JCv2	4_CENERE,{
 		switch(.@slot) {
 		case 3:
 		case 2:
-			setarray .@enchant[0],
-				4700,	// Strength1
-				4701,	// Strength2
-				4702,	// Strength3
-				4703,	// Strength4
-				4704,	// Strength5
-				4710,	// Inteligence1
-				4711,	// Inteligence2
-				4712,	// Inteligence3
-				4713,	// Inteligence4
-				4714,	// Inteligence5
-				4720,	// Dexterity1
-				4721,	// Dexterity2
-				4722,	// Dexterity3
-				4723,	// Dexterity4
-				4724,	// Dexterity5
-				4730,	// Agility1
-				4731,	// Agility2
-				4732,	// Agility3
-				4733,	// Agility4
-				4734,	// Agility5
-				4740,	// Vitality1
-				4741,	// Vitality2
-				4742,	// Vitality3
-				4743,	// Vitality4
-				4744,	// Vitality5
-				4750,	// Luck1
-				4751,	// Luck2
-				4752,	// Luck3
-				4753,	// Luck4
-				4754;	// Luck5
-			.@card[.@slot] = .@enchant[ rand( getarraysize(.@enchant) ) ];	// unknown rates
+
+			if (.@statType == 1) {
+				if (.@selectedStat == 1) {
+					setarray .@enchant[0],
+						4700,	// Strength1
+						4701,	// Strength2
+						4702,	// Strength3
+						4703,	// Strength4
+						4704;	// Strength5
+
+					.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+				}
+				else if (.@selectedStat == 2) {
+					setarray .@enchant[0],
+						4730,	// Agility1
+						4731,	// Agility2
+						4732,	// Agility3
+						4733,	// Agility4
+						4734;	// Agility5
+
+					.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+				}
+				else if (.@selectedStat == 3) {
+					setarray .@enchant[0],
+						4740,	// Vitality1
+						4741,	// Vitality2
+						4742,	// Vitality3
+						4743,	// Vitality4
+						4744;	// Vitality5
+
+					.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+				}
+				else if (.@selectedStat == 4) {
+					setarray .@enchant[0],
+						4720,	// Dexterity1
+						4721,	// Dexterity2
+						4722,	// Dexterity3
+						4723,	// Dexterity4
+						4724;	// Dexterity5
+
+					.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+				}
+				else if (.@selectedStat == 5) {
+					setarray .@enchant[0],
+						4710,	// Inteligence1
+						4711,	// Inteligence2
+						4712,	// Inteligence3
+						4713,	// Inteligence4
+						4714;	// Inteligence5
+
+					.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+				}
+				else if (.@selectedStat == 6) {
+					setarray .@enchant[0],
+						4750,	// Luck1
+						4751,	// Luck2
+						4752,	// Luck3
+						4753,	// Luck4
+						4754;	// Luck5
+
+					.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+				}
+			}
+			else {
+				setarray .@enchant[0],
+					4700,	// Strength1
+					4701,	// Strength2
+					4702,	// Strength3
+					4703,	// Strength4
+					4704,	// Strength5
+					4710,	// Inteligence1
+					4711,	// Inteligence2
+					4712,	// Inteligence3
+					4713,	// Inteligence4
+					4714,	// Inteligence5
+					4720,	// Dexterity1
+					4721,	// Dexterity2
+					4722,	// Dexterity3
+					4723,	// Dexterity4
+					4724,	// Dexterity5
+					4730,	// Agility1
+					4731,	// Agility2
+					4732,	// Agility3
+					4733,	// Agility4
+					4734,	// Agility5
+					4740,	// Vitality1
+					4741,	// Vitality2
+					4742,	// Vitality3
+					4743,	// Vitality4
+					4744,	// Vitality5
+					4750,	// Luck1
+					4751,	// Luck2
+					4752,	// Luck3
+					4753,	// Luck4
+					4754;	// Luck5
+
+				.@statEnchant = .@enchant[ rand( getarraysize(.@enchant) ) ];
+			}
+
+			.@card[.@slot] = .@statEnchant;
 			break;
 		case 1:
 			if (.@type == 1) {

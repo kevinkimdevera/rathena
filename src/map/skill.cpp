@@ -432,9 +432,9 @@ unsigned short skill_dummy2skill_id(unsigned short skill_id) {
 			return WL_SUMMONWB;
 		case WL_SUMMON_ATK_GROUND:
 			return WL_SUMMONSTONE;
-		case LG_OVERBRAND_BRANDISH:
-		case LG_OVERBRAND_PLUSATK:
-			return LG_OVERBRAND;
+		// case LG_OVERBRAND_BRANDISH:
+		// case LG_OVERBRAND_PLUSATK:
+		// 	return LG_OVERBRAND;
 		case WM_REVERBERATION_MELEE:
 		case WM_REVERBERATION_MAGIC:
 			return WM_REVERBERATION;
@@ -1762,9 +1762,9 @@ int skill_additional_effect(struct block_list* src, struct block_list *bl, uint1
 		break;
 	case NC_POWERSWING:
 		sc_start(src,bl, SC_STUN, 10, skill_lv, skill_get_time(skill_id, skill_lv));
-		skill = pc_checkskill(sd, NC_AXEBOOMERANG);
-		if (sd && skill > 0 && (sd->status.weapon == W_1HAXE || sd->status.weapon == W_2HAXE) && rnd() % 100 < 5 * skill_lv)
-			skill_castend_damage_id(src, bl, NC_AXEBOOMERANG, skill, tick, 1);
+		// skill = pc_checkskill(sd, NC_AXEBOOMERANG);
+		// if (sd && skill > 0 && (sd->status.weapon == W_1HAXE || sd->status.weapon == W_2HAXE) && rnd() % 100 < 5 * skill_lv)
+		// 	skill_castend_damage_id(src, bl, NC_AXEBOOMERANG, skill, tick, 1);
 		break;
 	case GC_WEAPONCRUSH:
 		skill_castend_nodamage_id(src,bl,skill_id,skill_lv,tick,BCT_ENEMY);
@@ -1801,7 +1801,7 @@ int skill_additional_effect(struct block_list* src, struct block_list *bl, uint1
 			sc_start(src,bl, SC_BLIND, 50, skill_lv, skill_get_time(skill_id,skill_lv));
 		break;
 	case LG_EARTHDRIVE:
-		skill_break_equip(src,src, EQP_SHIELD, 100 * skill_lv, BCT_SELF);
+		//skill_break_equip(src,src, EQP_SHIELD, 100 * skill_lv, BCT_SELF);
 		sc_start(src,bl, SC_EARTHDRIVE, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		break;
 	case LG_HESPERUSLIT:
@@ -3236,11 +3236,11 @@ void skill_attack_blow(struct block_list *src, struct block_list *dsrc, struct b
 
 	// Blown-specific handling
 	switch( skill_id ) {
-		case LG_OVERBRAND_BRANDISH:
-			// Give knockback damage bonus only hits the wall. (bugreport:9096)
-			if (skill_blown(dsrc,target,blewcount,dir,(enum e_skill_blown)(BLOWN_NO_KNOCKBACK_MAP|BLOWN_MD_KNOCKBACK_IMMUNE|BLOWN_TARGET_NO_KNOCKBACK|BLOWN_TARGET_BASILICA)) < blewcount)
-				skill_addtimerskill(src, tick + status_get_amotion(src), target->id, 0, 0, LG_OVERBRAND_PLUSATK, skill_lv, BF_WEAPON, flag|SD_ANIMATION);
-			break;
+		// case LG_OVERBRAND_BRANDISH:
+		// 	// Give knockback damage bonus only hits the wall. (bugreport:9096)
+		// 	if (skill_blown(dsrc,target,blewcount,dir,(enum e_skill_blown)(BLOWN_NO_KNOCKBACK_MAP|BLOWN_MD_KNOCKBACK_IMMUNE|BLOWN_TARGET_NO_KNOCKBACK|BLOWN_TARGET_BASILICA)) < blewcount)
+		// 		skill_addtimerskill(src, tick + status_get_amotion(src), target->id, 0, 0, LG_OVERBRAND_PLUSATK, skill_lv, BF_WEAPON, flag|SD_ANIMATION);
+		// 	break;
 		case SR_KNUCKLEARROW:
 			// Ignore knockback damage bonus if in WOE (player cannot be knocked in WOE)
 			// Boss & Immune Knockback stay in place and don't get bonus damage
@@ -3565,12 +3565,12 @@ int64 skill_attack (int attack_type, struct block_list* src, struct block_list *
 		case LG_SHIELDPRESS:
 			dmg.dmotion = clif_skill_damage(dsrc, bl, tick, status_get_amotion(src), dmg.dmotion, damage, dmg.div_, skill_id, -1, DMG_SINGLE);
 			break;
-		case LG_OVERBRAND:
-		case LG_OVERBRAND_BRANDISH:
-			dmg.amotion = status_get_amotion(src) * 2;
-		case LG_OVERBRAND_PLUSATK:
-			dmg.dmotion = clif_skill_damage(dsrc,bl,tick,status_get_amotion(src),dmg.dmotion,damage,dmg.div_,skill_id,-1,DMG_SPLASH);
-			break;
+		// case LG_OVERBRAND:
+		// case LG_OVERBRAND_BRANDISH:
+		// 	dmg.amotion = status_get_amotion(src) * 2;
+		// case LG_OVERBRAND_PLUSATK:
+		// 	dmg.dmotion = clif_skill_damage(dsrc,bl,tick,status_get_amotion(src),dmg.dmotion,damage,dmg.div_,skill_id,-1,DMG_SPLASH);
+		// 	break;
 		case NPC_EARTHQUAKE:
 			dmg.dmotion = clif_skill_damage(src, bl, tick, dmg.amotion, dmg.dmotion, damage, dmg.div_, skill_id, -1, DMG_ENDURE);
 			break;
@@ -4217,7 +4217,7 @@ static TIMER_FUNC(skill_timerskill){
 					case SR_DRAGONCOMBO:
 					case SR_FALLENEMPIRE:
 					case SR_TIGERCANNON:
-					case SR_SKYNETBLOW:
+					// case SR_SKYNETBLOW:
 						if (src->type != BL_PC)
 							continue;
 						break; // Exceptions
@@ -4368,7 +4368,7 @@ static TIMER_FUNC(skill_timerskill){
 				case SR_DRAGONCOMBO:
 				case SR_FALLENEMPIRE:
 				case SR_TIGERCANNON:
-				case SR_SKYNETBLOW:
+				// case SR_SKYNETBLOW:
 					if( src->type == BL_PC ) {
 						if( distance_xy(src->x, src->y, target->x, target->y) >= 3 )
 							break;
@@ -4404,15 +4404,15 @@ static TIMER_FUNC(skill_timerskill){
 				case WL_EARTHSTRAIN:
 					skill_unitsetting(src,skl->skill_id,skl->skill_lv,skl->x,skl->y,(skl->type<<16)|skl->flag);
 					break;
-				case LG_OVERBRAND_BRANDISH: {
-						int i, dir = map_calc_dir(src,skl->x,skl->y);
-						int x = src->x, y = src->y;
-						struct s_skill_nounit_layout *layout = skill_get_nounit_layout(skl->skill_id,skl->skill_lv,src,x,y,dir);
+				// case LG_OVERBRAND_BRANDISH: {
+				// 		int i, dir = map_calc_dir(src,skl->x,skl->y);
+				// 		int x = src->x, y = src->y;
+				// 		struct s_skill_nounit_layout *layout = skill_get_nounit_layout(skl->skill_id,skl->skill_lv,src,x,y,dir);
 
-						for( i = 0; i < layout->count; i++ )
-							map_foreachincell(skill_area_sub,src->m,x+layout->dx[i],y+layout->dy[i],BL_CHAR,src,skl->skill_id,skl->skill_lv,tick,skl->flag|BCT_ENEMY|SD_ANIMATION|1,skill_castend_damage_id);
-					}
-					break;
+				// 		for( i = 0; i < layout->count; i++ )
+				// 			map_foreachincell(skill_area_sub,src->m,x+layout->dx[i],y+layout->dy[i],BL_CHAR,src,skl->skill_id,skl->skill_lv,tick,skl->flag|BCT_ENEMY|SD_ANIMATION|1,skill_castend_damage_id);
+				// 	}
+				// 	break;
 				case RL_FIRE_RAIN: {
 						int dummy = 1, i = skill_get_splash(skl->skill_id,skl->skill_lv);
 
@@ -4484,7 +4484,7 @@ int skill_cleartimerskill (struct block_list *src)
 				case SR_DRAGONCOMBO:
 				case SR_FALLENEMPIRE:
 				case SR_TIGERCANNON:
-				case SR_SKYNETBLOW:
+				// case SR_SKYNETBLOW:
 					if (src->type != BL_PC)
 						break;
 					continue;
@@ -4836,8 +4836,8 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 	case LG_SHIELDPRESS:
 	case LG_RAGEBURST:
 	case LG_HESPERUSLIT:
-	case LG_OVERBRAND:
-	case LG_OVERBRAND_BRANDISH:
+	// case LG_OVERBRAND:
+	// case LG_OVERBRAND_BRANDISH:
 	case SR_FALLENEMPIRE:
 	case SR_CRESCENTELBOW_AUTOSPELL:
 	case SR_GATEOFHELL:
@@ -4916,9 +4916,9 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 		break;
 
 	case NC_FLAMELAUNCHER:
-	case LG_CANNONSPEAR:
-		if(skill_id == LG_CANNONSPEAR)
-			clif_skill_damage(src, bl, tick, status_get_amotion(src), 0, -30000, 1, skill_id, skill_lv, DMG_SINGLE);
+	// case LG_CANNONSPEAR:
+	// 	if(skill_id == LG_CANNONSPEAR)
+	// 		clif_skill_damage(src, bl, tick, status_get_amotion(src), 0, -30000, 1, skill_id, skill_lv, DMG_SINGLE);
 		skill_area_temp[1] = bl->id;
 		if (battle_config.skill_eightpath_algorithm) {
 			//Use official AoE algorithm
@@ -4932,9 +4932,9 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 		}
 		break;
 
-	case SN_SHARPSHOOTING:
-		flag |= 2; // Flag for specific mob damage formula
-	case MA_SHARPSHOOTING:
+	// case SN_SHARPSHOOTING:
+	// 	flag |= 2; // Flag for specific mob damage formula
+	// case MA_SHARPSHOOTING:
 	case NJ_KAMAITACHI:
 	case NPC_DARKPIERCING:
 	case NPC_ACIDBREATH:
@@ -4948,8 +4948,8 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			if (!(map_foreachindir(skill_attack_area, src->m, src->x, src->y, bl->x, bl->y,
 			   skill_get_splash(skill_id, skill_lv), skill_get_maxcount(skill_id, skill_lv), 0, splash_target(src),
 			   skill_get_type(skill_id), src, src, skill_id, skill_lv, tick, flag, BCT_ENEMY))) {
-			   	if (skill_id == SN_SHARPSHOOTING)
-			   		flag &= ~2; // Only targets in the splash area are affected
+			   	//if (skill_id == SN_SHARPSHOOTING)
+			   		//flag &= ~2; // Only targets in the splash area are affected
 
 				//These skills hit at least the target if the AoE doesn't hit
 				skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, flag);
@@ -5092,6 +5092,11 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 		break;
 
 	//Splash attack skills.
+	case LG_CANNONSPEAR:
+	case LG_OVERBRAND:
+	case SN_SHARPSHOOTING:
+		flag |= 2; // Flag for specific mob damage formula
+	case MA_SHARPSHOOTING:
 	case AS_GRIMTOOTH:
 	case MC_CARTREVOLUTION:
 	case NPC_SPLASHATTACK:
@@ -7510,6 +7515,8 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 		break;
 
 	//List of self skills that give damage around caster
+	case LG_OVERBRAND:
+	case LG_RAYOFGENESIS:
 	case ASC_METEORASSAULT:
 	case GS_SPREADATTACK:
 	case RK_WINDCUTTER:
@@ -7517,6 +7524,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 	case NC_AXETORNADO:
 	case GC_COUNTERSLASH:
 	case SR_SKYNETBLOW:
+	case SR_TIGERCANNON:
 	case SR_RAMPAGEBLASTER:
 	case SR_HOWLINGOFLION:
 	case KO_HAPPOKUNAI:
@@ -7555,7 +7563,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 		clif_skill_nodamage(src,bl,skill_id,skill_lv,1);
 		i = map_foreachinrange(skill_area_sub, bl, skill_get_splash(skill_id, skill_lv), starget,
 				src, skill_id, skill_lv, tick, flag|BCT_ENEMY|SD_SPLASH|1, skill_castend_damage_id);
-		if( !i && ( skill_id == RK_WINDCUTTER || skill_id == NC_AXETORNADO || skill_id == SR_SKYNETBLOW || skill_id == KO_HAPPOKUNAI ) )
+		if( !i && ( skill_id == LG_OVERBRAND || skill_id == RK_WINDCUTTER || skill_id == NC_AXETORNADO || skill_id == SR_SKYNETBLOW || skill_id == KO_HAPPOKUNAI ) )
 			clif_skill_damage(src,src,tick, status_get_amotion(src), 0, -30000, 1, skill_id, skill_lv, DMG_SINGLE);
 	}
 		break;
@@ -10666,11 +10674,13 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 			sc_start(src,bl,type,100,skill_lv,skill_get_time(skill_id,skill_lv)));
 		break;
 	case SR_FLASHCOMBO: {
-		const int combo[] = { SR_DRAGONCOMBO, SR_FALLENEMPIRE, SR_TIGERCANNON, SR_SKYNETBLOW };
-		const int delay[] = { 0, 250, 500, 2000 };
+		// const int combo[] = { SR_DRAGONCOMBO, SR_FALLENEMPIRE, SR_TIGERCANNON, SR_SKYNETBLOW };
+		// const int delay[] = { 0, 250, 500, 2000 };
+		const int combo[] = { SR_DRAGONCOMBO, SR_FALLENEMPIRE, SR_TIGERCANNON };
+		const int delay[] = { 0, 500, 1000 };
 
 		if (sd) // Disable attacking/acting/moving for skill's duration.
-			sd->ud.attackabletime = sd->canuseitem_tick = sd->ud.canact_tick = tick + delay[3];
+			sd->ud.attackabletime = sd->canuseitem_tick = sd->ud.canact_tick = tick + delay[2];
 		clif_skill_nodamage(src,bl,skill_id,skill_lv,
 			sc_start(src,src,type,100,skill_lv,skill_get_time(skill_id,skill_lv)));
 		for (i = 0; i < ARRAYLENGTH(combo); i++)
@@ -12914,16 +12924,16 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 		flag |= 1;
 		break;
 
-	case LG_OVERBRAND: {
-			int dir = map_calc_dir(src,x,y);
-			int sx = src->x, sy = src->y;
-			struct s_skill_nounit_layout *layout = skill_get_nounit_layout(skill_id,skill_lv,src,sx,sy,dir);
+	// case LG_OVERBRAND: {
+	// 		int dir = map_calc_dir(src,x,y);
+	// 		int sx = src->x, sy = src->y;
+	// 		struct s_skill_nounit_layout *layout = skill_get_nounit_layout(skill_id,skill_lv,src,sx,sy,dir);
 
-			for( i = 0; i < layout->count; i++ )
-				map_foreachincell(skill_area_sub,src->m,sx+layout->dx[i],sy+layout->dy[i],BL_CHAR,src,skill_id,skill_lv,tick,flag|BCT_ENEMY|SD_ANIMATION|1,skill_castend_damage_id);
-			skill_addtimerskill(src,gettick() + status_get_amotion(src),0,x,y,LG_OVERBRAND_BRANDISH,skill_lv,dir,flag);
-		}
-		break;
+	// 		for( i = 0; i < layout->count; i++ )
+	// 			map_foreachincell(skill_area_sub,src->m,sx+layout->dx[i],sy+layout->dy[i],BL_CHAR,src,skill_id,skill_lv,tick,flag|BCT_ENEMY|SD_ANIMATION|1,skill_castend_damage_id);
+	// 		//skill_addtimerskill(src,gettick() + status_get_amotion(src),0,x,y,LG_OVERBRAND_BRANDISH,skill_lv,dir,flag);
+	// 	}
+	// 	break;
 
 	case LG_BANDING:
 		if( sc && sc->data[SC_BANDING] )
@@ -12933,10 +12943,10 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 		clif_skill_nodamage(src,src,skill_id,skill_lv,1);
 		break;
 
-	case LG_RAYOFGENESIS:
-		i = skill_get_splash(skill_id,skill_lv);
-		map_foreachinarea(skill_area_sub,src->m,x-i,y-i,x+i,y+i,BL_CHAR|BL_SKILL,src,skill_id,skill_lv,tick,flag|BCT_ENEMY|1,skill_castend_damage_id);
-		break;
+	// case LG_RAYOFGENESIS:
+	// 	i = skill_get_splash(skill_id,skill_lv);
+	// 	map_foreachinarea(skill_area_sub,src->m,x-i,y-i,x+i,y+i,BL_CHAR|BL_SKILL,src,skill_id,skill_lv,tick,flag|BCT_ENEMY|1,skill_castend_damage_id);
+	// 	break;
 
 	case WM_DOMINION_IMPULSE:
 		i = skill_get_splash(skill_id, skill_lv);
@@ -20747,7 +20757,7 @@ void skill_spellbook(struct map_session_data *sd, t_itemid nameid) {
 	int points = spell->points;
 
 	if (sc && sc->data[SC_FREEZE_SP]) {
-		if ((sc->data[SC_FREEZE_SP]->val2 + points) > 4 * pc_checkskill(sd, WL_FREEZE_SP) + status_get_int(&sd->bl) / 10 + sd->status.base_level / 10) {
+		if ((sc->data[SC_FREEZE_SP]->val2 + points) > 8 * pc_checkskill(sd, WL_FREEZE_SP) + status_get_int(&sd->bl) / 10 + sd->status.base_level / 10) {
 			clif_skill_fail(sd, WL_READING_SB, USESKILL_FAIL_SPELLBOOK_PRESERVATION_POINT, 0);
 			return;
 		}

@@ -287,15 +287,15 @@ static bool mobdb_searchname_sub(uint16 mob_id, const char * const str, bool ful
 
 	if (mob == nullptr)
 		return false;
-	
+
 	if( mobdb_checkid(mob_id) <= 0 )
 		return false; // invalid mob_id (includes clone check)
 	if(!mob->base_exp && !mob->job_exp && !mob_has_spawn(mob_id))
 		return false; // Monsters with no base/job exp and no spawn point are, by this criteria, considered "slave mobs" and excluded from search results
 	if( full_cmp ) {
 		// str must equal the db value
-		if( strcmpi(mob->name.c_str(), str) == 0 || 
-			strcmpi(mob->jname.c_str(), str) == 0 || 
+		if( strcmpi(mob->name.c_str(), str) == 0 ||
+			strcmpi(mob->jname.c_str(), str) == 0 ||
 			strcmpi(mob->sprite.c_str(), str) == 0 )
 			return true;
 	} else {
@@ -515,7 +515,7 @@ int mob_get_random_id(int type, enum e_random_monster_flags flag, int lv)
 
 	if (type == MOBG_Bloody_Dead_Branch && flag&RMF_MOB_NOT_BOSS)
 		flag = static_cast<e_random_monster_flags>(flag&~RMF_MOB_NOT_BOSS);
-	
+
 	if (!msummon) {
 		ShowError("mob_get_random_id: Invalid type (%d) of random monster.\n", type);
 		return 0;
@@ -586,7 +586,7 @@ bool mob_ksprotected (struct block_list *src, struct block_list *target)
 		struct map_session_data *pl_sd; // Owner
 		struct map_data *mapdata = map_getmapdata(md->bl.m);
 		char output[128];
-		
+
 		if( mapdata->flag[MF_ALLOWKS] || mapdata_flag_ks(mapdata) )
 			return false; // Ignores GVG, PVP and AllowKS map flags
 
@@ -1793,7 +1793,7 @@ static bool mob_ai_sub_hard(struct mob_data *md, t_tick tick)
 				) )
 			{ // Rude attacked
 				if (abl->id != md->bl.id //Self damage does not cause rude attack
-				&& md->state.attacked_count++ >= RUDE_ATTACKED_COUNT				
+				&& md->state.attacked_count++ >= RUDE_ATTACKED_COUNT
 				&& !mobskill_use(md, tick, MSC_RUDEATTACKED) && can_move
 				&& !tbl && unit_escape(&md->bl, abl, rnd()%10 +1))
 				{	//Escaped.
@@ -1930,7 +1930,7 @@ static bool mob_ai_sub_hard(struct mob_data *md, t_tick tick)
 	//At this point we know the target is attackable, we just gotta check if the range matches.
 	if (battle_check_range(&md->bl, tbl, md->status.rhw.range) && !(md->sc.option&OPTION_HIDE))
 	{	//Target within range and able to use normal attack, engage
-		if (md->ud.target != tbl->id || md->ud.attacktimer == INVALID_TIMER) 
+		if (md->ud.target != tbl->id || md->ud.attacktimer == INVALID_TIMER)
 		{ //Only attack if no more attack delay left
 			if(tbl->type == BL_PC)
 				mob_log_damage(md, tbl, 0); //Log interaction (counts as 'attacker' for the exp bonus)
@@ -1950,9 +1950,9 @@ static bool mob_ai_sub_hard(struct mob_data *md, t_tick tick)
 	}
 
 	//Monsters in berserk state, unable to use normal attacks, will always attempt a skill
-	if(md->ud.walktimer == INVALID_TIMER && (md->state.skillstate == MSS_BERSERK || md->state.skillstate == MSS_ANGRY)) 
+	if(md->ud.walktimer == INVALID_TIMER && (md->state.skillstate == MSS_BERSERK || md->state.skillstate == MSS_ANGRY))
 	{
-		if (DIFF_TICK(md->ud.canmove_tick, tick) <= MIN_MOBTHINKTIME && DIFF_TICK(md->ud.canact_tick, tick) < -MIN_MOBTHINKTIME*IDLE_SKILL_INTERVAL) 
+		if (DIFF_TICK(md->ud.canmove_tick, tick) <= MIN_MOBTHINKTIME && DIFF_TICK(md->ud.canact_tick, tick) < -MIN_MOBTHINKTIME*IDLE_SKILL_INTERVAL)
 		{ //Only use skill if able to walk on next tick and not used a skill the last second
 			if (mobskill_use(md, tick, -1))
 				return true;
@@ -2251,7 +2251,7 @@ static void mob_item_drop(struct mob_data *md, struct item_drop_list *dlist, str
 	sd = map_charid2sd(dlist->first_charid);
 	if( sd == NULL ) sd = map_charid2sd(dlist->second_charid);
 	if( sd == NULL ) sd = map_charid2sd(dlist->third_charid);
-	test_autoloot = sd 
+	test_autoloot = sd
 		&& (drop_rate <= sd->state.autoloot || pc_isautolooting(sd, ditem->item_data.nameid))
 		&& (flag ? ((battle_config.homunculus_autoloot ? (battle_config.hom_idle_no_share == 0 || !pc_isidle_hom(sd)) : 0) || (battle_config.mercenary_autoloot ? (battle_config.mer_idle_no_share == 0 || !pc_isidle_mer(sd)) : 0)) :
 			(battle_config.idle_no_autoloot == 0 || DIFF_TICK(last_tick, sd->idletime) < battle_config.idle_no_autoloot));
@@ -3077,7 +3077,8 @@ int mob_dead(struct mob_data *md, struct block_list *src, int type)
 			}
 
 			if (sd->status.party_id)
-				map_foreachinallrange(quest_update_objective_sub, &md->bl, AREA_SIZE, BL_PC, sd->status.party_id, md);
+				//map_foreachinallrange(quest_update_objective_sub, &md->bl, AREA_SIZE, BL_PC, sd->status.party_id, md);
+				map_foreachinmap(quest_update_objective_sub, md->bl.m, BL_PC, sd->status.party_id, md);
 			else if (sd->avail_quests)
 				quest_update_objective(sd, md);
 
@@ -3283,14 +3284,14 @@ void mob_add_spawn(uint16 mob_id, const struct spawn_info& new_spawn)
 
 	std::vector<spawn_info>& spawns = mob_spawn_data[mob_id];
 	// Search if the map is already in spawns
-	auto itSameMap = std::find_if(spawns.begin(), spawns.end(), 
+	auto itSameMap = std::find_if(spawns.begin(), spawns.end(),
 		[&m] (const spawn_info &s) { return (s.mapindex == m); });
-	
+
 	if( itSameMap != spawns.end() )
 		itSameMap->qty += new_spawn.qty; // add quantity, if map is found
 	else
 		spawns.push_back(new_spawn); // else, add the whole spawn info
-	
+
 	// sort spawns by spawn quantity
 	std::sort(spawns.begin(), spawns.end(),
 		[](const spawn_info & a, const spawn_info & b) -> bool
@@ -4358,7 +4359,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.max_hp = 1;
 	}
-	
+
 	if (this->nodeExists(node, "Sp")) {
 		uint32 sp;
 
@@ -4370,7 +4371,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.max_sp = 1;
 	}
-	
+
 	if (this->nodeExists(node, "BaseExp")) {
 		t_exp exp;
 
@@ -4382,7 +4383,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->base_exp = 0;
 	}
-	
+
 	if (this->nodeExists(node, "JobExp")) {
 		t_exp exp;
 
@@ -4394,7 +4395,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->job_exp = 0;
 	}
-	
+
 	if (this->nodeExists(node, "MvpExp")) {
 		t_exp exp;
 
@@ -4418,7 +4419,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.rhw.atk = 0;
 	}
-	
+
 	if (this->nodeExists(node, "Attack2")) {
 		uint16 atk;
 
@@ -4438,7 +4439,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 			mob->status.rhw.atk2 = 0;
 #endif
 	}
-	
+
 	if (this->nodeExists(node, "Defense")) {
 		uint16 def;
 
@@ -4455,7 +4456,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.def = 0;
 	}
-	
+
 	if (this->nodeExists(node, "MagicDefense")) {
 		uint16 def;
 
@@ -4472,7 +4473,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.mdef = 0;
 	}
-	
+
 	if (this->nodeExists(node, "Str")) {
 		uint16 stat;
 
@@ -4544,7 +4545,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.luk = 1;
 	}
-	
+
 	if (this->nodeExists(node, "AttackRange")) {
 		uint16 range;
 
@@ -4556,7 +4557,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.rhw.range = 0;
 	}
-	
+
 	if (this->nodeExists(node, "SkillRange")) {
 		uint16 range;
 
@@ -4568,7 +4569,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->range2 = 0;
 	}
-	
+
 	if (this->nodeExists(node, "ChaseRange")) {
 		uint16 range;
 
@@ -4580,7 +4581,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->range3 = 0;
 	}
-	
+
 	if (this->nodeExists(node, "Size")) {
 		std::string size;
 
@@ -4605,7 +4606,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.size = SZ_SMALL;
 	}
-	
+
 	if (this->nodeExists(node, "Race")) {
 		std::string race;
 
@@ -4730,7 +4731,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.adelay = 0;
 	}
-	
+
 	if (this->nodeExists(node, "AttackMotion")) {
 		uint16 speed;
 
@@ -4757,7 +4758,7 @@ uint64 MobDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!exists)
 			mob->status.dmotion = 0;
 	}
-	
+
 	if (this->nodeExists(node, "DamageTaken")) {
 		uint16 damage;
 
@@ -5548,7 +5549,7 @@ static bool mob_parse_row_chatdb(char* fields[], int columns, int current)
 			return false;
 		}
 	}
-	
+
 	//MSG ID
 	ms->msg_id=msg_id;
 	//Color
@@ -5871,7 +5872,7 @@ static int mob_read_sqlskilldb(void)
 			for( i = 0; i < 19; ++i )
 			{
 				Sql_GetData(mmysql_handle, i, &str[i], NULL);
-				if( str[i] == NULL ) 
+				if( str[i] == NULL )
 					str[i] = dummy; // get rid of NULL columns
 			}
 
@@ -6144,7 +6145,7 @@ static void mob_skill_db_set_single(struct s_mob_skill_db *skill) {
 			mob_skill_db_set_single_sub(pair.second, skill);
 		}
 	}
-	
+
 }
 
 /**
@@ -6191,7 +6192,7 @@ static void mob_load(void)
 	else
 		mob_db.load();
 
-	for(int i = 0; i < ARRAYLENGTH(dbsubpath); i++){	
+	for(int i = 0; i < ARRAYLENGTH(dbsubpath); i++){
 		int n1 = strlen(db_path)+strlen(dbsubpath[i])+1;
 		int n2 = strlen(db_path)+strlen(DBPATH)+strlen(dbsubpath[i])+1;
 

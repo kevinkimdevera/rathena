@@ -122682,7 +122682,6 @@ Body:
     View: 848
     Weight: 50
     Locations:
-      Head_Mid: true
       Head_Low: true
     EquipLevelMin: 100
   - Id: 420018
@@ -122702,7 +122701,6 @@ Body:
     View: 848
     Weight: 50
     Locations:
-      Head_Mid: true
       Head_Low: true
     EquipLevelMin: 100
   - Id: 420020
@@ -122712,7 +122710,6 @@ Body:
     View: 848
     Weight: 50
     Locations:
-      Head_Mid: true
       Head_Low: true
     EquipLevelMin: 100
   - Id: 420021
@@ -122722,7 +122719,6 @@ Body:
     View: 848
     Weight: 50
     Locations:
-      Head_Mid: true
       Head_Low: true
     EquipLevelMin: 100
   - Id: 420022
@@ -122732,7 +122728,6 @@ Body:
     View: 848
     Weight: 50
     Locations:
-      Head_Mid: true
       Head_Low: true
     EquipLevelMin: 100
   - Id: 420025
@@ -133134,6 +133129,7 @@ Body:
       Both_Hand: true
     WeaponLevel: 4
     EquipLevelMin: 150
+    Refineable: true
     Script: |
       .@r = getrefine();
       bonus2 bSkillAtk,"RA_ARROWSTORM",10;
@@ -133164,6 +133160,7 @@ Body:
       Both_Hand: true
     WeaponLevel: 4
     EquipLevelMin: 150
+    Refineable: true
     Script: |
       .@r = getrefine();
       bonus2 bSkillAtk,"SC_TRIANGLESHOT",10;
