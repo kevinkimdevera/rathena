@@ -362,7 +362,7 @@ int party_recv_info(struct party* sp, uint32 char_id)
 		if (p->instance_id > 0)
 			instance_reqinfo(sd, p->instance_id);
 	}
-	
+
 	// If a player was renamed, make sure to resend the party information
 	if( rename ){
 		clif_party_info(p,NULL);
@@ -1255,28 +1255,28 @@ int party_sub_count_class(struct block_list *bl, va_list ap)
  * @param ap: List of parameters: Check Type
  * @return 1 or total HP on success or 0 otherwise
  */
-int party_sub_count_banding(struct block_list *bl, va_list ap)
-{
-	struct map_session_data *sd = (TBL_PC *)bl;
-	int type = va_arg(ap, int); // 0 = Banding Count, 1 = HP Check
+// int party_sub_count_banding(struct block_list *bl, va_list ap)
+// {
+// 	struct map_session_data *sd = (TBL_PC *)bl;
+// 	int type = va_arg(ap, int); // 0 = Banding Count, 1 = HP Check
 
-	if (sd->state.autotrade)
-		return 0;
+// 	if (sd->state.autotrade)
+// 		return 0;
 
-	if (battle_config.idle_no_share && pc_isidle_party(sd))
-		return 0;
+// 	if (battle_config.idle_no_share && pc_isidle_party(sd))
+// 		return 0;
 
-	if ((sd->class_&MAPID_THIRDMASK) != MAPID_ROYAL_GUARD)
-		return 0;
+// 	if ((sd->class_&MAPID_THIRDMASK) != MAPID_ROYAL_GUARD)
+// 		return 0;
 
-	if (!sd->sc.data[SC_BANDING])
-		return 0;
+// 	if (!sd->sc.data[SC_BANDING])
+// 		return 0;
 
-	if (type == 1)
-		return status_get_hp(bl);
+// 	if (type == 1)
+// 		return status_get_hp(bl);
 
-	return 1;
-}
+// 	return 1;
+// }
 
 /// Executes 'func' for each party member on the same map and in range (0:whole map)
 int party_foreachsamemap(int (*func)(struct block_list*,va_list),struct map_session_data *sd,int range,...)

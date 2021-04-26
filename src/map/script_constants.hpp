@@ -1240,9 +1240,12 @@
 	export_constant(SC_LEECHESEND);
 	export_constant(SC_REFLECTDAMAGE);
 	export_constant(SC_FORCEOFVANGUARD);
-	export_constant(SC_SHIELDSPELL_DEF);
-	export_constant(SC_SHIELDSPELL_MDEF);
-	export_constant(SC_SHIELDSPELL_REF);
+	// export_constant(SC_SHIELDSPELL_DEF);
+	// export_constant(SC_SHIELDSPELL_MDEF);
+	// export_constant(SC_SHIELDSPELL_REF);
+	export_constant(SC_SHIELDSPELL_HP);
+	export_constant(SC_SHIELDSPELL_SP);
+	export_constant(SC_SHIELDSPELL_ATK);
 	export_constant(SC_EXEEDBREAK);
 	export_constant(SC_PRESTIGE);
 	export_constant(SC_BANDING);
@@ -1612,6 +1615,12 @@
 	export_constant(SC_EMERGENCY_MOVE);
 	export_constant(SC_MADOGEAR);
 	export_constant(SC_NPC_HALLUCINATIONWALK);
+
+	export_constant(SC_OVERBRANDREADY);
+	export_constant(SC_POISON_MIST);
+	export_constant(SC_STONE_WALL);
+	export_constant(SC_CLOUD_POISON);
+	export_constant(SC_HOMUN_TIME);
 #ifdef RENEWAL
 	export_constant(SC_EXTREMITYFIST2);
 #endif
@@ -4583,7 +4592,7 @@
 	export_constant(ADOPT_MORE_CHILDREN);
 	export_constant(ADOPT_LEVEL_70);
 	export_constant(ADOPT_MARRIED);
-	
+
 	/* directions */
 	export_constant(DIR_NORTH);
 	export_constant(DIR_NORTHWEST);
@@ -4637,13 +4646,13 @@
 	export_constant(STOR_MODE_NONE);
 	export_constant(STOR_MODE_GET);
 	export_constant(STOR_MODE_PUT);
-	
+
 	/* instance enter */
 	export_constant(IE_OK);
 	export_constant(IE_NOMEMBER);
 	export_constant(IE_NOINSTANCE);
 	export_constant(IE_OTHER);
-	
+
 	/* months */
 	export_constant(JANUARY);
 	export_constant(FEBRUARY);
@@ -4657,7 +4666,7 @@
 	export_constant(OCTOBER);
 	export_constant(NOVEMBER);
 	export_constant(DECEMBER);
-	
+
 	/* days of the week */
 	export_constant(SUNDAY);
 	export_constant(MONDAY);
@@ -4666,7 +4675,7 @@
 	export_constant(THURSDAY);
 	export_constant(FRIDAY);
 	export_constant(SATURDAY);
-	
+
 	/* date types */
 	export_constant(DT_SECOND);
 	export_constant(DT_MINUTE);
