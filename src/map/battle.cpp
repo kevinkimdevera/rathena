@@ -4596,7 +4596,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += -100 + 300 * skill_lv;
 
 			skillratio += ((sd) ? pc_checkskill(sd, CR_SPEARQUICKEN) * 50 : 0);
-			skillratio += sstatus->str + sstatus + dex;
+			skillratio += sstatus->str + sstatus->dex;
 
 			RE_LVL_DMOD(100);
 			break;
