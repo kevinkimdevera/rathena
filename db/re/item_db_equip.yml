@@ -92611,7 +92611,7 @@ Body:
     Defense: 38
     Slots: 1
     Classes:
-      All_Third: true
+      All: true
     Locations:
       Garment: true
     EquipLevelMin: 100
@@ -92644,7 +92644,7 @@ Body:
     Defense: 38
     Slots: 1
     Classes:
-      All_Third: true
+      All: true
     Locations:
       Garment: true
     EquipLevelMin: 100
@@ -92677,7 +92677,7 @@ Body:
     Defense: 38
     Slots: 1
     Classes:
-      All_Third: true
+      All: true
     Locations:
       Garment: true
     EquipLevelMin: 100
@@ -92710,7 +92710,7 @@ Body:
     Defense: 38
     Slots: 1
     Classes:
-      All_Third: true
+      All: true
     Locations:
       Garment: true
     EquipLevelMin: 100
@@ -92743,7 +92743,7 @@ Body:
     Defense: 38
     Slots: 1
     Classes:
-      All_Third: true
+      All: true
     Locations:
       Garment: true
     EquipLevelMin: 100
@@ -92776,7 +92776,7 @@ Body:
     Defense: 38
     Slots: 1
     Classes:
-      All_Third: true
+      All: true
     Locations:
       Garment: true
     EquipLevelMin: 100

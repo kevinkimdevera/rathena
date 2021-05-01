@@ -1317,7 +1317,7 @@ Body:
               - Type: HD
                 Rate: 1800
                 Price: 100000
-                Material: HD_Bradium
+                Material: Limited_High_Density_Bradium
           - Level: 12
             Bonus: 6000
             RandomBonus: 5600
