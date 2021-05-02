@@ -6770,7 +6770,9 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						// skillratio += -100 + 200 * skill_lv;
 						// if(sc && sc->data[SC_INSPIRATION])
 						// 	skillratio += 1400;
-						skillratio += -100 + ((sc && sc->data[SC_INSPIRATION]) ? 300 : 230) * skill_lv + sstatus->int_;
+						skillratio += -100 + 230 * skill_lv + sstatus->int_; // !TODO: What's the INT bonus?
+						if (sc && sc->data[SC_INSPIRATION])
+							skillratio += 70 * skill_lv;
 						RE_LVL_DMOD(100);
 						break;
 					// case LG_SHIELDSPELL: // [(Casters Base Level x 4) + (Shield MDEF x 100) + (Casters INT x 2)] %

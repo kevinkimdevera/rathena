@@ -23469,7 +23469,7 @@ Body:
     Hit: Multi_Hit
     HitCount: -7
     Element: Holy
-    SplashArea: 7
+    SplashArea: 5
     CastCancel: true
     CastTime: # !TODO: Confirm cast delay and cooldown
       - Level: 1

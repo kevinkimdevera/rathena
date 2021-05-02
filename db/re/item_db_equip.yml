@@ -51960,14 +51960,12 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
+      bonus5 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",max(1,getskilllv("LG_RAYOFGENESIS")),1000,1;
+      bonus5 bAutoSpellOnSkill,"LG_RAYOFGENESIS","SU_TUNABELLY",2,1000,1;
       .@r = getrefine();
-      bonus2 bSubSize,Size_All,5;
-      if (.@r>=7) {
-         .@level = getskilllv("AL_HEAL");
-         bonus3 bAutoSpellWhenHit,"AL_HEAL",(.@level ? .@level : 5),10;
-      }
       if (.@r>=9) {
-         bonus2 bSkillAtk,"LG_RAYOFGENESIS",20;
+        .@level = getskilllv("CR_HOLYCROSS");
+        bonus2 bSkillAtk,"LG_RAYOFGENESIS",10*(.@level / 2);
       }
   - Id: 5901
     AegisName: Focus_Beret_
@@ -79218,6 +79216,40 @@ Body:
     Script: |
       bonus2 bDropAddClass,Class_All,10;
       bonus2 bExpAddClass,Class_All,10;
+  - Id: 19262
+    AegisName: Jirant_Circlet
+    Name: Ancient Dragon's Crown
+    Type: Armor
+    View: 1644
+    Buy: 20
+    Weight: 60
+    Defense: 12
+    Slots: 1
+    Locations:
+      Head_top: true
+    Refineable: true
+    Script: |
+      bonus bMdef,15;
+      .@r = getrefine();
+      .@f = (1000*.@r);
+      bonus2 bResEff,Eff_Fear,min(.@f,10000);
+      bonus bMatkRate,.@r;
+      bonus bVariableCastrate,.@r;
+      if (.@r>=7) {
+        bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",15;
+        bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-1000+(.@r >= 9 ? -1000 : 0);
+      }
+      if (.@r>=9) {
+        bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",15;
+      }
+      if (.@r>=10) {
+        .@a = (readparam(bInt)+readparam(bDex))/10;
+        bonus bInt,.@a;
+        bonus bDex,.@a;
+      }
+      if (Class == Job_Sorcerer || Class == Job_Sorcerer_T) {
+        skill "HW_GANBANTEIN",1;
+      }
   - Id: 19263
     AegisName: General_Helmet_
     Name: General's Helm
@@ -79263,7 +79295,7 @@ Body:
          bonus4 bAutoSpellWhenHit,"WZ_QUAGMIRE",1,10,1;
       }
       if (.@r<6) {
-         autobonus "{ bonus2 bMagicAtkEle,Ele_Holy,10; }",10,60000,BF_MAGIC,"{ specialeffect2 EF_ASPERSIO; }";
+         autobonus "{ c }",10,60000,BF_MAGIC,"{ specialeffect2 EF_ASPERSIO; }";
       }
       else {
          autobonus "{ bonus2 bMagicAtkEle,Ele_Holy,10; }",(10+(.@r*2)),60000,BF_MAGIC,"{ specialeffect2 EF_ASPERSIO; }";
@@ -128032,6 +128064,39 @@ Body:
     Script: |
       bonus bMatkRate,5;
       bonus bMaxSPrate,5;
+  - Id: 490038
+    AegisName: Sixth_Sense_Ring
+    Name: Perceptual Amplification Ring
+    Type: Armor
+    Weight: 10
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    EquipLevelMin: 100
+    Script: |
+      bonus bMdef,15;
+      bonus bInt,7;
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",(BaseLevel/5);
+      if (getskilllv("SO_CLOUD_KILL") == 5) {
+        bonus bVariableCastrate,15;
+        bonus bMagicHPGainValue,100;
+        bonus bMagicSPGainValue,10;
+      }
+      if (getskilllv("SO_PSYCHIC_WAVE") == 5) {
+        bonus bDelayrate,-30;
+      }
+      if (getskilllv("SO_STRIKING") == 5) {
+        bonus2 bMagicAtkEle,Ele_Fire,10;
+        bonus2 bMagicAtkEle,Ele_Water,10;
+        bonus2 bMagicAtkEle,Ele_Wind,10;
+        bonus2 bMagicAtkEle,Ele_Earth,10;
+        bonus2 bMagicAtkEle,Ele_Neutral,10;
+      }
+      if (getskilllv("SO_VACUUM_EXTREME") == 5) {
+        bonus2 bSkillUseSP,"SO_PSYCHIC_WAVE",20;
+        bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-1000;
+      }
   - Id: 490044
     AegisName: Sin_Ring_R
     Name: Sinful Ruby Ring
