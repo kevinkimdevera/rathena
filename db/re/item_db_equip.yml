@@ -80275,7 +80275,7 @@ Body:
       if (getskilllv("NC_AXEBOOMERANG") >= 5)
          bonus bBaseAtk,100;
       if (getskilllv("NC_MAGMA_ERUPTION") >= 5)
-         bonus2 bAddMonsterDropItem,732,10;
+         bonus2 bAddMonsterDropItem,732,1000;
       if (.@r>=7)
          bonus2 bSkillAtk,"NC_AXETORNADO",30;
       if (.@r>=9)
