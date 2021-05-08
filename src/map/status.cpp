@@ -11882,19 +11882,6 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			val2 = (status->int_ + status->luk) * val1 / 20 * status_get_lv(bl) / 200 + val1;	// Chance to evade magic damage.
 			val3 = ((val1 * 15) + (10 * (sd?pc_checkskill(sd,CR_DEFENDER):skill_get_max(CR_DEFENDER)))) * status_get_lv(bl) / 100; // Defence added
 			break;
-		case SC_SHIELDSPELL_HP:
-			val2 = 3; // 3% HP every 3 seconds
-			tick_time = 3000;
-			val4 = tick / tick_time;
-			break;
-		case SC_SHIELDSPELL_SP:
-			val2 = 3; // 3% SP every 5 seconds
-			tick_time = 5000;
-			val4 = tick / tick_time;
-			break;
-		case SC_SHIELDSPELL_ATK:
-			val2 = 150; // WATK/MATK bonus
-			break;
 		case SC_BANDING:
 			val2 = (sd ? skill_banding_count(sd) : 1);
 			tick_time = 5000; // [GodLesZ] tick time
