@@ -4487,11 +4487,11 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 350 + 50 * skill_lv;
 			break;
 		case NC_AXETORNADO:
-			skillratio += -100 + 200 + 180 * skill_lv + sstatus->vit / 6; // !TODO: What's the VIT bonus?
+			skillratio += -100 + 200 + 180 * skill_lv + sstatus->vit; // !TODO: What's the VIT bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case SC_FATALMENACE:
-			skillratio += 120 * skill_lv + sstatus->agi / 6; // !TODO: What's the AGI bonus?
+			skillratio += -100 + 120 * skill_lv + (3 * sstatus->agi); // !TODO: What's the AGI bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case SC_TRIANGLESHOT:
@@ -4536,15 +4536,17 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case LG_OVERBRAND:
-			if(sc && sc->data[SC_OVERBRANDREADY])
+			if(sc && sc->data[SC_OVERBRANDREADY]) {
 				skillratio += -100 + 450 * skill_lv;
-			else
+			}
+			else{
 				skillratio += -100 + 300 * skill_lv;
-			skillratio += ((sd) ? pc_checkskill(sd, CR_SPEARQUICKEN) * 50 : 0);
+			}
+			skillratio += ((sd) ? pc_checkskill(sd, CR_SPEARQUICKEN) * 50 : 0) + sstatus->str + sstatus->dex;
 			RE_LVL_DMOD(100);
 			break;
 		case LG_EARTHDRIVE:
-			skillratio += -100 + 380 * skill_lv + ((sstatus->str + sstatus->vit) / 6); // !TODO: What's the STR/VIT bonus?
+			skillratio += -100 + 380 * skill_lv + (sstatus->str + sstatus->vit); // !TODO: What's the STR/VIT bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case LG_HESPERUSLIT:
@@ -4552,7 +4554,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += -100 + 450 * skill_lv;
 			else
 				skillratio += -100 + 300 * skill_lv;
-			skillratio += sstatus->vit / 6; // !TODO: What's the VIT bonus?
+			skillratio += sstatus->vit; // !TODO: What's the VIT bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case SR_EARTHSHAKER:
@@ -4595,7 +4597,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case SR_SKYNETBLOW:
 			//ATK [{(Skill Level x 200) + (Caster AGI)} x Caster Base Level / 100] %
-			skillratio += -100 + 200 * skill_lv + sstatus->agi / 6; // !TODO: Confirm AGI bonus
+			skillratio += -100 + 200 * skill_lv + sstatus->agi; // !TODO: Confirm AGI bonus
 			RE_LVL_DMOD(100);
 			break;
 

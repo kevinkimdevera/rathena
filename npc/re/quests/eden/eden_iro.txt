@@ -168,7 +168,7 @@ moc_para01,26,15,3	script	Primo d'Buffer	790,{
 moc_para01,53,30,3	script	Clearchus	470,{
 	if (checkquest(62238,PLAYTIME) > -1 && checkquest(62238,PLAYTIME) < 2) {
 		mes "You must wait for the timer to finish before you can hire a new mercenary.";
-		close;	
+		close;
 	}
 	mes "[Clearchus]";
 	mes "Greetings young adventurer! I represent the Midgardian Mercenary Mission.";
@@ -480,7 +480,7 @@ moc_para01,50,39,4	script	Eve Natalia	882,{
 moc_para01,48,184,2	script	Gum & Manual Exchanger	562,{
 	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 2000) {
 		mes "You're carrying too many items right now.";
-		close;	
+		close;
 	}
 	mes "[Trader Machine]";
 	mes "Insert Bubble Gums and/or Battle Manuals to trade for higher efficiency Gums and Manuals.";
@@ -543,7 +543,8 @@ L_Exchange:
 		mes "[Trader Machine]";
 		mes "Cancelled.";
 		close;
-	} else if (.@amount < 0 || .@amount > 60) {
+	//} else if (.@amount < 0 || .@amount > 60) {
+	} else if (.@amount < 0) {
 		mes "[Trader Machine]";
 		mes "I said only 60 max.";
 		close;
@@ -583,13 +584,13 @@ moc_para01,13,22,4	script	Merry Badger#xch	882,{
 		setarray .@menu_list$[0],
 			"4 EMB for 10 KVM Badge",
 			"4 EMB for 10 Bravery Medals",
-			"4 EMB for 10 Valor Medals", 
+			"4 EMB for 10 Valor Medals",
 			"8 EMB for 1 Reset Stone",
 			"5 EMB for Battle Manual Buff",
 			"5 EMB for Job Battle Manual Buff",
 			"10 EMB for HE Battle Manual Buff",
 			"20 EMB for 3X Battle Manual Buff",
-			"5 EMB for Bubblegum Buff", 
+			"5 EMB for Bubblegum Buff",
 			"10 EMB for HE Bubblegum Buff",
 			"",	// "5 EMB for Miracle Buff" (item doesn't exist in db)
 			"1 EMB for Yggdrasil Leaf",

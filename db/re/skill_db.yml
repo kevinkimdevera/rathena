@@ -23344,7 +23344,6 @@ Body:
     TargetType: Self
     DamageFlags:
       Splash: true
-    SplashArea: 7
     Range: 2
     Hit: Multi_Hit
     HitCount: 3

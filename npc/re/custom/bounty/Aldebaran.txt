@@ -14,7 +14,7 @@
 //= npc on cities.
 //= The function arguments are this:
 //= 	callfunc "F_Bounty_Board", MinLevel, MaxLevel, MsgHuntPlace, MsgOutLevel,
-//=			MonsterID, 		QuestID, 	BaseExp, 	JobExp{, 
+//=			MonsterID, 		QuestID, 	BaseExp, 	JobExp{,
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
@@ -22,7 +22,7 @@ aldebaran,144,128,3	script	Bounty Board#al1	837,{
 	callfunc "F_Bounty_Board", 140, 0, 1, 5,
 		2479,	62890,		 622800,	 529650,	// NG_MIMIC
 		2478,	62891,		1181250,	1782000,	// NG_RIDEWORD
-		2917,	62892,		1690425,	1902825,	// BIG_BELL
+		2917,	62892,		2253900,	2537250,	// BIG_BELL
 		2916,	62893,		1675575,	1576125,	// BIG_BEN
 		2919,	62894,		1321650,	1489050;	// NEO_PUNK
 	end;
