@@ -22,3 +22,14 @@ ein_dun02,216,210,0	warp	EinCave01A_EinCave01B	1,1,ein_dun02,208,228
 ein_dun02,228,109,0	warp	EinCave02A_EinCave02B	1,1,ein_dun02,191,130
 ein_dun02,210,225,0	warp	EinCave01B_EinCave01A	1,1,ein_dun02,216,207
 ein_dun02,195,130,0	warp	EinCave02B_EinCave02A	1,1,ein_dun02,233,109
+ein_dun02,17,250,0	script	ein_dun03	45,1,1,{
+	OnTouch_:
+	if(BaseLevel < 180) {
+		dispbottom "System: You are not strong enough for the next area. You need at least Base Level 180!";
+		end;
+	}
+	warp "ein_dun03",268,277;
+	end;
+
+}
+ein_dun03,268,281,0	warp	ein_dun02	1,1,ein_dun02,22,250
