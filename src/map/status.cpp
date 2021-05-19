@@ -7087,10 +7087,6 @@ static unsigned short status_calc_matk(struct block_list *bl, struct status_chan
 		matk += matk * sc->data[SC_SHRIMP]->val2 / 100;
 	if (sc->data[SC_VOLCANO])
 		matk += sc->data[SC_VOLCANO]->val2;
-	if (sc->data[SC_INSPIRATION])
-		matk += sc->data[SC_INSPIRATION]->val2;
-	if (sc->data[SC__AUTOSHADOWSPELL])
-		matk += sc->data[SC__AUTOSHADOWSPELL]->val2;
 #ifdef RENEWAL
 	if (sc->data[SC_NIBELUNGEN] && sc->data[SC_NIBELUNGEN]->val2 == RINGNBL_MATKRATE)
 		matk += matk * 20 / 100;
@@ -11689,9 +11685,6 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 		case SC__STRIPACCESSORY:
 			if (!sd)
 				val2 = 20;
-			break;
-		case SC__AUTOSHADOWSPELL:
-			val2 = val1 * 5; // MATK Increase
 			break;
 		case SC__INVISIBILITY:
 			val2 = 50 - 10 * val1; // ASPD

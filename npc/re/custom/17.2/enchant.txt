@@ -1,4 +1,4 @@
-prontera,110,191,4	script	Liza	805,{
+prontera,111,191,4	script	Liza	805,{
 	mes "[Liza]";
 	mes "" + strcharinfo(0) + ",";
 	mes "Hello! Can I help you?";

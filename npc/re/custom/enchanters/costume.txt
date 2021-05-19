@@ -1,0 +1,198 @@
+prontera,117,191,4	script	Costume Enchant	408,{
+	disable_items;
+
+	mes .n$;
+	mes "Hello, "+strcharinfo(0)+"!";
+	mes "What can I do for you?";
+	if(select("Enchant:Nevermind") - 1) close;
+	next;
+	mes .n$;
+	mes "To apply an random properity to your Costumes, you need to have it equipped.";
+	mes "Costumes can have 2 enchants.";
+	mes "And i need 1,000,000 per enchantment.";
+	mes "Also be warned, that what you get and with which value is completely random!";
+	next;
+	mes .n$;
+	mes "Select a costume to enchant:";
+
+	setarray .@indices[1],
+		EQI_COSTUME_HEAD_TOP,
+		EQI_COSTUME_HEAD_MID,
+		EQI_COSTUME_HEAD_LOW,
+		EQI_COSTUME_GARMENT;
+
+	for(set .@i,1; .@i<=4; set .@i,.@i+1) {
+		if (getequipisequiped(.@indices[.@i])) {
+			set .@menu$, .@menu$ + F_getpositionname(.@indices[.@i]) + "-[" + getequipname(.@indices[.@i]) + "]";
+			set .@equipped,1;
+		}
+		set .@menu$, .@menu$ + ":";
+	}
+
+	set .@part, .@indices[ select(.@menu$) ];
+
+	if(getequipid(.@part) == -1) {
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	if (.cost > Zeny){
+		mes .n$;
+		mes "Hmm, you don't have enough zeny.";
+		close;
+	}
+
+	next;
+
+	switch (.@part) {
+		case EQI_COSTUME_HEAD_TOP: {
+			set .@opt1$, ".top";
+			set .@opt2$, ".top";
+			break;
+		}
+		case EQI_COSTUME_HEAD_MID: {
+			set .@opt1$, ".mid";
+			set .@opt2$, ".mid";
+			break;
+		}
+		case EQI_COSTUME_HEAD_LOW: {
+			set .@opt1$, ".low";
+			set .@opt2$, ".low";
+			break;
+		}
+		case EQI_COSTUME_GARMENT: {
+			set .@opt1$, ".garment";
+			set .@opt2$, ".element";
+			break;
+		}
+	}
+
+	set .@ropt1, getequiprandomoption(.@part, 0, ROA_ID);
+	set .@ropt2, getequiprandomoption(.@part, 1, ROA_ID);
+
+	if (.@ropt1 && .@ropt2) {
+		// re-roll
+		mes "Your " + getitemname(getequipid(.@part)) + " is already fully enchanted.";
+		mes "You can choose to re-roll specific enchantment.";
+		next;
+		.@slot = select(
+			"Re-roll Slot 1",
+			"Re-roll Slot 2",
+			"Cancel" );
+
+		switch (.@slot) {
+			case 1: {
+				set .@count, getarraysize(getd(.@opt1$));
+				set .@enc, rand((.@count / 3));
+				set .@opt$, .@opt1$;
+				set .@slot, 0;
+				break;
+			}
+			case 2: {
+				set .@count, getarraysize(getd(.@opt2$));
+				set .@enc, rand((.@count / 3));
+				set .@opt$, .@opt2$;
+				set .@slot, 1;
+				break;
+			}
+			default: {
+				mes "Come back anytime you want.";
+				close;
+			}
+		}
+	}
+	else {
+		if (!.@ropt1) {
+			set .@count, getarraysize(getd(.@opt1$));
+			set .@enc, rand((.@count / 3));
+			set .@opt$, .@opt1$;
+			set .@slot, 0;
+		}
+		else {
+			set .@count, getarraysize(getd(.@opt2$));
+			set .@enc, rand((.@count / 3));
+			set .@opt$, .@opt2$;
+			set .@slot, 1;
+		}
+	}
+
+	.@index = 0;
+	for ( .@i = 0; .@i < .@count; .@i += 3 ) {
+		if (.@index == .@enc) {
+			set .@Enchant, getd(.@opt$ + "["+ .@i +"]");
+			set .@Min, getd(.@opt$ + "["+ (.@i + 1) +"]");
+			set .@Max, getd(.@opt$ + "["+ (.@i + 2) +"]");
+			set .@Value, rand(.@Min, .@Max);
+			break;
+		}
+		.@index++;
+	}
+	specialeffect2 EF_REPAIRWEAPON;
+	setrandomoption(.@part, .@slot, .@Enchant, .@Value, 0);
+
+	// APPLY
+	set Zeny, Zeny - .cost;
+
+	mes .n$;
+	mes "Random bonus properities have been applied on your \""+getitemname(getequipid(.@part))+"\" successfully.";
+	end;
+
+	end;
+
+	OnInit:
+	set .n$,"[Costume Enchant]";
+
+	// Required Items
+	set .cost, 1000000;
+
+
+	// Options
+	setarray .top,
+		RDMOPT_VAR_MAXHPAMOUNT, 1000, 5000,
+		RDMOPT_VAR_MAXSPAMOUNT, 25, 500,
+		RDMOPT_VAR_MAXHPPERCENT, 1, 5,
+		RDMOPT_VAR_MAXSPPERCENT, 1, 5,
+		RDMOPT_VAR_ITEMDEFPOWER, 1, 10,
+		RDMOPT_VAR_MDEFPOWER, 1, 10;
+
+	setarray .mid,
+		RDMOPT_VAR_ATTPOWER, 10, 50,
+		RDMOPT_VAR_ATTMPOWER, 10, 50,
+		RDMOPT_CLASS_DAMAGE_NORMAL_TARGET, 1, 5,
+		RDMOPT_CLASS_DAMAGE_BOSS_TARGET, 1 ,5,
+		RDMOPT_CLASS_MDAMAGE_NORMAL, 1, 5,
+		RDMOPT_CLASS_MDAMAGE_BOSS, 1, 5,
+		RDMOPT_DAMAGE_CRI_TARGET, 5, 15,
+		RDMOPT_VAR_ATKPERCENT, 1, 5,
+		RDMOPT_VAR_MAGICATKPERCENT, 1, 5;
+
+	setarray .low,
+		RDMOPT_HEAL_MODIFY_PERCENT, 5, 15,
+		RDMOPT_DEC_SPELL_DELAY_TIME, 3, 10,
+		RDMOPT_DEC_SPELL_CAST_TIME, 5, 15,
+		RDMOPT_VAR_PLUSASPD, 1, 5,
+		RDMOPT_VAR_PLUSASPDPERCENT, 5, 15,
+		RDMOPT_VAR_CRITICALSUCCESSVALUE, 5, 15,
+		RDMOPT_VAR_HITSUCCESSVALUE, 15, 30,
+		RDMOPT_VAR_AVOIDSUCCESSVALUE, 15, 30;
+
+	setarray .garment,
+		RDMOPT_VAR_STRAMOUNT, 1, 5,
+		RDMOPT_VAR_AGIAMOUNT, 1, 5,
+		RDMOPT_VAR_VITAMOUNT, 1, 5,
+		RDMOPT_VAR_INTAMOUNT, 1, 5,
+		RDMOPT_VAR_DEXAMOUNT, 1, 5,
+		RDMOPT_VAR_LUKAMOUNT, 1, 5;
+
+	setarray .element,
+		RDMOPT_BODY_ATTR_WATER,1,1,
+		RDMOPT_BODY_ATTR_GROUND,1,1,
+		RDMOPT_BODY_ATTR_FIRE,1,1,
+		RDMOPT_BODY_ATTR_WIND,1,1,
+		RDMOPT_BODY_ATTR_POISON,1,1,
+		RDMOPT_BODY_ATTR_SAINT,1,1,
+		RDMOPT_BODY_ATTR_DARKNESS,1,1,
+		RDMOPT_BODY_ATTR_TELEKINESIS,1,1;
+
+	end;
+}

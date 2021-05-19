@@ -1,0 +1,143 @@
+prontera,105,191,4	script	Temporal Armor Enchant	470,{
+	disable_items;
+
+	mes .n$;
+	mes "Hello, "+strcharinfo(0)+"!";
+	mes "What can I do for you?";
+	if(select("Enchant:Nevermind") - 1) close;
+	next;
+	mes .n$;
+	mes "To apply an random properity to a Temporal Armors, you need to have it equipped.";
+	mes "And i need Gemstone of Time to perform enchantments.";
+	mes "Also be warned, that what you get and with which value is completely random!";
+	next;
+	set .@part,EQI_ARMOR; // Save equip location
+	mes .n$;
+
+	if(getequipid(.@part) == -1) {
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	switch(getequipid(.@part)) {
+		15278:
+		15279:
+		15347:
+		15354:
+		15353:
+		15346:
+		break;
+
+		default:
+		mes "This is not a Temporal Armor, please be sure to equip one and come back again.";
+		close;
+	}
+
+	next;
+
+	if (.cost > countitem(.key)){
+		mes .n$;
+		mes "Hmm, you are missing Gemstone of Time.";
+		close;
+	}
+
+	set .@count1, getarraysize(getd(".Opt1"));
+	set .@enc1, rand((.@count1 / 3));
+
+	.@index1 = 0;
+	for ( .@i = 0; .@i < .@count1; .@i += 3 ) {
+		if (.@index1 == .@enc1) {
+			set .@Enchant1, getd(".Opt1["+ .@i +"]");
+			set .@Min1, getd(".Opt1["+ (.@i + 1) +"]");
+			set .@Max1, getd(".Opt1["+ (.@i + 2) +"]");
+			set .@Value1, rand(.@Min1, .@Max1);
+			break;
+		}
+		.@index1++;
+	}
+
+	set .@count2, getarraysize(getd(".Opt2"));
+	set .@enc2, rand((.@count2 / 3));
+
+	.@index2 = 0;
+	for ( .@i = 0; .@i < .@count2; .@i += 3 ) {
+		if (.@index2 == .@enc2) {
+			set .@Enchant2, getd(".Opt2["+ .@i +"]");
+			set .@Min2, getd(".Opt2["+ (.@i + 1) +"]");
+			set .@Max2, getd(".Opt2["+ (.@i + 2) +"]");
+			set .@Value2, rand(.@Min2, .@Max2);
+			break;
+		}
+		.@index2++;
+	}
+
+	// APPLY
+	setrandomoption(.@part,0, .@Enchant1, .@Value1, 0);
+	setrandomoption(.@part,1, .@Enchant2, .@Value2, 0);
+	delitem .key,.cost;
+
+	specialeffect2 EF_REPAIRWEAPON;
+
+	mes .n$;
+	mes "Random bonus properities have been applied on your \""+getitemname(getequipid(.@part))+"\" successfully.";
+	end;
+
+	end;
+
+	OnInit:
+	set .n$,"[Armor Enchanter]";
+
+	// Required Items
+	set .key, 9550;
+	set .cost, 1;
+
+
+	// Options
+	setarray .Opt1,
+		RDMOPT_VAR_MAXHPPERCENT, 1, 5,
+		RDMOPT_VAR_MAXSPPERCENT, 1, 5,
+		RDMOPT_VAR_MAXHPAMOUNT, 500, 1000,
+		RDMOPT_VAR_MAXSPAMOUNT, 500, 1000,
+		RDMOPT_VAR_ATTPOWER, 3, 20,
+		RDMOPT_VAR_ATKPERCENT, 1, 3,
+		RDMOPT_VAR_ATTMPOWER, 3, 20,
+		RDMOPT_VAR_MAGICATKPERCENT, 1, 3,
+		RDMOPT_VAR_HITSUCCESSVALUE, 1, 5,
+		RDMOPT_VAR_AVOIDSUCCESSVALUE, 1, 30,
+		RDMOPT_VAR_CRITICALSUCCESSVALUE, 1, 5,
+		RDMOPT_DAMAGE_CRI_TARGET, 1, 5,
+		RDMOPT_RANGE_ATTACK_DAMAGE_TARGET, 1, 5,
+		RDMOPT_DEC_SPELL_CAST_TIME, 1, 5,
+		RDMOPT_DEC_SPELL_DELAY_TIME, 1, 5;
+
+	setarray .Opt2,
+		RDMOPT_VAR_MAXHPPERCENT, 1, 5,
+		RDMOPT_VAR_MAXSPPERCENT, 1, 5,
+		RDMOPT_VAR_MAXHPAMOUNT, 500, 1000,
+		RDMOPT_VAR_MAXSPAMOUNT, 500, 1000,
+		RDMOPT_VAR_ATTPOWER, 3, 20,
+		RDMOPT_VAR_ATKPERCENT, 1, 3,
+		RDMOPT_VAR_ATTMPOWER, 3, 20,
+		RDMOPT_VAR_MAGICATKPERCENT, 1, 3,
+		RDMOPT_VAR_HITSUCCESSVALUE, 1, 5,
+		RDMOPT_VAR_AVOIDSUCCESSVALUE, 1, 30,
+		RDMOPT_VAR_CRITICALSUCCESSVALUE, 1, 5,
+		RDMOPT_BODY_ATTR_NOTHING, 1, 1,
+		RDMOPT_BODY_ATTR_WATER, 1, 1,
+		RDMOPT_BODY_ATTR_GROUND, 1, 1,
+		RDMOPT_BODY_ATTR_FIRE, 1, 1,
+		RDMOPT_BODY_ATTR_WIND, 1, 1,
+		RDMOPT_BODY_ATTR_POISON, 1, 1,
+		RDMOPT_BODY_ATTR_SAINT, 1, 1,
+		RDMOPT_BODY_ATTR_DARKNESS, 1, 1,
+		RDMOPT_BODY_ATTR_TELEKINESIS, 1, 1,
+		RDMOPT_BODY_ATTR_UNDEAD, 1, 1,
+		RDMOPT_BODY_INDESTRUCTIBLE, 1, 1,
+		RDMOPT_DAMAGE_CRI_TARGET, 1, 5,
+		RDMOPT_RANGE_ATTACK_DAMAGE_TARGET, 1, 5,
+		RDMOPT_VAR_PLUSASPDPERCENT, 1, 5,
+		RDMOPT_DEC_SPELL_CAST_TIME, 1, 5,
+		RDMOPT_DEC_SPELL_DELAY_TIME, 1, 5;
+
+	end;
+}

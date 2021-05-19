@@ -1,4 +1,4 @@
-prontera,108,191,4	script	Soutane Enchanter	101,{
+prontera,109,191,4	script	Soutane Enchanter	478,{
 	disable_items;
 
 	mes .n$;
@@ -9,9 +9,6 @@ prontera,108,191,4	script	Soutane Enchanter	101,{
 
 	switch(.@choice) {
 		case 1:
-		mes .n$;
-			mes .n$;
-			mes "Enchant!";
 			break;
 		default:
 			mes .n$;
@@ -47,7 +44,11 @@ prontera,108,191,4	script	Soutane Enchanter	101,{
 			mes "This is not a soutane...";
 			close;
 	}
-	next;
+
+	if (countitem(.key) < .cost) {
+		mes "You don't have the enough " + getitemname(.@key) + " to perform enchantment.";
+		end;
+	}
 
 	// GET CARDS
 	setarray .@card[0], getequipcardid(EQI_ARMOR,0), getequipcardid(EQI_ARMOR,1), getequipcardid(EQI_ARMOR,2), getequipcardid(EQI_ARMOR,3);
@@ -71,6 +72,8 @@ prontera,108,191,4	script	Soutane Enchanter	101,{
 				"Slot 3 [" + getitemname(.@card[3]) +  "]",
 				"Cancel"));
 	}
+
+	next;
 
 	switch(.@slot) {
 		case 3:
@@ -96,6 +99,10 @@ prontera,108,191,4	script	Soutane Enchanter	101,{
 
 	delequip EQI_ARMOR;
 	getitem2 .@armor,1,1,.@refine,0,.@card[0],.@card[1],.@card[2],.@card[3];
+	delitem .key,.cost;
+
+	specialeffect2 EF_REPAIRWEAPON;
+	mes "Random bonus properities have been applied successfully.";
 	close;
 
 	end;
@@ -140,6 +147,6 @@ prontera,108,191,4	script	Soutane Enchanter	101,{
 						 310081; // LUK BLESSING
 
 	// Required Items
-	set .key, 9551;
+	set .key, 25767;
 	set .cost, 1;
 }

@@ -1,4 +1,4 @@
-prontera,106,191,4	script	Temporal Enchanter	101,{
+prontera,107,191,4	script	Temporal Manteau Enchant	101,{
 	disable_items;
 
 	mes .n$;
@@ -29,7 +29,7 @@ prontera,106,191,4	script	Temporal Enchanter	101,{
 		break;
 
 		default:
-		mes "This is not an Temporal Manteau, please be sure to equip one and come back again.";
+		mes "This is not a Temporal Manteau, please be sure to equip one and come back again.";
 		close;
 	}
 
@@ -56,7 +56,7 @@ prontera,106,191,4	script	Temporal Enchanter	101,{
 	end;
 
 	OnInit:
-	set .n$,"[Temporal Enchanter]";
+	set .n$,"[Manteau Enchanter]";
 
 	// Required Items
 	set .key, 9551;

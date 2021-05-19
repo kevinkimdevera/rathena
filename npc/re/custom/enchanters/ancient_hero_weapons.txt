@@ -1,0 +1,248 @@
+prontera,113,191,4	script	Ancient Hero Enchanter	754,{
+	disable_items;
+
+	mes .n$;
+	mes "Hello, "+strcharinfo(0)+"!";
+	mes "What can I do for you?";
+	if(select("Enchant:Nevermind") - 1) close;
+	next;
+	mes .n$;
+	mes "To apply an random properity to a ^0000FFAncient Hero Weapons^000000, you need to have it equipped.";
+	mes "I also require ^FF0000Ancient Hero's Bravery^000000 for Physical enchants or ^0000FFAncient Hero's Wisdom^000000 for Magical enchants.";
+	mes "Also be warned, that what you get and with which value is completely random!";
+
+	set .@part,EQI_HAND_R; // Save equip location
+
+	next;
+
+	if(getequipid(.@part) == -1) {
+		mes .n$;
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	switch(getequipid(.@part)) {
+		18170:
+		28130:
+		28744:
+		1847:
+		18164:
+		26118:
+		2048:
+		13485:
+		21038:
+		28039:
+		28630:
+		32018:
+		28631:
+		26154:
+		26155:
+		32302:
+		28255:
+		28256:
+		28257:
+		28258:
+		13345:
+		28763:
+		28764:
+		500003:
+		500004:
+		570002:
+		580002:
+		590002:
+		600004:
+		510006:
+		560002:
+		590003:
+		610003:
+		700003:
+		550007:
+		640004:
+		21058:
+		600009:
+		610008:
+		610009:
+		700013:
+		500013:
+		500014:
+		570009:
+		580009:
+		510019:
+		510020:
+		590011:
+		620004:
+		700018:
+		700019:
+		550012:
+		550013:
+		500017:
+		530006:
+		540011:
+		560008:
+		560009:
+		590012:
+		640011:
+		640012:
+		510022:
+		550014:
+		650004:
+		800002:
+		810001:
+		820001:
+		830002:
+		840001:
+		540010:
+		550015:
+		break;
+
+		default:
+		mes .n$;
+		mes "This is not an Ancient Weapon, please be sure to equip one and come back again.";
+		close;
+	}
+
+	mes .n$;
+	mes "Please select the enchant type:";
+	set .@type, select("Physical:Magic:Cancel");
+
+	switch (.@type) {
+		case 1:
+			.@key = 100023;
+			.@array$ = ".Physical";
+			break;
+		case 2:
+			.@key = 100025;
+			.@array$ = ".Magical";
+			break;
+		default:
+			mes "Please come back again.";
+			end;
+	}
+
+	next;
+
+	if (countitem(.@key) < .cost) {
+		mes .n$;
+		mes "You don't have the enough " + getitemname(.@key) + ".";
+		end;
+	}
+
+	set .@count1, getarraysize(getd(.@array$  + "_1"));
+	set .@enc1, rand((.@count1 / 3));
+
+	// SLOT 1
+	.@index1 = 0;
+	for ( .@i = 0; .@i < .@count1; .@i += 3 ) {
+		if (.@index1 == .@enc1) {
+			set .@Enchant1, getd(.@array$ + "_1["+ .@i +"]");
+			set .@Min1, getd(.@array$ + "_1["+ (.@i + 1) +"]");
+			set .@Max1, getd(.@array$ + "_1["+ (.@i + 2) +"]");
+			set .@Value1, rand(.@Min1, .@Max1);
+			break;
+		}
+		.@index1++;
+	}
+
+	set .@count2, getarraysize(getd(.@array$ + "_2"));
+	set .@enc2, rand((.@count2 / 3));
+
+	.@index2 = 0;
+	for ( .@i = 0; .@i < .@count2; .@i += 3 ) {
+		if (.@index2 == .@enc2) {
+			set .@Enchant2, getd(.@array$ + "_2["+ .@i +"]");
+			set .@Min2, getd(.@array$ + "_2["+ (.@i + 1) +"]");
+			set .@Max2, getd(.@array$ + "_2["+ (.@i + 2) +"]");
+			set .@Value2, rand(.@Min2, .@Max2);
+			break;
+		}
+		.@index2++;
+	}
+
+
+	// APPLY
+	setrandomoption(.@part,0, .@Enchant1, .@Value1, 0);
+	setrandomoption(.@part,1, .@Enchant2, .@Value2, 0);
+	delitem .@key,.cost;
+
+	specialeffect2 EF_REPAIRWEAPON;
+
+	mes .n$;
+	mes "Random bonus properities have been applied on your ^0000FF\""+getitemname(getequipid(.@part))+"\"^000000 successfully.";
+	end;
+
+	end;
+
+	OnInit:
+	set .n$,"[Ancient Hero Enchanter]";
+
+	// Required Items
+	set .cost, 1;
+
+	// Options
+	// option, min, max
+	setarray .Physical_1,
+		RDMOPT_VAR_ATTPOWER, 5, 30,
+		RDMOPT_VAR_PLUSASPD, 1, 1,
+		RDMOPT_VAR_PLUSASPDPERCENT, 3, 10,
+		RDMOPT_RANGE_ATTACK_DAMAGE_TARGET, 3, 10,
+		RDMOPT_DAMAGE_PROPERTY_NOTHING_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_WATER_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_GROUND_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_FIRE_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_WIND_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_POISON_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_SAINT_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_DARKNESS_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_TELEKINESIS_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_UNDEAD_TARGET, 3, 20;
+
+	setarray .Physical_2,
+		RDMOPT_VAR_ATKPERCENT, 1, 5,
+		RDMOPT_DAMAGE_CRI_TARGET, 3, 10,
+		RDMOPT_RACE_DAMAGE_NOTHING, 3, 20,
+		RDMOPT_RACE_DAMAGE_UNDEAD, 3, 20,
+		RDMOPT_RACE_DAMAGE_ANIMAL, 3, 20,
+		RDMOPT_RACE_DAMAGE_PLANT, 3, 20,
+		RDMOPT_RACE_DAMAGE_INSECT, 3, 20,
+		RDMOPT_RACE_DAMAGE_FISHS, 3, 20,
+		RDMOPT_RACE_DAMAGE_DEVIL, 3, 20,
+		RDMOPT_RACE_DAMAGE_HUMAN, 3, 20,
+		RDMOPT_RACE_DAMAGE_ANGEL, 3, 20,
+		RDMOPT_RACE_DAMAGE_DRAGON, 3, 20,
+		RDMOPT_CLASS_DAMAGE_NORMAL_TARGET, 3, 20,
+		RDMOPT_CLASS_DAMAGE_BOSS_TARGET, 3, 20;
+
+	setarray .Magical_1,
+		RDMOPT_VAR_ATTMPOWER, 5, 30,
+		RDMOPT_HEAL_VALUE, 3, 20,
+		RDMOPT_DEC_SPELL_CAST_TIME, 3, 10,
+		RDMOPT_DEC_SPELL_DELAY_TIME, 1, 5,
+		RDMOPT_MDAMAGE_PROPERTY_NOTHING_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_WATER_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_GROUND_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_FIRE_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_WIND_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_POISON_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_SAINT_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_DARKNESS_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_TELEKINESIS_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_UNDEAD_TARGET, 3, 20;
+
+	setarray .Magical_2,
+		RDMOPT_VAR_MAGICATKPERCENT, 1, 5,
+		RDMOPT_DEC_SPELL_CAST_TIME, 3, 10,
+		RDMOPT_RACE_MDAMAGE_NOTHING, 3, 20,
+		RDMOPT_RACE_MDAMAGE_UNDEAD, 3, 20,
+		RDMOPT_RACE_MDAMAGE_ANIMAL, 3, 20,
+		RDMOPT_RACE_MDAMAGE_PLANT, 3, 20,
+		RDMOPT_RACE_MDAMAGE_INSECT, 3, 20,
+		RDMOPT_RACE_MDAMAGE_FISHS, 3, 20,
+		RDMOPT_RACE_MDAMAGE_DEVIL, 3, 20,
+		RDMOPT_RACE_MDAMAGE_HUMAN, 3, 20,
+		RDMOPT_RACE_MDAMAGE_ANGEL, 3, 20,
+		RDMOPT_RACE_MDAMAGE_DRAGON, 3, 20,
+		RDMOPT_CLASS_MDAMAGE_NORMAL, 3, 20,
+		RDMOPT_CLASS_MDAMAGE_BOSS, 3, 20;
+
+	end;
+}
