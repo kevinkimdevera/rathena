@@ -3133,18 +3133,6 @@ static int battle_get_weapon_element(struct Damage* wd, struct block_list *src, 
 					element = ELE_GHOST;
 			}
 			break;
-		case LG_RAYOFGENESIS:
-			if (sc) {
-				if (sc->data[SC_INSPIRATION]) // Nuetral when Inspiration is active
-					element = ELE_NEUTRAL;
-			}
-			break;
-		case AB_ADORAMUS:
-			if (sc) {
-				if (sc->data[SC_ANCILLA]) // Nuetral when Ancilla is active
-					element = ELE_NEUTRAL;
-			}
-			break;
 		// case LG_HESPERUSLIT:
 		// 	if (sc && sc->data[SC_BANDING] && sc->data[SC_BANDING]->val2 > 4)
 		// 		element = ELE_HOLY;
@@ -6649,7 +6637,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						RE_LVL_DMOD(100); // ! TODO: Confirm new formula
 						break;
 					case LG_RAYOFGENESIS:
-						skillratio += -100 + 230 * skill_lv + sstatus->int_ / 6; // !TODO: What's the INT bonus?
+						skillratio += -100 + 230 * skill_lv + sstatus->int_; // !TODO: What's the INT bonus?
 						if (sc && sc->data[SC_INSPIRATION])
 							skillratio += 70 * skill_lv;
 						RE_LVL_DMOD(100);

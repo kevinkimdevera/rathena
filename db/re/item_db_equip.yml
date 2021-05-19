@@ -51960,7 +51960,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      bonus5 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",max(1,getskilllv("LG_RAYOFGENESIS")),1000,1;
+      bonus5 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",getskilllv("LG_RAYOFGENESIS"),1000,1;
       bonus5 bAutoSpellOnSkill,"LG_RAYOFGENESIS","SU_TUNABELLY",2,1000,1;
       .@r = getrefine();
       if (.@r>=9) {
@@ -128499,6 +128499,31 @@ Body:
       NoAuction: true
     Script: |
       bonus bMatkRate,5;
+  - Id: 490083
+    AegisName: Themis_Balance
+    Name: Judgement Scale
+    Type: Armor
+    Locations:
+      Both_Accessory: true
+    EquipLevelMin: 100
+    Weight: 10
+    Defense: 5
+    Slots: 1
+    Script: |
+      bonus bMdef,5;
+      bonus bInt,7;
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",(BaseLevel/5);
+      if (getskilllv("LG_INSPIRATION") == 5) {
+        bonus2 bCastrate,"LG_RAYOFGENESIS",50;
+        bonus2 bSkillUseSP,"LG_RAYOFGENESIS",20;
+      }
+      if (getskilllv("CR_DEVOTION") == 5) {
+        bonus2 bMagicAddClass,Class_Boss,15;
+      }
+      if (getskilllv("LG_HESPERUSLIT") == 5) {
+        bonus bDelayrate,-30;
+      }
+      bonus5 bAutoSpellOnSkill,"LG_RAYOFGENESIS","AB_HIGHNESSHEAL",3,200,1;
   - Id: 490087
     AegisName: 4th_Q_Necklace
     Name: Hourglass necklace    # !todo check english name

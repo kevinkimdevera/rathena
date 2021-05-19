@@ -1198,7 +1198,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			1000214,310181, //High Wizard 2
 			1000297,310258, //Lord Knight 2
 			1000012,310004, // MasterSmith 2
-			1000218,310187, // Paladin 2
+			1000218,310185, // Paladin 2
 			25804,29617, // Scholar 2
 			1000008,310000, // Sniper 2
 			25808,29621, // Stalker 2
@@ -1260,7 +1260,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			1000215,310182, //High Wizard 2
 			1000298,310259, //Lord Knight 2
 			1000013,310005, // MasterSmith 2
-			1000219,310188, // Paladin 2
+			1000219,310186, // Paladin 2
 			25803,29616, // Scholar 2
 			1000009,310001, // Sniper 2
 			25807,29620, // Stalker 2
@@ -1325,7 +1325,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			1000216,310183, //High Wizard 2
 			1000299,310260, //Lord Knight 2
 			1000014,310006, // MasterSmith 2
-			1000220,310189, // Paladin 2
+			1000220,310187, // Paladin 2
 			25802,29615, // Scholar 2
 			1000010,310002, // Sniper 2
 			25806,29619, // Stalker 2
