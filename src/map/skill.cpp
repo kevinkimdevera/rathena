@@ -2301,7 +2301,7 @@ int skill_onskillusage(struct map_session_data *sd, struct block_list *bl, uint1
 		if( skill < 0 ) {
 			tbl = &sd->bl;
 			skill *= -1;
-			skill_lv = 1 + rnd()%(-skill_lv); //random skill_lv
+			//skill_lv = 1 + rnd()%(-skill_lv); //random skill_lv
 		}
 		else
 			tbl = bl;

@@ -16,7 +16,7 @@
 //= npc on cities.
 //= The function arguments are this:
 //= 	callfunc "F_Bounty_Board", MinLevel, MaxLevel, MsgHuntPlace, MsgOutLevel,
-//=			MonsterID, 		QuestID, 	BaseExp, 	JobExp{, 
+//=			MonsterID, 		QuestID, 	BaseExp, 	JobExp{,
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
@@ -203,45 +203,59 @@ L_BountyAll:
 	mes "Oh you fancy yourself a good hunter eh?";
 	mes "Let me see if you've actually hunted all the monsters you said you would.";
 	next;
-	for (.@i = 5; .@i < getargcount(); .@i += 4){
-		if (checkquest(getarg(.@i),HUNTING) < 2){
-			mes "[Bounty Board]";
-			mes "The bounty to hunt all has not been completed.";
-			mes "Lying will not be tolerated.";
-			close;
-		}
-	}
-	if (vip_status(1)){
+
+	.@missingTargets = 0;
+
+	if (vip_status(1)) {
 		mes "^000000[Bounty Board]^000000";
 		mes "How will you distribute your newfound experience?";
 		next;
 		.@vip_reward = select("^FF0000Both Base and Job EXP^000000", "^0000FFI want Base EXP only.^000000", "^FFA400I want Job EXP only.^000000");
 	}
-	for (.@i = 5; .@i < getargcount(); .@i += 4)
-		erasequest getarg(.@i);
-	for (.@i = 6; .@i < getargcount(); .@i += 4){
-		if (Zeny + 37500 <= MAX_ZENY)
-			Zeny += 37500;
-		.@BaseExp = getarg(.@i);
-		.@JobExp = getarg(.@i+1);
-		switch(.@vip_reward){
-			case 2:
-				getexp .@BaseExp,0;
-				getexp .@JobExp,0;
-				break;
-			case 3:
-				getexp 0,.@BaseExp;
-				getexp 0,.@JobExp;
-				break;
-			default:
-				getexp .@BaseExp,.@JobExp;
-				break;
+
+	for (.@i = 5; .@i < getargcount(); .@i += 4) {
+		if (checkquest(getarg(.@i),HUNTING) == 2){
+			erasequest getarg(.@i);
+
+			if (Zeny + 37500 <= MAX_ZENY) {
+				Zeny += 37500;
+			}
+
+			.@BaseExp = getarg(.@i+1);
+			.@JobExp = getarg(.@i+2);
+
+			switch (.@vip_reward) {
+				case 2:
+					getexp .@BaseExp,0;
+					getexp .@JobExp,0;
+					break;
+				case 3:
+					getexp 0,.@BaseExp;
+					getexp 0,.@JobExp;
+					break;
+				default:
+					getexp .@BaseExp,.@JobExp;
+					break;
+			}
+		}
+		else {
+			.@missingTargets++;
 		}
 	}
-	getitem "Para_Logro_Badge",1;
-	mes "[Bounty Board]";
-	mes "Here is your reward.";
-	close;
+
+	if (.@missingTargets > 0) {
+		mes "[Bounty Board]";
+		mes "The bounty to hunt all has not been completed.";
+		mes "Lying will not be tolerated.";
+		close;
+	}
+	else {
+		getitem "Para_Logro_Badge",1;
+		mes "[Bounty Board]";
+		mes "Here is your reward.";
+		close;
+	}
+
 
 L_BountyDel:
 	mes "[Bounty Board]";

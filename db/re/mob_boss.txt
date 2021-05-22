@@ -50,3 +50,6 @@ MOBG_Bloody_Dead_Branch,1885,Gopinich,500000
 MOBG_Bloody_Dead_Branch,2022,Nidhoggur's Shadow,500000
 MOBG_Bloody_Dead_Branch,2068,Boitata,500000
 MOBG_Bloody_Dead_Branch,2087,Scaraba Queen,500000
+MOBG_Bloody_Dead_Branch,3074,Time Holder,500000
+MOBG_Bloody_Dead_Branch,3633,Venomous Chimera,500000
+MOBG_Bloody_Dead_Branch,2362,Nightmare Amon Ra,500000

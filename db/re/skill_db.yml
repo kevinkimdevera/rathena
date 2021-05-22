@@ -10007,7 +10007,7 @@ Body:
     TargetType: Attack
     Range: 9
     Hit: Multi_Hit
-    HitCount: 1
+    HitCount: -3
     Element: Holy
     CastTime: 1000
     AfterCastActDelay:
@@ -17706,25 +17706,25 @@ Body:
     Element: Weapon
     SplashArea:
       - Level: 1
-        Area: 3
+        Area: 1
       - Level: 2
-        Area: 3
+        Area: 1
       - Level: 3
-        Area: 3
+        Area: 1
       - Level: 4
-        Area: 3
+        Area: 1
       - Level: 5
-        Area: 5
+        Area: 2
       - Level: 6
-        Area: 5
+        Area: 2
       - Level: 7
-        Area: 5
+        Area: 2
       - Level: 8
-        Area: 5
+        Area: 2
       - Level: 9
-        Area: 7
+        Area: 3
       - Level: 10
-        Area: 7
+        Area: 3
     CastTime:
       - Level: 1
         Time: 1000
@@ -21358,13 +21358,13 @@ Body:
     Element: Weapon
     SplashArea:
       - Level: 1
-        Area: 3
+        Area: 1
       - Level: 2
-        Area: 3
+        Area: 1
       - Level: 3
         Area: 1
       - Level: 4
-        Area: 5
+        Area: 2
       - Level: 5
         Area: 2
     CastTime:
@@ -23535,9 +23535,9 @@ Body:
         Time: 5000
       - Level: 10
         Time: 5500
-    AfterCastActDelay: 2000
+    AfterCastActDelay: 1500
     Duration1: 10000
-    Cooldown: 3500
+    Cooldown: 2000
     FixedCastTime: 500
     Requires:
       SpCost:

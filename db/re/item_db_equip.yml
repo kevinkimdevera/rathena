@@ -51960,7 +51960,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      bonus5 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",getskilllv("LG_RAYOFGENESIS"),1000,1;
+      bonus5 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",max(1,getskilllv("LG_RAYOFGENESIS")),1000,1;
       bonus5 bAutoSpellOnSkill,"LG_RAYOFGENESIS","SU_TUNABELLY",2,1000,1;
       .@r = getrefine();
       if (.@r>=9) {
@@ -122847,8 +122847,7 @@ Body:
     Type: Armor
     View: 1552
     Locations:
-      Head_Top: true
-      Head_Low: true
+      Head_Mid: true
     Script: |
       bonus bMatk,20;
       bonus bBaseAtk,20;
@@ -122859,8 +122858,7 @@ Body:
     View: 1552
     Slots: 1
     Locations:
-      Head_Top: true
-      Head_Low: true
+      Head_Mid: true
     Script: |
       bonus bMatk,10;
       bonus bBaseAtk,10;
@@ -122871,8 +122869,7 @@ Body:
     View: 876
     Slots: 1
     Locations:
-      Head_Top: true
-      Head_Low: true
+      Head_Mid: true
     EquipLevelMin: 130
     Trade:
       Override: 100
@@ -132505,7 +132502,7 @@ Body:
     AegisName: Dragonic_Slayer
     Name: Dragonic Slayer
     Type: Weapon
-    SubType: 1hSword
+    SubType: 2hSword
     Weight: 1000
     Attack: 180
     Range: 1
@@ -132517,6 +132514,7 @@ Body:
     Locations:
       Both_Hand: true
     WeaponLevel: 4
+    Refineable: true
     Script: |
       .@r = getrefine();
       if (.@r>=2) {
@@ -132549,6 +132547,7 @@ Body:
     Locations:
       Both_Hand: true
     WeaponLevel: 4
+    Refineable: true
     EquipLevelMin: 150
     Script: |
       .@r = getrefine();
@@ -132618,6 +132617,7 @@ Body:
       Both_Hand: true
     WeaponLevel: 4
     EquipLevelMin: 120
+    Refineable: true
     Script: |
       .@r = getrefine();
       bonus bBaseAtk,4*.@r;
