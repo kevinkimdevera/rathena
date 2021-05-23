@@ -4840,27 +4840,27 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			BF_WEAPON, src, src, skill_id, skill_lv, tick, flag, BCT_ENEMY);
 		break;
 
-	case KN_CHARGEATK:
-		{
-		bool path = path_search_long(NULL, src->m, src->x, src->y, bl->x, bl->y,CELL_CHKWALL);
-		unsigned int dist = distance_bl(src, bl);
-		uint8 dir = map_calc_dir(bl, src->x, src->y);
+	// case KN_CHARGEATK:
+	// 	{
+	// 	bool path = path_search_long(NULL, src->m, src->x, src->y, bl->x, bl->y,CELL_CHKWALL);
+	// 	unsigned int dist = distance_bl(src, bl);
+	// 	uint8 dir = map_calc_dir(bl, src->x, src->y);
 
-		// teleport to target (if not on WoE grounds)
-		if (skill_check_unit_movepos(5, src, bl->x, bl->y, 0, 1))
-			skill_blown(src, src, 1, (dir+4)%8, BLOWN_NONE); //Target position is actually one cell next to the target
+	// 	// teleport to target (if not on WoE grounds)
+	// 	if (skill_check_unit_movepos(5, src, bl->x, bl->y, 0, 1))
+	// 		skill_blown(src, src, 1, (dir+4)%8, BLOWN_NONE); //Target position is actually one cell next to the target
 
-		// cause damage and knockback if the path to target was a straight one
-		if (path) {
-			if(skill_attack(BF_WEAPON, src, src, bl, skill_id, skill_lv, tick, dist))
-				skill_blown(src, bl, dist, dir, BLOWN_NONE);
-			//HACK: since knockback officially defaults to the left, the client also turns to the left... therefore,
-			// make the caster look in the direction of the target
-			unit_setdir(src, (dir+4)%8);
-		}
+	// 	// cause damage and knockback if the path to target was a straight one
+	// 	if (path) {
+	// 		if(skill_attack(BF_WEAPON, src, src, bl, skill_id, skill_lv, tick, dist))
+	// 			skill_blown(src, bl, dist, dir, BLOWN_NONE);
+	// 		//HACK: since knockback officially defaults to the left, the client also turns to the left... therefore,
+	// 		// make the caster look in the direction of the target
+	// 		unit_setdir(src, (dir+4)%8);
+	// 	}
 
-		}
-		break;
+	// 	}
+	// 	break;
 
 	case NC_FLAMELAUNCHER:
 		skill_area_temp[1] = bl->id;
@@ -5919,6 +5919,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			clif_skill_damage(src,src,tick,status_get_amotion(src),0,-30000,1,skill_id,skill_lv,DMG_SINGLE);
 		}
 		break;
+	case KN_CHARGEATK:
 	case LG_PINPOINTATTACK:
 		if (skill_check_unit_movepos(5, src, bl->x, bl->y, 1, 1))
 			clif_blown(src);
