@@ -51935,6 +51935,32 @@ Body:
       bonus bAllStats,1;
       bonus2 bAddClass,Class_All,2;
       bonus bMatkRate,2;
+  - Id: 5899
+    AegisName: Black_Ribbon_
+    Name: Black Ribbon
+    Type: Armor
+    Weight: 20
+    Defense: 10
+    Slots: 1
+    Jobs:
+      Knight: true
+    Classes:
+      All_Third: true
+    Locations:
+      Head_Top: true
+    EquipLevelMin: 100
+    Refineable: true
+    View: 1120
+    Script: |
+      bonus bAtk,(readparam(bStr) / 5);
+      bonus2 bSkillCooldown,"RK_WINDCUTTER",1800;
+      bonus2 bSkillUseSP,"RK_WINDCUTTER",16;
+      .@r = getrefine();
+      if (.@r>=9) {
+        bonus2 bSkillAtk,"RK_SONICWAVE",50;
+        bonus2 bSkillAtk,"RK_WINDCUTTER",50;
+        bonus2 bSkillAtk,"RK_IGNITIONBREAK",30;
+      }
   - Id: 5900
     AegisName: Divine_Guard_Hat_
     Name: Divine Guard Hat
