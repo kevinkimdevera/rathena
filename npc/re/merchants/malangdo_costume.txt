@@ -1190,7 +1190,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25417,29432, // Scholar 1
 			25413,29428, // Sniper 1
 			25490,29477, // Stalker 1
-			1000222,29521, //Assassin Cross 2
+			1000222,310191, //Assassin Cross 2
 			25800,29613, //Champion 2
 			1000305,310266, //Performer 2
 			1000301,310262, //Creator 2
@@ -1252,7 +1252,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25418,29433, // Scholar 1
 			25414,29429, // Sniper 1
 			25491,29478, // Stalker 1
-			1000223,29522, //Assassin Cross 2
+			1000223,310190, //Assassin Cross 2
 			25799,29612, //Champion 2
 			1000306,310267, //Performer 2
 			1000302,310263, //Creator 2
@@ -1317,7 +1317,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			25419,29434, // Scholar 1
 			25415,29430, // Sniper 1
 			25492,29479, // Stalker 1
-			1000224,29523, //Assassin Cross 2
+			1000224,310189, //Assassin Cross 2
 			25798,29611, //Champion 2
 			1000307,310268, //Performer 2
 			1000303,310264, //Creator 2

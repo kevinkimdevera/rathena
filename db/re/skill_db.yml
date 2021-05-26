@@ -28749,10 +28749,6 @@ Body:
         Bullet: true
       AmmoAmount: 1
       SpiritSphereCost: -1
-      Equipment:
-        Silver_Bullet: true
-        Sanctified_Bullet: true
-        Silver_Bullet_: true
   - Id: 2564
     Name: RL_FALLEN_ANGEL
     Description: Fallen Angel

@@ -1,0 +1,445 @@
+einbech,149,257,3	script	Field Manager Elmen	855,{
+	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 2000) {
+		mes "You're carrying too many items right now.";
+		close;
+	}
+	mes "[Field Manager Elmen]";
+	mes "Hello, " + strcharinfo(0) + ". I can craft Dynite and anything related to Einbroch.";
+	next;
+	switch(select("Smelt Dynite:Buy Modification Permits:Buy Accessories:Buy Weapons:Nothing")) {
+		case 1:
+			callfunc "EIN_CRAFT_DYNITE";
+			break;
+		case 2:
+			callshop "EIN_PERMIT_SHOP";
+			break;
+		case 3:
+			callshop "EIN_ACC_SHOP";
+			break;
+		case 4:
+			callfunc "EIN_WEAPON_EXCHANGE";
+			break;
+		default:
+			close;
+	}
+}
+
+einbech,152,257,3	script	Weapon Master Rita	854,{
+	mes "[Weapon Master Rita]";
+	mes "I can enchant your Einbroch Weapons.";
+	mes "I need Modification Permits Purchased from Elmen.";
+	next;
+	if (select("Enchant:Nevermind") == 2) {
+		close;
+	}
+
+	switch(select("Physical Modifications:Magical Modifications:Nevermind")) {
+		case 1:
+			callfunc "EIN_ENCHANT_PHYSICAL";
+			break;
+		case 2:
+			callfunc "EIN_ENCHANT_MAGICAL";
+			break;
+		default:
+			close;
+	}
+	close;
+}
+
+-	itemshop	EIN_PERMIT_SHOP	-1, 25814, 9529:30, 9514: 30;
+
+-	itemshop	EIN_ACC_SHOP	-1, 25814, 32248:75, 32249:75, 32250:75, 32251:75;
+
+// Craft Dynite
+function	script	EIN_CRAFT_DYNITE	{
+	disable_items;
+	mes "[Field Manager Elmen]";
+	mes "How many would you like to craft at once?";
+	mes "Cannot be less than 1 or above 100.";
+	next;
+	input .@amount;
+	if (.@amount <= 0 || .@amount > 100) {
+		mes "[Field Manager Elmen]";
+		mes "I'm sorry, it must be above 1 and below 100.";
+		close;
+	}
+	next;
+
+	.@red = countitem(25809); // Redium
+	.@green = countitem(25810); // Rindium
+	.@orange = countitem(25811); // Odium
+	.@purple = countitem(25812); // Purdium
+	.@white = countitem(25813); // Whidium
+
+	.@min = min(.@red, .@green, .@orange, .@purple, .@white );
+
+	if (.@min < .@amount) {
+		mes "[Field Manager Elmen]";
+		mes "I'm sorry, you don't have enough materials.";
+		close;
+	}
+
+	mes "[Field Manager Elmen]";
+	mes "Are you sure you want to craft " + .@amount + " Dynites?";
+	mes "Requirements: ";
+	mes "Redium: " + .@red;
+	mes "Rindium: " + .@green;
+	mes "Odium: " + .@orange;
+	mes "Purdium: " + .@purple;
+	mes "Whidium: " + .@white;
+
+	if (select("Yes:No") == 1) {
+		delitem 25809,.@amount;
+		delitem 25810,.@amount;
+		delitem 25811,.@amount;
+		delitem 25812,.@amount;
+		delitem 25813,.@amount;
+		getitem 25814,.@amount;
+		close;
+	}
+	else {
+		close;
+	}
+}
+
+// Craft Random Weapon
+function	script	EIN_WEAPON_EXCHANGE	{
+	mes "[Field Manager Elmen]";
+	mes "Are you sure you want to exchange 50 Dynites for a random weapon?";
+	next;
+
+	if (select("Yes:No") == 1) {
+		if (countitem(25814) < 50) {
+			mes "[Field Manager Elmen]";
+			mes "I'm sorry, you don't have enough Dynites.";
+			close;
+		}
+		else {
+			setarray .@weapons[1],
+				1867,
+				2058,
+				13346,
+				16099,
+				18190,
+				21054,
+				26162,
+				26215,
+				28045,
+				28140,
+				28635,
+				28771,
+				28772,
+				32026,
+				32110,
+				32303,
+				32352,
+				550006;
+
+			.@size = getarraysize(.@weapons);
+			.@random = rand(1, .@size);
+
+			getitem .@weapons[.@random], 1;
+			delitem 25814, 50;
+
+			close;
+		}
+	}
+	else {
+		close;
+	}
+}
+
+function	script	EIN_ENCHANT_PHYSICAL	{
+	set .@part,EQI_HAND_R; // Save equip location
+	set .@weapon, getequipid(.@part);
+	set .@permit, 9514;
+
+	if(getequipid(.@part) == -1) {
+		mes "[Weapon Master Rita]";
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	switch(getequipid(.@part)) {
+		case 1867:
+		case 2058:
+		case 13346:
+		case 16099:
+		case 18190:
+		case 21054:
+		case 26162:
+		case 26215:
+		case 28045:
+		case 28140:
+		case 28635:
+		case 28771:
+		case 28772:
+		case 32026:
+		case 32110:
+		case 32303:
+		case 32352:
+		case 550006:
+			break;
+
+		default:
+			mes "[Weapon Master Rita]";
+			mes "Please be sure that you equipped a weapon and come back again.";
+			close;
+	}
+
+	if (countitem(.@permit) < 1) {
+		mes .n$;
+		mes "You don't have the enough " + getitemname(.@permit) + ".";
+		close;
+	}
+
+	setarray .@P1,
+		RDMOPT_VAR_ATTPOWER, 5, 45,
+		RDMOPT_VAR_ATKPERCENT, 1, 10;
+
+	setarray .@P2,
+		RDMOPT_VAR_HITSUCCESSVALUE, 5, 35,
+		RDMOPT_VAR_AVOIDSUCCESSVALUE, 7, 35,
+		RDMOPT_VAR_PLUSASPD, 1, 2,
+		RDMOPT_VAR_CRITICALSUCCESSVALUE, 2, 10,
+		RDMOPT_DAMAGE_CRI_TARGET, 5, 20,
+		RDMOPT_DAMAGE_PROPERTY_NOTHING_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_WATER_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_GROUND_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_FIRE_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_WIND_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_POISON_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_SAINT_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_DARKNESS_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_TELEKINESIS_TARGET, 3, 20,
+		RDMOPT_DAMAGE_PROPERTY_UNDEAD_TARGET, 3, 20,
+		RDMOPT_VAR_PLUSASPDPERCENT, 5, 10;
+
+	setarray .@P3,
+		RDMOPT_RACE_DAMAGE_NOTHING, 3, 20,
+		RDMOPT_RACE_DAMAGE_UNDEAD, 3, 20,
+		RDMOPT_RACE_DAMAGE_ANIMAL, 3, 20,
+		RDMOPT_RACE_DAMAGE_PLANT, 3, 20,
+		RDMOPT_RACE_DAMAGE_INSECT, 3, 20,
+		RDMOPT_RACE_DAMAGE_FISHS, 3, 20,
+		RDMOPT_RACE_DAMAGE_DEVIL, 3, 20,
+		RDMOPT_RACE_DAMAGE_HUMAN, 3, 20,
+		RDMOPT_RACE_DAMAGE_ANGEL, 3, 20,
+		RDMOPT_RACE_DAMAGE_DRAGON, 3, 20,
+		RDMOPT_CLASS_DAMAGE_NORMAL_TARGET, 3, 20,
+		RDMOPT_CLASS_DAMAGE_BOSS_TARGET, 3, 20,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_NOTHING, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_UNDEAD, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_ANIMAL, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_PLANT, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_INSECT, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_FISHS, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_DEVIL, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_HUMAN, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_ANGEL, 3, 25,
+		RDMOPT_RACE_IGNORE_DEF_PERCENT_DRAGON, 3, 25,
+		RDMOPT_CLASS_IGNORE_DEF_PERCENT_NORMAL, 3, 18;
+
+	set .@count1, getarraysize(.@P1);
+	set .@count2, getarraysize(.@P2);
+	set .@count3, getarraysize(.@P3);
+
+	set .@enc1, rand((.@count1 / 3));
+	set .@enc2, rand((.@count2 / 3));
+	set .@enc3, rand((.@count3 / 3));
+
+	// SLOT 1
+	.@index1 = 0;
+	for ( .@i = 0; .@i < .@count1; .@i += 3 ) {
+		if (.@index1 == .@enc1) {
+			set .@Enchant1, getd(".@P1["+ .@i +"]");
+			set .@Min1, getd(".@P1["+ (.@i + 1) +"]");
+			set .@Max1, getd(".@P1["+ (.@i + 2) +"]");
+			set .@Value1, rand(.@Min1, .@Max1);
+			break;
+		}
+		.@index1++;
+	}
+
+	// SLOT 2
+	.@index2 = 0;
+	for ( .@i = 0; .@i < .@count2; .@i += 3 ) {
+		if (.@index2 == .@enc2) {
+			set .@Enchant2, getd(".@P2["+ .@i +"]");
+			set .@Min2, getd(".@P2["+ (.@i + 1) +"]");
+			set .@Max2, getd(".@P2["+ (.@i + 2) +"]");
+			set .@Value2, rand(.@Min2, .@Max2);
+			break;
+		}
+		.@index2++;
+	}
+
+	// SLOT 3
+	.@index3 = 0;
+	for ( .@i = 0; .@i < .@count3; .@i += 3 ) {
+		if (.@index3 == .@enc3) {
+			set .@Enchant3, getd(".@P3["+ .@i +"]");
+			set .@Min3, getd(".@P3["+ (.@i + 1) +"]");
+			set .@Max3, getd(".@P3["+ (.@i + 2) +"]");
+			set .@Value3, rand(.@Min3, .@Max3);
+			break;
+		}
+		.@index3++;
+	}
+
+	setrandomoption(.@part,0, .@Enchant1, .@Value1, 0);
+	setrandomoption(.@part,1, .@Enchant2, .@Value2, 0);
+	setrandomoption(.@part,2, .@Enchant3, .@Value3, 0);
+	delitem .@permit,1;
+
+	specialeffect2 EF_REPAIRWEAPON;
+
+	close;
+}
+
+function	script	EIN_ENCHANT_MAGICAL	{
+	set .@part,EQI_HAND_R; // Save equip location
+	set .@weapon, getequipid(.@part);
+	set .@permit, 9529;
+
+	if(getequipid(.@part) == -1) {
+		mes "[Weapon Master Rita]";
+		mes "You don't have anything equipped!";
+		close;
+	}
+
+	switch(getequipid(.@part)) {
+		case 1867:
+		case 2058:
+		case 13346:
+		case 16099:
+		case 18190:
+		case 21054:
+		case 26162:
+		case 26215:
+		case 28045:
+		case 28140:
+		case 28635:
+		case 28771:
+		case 28772:
+		case 32026:
+		case 32110:
+		case 32303:
+		case 32352:
+		case 550006:
+			break;
+
+		default:
+			mes "[Weapon Master Rita]";
+			mes "Please be sure that you equipped a weapon and come back again.";
+			close;
+	}
+
+	if (countitem(.@permit) < 1) {
+		mes .n$;
+		mes "You don't have the enough " + getitemname(.@permit) + ".";
+		close;
+	}
+
+	setarray .@P1,
+		RDMOPT_VAR_ATTMPOWER, 5, 45,
+		RDMOPT_VAR_MAGICATKPERCENT, 1, 10;
+
+	setarray .@P2,
+		RDMOPT_HEAL_VALUE, 5, 25,
+		RDMOPT_VAR_AVOIDSUCCESSVALUE, 7, 35,
+		RDMOPT_MDAMAGE_PROPERTY_NOTHING_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_WATER_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_GROUND_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_FIRE_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_WIND_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_POISON_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_SAINT_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_DARKNESS_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_TELEKINESIS_TARGET, 3, 20,
+		RDMOPT_MDAMAGE_PROPERTY_UNDEAD_TARGET, 3, 20,
+		RDMOPT_DEC_SPELL_CAST_TIME, 5, 10;
+
+	setarray .@P3,
+		RDMOPT_HEAL_VALUE, 7, 25,
+		RDMOPT_RACE_MDAMAGE_NOTHING, 3, 20,
+		RDMOPT_RACE_MDAMAGE_UNDEAD, 3, 20,
+		RDMOPT_RACE_MDAMAGE_ANIMAL, 3, 20,
+		RDMOPT_RACE_MDAMAGE_PLANT, 3, 20,
+		RDMOPT_RACE_MDAMAGE_INSECT, 3, 20,
+		RDMOPT_RACE_MDAMAGE_FISHS, 3, 20,
+		RDMOPT_RACE_MDAMAGE_DEVIL, 3, 20,
+		RDMOPT_RACE_MDAMAGE_HUMAN, 3, 20,
+		RDMOPT_RACE_MDAMAGE_ANGEL, 3, 20,
+		RDMOPT_RACE_MDAMAGE_DRAGON, 3, 20,
+		RDMOPT_CLASS_MDAMAGE_NORMAL, 3, 20,
+		RDMOPT_CLASS_MDAMAGE_BOSS, 3, 20,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_NOTHING, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_UNDEAD, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_ANIMAL, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_PLANT, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_INSECT, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_FISHS, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_DEVIL, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_HUMAN, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_ANGEL, 3, 25,
+		RDMOPT_RACE_IGNORE_MDEF_PERCENT_DRAGON, 3, 25,
+		RDMOPT_CLASS_IGNORE_MDEF_PERCENT_NORMAL, 3, 18,
+		RDMOPT_DEC_SPELL_CAST_TIME, 5, 10;
+
+	set .@count1, getarraysize(.@P1);
+	set .@count2, getarraysize(.@P2);
+	set .@count3, getarraysize(.@P3);
+
+	set .@enc1, rand((.@count1 / 3));
+	set .@enc2, rand((.@count2 / 3));
+	set .@enc3, rand((.@count3 / 3));
+
+	// SLOT 1
+	.@index1 = 0;
+	for ( .@i = 0; .@i < .@count1; .@i += 3 ) {
+		if (.@index1 == .@enc1) {
+			set .@Enchant1, getd(".@P1["+ .@i +"]");
+			set .@Min1, getd(".@P1["+ (.@i + 1) +"]");
+			set .@Max1, getd(".@P1["+ (.@i + 2) +"]");
+			set .@Value1, rand(.@Min1, .@Max1);
+			break;
+		}
+		.@index1++;
+	}
+
+	// SLOT 2
+	.@index2 = 0;
+	for ( .@i = 0; .@i < .@count2; .@i += 3 ) {
+		if (.@index2 == .@enc2) {
+			set .@Enchant2, getd(".@P2["+ .@i +"]");
+			set .@Min2, getd(".@P2["+ (.@i + 1) +"]");
+			set .@Max2, getd(".@P2["+ (.@i + 2) +"]");
+			set .@Value2, rand(.@Min2, .@Max2);
+			break;
+		}
+		.@index2++;
+	}
+
+	// SLOT 3
+	.@index3 = 0;
+	for ( .@i = 0; .@i < .@count3; .@i += 3 ) {
+		if (.@index3 == .@enc3) {
+			set .@Enchant3, getd(".@P3["+ .@i +"]");
+			set .@Min3, getd(".@P3["+ (.@i + 1) +"]");
+			set .@Max3, getd(".@P3["+ (.@i + 2) +"]");
+			set .@Value3, rand(.@Min3, .@Max3);
+			break;
+		}
+		.@index3++;
+	}
+
+	setrandomoption(.@part,0, .@Enchant1, .@Value1, 0);
+	setrandomoption(.@part,1, .@Enchant2, .@Value2, 0);
+	setrandomoption(.@part,2, .@Enchant3, .@Value3, 0);
+	delitem .@permit,1;
+
+	specialeffect2 EF_REPAIRWEAPON;
+
+	close;
+}

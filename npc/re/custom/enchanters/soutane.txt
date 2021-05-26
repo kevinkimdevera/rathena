@@ -1,4 +1,4 @@
-prontera,109,191,4	script	Soutane Enchanter	478,{
+prontera,109,191,4	script	Susan Grey	893,{
 	disable_items;
 
 	mes .n$;
@@ -108,7 +108,7 @@ prontera,109,191,4	script	Soutane Enchanter	478,{
 	end;
 
 	OnInit:
-	set .n$,"[Soutane Enchanter]";
+	set .n$,"[Susan Grey]";
 
 	setarray .low, 4706, // STR + 7
 						4707, // STR + 8

@@ -5122,7 +5122,7 @@ IG_Enchant_Stone_Box16,25709,16	// ArchbishopStone_Robe
 IG_Enchant_Stone_Box16,25713,16	// RoyalguardStone_Robe
 IG_Enchant_Stone_Box16,25717,16	// GuillcrossStone_Robe
 IG_Enchant_Stone_Box16,25015,24	// EXPStone_Bottom
-IG_Enchant_Stone_Box16,310330,24	// 
+IG_Enchant_Stone_Box16,310330,24	//
 IG_Enchant_Stone_Box16,25141,24	// EXPStone_Middle
 IG_Enchant_Stone_Box16,25171,24	// EXPStone_Top
 IG_Enchant_Stone_Box16,25172,24	// CastingStone_Top
@@ -5164,7 +5164,7 @@ IG_Enchant_Stone_Box17,25797,16	// SuraStone_Robe2
 IG_Enchant_Stone_Box17,25801,16	// SorcererStone_Robe2
 IG_Enchant_Stone_Box17,25805,16	// ShadowchaserStone_Robe2
 IG_Enchant_Stone_Box17,25015,24	// EXPStone_Bottom
-IG_Enchant_Stone_Box17,310330,24	// 
+IG_Enchant_Stone_Box17,310330,24	//
 IG_Enchant_Stone_Box17,25141,24	// EXPStone_Middle
 IG_Enchant_Stone_Box17,25171,24	// EXPStone_Top
 IG_Enchant_Stone_Box17,25172,24	// CastingStone_Top
@@ -5206,7 +5206,7 @@ IG_Enchant_Stone_Box18,25862,16	// DoramStone_Robe
 IG_Enchant_Stone_Box18,25136,17	// ElectricEffect_Middle
 IG_Enchant_Stone_Box18,25226,17	// WaterFieldEffect_Bottom
 IG_Enchant_Stone_Box18,25015,20	// EXPStone_Bottom
-IG_Enchant_Stone_Box18,310330,20	// 
+IG_Enchant_Stone_Box18,310330,20	//
 IG_Enchant_Stone_Box18,25069,20	// ReloadStone_Top
 IG_Enchant_Stone_Box18,25070,20	// ReloadStone_Middle
 IG_Enchant_Stone_Box18,25071,20	// ReloadStone_Bottom
@@ -5258,7 +5258,7 @@ IG_Enchant_Stone_Box19,1000011,16	// RangerStone_II_Garment
 IG_Enchant_Stone_Box19,1000015,16	// MechanicStone_II_Garment
 IG_Enchant_Stone_Box19,1000019,16	// ArchbishopStone_II_Garment
 IG_Enchant_Stone_Box19,25015,24	// EXPStone_Bottom
-IG_Enchant_Stone_Box19,310330,24	// 
+IG_Enchant_Stone_Box19,310330,24	//
 IG_Enchant_Stone_Box19,25141,24	// EXPStone_Middle
 IG_Enchant_Stone_Box19,25171,24	// EXPStone_Top
 IG_Enchant_Stone_Box19,25172,24	// CastingStone_Top
@@ -5300,7 +5300,7 @@ IG_Enchant_Stone_Box20,1000213,16	// WarlockStone_Robe2
 IG_Enchant_Stone_Box20,1000217,16	// RoyalGuardStone_Robe2
 IG_Enchant_Stone_Box20,1000221,16	// GuillotineCrossStone_Robe2
 IG_Enchant_Stone_Box20,25015,24	// EXPStone_Bottom
-IG_Enchant_Stone_Box20,310330,24	// 
+IG_Enchant_Stone_Box20,310330,24	//
 IG_Enchant_Stone_Box20,25141,24	// EXPStone_Middle
 IG_Enchant_Stone_Box20,25171,24	// EXPStone_Top
 IG_Enchant_Stone_Box20,25172,24	// CastingStone_Top
@@ -5341,7 +5341,7 @@ IG_Enchant_Stone_Box21,25226,16	// WaterFieldEffect_Bottom
 IG_Enchant_Stone_Box21,1000296,16	// RuneknightStone_Robe2
 IG_Enchant_Stone_Box21,1000300,16	// GeneticStone_Robe2
 IG_Enchant_Stone_Box21,1000304,16	// WanderMinsStone_Robe2
-IG_Enchant_Stone_Box21,310330,24	// 
+IG_Enchant_Stone_Box21,310330,24	//
 IG_Enchant_Stone_Box21,25171,24	// EXPStone_Top
 IG_Enchant_Stone_Box21,25141,24	// EXPStone_Middle
 IG_Enchant_Stone_Box21,25015,24	// EXPStone_Bottom
@@ -5366,3 +5366,16 @@ IG_Enchant_Stone_Box21,25017,37	// MATKStone_Bottom
 IG_Enchant_Stone_Box21,25304,37	// Critical_Stone_Top
 IG_Enchant_Stone_Box21,25060,37	// Critical_Stone
 IG_Enchant_Stone_Box21,25305,37	// Critical_Stone_Bottom
+
+// ODIN ITEM BOX
+IG_Odin_Item_Box,15397,2
+IG_Odin_Item_Box,15398,2
+IG_Odin_Item_Box,15399,2
+IG_Odin_Item_Box,15400,2
+IG_Odin_Item_Box,15401,2
+IG_Odin_Item_Box,15402,2
+IG_Odin_Item_Box,20947,4
+IG_Odin_Item_Box,22209,4
+IG_Odin_Item_Box,25767,20
+IG_Odin_Item_Box,7511,30
+IG_Odin_Item_Box,7063,30

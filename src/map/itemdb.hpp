@@ -754,6 +754,7 @@ enum e_random_item_group {
 	IG_ENCHANT_STONE_BOX19,
 	IG_ENCHANT_STONE_BOX20,
 	IG_ENCHANT_STONE_BOX21,
+	IG_ODIN_ITEM_BOX,
 };
 
 /// Enum for bound/sell restricted selling

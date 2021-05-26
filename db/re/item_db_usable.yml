@@ -2215,15 +2215,6 @@ Body:
     Name: Physical Modification Permit
     Type: DelayConsume
     Weight: 10
-    Trade:
-      Override: 100
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       /* upgradeui 9514; */
   - Id: 9523
@@ -2238,15 +2229,6 @@ Body:
     Name: Magical Modification Permit
     Type: DelayConsume
     Weight: 10
-    Trade:
-      Override: 100
-      NoDrop: true
-      NoTrade: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       /* upgradeui 9529; */
   - Id: 9550
@@ -48586,6 +48568,13 @@ Body:
     Weight: 10
     Script: |
       /* upgradeui 23981; */
+  - Id: 23986
+    AegisName: Odin_itembox
+    Name: Odin Relic
+    Type: Usable
+    Weight: 10
+    Script: |
+      getgroupitem(IG_Odin_Item_Box);
   - Id: 100000
     AegisName: IDTest_Special
     Name: IDTest Special

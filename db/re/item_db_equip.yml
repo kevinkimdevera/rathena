@@ -51952,8 +51952,8 @@ Body:
     Refineable: true
     View: 1120
     Script: |
-      bonus bAtk,(readparam(bStr) / 5);
-      bonus2 bSkillCooldown,"RK_WINDCUTTER",1800;
+      bonus bAtk,(readparam(bStr)/5);
+      bonus2 bSkillCooldown,"RK_WINDCUTTER",-1800;
       bonus2 bSkillUseSP,"RK_WINDCUTTER",16;
       .@r = getrefine();
       if (.@r>=9) {
@@ -128087,6 +128087,35 @@ Body:
     Script: |
       bonus bMatkRate,5;
       bonus bMaxSPrate,5;
+  - Id: 490029
+    AegisName: Geffenia_Magictool_Ice
+    Name: Geffenia Ice Magic Tool
+    Type: Armor
+    Defense: 2
+    Weight: 50
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    EquipLevelMin: 100
+    Script: |
+      bonus bMdef,10;
+      bonus2 bMagicAddSize,Size_All,10;
+      bonus2 bSkillAtk,"WZ_STORMGUST",(BaseLevel/3);
+      if (getskilllv("WL_COMET") == 5) {
+        bonus2 bSkillUseSP,"WL_JACKFROST",35;
+        bonus2 bFixedCastrate,"WL_JACKFROST",-100;
+      }
+      if (getskilllv("WL_JACKFROST") == 5) {
+        bonus2 bSkillUseSP,"WL_COMET",100;
+        bonus2 bSkillAtk,"WL_COMET",50;
+      }
+      if (getskilllv("WL_STASIS") == 5) {
+        bonus2 bSkillAtk,"WL_JACKFROST",50;
+        bonus2 bSkillAtk,"WL_FROSTMISTY",50;
+      }
+      if (getskilllv("WL_RECOGNIZEDSPELL") == 5) {
+        bonus bDelayrate,-30;
+      }
   - Id: 490038
     AegisName: Sixth_Sense_Ring
     Name: Perceptual Amplification Ring

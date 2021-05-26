@@ -86855,6 +86855,12 @@ Body:
     Race: Formless
     Element: Neutral
     ElementLevel: 4
+    Modes:
+      Aggressive: true
+      IgnoreMelee: true
+      IgnoreMagic: true
+      IgnoreRanged: true
+      IgnoreMisc: true
     WalkSpeed: 425
     AttackDelay: 603
     AttackMotion: 864
