@@ -79263,18 +79263,20 @@ Body:
       bonus bVariableCastrate,.@r;
       if (.@r>=7) {
         bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",15;
-        bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-1000+(.@r >= 9 ? -1000 : 0);
+        bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-1000;
       }
       if (.@r>=9) {
         bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",15;
+        bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-1000;
       }
       if (.@r>=10) {
         .@a = (readparam(bInt)+readparam(bDex))/10;
         bonus bInt,.@a;
         bonus bDex,.@a;
-      }
-      if (Class == Job_Sorcerer || Class == Job_Sorcerer_T) {
-        skill "HW_GANBANTEIN",1;
+
+        if (Class == Job_Sorcerer || Class == Job_Sorcerer_T) {
+          skill "HW_GANBANTEIN",1;
+        }
       }
   - Id: 19263
     AegisName: General_Helmet_
