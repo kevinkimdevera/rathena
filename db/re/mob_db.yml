@@ -82630,11 +82630,15 @@ Body:
     Ai: 02
     Drops:
       - Item: Jellopy
-        Rate: 8750
+        Rate: 7000
+      - Item: Apple
+        Rate: 1000
       - Item: Sticky_Mucus
-        Rate: 3750
+        Rate: 400
+      - Item: Phracon
+        Rate: 30
       - Item: Wing_Of_Fly
-        Rate: 1250
+        Rate: 500
       - Item: Eggring_Card
         Rate: 1
         StealProtected: true
@@ -82665,12 +82669,18 @@ Body:
     DamageMotion: 336
     Ai: 01
     Drops:
-      - Item: Carrot
-        Rate: 2000
-      - Item: Feather
-        Rate: 6000
       - Item: Clover
-        Rate: 8000
+        Rate: 7000
+      - Item: Carrot
+        Rate: 3000
+      - Item: Feather
+        Rate: 3000
+      - Item: Pierrot_Nose
+        Rate: 4
+      - Item: Wing_of_Fly
+        Rate: 500
+      - Item: Phracon
+        Rate: 30
       - Item: Leaf_Lunatic_Card
         Rate: 1
         StealProtected: true
@@ -82705,9 +82715,15 @@ Body:
       Detector: true
     Drops:
       - Item: Fluff
-        Rate: 7500
+        Rate: 7000
+      - Item: Feather
+        Rate: 1000
+      - Item: Wing_of_Fly
+        Rate: 500
       - Item: Green_Herb
-        Rate: 2500
+        Rate: 3000
+      - Item: Clover
+        Rate: 1000
       - Item: Grass_Fabre_Card
         Rate: 1
         StealProtected: true
@@ -82744,12 +82760,18 @@ Body:
       ChangeTargetMelee: true
       Detector: true
     Drops:
+      - Item: Wind_Of_Verdure
+        Rate: 80
       - Item: Bee_Sting
-        Rate: 10000
+        Rate: 8000
       - Item: Jellopy
-        Rate: 10000
+        Rate: 3000
+      - Item: Green_Herb
+        Rate: 500
+      - Item: Honey
+        Rate: 100
       - Item: Wing_Of_Fly
-        Rate: 444
+        Rate: 500
       - Item: Wild_Honet_Card
         Rate: 1
         StealProtected: true
@@ -82783,17 +82805,19 @@ Body:
     Ai: 01
     Drops:
       - Item: Sticky_Webfoot
-        Rate: 10000
+        Rate: 4500
       - Item: Spawn
-        Rate: 571
+        Rate: 500
       - Item: Green_Herb
-        Rate: 571
+        Rate: 300
+      - Item: Azure_Jewel
+        Rate: 8
       - Item: Wing_Of_Fly
-        Rate: 571
+        Rate: 500
       - Item: Long_Foxtail
-        Rate: 416
+        Rate: 100
       - Item: Abundantly_Foxtail
-        Rate: 416
+        Rate: 100
       - Item: Sw_Roda_Frog_Card
         Rate: 1
         StealProtected: true
@@ -82827,10 +82851,16 @@ Body:
     DamageMotion: 240
     Ai: 03
     Drops:
+      - Item: Emveretarcon
+        Rate: 50
       - Item: Animal's_Skin
-        Rate: 2000
+        Rate: 2750
+      - Item: Elunium_Stone
+        Rate: 30
+      - Item: Wing_of_Fly
+        Rate: 500
       - Item: Orange
-        Rate: 2000
+        Rate: 500
       - Item: Hunter_Wolf_Card
         Rate: 1
         StealProtected: true
@@ -82863,7 +82893,17 @@ Body:
     Ai: 01
     Drops:
       - Item: Mushroom_Spore
-        Rate: 10000
+        Rate: 8000
+      - Item: Red_Herb
+        Rate: 1000
+      - Item: Wing_of_Fly
+        Rate: 500
+      - Item: Spore_Doll
+        Rate: 10
+      - Item: Poison_Spore
+        Rate: 10
+      - Item: Emveretarcon
+        Rate: 50
       - Item: Trance_Spore_Card
         Rate: 1
         StealProtected: true
@@ -82896,12 +82936,16 @@ Body:
     DamageMotion: 576
     Ai: 04
     Drops:
+      - Item: Oridecon_Stone
+        Rate: 15
+      - Item: Elunium_Stone
+        Rate: 30
       - Item: DragonFry_Foxtail
-        Rate: 217
+        Rate: 100
       - Item: BigSize_Foxtail
-        Rate: 217
+        Rate: 100
       - Item: Dr_Life_Potion_02
-        Rate: 256
+        Rate: 500
       - Item: Basilisk1_Card
         Rate: 1
         StealProtected: true
@@ -82935,6 +82979,20 @@ Body:
     DamageMotion: 576
     Ai: 04
     Drops:
+      - Item: Yggdrasilberry
+        Rate: 80
+      - Item: Old_Violet_Box
+        Rate: 80
+      - Item: Elunium
+        Rate: 100
+      - Item: Carnium
+        Rate: 100
+      - Item: Dr_Life_Potion_02
+        Rate: 500
+      - Item: Magical_Foxtail
+        Rate: 1
+      - Item: Ex_Model_Foxtail
+        Rate: 1
       - Item: Basilisk2_Card
         Rate: 1
         StealProtected: true
@@ -82968,6 +83026,20 @@ Body:
     DamageMotion: 576
     Ai: 04
     Drops:
+      - Item: Yggdrasilberry
+        Rate: 80
+      - Item: Old_Blue_Box
+        Rate: 80
+      - Item: Oridecon
+        Rate: 100
+      - Item: Bradium
+        Rate: 100
+      - Item: Dr_Life_Potion_02
+        Rate: 500
+      - Item: Ex_Y_Model_Foxtail
+        Rate: 1
+      - Item: Doram_Ele_Shoes
+        Rate: 10
       - Item: Basilisk2_Card
         Rate: 1
         StealProtected: true
@@ -83004,6 +83076,16 @@ Body:
     Modes:
       Mvp: true
     Drops:
+      - Item: White_Potion
+        Rate: 5000
+      - Item: Wing_of_Fly
+        Rate: 1000
+      - Item: Elunium
+        Rate: 500
+      - Item: Oridecon
+        Rate: 500
+      - Item: Old_Blue_box
+        Rate: 100
       - Item: Big_Eggring_Card
         Rate: 1
         StealProtected: true
@@ -83037,6 +83119,20 @@ Body:
     DamageMotion: 576
     Ai: 21
     Drops:
+      - Item: Yellow_Live
+        Rate: 60
+      - Item: Stem
+        Rate: 8000
+      - Item: Old_Violet_Box
+        Rate: 80
+      - Item: Elunium
+        Rate: 100
+      - Item: Oridecon
+        Rate: 100
+      - Item: Four_Leaf_Clover
+        Rate: 1
+      - Item: Doram_Ele_Cape
+        Rate: 1
       - Item: Ju_Mandragora_Card
         Rate: 1
         StealProtected: true
@@ -83072,6 +83168,20 @@ Body:
     Modes:
       Detector: true
     Drops:
+      - Item: Fruit_Basket
+        Rate: 250
+      - Item: Short_Leg
+        Rate: 500
+      - Item: Mental_Stick
+        Rate: 1
+      - Item: Yggdrasilberry
+        Rate: 80
+      - Item: Old_Violet_Box
+        Rate: 80
+      - Item: Doram_Ele_Suit
+        Rate: 10
+      - Item: Magical_Y_Foxtail
+        Rate: 1
       - Item: Fru_Pom_Spider_Card
         Rate: 1
         StealProtected: true
