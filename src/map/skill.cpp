@@ -10902,7 +10902,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 			if( ammo_id == 0 )
 				break;
 			sd->itemid = ammo_id;
-			if( itemdb_group_item_exists(IG_BOMB, ammo_id) ) {
+			if( itemdb_group.item_exists(IG_BOMB, ammo_id) ) {
 				if(battle_check_target(src,bl,BCT_ENEMY) > 0) {// Only attack if the target is an enemy.
 					if( ammo_id == ITEMID_PINEAPPLE_BOMB )
 						map_foreachincell(skill_area_sub,bl->m,bl->x,bl->y,BL_CHAR,src,GN_SLINGITEM_RANGEMELEEATK,skill_lv,tick,flag|BCT_ENEMY|1,skill_castend_damage_id);
@@ -10910,7 +10910,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 						skill_attack(BF_WEAPON,src,src,bl,GN_SLINGITEM_RANGEMELEEATK,skill_lv,tick,flag);
 				} else //Otherwise, it fails, shows animation and removes items.
 					clif_skill_fail(sd,GN_SLINGITEM_RANGEMELEEATK,USESKILL_FAIL,0);
-			} else if (itemdb_group_item_exists(IG_THROWABLE, ammo_id)) {
+			} else if (itemdb_group.item_exists(IG_THROWABLE, ammo_id)) {
 				switch (ammo_id) {
 					case ITEMID_HP_INC_POTS_TO_THROW: // MaxHP +(500 + Thrower BaseLv * 10 / 3) and heals 1% MaxHP
 						sc_start2(src, bl, SC_PROMOTE_HEALTH_RESERCH, 100, 2, 1, 500000);
@@ -11121,11 +11121,9 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 		break;
 	case KG_KAGEHUMI:
 		if( flag&1 ){
-			if(tsc && ( tsc->option&(OPTION_CLOAK|OPTION_HIDE) ||
-				tsc->data[SC_CAMOUFLAGE] || tsc->data[SC__SHADOWFORM] ||
-				tsc->data[SC_MARIONETTE] || tsc->data[SC_HARMONIZE])){
-					sc_start(src,src, type, 100, skill_lv, skill_get_time(skill_id, skill_lv));
-					sc_start(src,bl, type, 100, skill_lv, skill_get_time(skill_id, skill_lv));
+			if (bl->type != BL_PC)
+				break;
+			if (tsc && (tsc->option & (OPTION_CLOAK | OPTION_HIDE) || tsc->data[SC_CAMOUFLAGE] || tsc->data[SC__SHADOWFORM] || tsc->data[SC_MARIONETTE] || tsc->data[SC_HARMONIZE])) {
 					status_change_end(bl, SC_HIDING, INVALID_TIMER);
 					status_change_end(bl, SC_CLOAKING, INVALID_TIMER);
 					status_change_end(bl, SC_CLOAKINGEXCEED, INVALID_TIMER);
@@ -11135,14 +11133,12 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 						status_change_end(bl, SC__SHADOWFORM, INVALID_TIMER);
 					status_change_end(bl, SC_MARIONETTE, INVALID_TIMER);
 					status_change_end(bl, SC_HARMONIZE, INVALID_TIMER);
-			}
-			if( skill_area_temp[2] == 1 ){
-				clif_skill_damage(src,src,tick, status_get_amotion(src), 0, -30000, 1, skill_id, skill_lv, DMG_SINGLE);
-				sc_start(src,src, SC_STOP, 100, skill_lv, skill_get_time(skill_id, skill_lv));
+					sc_start(src, bl, type, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 			}
 		}else{
-			skill_area_temp[2] = 0;
-			map_foreachinrange(skill_area_sub, bl, skill_get_splash(skill_id, skill_lv), BL_CHAR|BL_SKILL, src, skill_id, skill_lv, tick, flag|BCT_ENEMY|SD_SPLASH|1, skill_castend_nodamage_id);
+			map_foreachinrange(skill_area_sub, bl, skill_get_splash(skill_id, skill_lv), BL_CHAR|BL_SKILL, src, skill_id, skill_lv, tick, flag|BCT_ENEMY|1, skill_castend_nodamage_id);
+			clif_skill_damage(src, src, tick, status_get_amotion(src), 0, -30000, 1, skill_id, skill_lv, DMG_SINGLE);
+			clif_skill_nodamage(src, bl, skill_id, skill_lv, 1);
 		}
 		break;
 
@@ -16643,7 +16639,7 @@ void skill_consume_requirement(struct map_session_data *sd, uint16 skill_id, uin
 			if( !require.itemid[i] )
 				continue;
 
-			if( itemdb_group_item_exists(IG_GEMSTONE, require.itemid[i]) && skill_id != HW_GANBANTEIN && sc && sc->data[SC_SPIRIT] && sc->data[SC_SPIRIT]->val2 == SL_WIZARD )
+			if( itemdb_group.item_exists(IG_GEMSTONE, require.itemid[i]) && skill_id != HW_GANBANTEIN && sc && sc->data[SC_SPIRIT] && sc->data[SC_SPIRIT]->val2 == SL_WIZARD )
 				continue; //Gemstones are checked, but not substracted from inventory.
 
 			switch( skill_id ){
@@ -16852,7 +16848,7 @@ struct s_skill_condition skill_get_requirement(struct map_session_data* sd, uint
 							break;
 #endif
 						case AB_ADORAMUS:
-							if( itemdb_group_item_exists(IG_GEMSTONE, skill->require.itemid[i]) && (sd->special_state.no_gemstone == 2 || skill_check_pc_partner(sd,skill_id,&skill_lv, 1, 2)) )
+							if( itemdb_group.item_exists(IG_GEMSTONE, skill->require.itemid[i]) && (sd->special_state.no_gemstone == 2 || skill_check_pc_partner(sd,skill_id,&skill_lv, 1, 2)) )
 								continue;
 							break;
 					}
@@ -16875,7 +16871,7 @@ struct s_skill_condition skill_get_requirement(struct map_session_data* sd, uint
 				}
 
 				// Check requirement for gemstone.
-				if (itemdb_group_item_exists(IG_GEMSTONE, req.itemid[i])) {
+				if (itemdb_group.item_exists(IG_GEMSTONE, req.itemid[i])) {
 					if( sd->special_state.no_gemstone == 2 ) // Remove all Magic Stone required for all skills for VIP.
 						req.itemid[i] = req.amount[i] = 0;
 					else {
@@ -20461,7 +20457,7 @@ int skill_magicdecoy(struct map_session_data *sd, t_itemid nameid) {
 	nullpo_ret(sd);
 	skill = sd->menuskill_val;
 
-	if( !nameid || !itemdb_group_item_exists(IG_ELEMENT, nameid) || (i = pc_search_inventory(sd,nameid)) < 0 || !skill || pc_delitem(sd,i,1,0,0,LOG_TYPE_CONSUME) ) {
+	if( !nameid || !itemdb_group.item_exists(IG_ELEMENT, nameid) || (i = pc_search_inventory(sd,nameid)) < 0 || !skill || pc_delitem(sd,i,1,0,0,LOG_TYPE_CONSUME) ) {
 		clif_skill_fail(sd,NC_MAGICDECOY,USESKILL_FAIL_LEVEL,0);
 		return 0;
 	}
@@ -22331,7 +22327,7 @@ uint64 SkillDatabase::parseBodyNode(const YAML::Node &node) {
 				if (!this->asString(it, "Item", item_name))
 					continue;
 
-				struct item_data *item = itemdb_search_aegisname(item_name.c_str());
+				std::shared_ptr<item_data> item = item_db.search_aegisname( item_name.c_str() );
 
 				if (item == nullptr) {
 					this->invalidWarning(itemNode["Item"], "Requires ItemCost Item %s does not exist.\n", item_name.c_str());
@@ -22354,7 +22350,7 @@ uint64 SkillDatabase::parseBodyNode(const YAML::Node &node) {
 
 			for (const auto &it : equipNode) {
 				std::string item_name = it.first.as<std::string>();
-				struct item_data *item = itemdb_search_aegisname(item_name.c_str());
+				std::shared_ptr<item_data> item = item_db.search_aegisname( item_name.c_str() );
 
 				if (item == nullptr) {
 					this->invalidWarning(equipNode, "Requires Equipment %s does not exist.\n", item_name.c_str());
@@ -22571,7 +22567,7 @@ uint64 ReadingSpellbookDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!this->asString(node, "Book", book_name))
 			return 0;
 
-		struct item_data *item = itemdb_search_aegisname(book_name.c_str());
+		std::shared_ptr<item_data> item = item_db.search_aegisname( book_name.c_str() );
 
 		if (item == nullptr) {
 			this->invalidWarning(node["Book"], "Book item %s does not exist.\n", book_name.c_str());
@@ -22727,7 +22723,7 @@ uint64 SkillArrowDatabase::parseBodyNode(const YAML::Node &node) {
 	if (!this->asString(node, "Source", source_name))
 		return 0;
 
-	struct item_data *item = itemdb_search_aegisname(source_name.c_str());
+	std::shared_ptr<item_data> item = item_db.search_aegisname( source_name.c_str() );
 
 	if (item == nullptr) {
 		this->invalidWarning(node["Source"], "Item %s does not exist.\n", source_name.c_str());
@@ -22752,7 +22748,7 @@ uint64 SkillArrowDatabase::parseBodyNode(const YAML::Node &node) {
 		if (!this->asString(it, "Item", item_name))
 			return 0;
 
-		struct item_data *item = itemdb_search_aegisname(item_name.c_str());
+		std::shared_ptr<item_data> item = item_db.search_aegisname( item_name.c_str() );
 
 		if (item == nullptr) {
 			this->invalidWarning(it["Item"], "Item %s does not exist.\n", item_name.c_str());
