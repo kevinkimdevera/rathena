@@ -88,10 +88,10 @@ glast_01,204,273,5	script	Hugin	4_M_SAGE_C,{
 		setarray .@quest_id[0],12317,12318;
 	else if(.@diff == 2)
 		setarray .@quest_id[0],12334,12336;
-	
+
 	if(isbegin_quest(.@quest_id[1]) == 1)
 		erasequest .@quest_id[1];
-	
+
 	switch( checkquest(.@quest_id[0],PLAYTIME) ) {
 	case -1:
 		.@party_id = getcharid(1);
@@ -100,7 +100,7 @@ glast_01,204,273,5	script	Hugin	4_M_SAGE_C,{
 			.@md_name$ = "Old Glast Heim";
 		else if(.@diff == 2)
 			.@md_name$ = "Old Glast Heim Hard";
-				
+
 		if (!instance_check_party(.@party_id)) {
 			mes "[Hugin]";
 			mes "Why don't you make a party with more than 1 person and talk to me again?";
@@ -207,9 +207,9 @@ glast_01,204,273,5	script	Hugin	4_M_SAGE_C,{
 	}
 	.@account_id = getcharid(3);
 	.@player_name$ = strcharinfo(0);
-	
+
 	set 'OGH_Mode,@OGH_Mode;
-	
+
 	mes "[Varmundt]";
 	mes "Are you the one ^0000ffHerico^000000 sent to help me?";
 	npctalk "Varmundt: Are you the one Herico sent to help me?";
@@ -481,7 +481,7 @@ OnTimer92000:
 	hideonnpc instance_npcname("Khalitzburg Knightage#22");
 
 	.@label$ = instance_npcname("#talkinstance1") + "::OnMyMobDead";
-	
+
 	if('OGH_Mode == 1)  // Normal Mode
 		setarray .@mob_id[0],2470,2471;
 	else if('OGH_Mode == 2) // Hard Mode
@@ -656,12 +656,12 @@ OnStart:
 
 	// note: x17 MG_GHOUL / x17 MG_ZOMBIE / x17 MG_WRAITH
 	.@label$ = instance_npcname("#ghmemorialmob01") + "::OnMyMobDead";
-	
+
 	if('OGH_Mode == 1) // Normal mode
 		setarray .@mob_id[0],2466,2465,2464;
 	else if('OGH_Mode == 2) // Hard Mode
 		setarray .@mob_id[0],3141,3140,3139;
-	
+
 	areamonster 'map_name$[0],76,99,87,10,"Grand Chamberlain in pain",.@mob_id[0],14,.@label$;
 	areamonster 'map_name$[0],67,39,12, 6,"Corrupted Monk",.@mob_id[1],17,.@label$;
 	areamonster 'map_name$[0],67,39,12, 6,"Grand Chamberlain in pain",.@mob_id[0],3,.@label$;
@@ -741,12 +741,12 @@ OnStart:
 
 	// note: x34 MG_ZOMBIE / x35 MG_GHOUL
 	.@label$ = instance_npcname("#ghmemorialmob02") + "::OnMyMobDead";
-	
+
 	if('OGH_Mode == 1) // Normal Mode
 		setarray .@mob_id[0],2466,2464;
 	else if('OGH_Mode == 2) // Hard Mode
 		setarray .@mob_id[0],3141,3139;
-	
+
 	areamonster 'map_name$[0],236,12,288,52,"Outraged Refiner",.@mob_id[0],18,.@label$;// MG_GHOUL
 	areamonster 'map_name$[0],236,12,288,52,"Decomposed Blacksmith",.@mob_id[1],17,.@label$;// MG_ZOMBIE
 	areamonster 'map_name$[0],242,71,286,145,"Outraged Refiner",.@mob_id[0],17,.@label$;
@@ -821,11 +821,8 @@ OnTouch_:
 	else .@mobs = 7;
 	getmapxy .@map$,.@x,.@y, BL_NPC;
 	specialeffect EF_VENOMDUST;
-	if('OGH_Mode == 1) // Normal Mode
-		monster .@map$,.@x,.@y,"Maggot",2467,.@mobs;
-	else if('OGH_Mode == 2) // Hard Mode
-		monster .@map$,.@x,.@y,"Maggot",3142,.@mobs;
-	disablenpc instance_npcname( strnpcinfo(0) );
+	monster .@map$,.@x,.@y,"Maggot",2467,.@mobs;
+	disablenpc();
 	end;
 }
 1@gl_k,233,123,4	duplicate(A dead man#1)	A dead man#2	4_M_DIEMAN,5,5
@@ -870,7 +867,7 @@ OnEnable:
 		setarray .@mob_id[0],2469,2468;
 	else if('OGH_Mode == 2)  // Hard Mode
 		setarray .@mob_id[0],3144,3143;
-		
+
 	areamonster 'map_name$[0],16,186,43,280,"Outraged Archer",.@mob_id[0],25,.@label$;
 	areamonster 'map_name$[0],44,191,89,225,"Hungry Palace Guard",.@mob_id[1],25,.@label$;
 	areamonster 'map_name$[0],115,215,188,273,"Corrupted Palace Guard",.@mob_id[1],20,.@label$;
@@ -928,7 +925,7 @@ OnTimer5000:
 		mes "This item has an extraordinary aura with it. Can be very useful for someone special.";
 		getitem 6607,1;// Temporal_Crystal
 		getitem 6608,1;// Coagulated_Spell
-		
+
 	} else if('OGH_Mode == 2) { // Hard Mode
 		if (checkquest(12336,HUNTING) != 2) {
 			mes "I guess this is it. Is it impossible to stop the time traveler's will?!";
@@ -1153,7 +1150,7 @@ OnTimer69000:
 2@gl_k,118,141,0	script	#ogh_2-1	HIDDEN_WARP_NPC,20,20,{
 	end;
 OnTouch_:
-	disablenpc instance_npcname( strnpcinfo(0) );
+	disablenpc();
 	.@hidden_name$ = strnpcinfo(2);
 	.@event_type = atoi( charat(.@hidden_name$,4) );
 	if (.@event_type == 2)
@@ -1165,7 +1162,7 @@ OnTouch_:
 		setarray .@mob_id[0],2468,2469,2470,2471,2472;
 	else if('OGH_Mode == 2) // Hard Mode
 		setarray .@mob_id[0],3143,3144,3145,3146,3147;
-		
+
 	monster .@map$,.@x,.@y, "Corrupted Palace Guard", .@mob_id[0],1, .@label$;
 	monster .@map$,.@x,.@y, "Archer of Death", .@mob_id[1],1, .@label$;
 	monster .@map$,.@x,.@y, "Corrupted Abysmal Knight", .@mob_id[2],1, .@label$;
@@ -1174,11 +1171,11 @@ OnTouch_:
 	initnpctimer;
 	end;
 OnTimer30000:
-	enablenpc instance_npcname( strnpcinfo(0) );
+	enablenpc();
 	stopnpctimer;
 	end;
 OnStop:
-	disablenpc instance_npcname( strnpcinfo(0) );
+	disablenpc();
 	stopnpctimer;
 	end;
 }
@@ -1246,7 +1243,7 @@ OnStart:
 		setarray .@mob_id[0],2468,2469,2470,2471,2472;
 	else if('OGH_Mode == 2) // Hard Mode
 		setarray .@mob_id[0],3143,3144,3145,3146,3147;
-		
+
 	monster 'map_name$[1],252, 75, "Corrupted Palace Guard",.@mob_id[0],1, .@label$;
 	monster 'map_name$[1],253, 76, "Corrupted Palace Guard",.@mob_id[0],1, .@label$;
 	monster 'map_name$[1],247, 77, "Corrupted Palace Guard",.@mob_id[0],1, .@label$;
@@ -1283,12 +1280,12 @@ OnStart:
 	monster 'map_name$[1],259,138, "Suffered Khalitzburg",.@mob_id[3],1, .@label$;
 	monster 'map_name$[1],187,121, "Suffered Khalitzburg",.@mob_id[3],1, .@label$;
 	monster 'map_name$[1],265, 52, "Bloody Knight",.@mob_id[4],1, .@label$;
-	monster 'map_name$[1],265, 55, "Bloody Knight",.@mob_id[4],1, .@label$; 
-	monster 'map_name$[1],264, 79, "Bloody Knight",.@mob_id[4],1, .@label$; 
-	monster 'map_name$[1],225, 92, "Bloody Knight",.@mob_id[4],1, .@label$; 
-	monster 'map_name$[1],237, 92, "Bloody Knight",.@mob_id[4],1, .@label$; 
-	monster 'map_name$[1],249, 92, "Bloody Knight",.@mob_id[4],1, .@label$; 
-	monster 'map_name$[1],256, 93, "Bloody Knight",.@mob_id[4],1, .@label$; 
+	monster 'map_name$[1],265, 55, "Bloody Knight",.@mob_id[4],1, .@label$;
+	monster 'map_name$[1],264, 79, "Bloody Knight",.@mob_id[4],1, .@label$;
+	monster 'map_name$[1],225, 92, "Bloody Knight",.@mob_id[4],1, .@label$;
+	monster 'map_name$[1],237, 92, "Bloody Knight",.@mob_id[4],1, .@label$;
+	monster 'map_name$[1],249, 92, "Bloody Knight",.@mob_id[4],1, .@label$;
+	monster 'map_name$[1],256, 93, "Bloody Knight",.@mob_id[4],1, .@label$;
 	monster 'map_name$[1],264,100, "Bloody Knight",.@mob_id[4],1, .@label$;
 	monster 'map_name$[1],181,120, "Bloody Knight",.@mob_id[4],1, .@label$;
 	end;
@@ -1346,7 +1343,7 @@ OnTouch_:
 2@gl_k,143,260,4	script	Decomposed body#1	4_M_DIEMAN,5,5,{
 	end;
 OnTouch_:
-	disablenpc instance_npcname( strnpcinfo(0) );
+	disablenpc();
 	.@i = rand(1,10);
 	if (.@i == 1) .@mobs = 3;
 	else if (.@i == 2) .@mobs = 4;
@@ -1362,7 +1359,7 @@ OnTouch_:
 	initnpctimer;
 	end;
 OnTimer45000:
-	enablenpc instance_npcname( strnpcinfo(0) );
+	enablenpc();
 	stopnpctimer;
 	end;
 }
@@ -1690,7 +1687,7 @@ OnTouch:
 	end;
 OnEvent:
 	initnpctimer;
-	enablenpc instance_npcname( strnpcinfo(0) );
+	enablenpc();
 	.@num = atoi( replacestr(strnpcinfo(2), "Buff", "") );
 	if (.@num == 1)
 		npctalk "Varmundt's Ghost: Amdarais may use a strong magic shield! Stay close to me and I'll protect you!";
@@ -1703,7 +1700,7 @@ OnEvent:
 	end;
 OnTimer10000:
 	stopnpctimer;
-	disablenpc instance_npcname( strnpcinfo(0) );
+	disablenpc();
 	end;
 }
 2@gl_k,165,247,3	duplicate(Varmundt's Ghost#Buff1)	Varmundt's Ghost#Buff2	4_M_BARMUND,2,2
@@ -1712,7 +1709,7 @@ OnTimer10000:
 
 
 2@gl_k,158,241,1	script	Hugin#21	4_M_SAGE_C,{
-	
+
 	if('OGH_Mode == 1) { // Normal Mode
 		if (checkquest(12319,HUNTING) == 2) {// note: complete hunting 'Corrupted Soul Hunt' prerequis
 			mes "[Hugin]";
@@ -1803,7 +1800,7 @@ OnTimer10000:
 	}
 	close2;
 	if('OGH_Mode == 1 && !OGH_Norm) // Completing Normal Mode grants access to Hard Mode
-		set OGH_Norm,1; 
+		set OGH_Norm,1;
 	warp "glast_01",204,270;
 	set @OGH_Mode,0;
 	end;
@@ -1894,7 +1891,7 @@ OnTimer10000:
 			makeitem 6755,1,"this",129,138;
 		break;
 	}
-	disablenpc instance_npcname( strnpcinfo(0) );
+	disablenpc();
 	end;
 }
 1@gl_k,159,136,3	duplicate(Strange crack#2)	Strange crack#3	CLEAR_NPC
