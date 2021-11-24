@@ -3,14 +3,17 @@
 //===== Description: =========================================
 //= [Official Conversion]
 //= Costumes exchange/enchant NPCs in Malangdo.
-//= The database of the following box are left empty
-//= until high items ID are supported:
-//=   Enchant_Stone_Box19
-//=   Enchant_Stone_Box20
-//=   Enchant_Stone_Box21
+//=
+//= Note:
+//=   Although new enchant boxes are already exchanged,
+//=   their enchants are currently not supported.
 //===== Changelogs: ==========================================
 //= 1.0 First version. [Capuche]
+//= 1.1 Corrected exchange costumes for enchant box 4-21 [Everade]
 //============================================================
+
+// Missing 4th slot enchanter
+//mal_in01,24,121,x	script	Gregio Grumani#x	x,{
 
 // Costume exchange
 mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
@@ -64,31 +67,19 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	// ===================================================================
 	.@box_list[1] = 22868;		// Enchant_Stone_Box5
 	setarray .@item_list_1[0],
-		19601,		// Drooping_Aliot
 		19643,		// C_Whikebain_Ears
-		19787,		// C_Devoted_Eyes
-		19836,		// C_L_Magestic_Goat
-		19912,		// C_Cat_Eye
-		19928,		// C_Gothic_Heart_Wing
-		19930,		// C_Angel_Mini_Silk_Hat
-		19668,		// C_Wind_Milestone
-		20070,		// C_Alpaca_Hood
-		20115,		// C_Under_Rim_Glasses
 		20130,		// C_Whisper_Tall_Hat
 		20132,		// C_Subject_Aura
 		20133,		// C_Poring_Mascot_Costume
 		20199,		// C_Evil_Marcher_Hat
 		20200,		// C_Rabbit_Head_Dress
+		20201,		// C_Banshee_Master_Kiss
 		20202,		// C_Deviruchi_Balloon
-		20217,		// C_Arabian_Veil
-		20224,		// C_Red_Tailed_Ribbon
 		20230,		// C_Mask_Of_Bankrupt
 		20231,		// C_Snowman_Hat
 		20232,		// C_Celines_Ribbon
 		20233,		// C_Gold_Angel_Sculpture
-		20263,		// C_Hat_Of_Drowsy_Cat
-		20761,		// C_Wing_Of_Happiness
-		20798;		// GrimReaper_Protection
+		20761;		// C_Wing_Of_Happiness
 	// ===================================================================
 	// =================== Costume Enchant Stone Box 6 ===================
 	// ===================================================================
@@ -118,22 +109,12 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	// ===================================================================
 	.@box_list[4] = 23001;		// Enchant_Stone_Box8
 	setarray .@item_list_4[0],
+		5979,		// C_Angel_Fluttering
 		19158,		// C_Gemini_Eyes
 		19816,		// C_Pecopeco_Cap
-		19925,		// C_One_Eyed_Glasses
-		20071,		// C_Worg_In_Mouth
-		20125,		// C_Mini_Glasses
-		20201,		// C_Banshee_Master_Kiss
-		20204,		// C_Hunting_Cap
-		20235,		// C_Frozen_Land_Rose
-		20253,		// C_Droopy_Alice_Doll
-		20254,		// C_Ribbon_Yellow
-		20258,		// C_Blue_Head_Dress
-		20264,		// C_Blood_Sucker
-		20266,		// C_Secret_Zipper
-		20270,		// C_Gryphon_Wing_Ears
 		20315,		// C_Analyze_Eye
 		20318,		// C_Charleston_Antenna
+		20325,		// C_Little_Aquarium
 		20340,		// C_Straight_Pony_BL
 		20341,		// C_Cowlick_BL
 		20342,		// C_Loose_Wave_Twin_BL
@@ -161,38 +142,23 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		20370,		// C_Loose_Wave_Twin_WH
 		20396,		// C_Woodie_Hat
 		20448,		// C_Cons_Of_Water
-		20457,		// C_Feather_Fluttering
 		20487,		// C_Floral_Waltz
 		20489,		// C_Pope_Crown
 		20504,		// C_Cupid_Wing_Pink
 		20299,		// C_Face_Crusher
-		19598,		// C_Wondering_Wolf_Helm
 		20300;		// C_Hill_Wind_Mask
 	// ===================================================================
 	// =================== Costume Enchant Stone Box 9 ===================
 	// ===================================================================
 	.@box_list[5] = 23058;		// Enchant_Stone_Box9
 	setarray .@item_list_5[0],
-		18744,		// C_World_Star
-		19600,		// Drooping_Kiehl
-		19760,		// C_Rainbow_Veil
 		19761,		// C_White_Lily
-		19978,		// C_Silver_Exclamation
-		19979,		// C_Golden_Question
 		20172,		// C_Pumpkin_Head
-		20180,		// C_Westren_Grace
-		20278,		// C_Man_Medal
-		20325,		// C_Little_Aquarium
-		20344,		// C_Happy_Balloon_J
 		20398,		// C_Niflheim_Bunny_Hat
 		20399,		// C_Crow_Tengu_Mask
 		20404,		// C_Blessing_Of_Angels
 		20405,		// C_Eremes_Scarf
-		20447,		// C_Small_Poring_Band
-		31331,		// C_Chung_E_Shinyon_Cap
-		31372,		// C_Binit_Doll_Hat
-		31430,		// C_Seppl_Hat_TW
-		31431;	// C_Curupira_Hat_TW
+		20447;		// C_Small_Poring_Band
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 10 ===================
 	// ====================================================================
@@ -216,18 +182,11 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	.@box_list[7] = 23174;		// Enchant_Stone_Box11
 	setarray .@item_list_7[0],
 		5909,		// C_Valkyrie_Circlet
-		5979,		// C_Angel_Fluttering
-		19745,		// C_Holy_Marching_Hat_J
-		19825,		// C_Vicious_Stop_Bandage
-		20149,		// C_Hexagon_Spectacles
 		20381,		// C_Steampunk_Hat
-		20383,		// C_Magicdecoy_Doll
-		20483,		// C_Butterfly_Barrettes
-		20490,		// C_Full_Bloom_Hp_Blue
 		20499,		// C_Cat_Ear_Hat
 		20509,		// C_Wings_of_Uriel
+		20510,		// C_SwordWing
 		31029,		// C_Pig_Nose
-		31032,		// C_Tare_Luwmin
 		31040,		// C_Magical_Feather
 		31055,		// C_Poring_Soap_Pipe
 		31057,		// C_Eremes_Scarf_Black
@@ -259,20 +218,12 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		31120,		// C_Vampire_Familiar
 		31123,		// C_Ghostring_Tall_Hat
 		31125,		// C_QueenAnzRevenge
-		31118,		// C_Assassin_Skull_Mask
-		31370,		// C_Straight_Long_YLK
-		31376,		// C_Jirant_Circlet
-		31391,		// C_Floating_Stone_Of_Int
-		31418,		// C_Leek_In_Mouth
-		20508,		// C_Poster_Girl_Hat
-		20530,		// C_Wings_of_Gabriel
-		19555;		// C_Crescent_Helm
+		31118;		// C_Assassin_Skull_Mask
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 12 ===================
 	// ====================================================================
 	.@box_list[8] = 23299;		// Enchant_Stone_Box12
 	setarray .@item_list_8[0],
-		20156,		// C_Fan_In_Mouth
 		20195,		// C_Scratching_Cat
 		20449,		// C_White_Black_Temp
 		20511,		// C_Blue_Fairy_Wing
@@ -284,28 +235,20 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		31162,		// C_Shaving_Foam
 		31165,		// C_Piggyback
 		31186,		// C_Black_Cat
-		31300,		// C_Warm_Cat_Muffler
-		31327;		// C_Stretched_Nose_M
-		// 31627;		// C_L_Magesic2_TW
+		31300;		// C_Warm_Cat_Muffler
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 13 ===================
 	// ====================================================================
 	.@box_list[9] = 23524;		// Enchant_Stone_Box13
 	setarray .@item_list_9[0],
 		20488,		// C_Pope_Ribbon
-		20495,		// C_Quati_Hat_J
 		31031,		// C_Tare_Pope_Casual
 		31033,		// C_BelieversCap
-		31122,		// C_Bloody_Stop_Bandage
 		31164,		// C_Brown_Stall
 		31166,		// C_Teddy_Bear_Hood
 		31168,		// C_Mouton_Life_BL
 		31178,		// C_Flame_Muffler
-		31294,		// C_Jirant_Circlet_Red
-		31397,		// C_Pope_Sitting_Head
-		31545,		// C_Eremes_Scarf_BU
-		// 31626,		// C_FluffyWing_TW
-		31628;		// C_Bogy_Cap_TW
+		31397;		// C_Pope_Sitting_Head
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 14 ===================
 	// ====================================================================
@@ -315,31 +258,20 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		19289,		// C_Moon_Eyepatch
 		19291,		// C_Shiba_Inu
 		19294,		// C_CatEars_Cyber_HeadP_R
-		19763,		// C_Leaf_Cat_Hat
-		20376,		// C_Memories_Of_Lovers
-		20493,		// C_Wing_Headphone
-		20498,		// C_Elephant_Hat
 		20516,		// C_Wings_of_Michael
 		31180,		// C_Shura_King_Pledge
 		31329,		// C_Alice_Wig
-		31332,		// Khalitzburg_KN_Helm_BL
-		31414,		// C_Cancer_Diadem
-		31504;		// C_Starving_Fish_Hat
+		31332;		// Khalitzburg_KN_Helm_BL
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 15 ===================
 	// ====================================================================
 	.@box_list[11] = 23682;		// Enchant_Stone_Box15
 	setarray .@item_list_11[0],
-		19723,		// C_Sacred_Torch_Coronet
-		19953,		// C_Parade_Cap
 		19959,		// C_Drooping_Argiope
 		19960,		// C_Chain_Puppet
 		19992,		// C_Chilly_Breath
-		20179,		// C_Monkey_On_Fur_Hat
-		20510,		// C_SwordWing
 		20515,		// C_Magic_Circle
 		20517,		// C_GiantCatBag_TW
-		31152,		// C_Piamette_BowTie_Red
 		31314,		// C_Ghost_Holiday
 		31396,		// C_Sorcerer_Hood
 		31398,		// C_Blinking_Thin_Eyes
@@ -350,14 +282,11 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		31452,		// C_White_Cat
 		31460,		// C_Blessing_Sky_Lantern
 		31463,		// C_Flying_Drone
-		31498,		// C_Elephangel_TH
-		// 31722,		// C_Sedora_Hat
-		31412;		// C_Virgo_Crown
+		31498;		// C_Elephangel_TH
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 16 ===================
 	// ====================================================================
-	// Note: The reward is 'Costume Enchant Stone Box 16' on items description but Enchant_Stone_Box21 in the file
-	.@box_list[12] = 100314;		// Enchant_Stone_Box21
+	.@box_list[12] = 23770;		// Enchant_Stone_Box16
 	setarray .@item_list_12[0],
 		20033,		// C_Buddhist_Priest_Crown
 		20098,		// C_Vampire_Hairband
@@ -377,7 +306,7 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 17 ===================
 	// ====================================================================
-	.@box_list[13] = 100314;		// Enchant_Stone_Box21
+	.@box_list[13] = 9510;		// Enchant_Stone_Box17
 	setarray .@item_list_13[0],
 		19990,		// C_Snow_Rabbit_Knit_Hat
 		20175,		// C_Diabolic_Headphone
@@ -392,7 +321,7 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	// ====================================================================
 	// =================== Costume Enchant Stone Box 18 ===================
 	// ====================================================================
-	.@box_list[14] = 100314;		// Enchant_Stone_Box21
+	.@box_list[14] = 100019;		// Enchant_Stone_Box18
 	setarray .@item_list_14[0],
 		20257,		// C_Black_Rabbit_Bonnet
 		20486,		// C_Twin_Margaret
@@ -449,9 +378,37 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 	// ====================================================================
 	.@box_list[17] = 100314;		// Enchant_Stone_Box21
 	setarray .@item_list_17[0],
+		19802,		// C_Drooping_Nine_Tail
+		20153,		// C_Monochrome_Cap
+		20379,		// C_PocketWatch_Hair_Orna
+		20451,		// C_Sky_Of_Memory
+		20589,		// C_Gimmick_One_Feather
 		20592,		// C_Santa_Backpack
+		20593,		// C_Ice_Wing
+		20598,		// C_GiantCatBag_JP_BL
+		20599,		// C_Sakura_Wing
+		31176,		// C_Looking
+		31179,		// C_Wolf_Masquerade
+		31404,		// C_Poring_Traffic_Light
+		31497,		// C_Flowery_Vision_TH
 		31509,		// C_Fawn_Ear
 		31559,		// C_Royalguard_Necklace
+		31566,		// C_Stall_Of_Dominions
+		31601,		// C_Under_Rim_Glasses_Bu
+		31716,		// C_Blinking_Eyes_RD
+		31815,		// C_Angola_Intention
+		31849,		// C_Runaway_Accelerator
+		31848,		// C_Rose_Gothic_Bonnet
+		31906,		// C_PGstone_Knit_Hat_PK
+		31911,		// C_LittleGarden
+		31916,		// C_Frill_Collar
+		31923,		// C_Baby_Polar_Bear
+		31930,		// C_Mike_Stand
+		31931,		// C_Half_Rim_Glasses
+		31934,		// C_Blink_Eyes_Sakura
+		400073,		// C_Romance_Rose_TW
+		400074,		// C_Disapear_Time_TW
+		410005,		// C_Magic_Heir_TW
 		440002;		// C_Happy_Cat_TW
 
 	while(1) {
