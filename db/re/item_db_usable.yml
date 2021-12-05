@@ -34277,7 +34277,7 @@ Body:
       NoAuction: true
     Script: |
       sc_start SC_FOOD_STR_CASH,1800000,15;
-      sc_start SC_ATKPOTION,600000,rand(11,111);
+      sc_start SC_ATKPOTION,1800000,rand(11,111);
   - Id: 14617
     AegisName: VIT_Biscuit_Stick
     Name: Bar Cookie Of Vitality
@@ -34295,7 +34295,7 @@ Body:
       NoAuction: true
     Script: |
       sc_start SC_FOOD_VIT_CASH,1800000,15;
-      bonus_script "{ bonus bHPRecovRate,rand(11,33); }",1800,1;
+      bonus_script "{ bonus bMaxHPrate,rand(11,33); }",1800,1;
   - Id: 14618
     AegisName: AGI_Biscuit_Stick
     Name: Bar Cookie Of Agility
@@ -34313,7 +34313,7 @@ Body:
       NoAuction: true
     Script: |
       sc_start SC_FOOD_AGI_CASH,1800000,15;
-      sc_start SC_FLEEFOOD,600000,rand(11,33);
+      sc_start SC_FLEEFOOD,1800000,rand(11,33);
   - Id: 14619
     AegisName: INT_Biscuit_Stick
     Name: Bar Cookie Of Intelligence
@@ -34331,7 +34331,7 @@ Body:
       NoAuction: true
     Script: |
       sc_start SC_FOOD_INT_CASH,1800000,15;
-      sc_start SC_MATKPOTION,600000,rand(11,111);
+      sc_start SC_MATKPOTION,1800000,rand(11,111);
   - Id: 14620
     AegisName: DEX_Biscuit_Stick
     Name: Bar Cookie Of Dexterity
@@ -34349,7 +34349,7 @@ Body:
       NoAuction: true
     Script: |
       sc_start SC_FOOD_DEX_CASH,1800000,15;
-      sc_start SC_HITFOOD,600000,rand(11,33);
+      sc_start SC_HITFOOD,1800000,rand(11,33);
   - Id: 14621
     AegisName: LUK_Biscuit_Stick
     Name: Bar Cookie Of Lucky
@@ -34367,7 +34367,7 @@ Body:
       NoAuction: true
     Script: |
       sc_start SC_FOOD_LUK_CASH,1800000,15;
-      sc_start SC_CRIFOOD,600000,rand(11,33);
+      sc_start SC_CRIFOOD,1800000,rand(11,33);
   - Id: 14623
     AegisName: Golden_Treasure_Box_
     Name: Golden Treasure Box

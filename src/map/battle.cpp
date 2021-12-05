@@ -2744,7 +2744,7 @@ static bool is_attack_critical(struct Damage* wd, struct block_list *src, struct
 #ifdef RENEWAL
 			case ASC_BREAKER:
 #endif
-			case LG_CANNONSPEAR:
+			//case LG_CANNONSPEAR:
 			case GC_CROSSIMPACT:
 				cri /= 2;
 				break;
@@ -2947,7 +2947,8 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 					hitrate += pc_checkskill(sd, GN_REMODELING_CART) * 4;
 				break;
 			case LG_BANISHINGPOINT:
-				hitrate += 3 * skill_lv;
+				//hitrate += 3 * skill_lv;
+				hitrate += 5 * skill_lv;
 				break;
 			case GC_VENOMPRESSURE:
 				hitrate += 10 + 4 * skill_lv;
@@ -4458,7 +4459,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 50 * skill_lv;
 			break;
 		case NC_BOOSTKNUCKLE:
-			skillratio += 200 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
+			//skillratio += 200 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
+			skillratio += 240 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case NC_PILEBUNKER:
@@ -4466,7 +4468,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case NC_VULCANARM:
-			skillratio += -100 + 140 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
+			//skillratio += -100 + 140 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
+			skillratio += -100 + 230 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case NC_FLAMELAUNCHER:
@@ -4475,7 +4478,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(150);
 			break;
 		case NC_ARMSCANNON:
-			skillratio += -100 + 400 + 300 * skill_lv;
+			//skillratio += -100 + 400 + 300 * skill_lv;
+			skillratio += -100 + 400 + 350 * skill_lv;
 			RE_LVL_DMOD(100);
 			break;
 		case NC_AXEBOOMERANG:
@@ -4512,11 +4516,13 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(120);
 			break;
 		case LG_CANNONSPEAR:
-			skillratio += -100 + skill_lv * (50 + sstatus->str);
+			//skillratio += -100 + skill_lv * (50 + sstatus->str);
+			skillratio += -100 + skill_lv * (120 + sstatus->str);
 			RE_LVL_DMOD(100);
 			break;
 		case LG_BANISHINGPOINT:
-			skillratio += -100 + (80 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
+			//skillratio += -100 + (80 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
+			skillratio += -100 + (140 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
 			RE_LVL_DMOD(100);
 			break;
 		case LG_SHIELDPRESS:
@@ -4546,10 +4552,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case LG_OVERBRAND:
 			if(sc && sc->data[SC_OVERBRANDREADY]) {
-				skillratio += -100 + 450 * skill_lv;
+				//skillratio += -100 + 450 * skill_lv;
+				skillratio += -100 + 500 * skill_lv;
 			}
 			else{
-				skillratio += -100 + 300 * skill_lv;
+				//skillratio += -100 + 300 * skill_lv;
+				skillratio += -100 + 350 * skill_lv;
 			}
 			skillratio += ((sd) ? pc_checkskill(sd, CR_SPEARQUICKEN) * 50 : 0) + sstatus->str + sstatus->dex;
 			RE_LVL_DMOD(100);
@@ -6662,9 +6670,11 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						RE_LVL_DMOD(100); // ! TODO: Confirm new formula
 						break;
 					case LG_RAYOFGENESIS:
-						skillratio += -100 + 230 * skill_lv + sstatus->int_; // !TODO: What's the INT bonus?
-						if (sc && sc->data[SC_INSPIRATION])
-							skillratio += 70 * skill_lv;
+						//skillratio += -100 + 230 * skill_lv + sstatus->int_; // !TODO: What's the INT bonus?
+						// if (sc && sc->data[SC_INSPIRATION])
+						// 	skillratio += 70 * skill_lv;
+
+						skillratio += -100 + 350 * skill_lv + sstatus->int_;
 						RE_LVL_DMOD(100);
 						break;
 					case NPC_RAYOFGENESIS:

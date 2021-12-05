@@ -398,6 +398,10 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
                 DowngradeAmount: 1
+              - Type: Enriched
+                Rate: 500
+                Price: 100000
+                Material: Limited_High_Density_Kalunium
       - Level: 2
         RefineLevels:
           - Level: 1
@@ -2112,6 +2116,10 @@ Body:
                 Price: 100000
                 Material: HD_Bradium
                 DowngradeAmount: 1
+              - Type: Enriched
+                Rate: 700
+                Price: 100000
+                Material: Limited_High_Density_Bradium
       - Level: 5
         RefineLevels:
           - Level: 1

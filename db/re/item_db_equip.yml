@@ -54198,6 +54198,30 @@ Body:
       bonus bAllStats,1;
       bonus2 bAddClass,Class_All,2;
       bonus bMatkRate,2;
+  - Id: 5898
+    AegisName: Autumn_Headband
+    Name: Autumn Headband
+    Type: Armor
+    Weight: 20
+    Defense: 10
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      All_Third: true
+    Locations:
+      Head_Top: true
+    EquipLevelMin: 100
+    Refineable: true
+    View: 1119
+    Script: |
+      bonus bAtk,2*(readparam(bDex)/5);
+      bonus2 bVariableCastrate,"RA_ARROWSTORM",-100;
+      bonus2 bSPDrainRate,40,1;
+      .@r = getrefine();
+      if (.@r>=9) {
+        bonus2 bSkillAtk,"RA_ARROWSTORM",(BaseLevel/5);
+      }
   - Id: 5899
     AegisName: Black_Ribbon_
     Name: Black Ribbon
@@ -54215,7 +54239,7 @@ Body:
     Refineable: true
     View: 1120
     Script: |
-      bonus bAtk,(readparam(bStr)/5);
+      bonus bAtk,2*(readparam(bStr)/5);
       bonus2 bSkillCooldown,"RK_WINDCUTTER",-1800;
       bonus2 bSkillUseSP,"RK_WINDCUTTER",16;
       .@r = getrefine();
@@ -84551,7 +84575,7 @@ Body:
       if (getskilllv("NC_AXEBOOMERANG") >= 5)
          bonus bBaseAtk,100;
       if (getskilllv("NC_MAGMA_ERUPTION") >= 5)
-         bonus2 bAddMonsterDropItem,732,1000;
+         bonus2 bAddMonsterDropItem,732,10;
       if (.@r>=7)
          bonus2 bSkillAtk,"NC_AXETORNADO",30;
       if (.@r>=9)
