@@ -1,4 +1,4 @@
-prontera,115,191,4	script	Shadow Enchant	993,{
+prontera,117,191,4	script	Shadow Enchant	993,{
 	disable_items;
 
 	mes .n$;

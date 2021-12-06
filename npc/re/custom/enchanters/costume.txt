@@ -1,4 +1,4 @@
-prontera,117,191,4	script	Costume Enchant	408,{
+prontera,119,191,4	script	Costume Enchant	408,{
 	disable_items;
 
 	mes .n$;
