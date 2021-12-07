@@ -303,11 +303,9 @@ Body:
       Y: 24
   - Id: 38
     Name: Old Glast Heim Hard
-    TimeLimit: 3600
-    IdleItmeOut: 300
     Enter:
       Map: 1@gl_k
-	  X: 150
-	  Y: 20
-	AdditionalMaps:
-	  2@gl_k: true
+      X: 150
+      Y: 20
+    AdditionalMaps:
+      2@gl_k: true

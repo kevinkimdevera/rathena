@@ -28,7 +28,7 @@
 	set @income,0;
 	//calculate %
 	if (#kafrabank<=0 || #kb_int>=@kb_int) goto L_NoIncomeToday;
-	set @income,(#kafrabank/10)*(@kb_int-#kb_int); //@income == % of the sum
+	set @income,(#kafrabank/1)*(@kb_int-#kb_int); //@income == % of the sum
 	//max income constant:
 	//if (@income>100000) set @income,100000;
 L_NoIncomeToday:
