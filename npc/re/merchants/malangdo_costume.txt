@@ -1507,6 +1507,7 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 		close;
 
 	delitem .@id, 1;
+	delequip .@part;
 	//if (rand(100) < 50) {
 		mes "[Lace La Zard]";
 		mes "Beautiful!!";
