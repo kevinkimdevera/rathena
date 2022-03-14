@@ -54161,6 +54161,9 @@ Body:
       BardDancer: true
     Classes:
       All_Third: true
+      Fourth: true
+    Gender: Female
+    Locations:
       Head_Top: true
     ArmorLevel: 1
     Refineable: true
@@ -92100,6 +92103,7 @@ Body:
       NoAuction: true
   - Id: 20137
     AegisName: C_Bomb_Wick
+    Name: Costume Bomb Wick
     Type: Armor
     Locations:
       Costume_Head_Top: true

@@ -2994,7 +2994,6 @@ static bool is_attack_hitting(struct Damage* wd, struct block_list *src, struct 
 					hitrate += pc_checkskill(sd, GN_REMODELING_CART) * 4;
 				break;
 			case LG_BANISHINGPOINT:
-				//hitrate += 3 * skill_lv;
 				hitrate += 5 * skill_lv;
 				break;
 			case GC_VENOMPRESSURE:
@@ -4183,7 +4182,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #ifdef RENEWAL
 		// Renewal: skill ratio applies to entire damage [helvetica]
 		case LK_SPIRALPIERCE:
-			skillratio += 50 + 50 * skill_lv;
+			skillratio += 150 + 50 * skill_lv;
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_CHARGINGPIERCE_COUNT] && sc->data[SC_CHARGINGPIERCE_COUNT]->val1 >= 10)
 				skillratio *= 2;
@@ -4195,7 +4194,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 		case ASC_METEORASSAULT:
 #ifdef RENEWAL
-			skillratio += 100 + 120 * skill_lv;
+			skillratio += 200 + 120 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += -60 + 40 * skill_lv;
@@ -4256,7 +4255,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case PA_SHIELDCHAIN:
 #ifdef RENEWAL
-			skillratio = 60 + 40 * skill_lv;
+			skillratio = 300 + 200 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += 30 * skill_lv;
@@ -4412,7 +4411,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				if (sc->data[SC_CHARGINGPIERCE_COUNT] && sc->data[SC_CHARGINGPIERCE_COUNT]->val1 >= 10)
 					skillratio *= 2;
 				if (sc->data[SC_DRAGONIC_AURA])// Need official damage increase. [Rytech]
-					skillratio += skillratio * 50 / 100;
+					skillratio += 160 * skill_lv;
 			}
 			break;
 		case RK_WINDCUTTER:
@@ -4527,7 +4526,6 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += 50 * skill_lv;
 			break;
 		case NC_BOOSTKNUCKLE:
-			//skillratio += 200 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
 			skillratio += 240 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
 			RE_LVL_DMOD(100);
 			break;
@@ -4536,7 +4534,6 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case NC_VULCANARM:
-			//skillratio += -100 + 140 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
 			skillratio += -100 + 230 * skill_lv + sstatus->dex; // !TODO: What's the DEX bonus?
 			RE_LVL_DMOD(100);
 			break;
@@ -4576,10 +4573,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += skillratio * 50 / 100;
 			break;
 		case SC_FATALMENACE:
-			skillratio += -100 + 120 * skill_lv + (3 * sstatus->agi); // !TODO: What's the AGI bonus?
+			skillratio += -100 + ((sc && sc->data[SC_ABYSS_DAGGER]) ? 150 : 120) * skill_lv + (3 * sstatus->agi); // !TODO: What's the AGI bonus?
 			RE_LVL_DMOD(100);
-			if (sc && sc->data[SC_ABYSS_DAGGER])
-				skillratio += skillratio * 50 / 100;
 			break;
 		case SC_TRIANGLESHOT:
 			skillratio += -100 + 230 * skill_lv + 3 * sstatus->agi;
@@ -4597,11 +4592,10 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += skillratio * 50 / 100;
 			break;
 		case LG_BANISHINGPOINT:
-			//skillratio += -100 + (80 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
 			skillratio += -100 + (140 * skill_lv) + ((sd) ? pc_checkskill(sd,SM_BASH) * 30 : 0);
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_SPEAR_SCAR])// Whats the official increase? [Rytech]
-				skillratio += skillratio * 50 / 100;
+				skillratio += skillratio * 32 / 100;
 			break;
 		case LG_SHIELDPRESS:
 			skillratio += -100 + 200 * skill_lv + sstatus->str;
@@ -4613,7 +4607,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			}
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_SHIELD_POWER])// Whats the official increase? [Rytech]
-				skillratio += skillratio * 50 / 100;
+				skillratio += skillratio + 100;
 			break;
 		case LG_PINPOINTATTACK:
 			skillratio += -100 + 100 * skill_lv + 5 * status_get_agi(src);
@@ -4632,11 +4626,9 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case LG_OVERBRAND:
 			if(sc && sc->data[SC_OVERBRANDREADY]) {
-				//skillratio += -100 + 450 * skill_lv;
 				skillratio += -100 + 500 * skill_lv;
 			}
 			else{
-				//skillratio += -100 + 300 * skill_lv;
 				skillratio += -100 + 350 * skill_lv;
 			}
 			skillratio += ((sd) ? pc_checkskill(sd, CR_SPEARQUICKEN) * 50 : 0) + sstatus->str + sstatus->dex;
@@ -4646,7 +4638,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += -100 + 380 * skill_lv + (sstatus->str + sstatus->vit); // !TODO: What's the STR/VIT bonus?
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_SHIELD_POWER])// Whats the official increase? [Rytech]
-				skillratio += skillratio * 50 / 100;
+				skillratio += skillratio - 50;
 			break;
 		case LG_HESPERUSLIT:
 			if (sc && sc->data[SC_INSPIRATION])
@@ -5025,7 +5017,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += skillratio * sc->data[SC_LIGHTOFSTAR]->val2 / 100;
 			break;
 		case DK_SERVANTWEAPON_ATK:
-			skillratio += 50 + 50 * skill_lv + 5 * sstatus->pow;
+			skillratio += 50 + 80 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case DK_SERVANT_W_PHANTOM:
@@ -5057,7 +5049,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case DK_MADNESS_CRUSHER:// How does weight affect the damage? [Rytech]
-			skillratio += -100 + 450 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 600 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_CHARGINGPIERCE_COUNT] && sc->data[SC_CHARGINGPIERCE_COUNT]->val1 >= 10)
 				skillratio *= 2;
@@ -5079,10 +5071,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case IQ_EXPOSION_BLASTER:
-			skillratio += -100 + 450 * skill_lv + 5 * sstatus->pow;
+			//skillratio += -100 + 450 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 650 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			if (tsc && tsc->data[SC_HOLY_OIL])
-				skillratio += skillratio * 50 / 100;
+				//skillratio += skillratio * 50 / 100;
+				skillratio += 1000;
 			break;
 		case IQ_FIRST_BRAND:
 			skillratio += -100 + 450 * skill_lv + 5 * sstatus->pow;
@@ -5101,7 +5095,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case IQ_THIRD_PUNISH:
-			skillratio += -100 + 550 * skill_lv + 5 * sstatus->pow;
+			//skillratio += -100 + 550 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 650 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case IQ_THIRD_FLAME_BOMB:
@@ -5153,7 +5148,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case SHC_SAVAGE_IMPACT:
-			skillratio += -100 + 350 * skill_lv + 5 * sstatus->pow;
+			//skillratio += -100 + 350 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 60 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case SHC_ETERNAL_SLASH:
@@ -5175,7 +5171,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case MT_AXE_STOMP:
-			skillratio += -100 + 350 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 400 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case MT_RUSH_QUAKE:
@@ -5189,11 +5185,13 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case ABC_ABYSS_DAGGER:
-			skillratio += -100 + 550 * skill_lv + 5 * sstatus->pow;
+			//skillratio += -100 + 550 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 350 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case ABC_UNLUCKY_RUSH:
-			skillratio += -100 + 500 * skill_lv + 5 * sstatus->crt;
+			//skillratio += -100 + 500 * skill_lv + 5 * sstatus->crt;
+			skillratio += -100 + 300 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case ABC_CHAIN_REACTION_SHOT:
@@ -5210,7 +5208,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			RE_LVL_DMOD(100);
 			break;
 		case WH_HAWKRUSH:
-			skillratio += -100 + 100 * skill_lv + 5 * sstatus->con;
+			skillratio += -100 + 200 * skill_lv + 5 * sstatus->con;
 			RE_LVL_DMOD(100);
 			break;
 		case WH_HAWKBOOMERANG:// Affected by trait stats??? CON for sure but the other one unknown. Likely POW. [Rytech]
@@ -5256,7 +5254,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 		case BO_ACIDIFIED_ZONE_GROUND_ATK:
 		case BO_ACIDIFIED_ZONE_WIND_ATK:
 		case BO_ACIDIFIED_ZONE_FIRE_ATK:
-			skillratio += -100 + 250 * skill_lv + 5 * sstatus->pow;
+			//skillratio += -100 + 250 * skill_lv + 5 * sstatus->pow;
+			skillratio += -100 + 400 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_RESEARCHREPORT]) { // Does this also affect skills like acid demo? [Rytech]
 				skillratio += skillratio * 50 / 100;
@@ -5272,10 +5271,12 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case TR_ROSEBLOSSOM:
 		case TR_ROSEBLOSSOM_ATK:// Same damage formula? [Rytech]
-			skillratio += -100 + 500 * skill_lv + (sd ? pc_checkskill(sd, TR_STAGE_MANNER) : 5) * sstatus->con;
+			//skillratio += -100 + 500 * skill_lv + (sd ? pc_checkskill(sd, TR_STAGE_MANNER) : 5) * sstatus->con;
+			skillratio += -100 + 750 * skill_lv + (sd ? pc_checkskill(sd, TR_STAGE_MANNER) : 5) * sstatus->con;
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_MYSTIC_SYMPHONY]) {
-				skillratio += skillratio * 40 / 100;
+				//skillratio += skillratio * 40 / 100;
+				skillratio *= 2;
 
 				if (tstatus->race == RC_FISH || tstatus->race == RC_DEMIHUMAN)
 					skillratio += skillratio * 50 / 100;
@@ -5287,7 +5288,8 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			skillratio += -100 + 120 * skill_lv + (sd ? pc_checkskill(sd, TR_STAGE_MANNER) : 5) * sstatus->con;
 			RE_LVL_DMOD(100);
 			if (sc && sc->data[SC_MYSTIC_SYMPHONY]) {
-				skillratio += skillratio * 40 / 100;
+				//skillratio += skillratio * 40 / 100;
+				skillratio *= 2;
 
 				if (tstatus->race == RC_FISH || tstatus->race == RC_DEMIHUMAN)
 					skillratio += skillratio * 50 / 100;
@@ -6214,7 +6216,7 @@ static struct Damage initialize_weapon_data(struct block_list *src, struct block
 				break;
 			case MT_AXE_STOMP:
 				if (sd && sd->status.weapon == W_2HAXE)
-					wd.div_ = 2;
+					wd.div_ = 3;
 				break;
 		}
 	} else {
@@ -7059,7 +7061,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += 3 * pc_checkskill(sd, BA_MUSICALLESSON);
 						break;
 					case HW_GRAVITATION:
-						skillratio += -100 + 100 * skill_lv;
+						skillratio += -100 + 50 * skill_lv;
 						RE_LVL_DMOD(100);
 						break;
 					case PA_PRESSURE:
@@ -7355,7 +7357,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						RE_LVL_DMOD(100);
 						break;
 					case AG_MYSTERY_ILLUSION:
-						skillratio += -100 + 250 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 500 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						break;
 					case AG_VIOLENT_QUAKE_ATK:
@@ -7430,21 +7432,32 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						RE_LVL_DMOD(100);
 						break;
 					case AG_ROCK_DOWN:
-						skillratio += -100 + 750 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
+						if (sc && sc->data[SC_CLIMAX])
+							skillratio += 1250;
 						break;
 					case AG_STORM_CANNON:
 						skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
+						if (sc && sc->data[SC_CLIMAX])
+							skillratio += 1250;
 						break;
 					case AG_CRIMSON_ARROW:
-					case AG_CRIMSON_ARROW_ATK:
 						skillratio += -100 + 300 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						break;
-					case AG_FROZEN_SLASH:
-						skillratio += -100 + 750 * skill_lv + 5 * sstatus->spl;
+					case AG_CRIMSON_ARROW_ATK:
+						skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
+						if (sc && sc->data[SC_CLIMAX])
+							skillratio *= 2;
+						break;
+					case AG_FROZEN_SLASH:
+						skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
+						RE_LVL_DMOD(100);
+						if (sc && sc->data[SC_CLIMAX])
+							skillratio +=  1250;
 						break;
 					case IG_JUDGEMENT_CROSS:
 						skillratio += -100 + 750 * skill_lv + 10 * sstatus->spl;
@@ -7455,12 +7468,14 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += skillratio * i / 100;
 						break;
 					case IG_CROSS_RAIN:// Need official damage increase from Spear and Sword Mastery. [Rytech]
-						skillratio += -100 + 30 * skill_lv + 5 * sstatus->spl + 5 * pc_checkskill(sd, IG_SPEAR_SWORD_M);
+						//skillratio += -100 + 30 * skill_lv + 5 * sstatus->spl + 5 * pc_checkskill(sd, IG_SPEAR_SWORD_M);
+						skillratio += -100 + 200 * skill_lv + 5 * sstatus->spl + 5 * pc_checkskill(sd, IG_SPEAR_SWORD_M);
 						RE_LVL_DMOD(100);
 						if ((i = pc_checkskill_imperial_guard(sd, 3)) > 0)
 							skillratio += skillratio * i / 100;
 						if (sc && sc->data[SC_HOLY_S])
-							skillratio += 20 * skill_lv;
+							// skillratio += 20 * skill_lv;
+							skillratio += 150 * skill_lv;
 						break;
 					case CD_ARBITRIUM:
 					case CD_ARBITRIUM_ATK:
@@ -7491,51 +7506,60 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						break;
 					case ABC_ABYSS_SQUARE:
 						skillratio += -100 + 140 * skill_lv + 5 * sstatus->spl;
+						skillratio += 130 * pc_checkskill(sd,ABC_MAGIC_SWORD_M);
+
 						RE_LVL_DMOD(100);
 						break;
 					case TR_METALIC_FURY:
-						skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
+						//skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 900 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						break;
 					case TR_SOUNDBLEND:
 						skillratio += -100 + 120 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						if (sc && sc->data[SC_MYSTIC_SYMPHONY]) {
-							skillratio += skillratio * 40 / 100;
+							//skillratio += skillratio * 40 / 100;
+							skillratio *= 2;
 
 							if (tstatus->race == RC_FISH || tstatus->race == RC_DEMIHUMAN)
 								skillratio += skillratio * 50 / 100;
 						}
 						break;
 					case EM_DIAMOND_STORM:
-						skillratio += -100 + 700 * skill_lv + 5 * sstatus->spl;
+						//skillratio += -100 + 700 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 1250 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						if (sc && sc->data[SC_SUMMON_ELEMENTAL_DILUVIO])
-							skillratio += skillratio * 30 / 100;
+							skillratio *= 2;
 						break;
 					case EM_LIGHTNING_LAND:
-						skillratio += -100 + 150 * skill_lv + 5 * sstatus->spl;
+						//skillratio += -100 + 150 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 400 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						if (sc && sc->data[SC_SUMMON_ELEMENTAL_PROCELLA])
-							skillratio += skillratio * 30 / 100;
+							skillratio *= 2;
 						break;
 					case EM_VENOM_SWAMP:
-						skillratio += -100 + 150 * skill_lv + 5 * sstatus->spl;
+						//skillratio += -100 + 150 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 400 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						if (sc && sc->data[SC_SUMMON_ELEMENTAL_SERPENS])
-							skillratio += skillratio * 30 / 100;
+							skillratio *= 2;
 						break;
 					case EM_CONFLAGRATION:
-						skillratio += -100 + 150 * skill_lv + 5 * sstatus->spl;
+						//skillratio += -100 + 150 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 400 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						if (sc && sc->data[SC_SUMMON_ELEMENTAL_ARDOR])
-							skillratio += skillratio * 30 / 100;
+							skillratio *= 2;
 						break;
 					case EM_TERRA_DRIVE:
-						skillratio += -100 + 700 * skill_lv + 5 * sstatus->spl;
+						//skillratio += -100 + 700 * skill_lv + 5 * sstatus->spl;
+						skillratio += -100 + 1250 * skill_lv + 5 * sstatus->spl;
 						RE_LVL_DMOD(100);
 						if (sc && sc->data[SC_SUMMON_ELEMENTAL_TERREMOTUS])
-							skillratio += skillratio * 30 / 100;
+							skillratio *= 2;
 						break;
 					case ABC_FROM_THE_ABYSS_ATK:
 						skillratio += 50 + 70 * skill_lv + 5 * sstatus->spl;
