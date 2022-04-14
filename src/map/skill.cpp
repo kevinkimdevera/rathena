@@ -392,9 +392,9 @@ unsigned short skill_dummy2skill_id(unsigned short skill_id) {
 			return WL_SUMMONWB;
 		case WL_SUMMON_ATK_GROUND:
 			return WL_SUMMONSTONE;
-		// case LG_OVERBRAND_BRANDISH:
-		// case LG_OVERBRAND_PLUSATK:
-		// 	return LG_OVERBRAND;
+		case LG_OVERBRAND_BRANDISH:
+		case LG_OVERBRAND_PLUSATK:
+			return LG_OVERBRAND;
 		case WM_REVERBERATION_MELEE:
 		case WM_REVERBERATION_MAGIC:
 			return WM_REVERBERATION;
@@ -5188,9 +5188,9 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 #endif
 		uint8 dir = map_calc_dir(bl, src->x, src->y);
 
-	// 	// teleport to target (if not on WoE grounds)
-	// 	if (skill_check_unit_movepos(5, src, bl->x, bl->y, 0, 1))
-	// 		skill_blown(src, src, 1, (dir+4)%8, BLOWN_NONE); //Target position is actually one cell next to the target
+		// teleport to target (if not on WoE grounds)
+		if (skill_check_unit_movepos(5, src, bl->x, bl->y, 0, 1))
+			skill_blown(src, src, 1, (dir+4)%8, BLOWN_NONE); //Target position is actually one cell next to the target
 
 		// cause damage and knockback if the path to target was a straight one
 		if (path) {
@@ -5206,8 +5206,8 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			unit_setdir(src, (dir+4)%8);
 		}
 
-	// 	}
-	// 	break;
+		}
+		break;
 
 	case NC_FLAMELAUNCHER:
 		skill_area_temp[1] = bl->id;
@@ -5222,6 +5222,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				skill_get_type(skill_id), src, src, skill_id, skill_lv, tick, flag, BCT_ENEMY);
 		}
 		break;
+
 #ifndef RENEWAL
 	case SN_SHARPSHOOTING:
 		flag |= 2; // Flag for specific mob damage formula
@@ -5552,6 +5553,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				break;
 
 			heal = (int)skill_attack(skill_get_type(skill_id), src, src, bl, skill_id, skill_lv, tick, sflag);
+
 			switch (skill_id) {
 				case NPC_VAMPIRE_GIFT:
 					if (heal > 0) {
@@ -6271,6 +6273,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 			break;
 		if (sd) {
 			int i;
+
 #ifndef RENEWAL
 			skill_toggle_magicpower(src, skill_id); // No hit will be amplified
 #endif
@@ -8193,7 +8196,6 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 	case NC_AXETORNADO:
 	case GC_COUNTERSLASH:
 	case SR_SKYNETBLOW:
-	case SR_TIGERCANNON:
 	case SR_RAMPAGEBLASTER:
 	case SR_HOWLINGOFLION:
 	case LG_CANNONSPEAR:
@@ -8325,6 +8327,8 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 #endif
 		map_foreachinrange(skill_area_sub, bl, skill_get_splash(skill_id, skill_lv), BL_CHAR|BL_SKILL, src, skill_id, skill_lv, tick, flag|BCT_ENEMY|SD_SPLASH|1, skill_castend_damage_id);
 		break;
+
+	case SR_TIGERCANNON:
 	case SR_WINDMILL:
 	case GN_CART_TORNADO:
 		clif_skill_nodamage(src,bl,skill_id,skill_lv,1);
@@ -24591,3 +24595,4 @@ void do_final_skill(void)
 	db_destroy(bowling_db);
 	ers_destroy(skill_timer_ers);
 }
+
