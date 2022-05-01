@@ -2459,6 +2459,7 @@ Body:
 #      - Item: Victory_Wing_Ear_
   - Item: Ancient_Hero_Bravery
     RandomOptionGroup: ANCIENT_HERO_BRAVERY
+    CardsAllowed: true
     TargetItems:
       - Item: Royal_Bow_K
       - Item: Narcis_Bow
@@ -2533,6 +2534,7 @@ Body:
       - Item: Up_Spirit_Pendulum_
   - Item: Ancient_Hero_Wisdom
     RandomOptionGroup: ANCIENT_HERO_WISDOM
+    CardsAllowed: true
     TargetItems:
       - Item: Royal_Bow_K
       - Item: Narcis_Bow
