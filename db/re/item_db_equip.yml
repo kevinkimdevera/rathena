@@ -54264,7 +54264,7 @@ Body:
     Classes:
       All_Third: true
       Fourth: true
-    Gender: Female
+    Gender: Male
     Locations:
       Head_Top: true
     ArmorLevel: 1
@@ -54281,7 +54281,7 @@ Body:
       .@r = getrefine();
       bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",15;
       if (.@r>=7) {
-         bonus bFixedCastrate,4*(getskilllv("WM_LESSON"));
+         bonus bFixedCastrate,-5*(getskilllv("WM_LESSON"));
       }
       if (.@r>=9) {
          bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",10;
@@ -78198,6 +78198,40 @@ Body:
          bonus2 bSkillAtk,"SC_SPELLFIST",25;
       if (.@r>8)
          bonus bAspd,5;
+  - Id: 18795
+    AegisName: Night_Sparrow_Hat
+    Name: Night Sparrow Hat
+    Type: Armor
+    Weight: 200
+    Defense: 15
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Gender: Female
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    Refineable: true
+    View: 913
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",15;
+      if (.@r>=7) {
+         bonus bFixedCastrate,-5*(getskilllv("WM_LESSON"));
+      }
+      if (.@r>=9) {
+         bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",10;
+      }
   - Id: 18796
     AegisName: RWC_Champ_Crown_QF
     Name: RWC Champ Crown Fourth Place
@@ -121981,8 +122015,8 @@ Body:
       bonus2 bSkillAtk,"BA_MUSICALSTRIKE",BaseLevel;
       bonus2 bSkillAtk,"DC_THROWARROW",BaseLevel;
       bonus2 bSkillAtk,"WM_METALICSOUND",2*(BaseLevel/5);
-      .@n = getskilllv("WM_METALICSOUND");
-      bonus2 bVariableCastrate,"WM_METALICSOUND",.@n/2;
+      bonus2 bVariableCastrate,"WM_METALICSOUND",(BaseLevel/5);
+      .@n = getskilllv("WM_LESSON");
       bonus bDex,.@n/2;
       bonus bAgi,.@n/2;
       bonus bInt,.@n/2;

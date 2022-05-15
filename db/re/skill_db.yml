@@ -34356,6 +34356,8 @@ Body:
     TargetType: Attack
     DamageFlags:
       Critical: true
+      Splash: true
+    SplashArea: 4
     Range: 1
     Hit: Single
     HitCount: 1

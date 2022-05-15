@@ -852,7 +852,7 @@ Body:
   - Id: 210
     Option: RACE_MDAMAGE_PLAYER_HUMAN
     Script: |
-      bonus2 bMagicAddRace,RC_Player_Human,getrandomoptinfo(ROA_VALUE); 
+      bonus2 bMagicAddRace,RC_Player_Human,getrandomoptinfo(ROA_VALUE);
   - Id: 211
     Option: RACE_MDAMAGE_PLAYER_DORAM
     Script: |

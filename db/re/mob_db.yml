@@ -90182,19 +90182,312 @@ Body:
 #    AegisName: ILL_FROZEN_KN
 #  - Id: 3798
 #    AegisName: ILL_FROZEN_GC
-#  - Id: 3799
-#    AegisName: ILL_ASSULTER
-#  - Id: 3800
-#    AegisName: ILL_PERMETER
-#  - Id: 3801
-#    AegisName: ILL_FREEZER
-#  - Id: 3802
-#    AegisName: ILL_SOLIDER
-#  - Id: 3803
-#    AegisName: ILL_HEATER
-#  - Id: 3804
-#    AegisName: ILL_TURTLE_GENERAL
-#  - Id: 3805
+  - Id: 3799
+    AegisName: ILL_ASSULTER
+    Name: Ominous Assulter
+    Level: 160
+    Hp: 592508
+    BaseExp: 54213
+    JobExp: 48375
+    Attack: 2779
+    Attack2: 3998
+    Defense: 369
+    MagicDefense: 82
+    Str: 180
+    Agi: 161
+    Vit: 60
+    Int: 44
+    Dex: 214
+    Luk: 30
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 504
+    Ai: 21
+    Drops:
+      - Item: Piece_of_Black_Horn
+        Rate: 2500
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Zargon
+        Rate: 1240
+      - Item: Turtle_Shell
+        Rate: 4413
+      - Item: Smoke_Powder
+        Rate: 200
+      - Item: Broken_Armor_Piece
+        Rate: 1200
+      - Item: Rust_Suriken
+        Rate: 840
+      - Item: Huuma_Bird_Wing
+        Rate: 5
+        StealProtected: true
+      - Item: Ominous_Assaulter_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3800
+    AegisName: ILL_PERMETER
+    Name: Ominous Permeter
+    Level: 157
+    Hp: 508355
+    BaseExp: 50806
+    JobExp: 41661
+    Attack: 2592
+    Attack2: 3730
+    Defense: 288
+    MagicDefense: 100
+    Str: 159
+    Agi: 60
+    Vit: 135
+    Int: 90
+    Dex: 120
+    Luk: 60
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 250
+    AttackDelay: 1100
+    AttackMotion: 483
+    DamageMotion: 528
+    Ai: 17
+    Drops:
+      - Item: ShipsLog
+        Rate: 2500
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Fruit_Of_Mastela
+        Rate: 25
+      - Item: Anodyne
+        Rate: 1
+      - Item: Zargon
+        Rate: 1240
+      - Item: Turtle_Shell
+        Rate: 4413
+      - Item: Coconut_Fruit
+        Rate: 200
+      - Item: Elder_Branch
+        Rate: 100
+        StealProtected: true
+      - Item: Ominous_Permeter_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3801
+    AegisName: ILL_FREEZER
+    Name: Ominous Freezer
+    Level: 159
+    Hp: 549071
+    BaseExp: 54892
+    JobExp: 43913
+    Attack: 2653
+    Attack2: 3823
+    Defense: 146
+    MagicDefense: 80
+    Str: 154
+    Agi: 111
+    Vit: 120
+    Int: 100
+    Dex: 142
+    Luk: 60
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 170
+    AttackDelay: 1260
+    AttackMotion: 960
+    DamageMotion: 672
+    Ai: 21
+    Drops:
+      - Item: Fine_Old_Doll
+        Rate: 1500
+      - Item: Royal_Jelly
+        Rate: 160
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Zargon
+        Rate: 1800
+      - Item: Turtle_Shell
+        Rate: 4413
+      - Item: Ice_Fragment
+        Rate: 200
+      - Item: Ice_Piece
+        Rate: 1250
+      - Item: Broken_Shell
+        Rate: 850
+        StealProtected: true
+      - Item: Ominous_Freezer_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3802
+    AegisName: ILL_SOLIDER
+    Name: Ominous Solider
+    Level: 161
+    Hp: 592310
+    BaseExp: 59190
+    JobExp: 49128
+    Attack: 2819
+    Attack2: 4070
+    Defense: 406
+    MagicDefense: 116
+    Str: 155
+    Agi: 100
+    Vit: 170
+    Int: 42
+    Dex: 133
+    Luk: 50
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 250
+    AttackDelay: 1452
+    AttackMotion: 483
+    DamageMotion: 528
+    Ai: 17
+    Drops:
+      - Item: Piece_of_Black_Horn
+        Rate: 2000
+      - Item: Yellow_Herb
+        Rate: 2100
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Zargon
+        Rate: 1240
+      - Item: Turtle_Shell
+        Rate: 4413
+      - Item: Stone_Piece
+        Rate: 850
+      - Item: Broken_Shell
+        Rate: 64
+      - Item: Ominous_Solider_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3803
+    AegisName: ILL_HEATER
+    Name: Ominous Heater
+    Level: 162
+    Hp: 527390
+    BaseExp: 52699
+    JobExp: 44794
+    Attack: 2938
+    Attack2: 4237
+    Defense: 400
+    MagicDefense: 100
+    Str: 177
+    Agi: 95
+    Vit: 120
+    Int: 100
+    Dex: 212
+    Luk: 89
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Brute
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 250
+    AttackDelay: 1452
+    AttackMotion: 483
+    DamageMotion: 528
+    Ai: 21
+    Drops:
+      - Item: Piece_Of_Shell
+        Rate: 2000
+      - Item: Royal_Jelly
+        Rate: 140
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Turtle_Shell
+        Rate: 4413
+      - Item: Gun_Powder
+        Rate: 1000
+      - Item: Brigan
+        Rate: 600
+      - Item: Burn_Tree
+        Rate: 1250
+      - Item: Broken_Shell
+        Rate: 750
+        StealProtected: true
+      - Item: Ominous_Heater_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3804
+    AegisName: ILL_TURTLE_GENERAL
+    Name: Ominous Turtle General
+    Level: 165
+    Hp: 11628549
+    BaseExp: 3431854
+    JobExp: 2146800
+    MvpExp: 1466560
+    Attack: 5512
+    Attack2: 8069
+    Defense: 796
+    MagicDefense: 246
+    Str: 232
+    Agi: 246
+    Vit: 308
+    Int: 189
+    Dex: 424
+    Luk: 180
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 900
+    AttackMotion: 1000
+    DamageMotion: 500
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Yggdrasilberry
+        Rate: 5000
+      - Item: Turtle_Shell
+        Rate: 5000
+    Drops:
+      - Item: Fine_Old_Doll
+        Rate: 10000
+      - Item: Union_Of_Tribe
+        Rate: 1
+      - Item: Immaterial_Sword
+        Rate: 80
+      - Item: War_Axe
+        Rate: 10
+      - Item: Pole_Axe
+        Rate: 9
+      - Item: Iron_Driver
+        Rate: 8
+      - Item: Broken_Shell
+        Rate: 5335
+      - Item: Cookbook09
+        Rate: 200
+        StealProtected: true
+      - Item: Ominous_Turtle_General_Card
+        Rate: 1
+        StealProtected: true
 #    AegisName: E_HAPPY_EGG
 #  - Id: 3806
 #    AegisName: E_STRANGE_EGG
@@ -91053,34 +91346,575 @@ Body:
 #    AegisName: VH_ENTWEIHEN_S
 #  - Id: 20254
 #    AegisName: VH_MIMIC
-#  - Id: 20255
-#    AegisName: ILL_TEDDY_BEAR_R
-#  - Id: 20256
-#    AegisName: ILL_TEDDY_BEAR_Y
-#  - Id: 20257
-#    AegisName: ILL_TEDDY_BEAR_G
-#  - Id: 20258
-#    AegisName: ILL_TEDDY_BEAR_W
-#  - Id: 20259
-#    AegisName: ILL_TEDDY_BEAR_B
-#  - Id: 20260
-#    AegisName: ILL_TEDDY_BEAR_S
-#  - Id: 20261
-#    AegisName: ILL_PITMAN
-#  - Id: 20262
-#    AegisName: ILL_MINERAL
-#  - Id: 20263
-#    AegisName: ILL_OBSIDIAN
-#  - Id: 20264
-#    AegisName: G_ILL_TEDDY_BEAR_R
-#  - Id: 20265
-#    AegisName: G_ILL_TEDDY_BEAR_Y
-#  - Id: 20266
-#    AegisName: G_ILL_TEDDY_BEAR_G
-#  - Id: 20267
-#    AegisName: G_ILL_TEDDY_BEAR_W
-#  - Id: 20268
-#    AegisName: G_ILL_TEDDY_BEAR_B
+  - Id: 20255
+    AegisName: ILL_TEDDY_BEAR_R
+    Name: Red Teddy Bear
+    Level: 155
+    Hp: 328072
+    BaseExp: 39944
+    JobExp: 45006
+    Attack: 2597
+    Attack2: 3752
+    Defense: 212
+    MagicDefense: 88
+    Str: 132
+    Agi: 100
+    Vit: 155
+    Int: 132
+    Dex: 133
+    Luk: 132
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+    Drops:
+      - Item: Honey
+        Rate: 1000
+      - Item: Oridecon_Hammer
+        Rate: 300
+      - Item: Elunium
+        Rate: 100
+      - Item: Green_Bearopy
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Screw
+        Rate: 3800
+      - Item: Colorful_Teddy_Bear_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20256
+    AegisName: ILL_TEDDY_BEAR_Y
+    Name: Yellow Teddy Bear
+    Level: 155
+    Hp: 294044
+    BaseExp: 38768
+    JobExp: 46330
+    Attack: 2296
+    Attack2: 3335
+    Defense: 200
+    MagicDefense: 112
+    Str: 102
+    Agi: 132
+    Vit: 102
+    Int: 182
+    Dex: 155
+    Luk: 102
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Wind
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+    Drops:
+      - Item: Honey
+        Rate: 1000
+      - Item: Oridecon_Hammer
+        Rate: 300
+      - Item: Elunium
+        Rate: 100
+      - Item: NasariansSoulstone
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Screw
+        Rate: 3800
+      - Item: Boots_
+        Rate: 50
+      - Item: Colorful_Teddy_Bear_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20257
+    AegisName: ILL_TEDDY_BEAR_G
+    Name: Green Teddy Bear
+    Level: 157
+    Hp: 331960
+    BaseExp: 43292
+    JobExp: 50234
+    Attack: 2700
+    Attack2: 3907
+    Defense: 227
+    MagicDefense: 110
+    Str: 129
+    Agi: 128
+    Vit: 141
+    Int: 173
+    Dex: 158
+    Luk: 129
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+    Drops:
+      - Item: Honey
+        Rate: 1000
+      - Item: Oridecon_Hammer
+        Rate: 300
+      - Item: Elunium
+        Rate: 100
+      - Item: Chonchon_Doll_HQ
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Screw
+        Rate: 3800
+      - Item: Headband_Of_Power
+        Rate: 50
+      - Item: Colorful_Teddy_Bear_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20258
+    AegisName: ILL_TEDDY_BEAR_W
+    Name: White Teddy Bear
+    Level: 155
+    Hp: 311841
+    BaseExp: 42701
+    JobExp: 49549
+    Attack: 2544
+    Attack2: 3678
+    Defense: 213
+    MagicDefense: 103
+    Str: 121
+    Agi: 120
+    Vit: 133
+    Int: 162
+    Dex: 149
+    Luk: 121
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+    Drops:
+      - Item: Honey
+        Rate: 1000
+      - Item: Oridecon_Hammer
+        Rate: 300
+      - Item: Elunium
+        Rate: 100
+      - Item: Gothic_China_Doll
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Screw
+        Rate: 3800
+      - Item: Colorful_Teddy_Bear_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20259
+    AegisName: ILL_TEDDY_BEAR_B
+    Name: Blue Teddy Bear
+    Level: 152
+    Hp: 280657
+    BaseExp: 36600
+    JobExp: 42470
+    Attack: 2302
+    Attack2: 3323
+    Defense: 192
+    MagicDefense: 93
+    Str: 109
+    Agi: 108
+    Vit: 120
+    Int: 146
+    Dex: 134
+    Luk: 109
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+    Drops:
+      - Item: Honey
+        Rate: 1000
+      - Item: Oridecon_Hammer
+        Rate: 300
+      - Item: Elunium
+        Rate: 100
+      - Item: Clay_Doll
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Screw
+        Rate: 3800
+      - Item: Headband_Of_Power
+        Rate: 50
+      - Item: Colorful_Teddy_Bear_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20260
+    AegisName: ILL_TEDDY_BEAR_S
+    Name: Shiny Teddy Bear
+    Level: 160
+    Hp: 10724874
+    BaseExp: 3586888
+    JobExp: 3237228
+    MvpExp: 50000
+    Attack: 3672
+    Attack2: 5339
+    Defense: 313
+    MagicDefense: 152
+    Str: 178
+    Agi: 176
+    Vit: 195
+    Int: 238
+    Dex: 219
+    Luk: 178
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Holy
+    ElementLevel: 4
+    WalkSpeed: 250
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Old_Card_Album
+        Rate: 5000
+      - Item: Fruit_Of_Mastela
+        Rate: 5000
+    Drops:
+      - Item: Honey
+        Rate: 1000
+      - Item: Oridecon_Hammer
+        Rate: 300
+      - Item: Elunium
+        Rate: 100
+      - Item: Screw
+        Rate: 3800
+      - Item: IllusionStone
+        Rate: 10000
+      - Item: Counter_Dagger
+        Rate: 200
+      - Item: Survival_Rod_
+        Rate: 200
+      - Item: Shiny_Teddy_Bear_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20261
+    AegisName: ILL_PITMAN
+    Name: Hardworking Pitman
+    Level: 154
+    Hp: 305605
+    BaseExp: 37000
+    JobExp: 43000
+    Attack: 2494
+    Attack2: 3605
+    Defense: 209
+    MagicDefense: 101
+    Str: 118
+    Agi: 117
+    Vit: 130
+    Int: 159
+    Dex: 146
+    Luk: 118
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 180
+    AttackDelay: 960
+    AttackMotion: 336
+    DamageMotion: 300
+    Ai: 17
+    Drops:
+      - Item: Steel
+        Rate: 500
+      - Item: Coal
+        Rate: 100
+      - Item: Lantern
+        Rate: 1000
+      - Item: Gun_Powder
+        Rate: 900
+      - Item: Old_Pick
+        Rate: 3000
+      - Item: Old_Steel_Plate
+        Rate: 500
+      - Item: Headlamp
+        Rate: 80
+      - Item: IllusionStone
+        Rate: 4000
+        StealProtected: true
+      - Item: Hardworking_Pitman_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20262
+    AegisName: ILL_MINERAL
+    Name: Soul Fragment
+    Level: 153
+    Hp: 290324
+    BaseExp: 37872
+    JobExp: 43934
+    Attack: 2377
+    Attack2: 3432
+    Defense: 198
+    MagicDefense: 96
+    Str: 113
+    Agi: 112
+    Vit: 124
+    Int: 151
+    Dex: 139
+    Luk: 113
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 250
+    AttackDelay: 648
+    AttackMotion: 460
+    DamageMotion: 360
+    Ai: 17
+    Drops:
+      - Item: Emperium
+        Rate: 2
+      - Item: Yellow_Gemstone
+        Rate: 100
+      - Item: Golden_Jewel
+        Rate: 500
+      - Item: Gold
+        Rate: 2
+      - Item: Oridecon
+        Rate: 80
+      - Item: Emveretarcon
+        Rate: 800
+      - Item: Fragment_Of_Crystal
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+        StealProtected: true
+      - Item: Soul_Fragment_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20263
+    AegisName: ILL_OBSIDIAN
+    Name: Vicious Mind Obsidian
+    Level: 156
+    Hp: 318593
+    BaseExp: 43444
+    JobExp: 38000
+    Attack: 2596
+    Attack2: 3755
+    Defense: 217
+    MagicDefense: 106
+    Str: 124
+    Agi: 122
+    Vit: 136
+    Int: 166
+    Dex: 152
+    Luk: 124
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 350
+    AttackDelay: 720
+    AttackMotion: 864
+    DamageMotion: 504
+    Ai: 17
+    Drops:
+      - Item: Crystal_Jewel
+        Rate: 500
+      - Item: Elunium
+        Rate: 50
+      - Item: Steel
+        Rate: 500
+      - Item: Coal
+        Rate: 500
+      - Item: Dark_Crystal_Fragment
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Gate_KeeperDD
+        Rate: 50
+      - Item: Haunted_Obsidian_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20264
+    AegisName: G_ILL_TEDDY_BEAR_R
+    Name: Red Teddy Bear
+    Level: 155
+    Hp: 328072
+    Attack: 2597
+    Attack2: 3752
+    Defense: 212
+    MagicDefense: 88
+    Str: 132
+    Agi: 100
+    Vit: 155
+    Int: 132
+    Dex: 133
+    Luk: 132
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Fire
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+  - Id: 20265
+    AegisName: G_ILL_TEDDY_BEAR_Y
+    Name: Yellow Teddy Bear
+    Level: 155
+    Hp: 294044
+    Attack: 2296
+    Attack2: 3335
+    Defense: 200
+    MagicDefense: 112
+    Str: 102
+    Agi: 132
+    Vit: 102
+    Int: 182
+    Dex: 155
+    Luk: 102
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Wind
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+  - Id: 20266
+    AegisName: G_ILL_TEDDY_BEAR_G
+    Name: Green Teddy Bear
+    Level: 157
+    Hp: 331960
+    Attack: 2700
+    Attack2: 3907
+    Defense: 227
+    MagicDefense: 110
+    Str: 129
+    Agi: 128
+    Vit: 141
+    Int: 173
+    Dex: 158
+    Luk: 129
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Poison
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+  - Id: 20267
+    AegisName: G_ILL_TEDDY_BEAR_W
+    Name: White Teddy Bear
+    Level: 155
+    Hp: 311841
+    Attack: 2544
+    Attack2: 3678
+    Defense: 213
+    MagicDefense: 103
+    Str: 121
+    Agi: 120
+    Vit: 133
+    Int: 162
+    Dex: 149
+    Luk: 121
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
+  - Id: 20268
+    AegisName: G_ILL_TEDDY_BEAR_B
+    Name: Blue Teddy Bear
+    Level: 152
+    Hp: 280657
+    Attack: 2302
+    Attack2: 3323
+    Defense: 192
+    MagicDefense: 93
+    Str: 109
+    Agi: 108
+    Vit: 120
+    Int: 146
+    Dex: 134
+    Luk: 109
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 512
+    AttackMotion: 780
+    DamageMotion: 480
+    Ai: 09
   - Id: 20269
     AegisName: GUILD_SKILL_FLAG
     Name: Guild Skill Flag
@@ -91102,28 +91936,517 @@ Body:
     DamageMotion: 384
     Modes:
       NoRandomWalk: true
-#  - Id: 20270
-#    AegisName: ILL_TRI_JOINT
-#  - Id: 20271
-#    AegisName: ILL_STALACTIC_GOLEM
-#  - Id: 20272
-#    AegisName: ILL_MEGALITH
-#  - Id: 20273
-#    AegisName: ILL_TAO_GUNKA
-#  - Id: 20274
-#    AegisName: ILL_STONE_SHOOTER
-#  - Id: 20275
-#    AegisName: ILL_WOOTAN_SHOOTER
-#  - Id: 20276
-#    AegisName: ILL_WOOTAN_FIGHTER
-#  - Id: 20277
-#    AegisName: ILL_WOOTAN_DEFENDER
-#  - Id: 20278
-#    AegisName: G_ILL_MEGALITH
-#  - Id: 20279
-#    AegisName: G_ILL_WOOTAN_SHOOTER
-#  - Id: 20280
-#    AegisName: G_ILL_WOOTAN_FIGHTER
+  - Id: 20270
+    AegisName: ILL_TRI_JOINT
+    Name: Ancient Tri Joint
+    Level: 164
+    Hp: 694500
+    BaseExp: 151678
+    JobExp: 113760
+    Attack: 3742
+    Attack2: 5444
+    Defense: 144
+    MagicDefense: 5
+    Str: 174
+    Agi: 88
+    Vit: 70
+    Int: 55
+    Dex: 145
+    Luk: 20
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    Element: Earth
+    ElementLevel: 1
+    WalkSpeed: 200
+    AttackDelay: 860
+    AttackMotion: 660
+    DamageMotion: 624
+    Ai: 21
+    Modes:
+      Detector: true
+    Drops:
+      - Item: Aloebera
+        Rate: 200
+      - Item: Elunium_Stone
+        Rate: 106
+      - Item: Solid_Shell
+        Rate: 380
+      - Item: Sparkling_Dust
+        Rate: 140
+      - Item: Cyfar
+        Rate: 100
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Token_Of_Bigstone
+        Rate: 1500
+        StealProtected: true
+      - Item: Weak_Worm
+        Rate: 3000
+        StealProtected: true
+      - Item: Ancient_Tri_Joint_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20271
+    AegisName: ILL_STALACTIC_GOLEM
+    Name: Ancient Stalactic Golem
+    Level: 167
+    Hp: 725400
+    BaseExp: 158428
+    JobExp: 118820
+    Attack: 3947
+    Attack2: 5738
+    Defense: 412
+    MagicDefense: 5
+    Str: 198
+    Agi: 98
+    Vit: 122
+    Int: 45
+    Dex: 158
+    Luk: 55
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 1264
+    AttackMotion: 864
+    DamageMotion: 288
+    Ai: 17
+    Drops:
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Elunium_Stone
+        Rate: 250
+      - Item: Elunium
+        Rate: 163
+      - Item: Hard_Mud
+        Rate: 3000
+      - Item: Star_Crumb
+        Rate: 250
+      - Item: Round_Buckler
+        Rate: 5
+      - Item: Mud_Lump
+        Rate: 2000
+      - Item: Brigan
+        Rate: 4850
+        StealProtected: true
+      - Item: Token_Of_Bigstone
+        Rate: 1500
+        StealProtected: true
+      - Item: Ancient_Stalactic_Golem_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20272
+    AegisName: ILL_MEGALITH
+    Name: Ancient Megalith
+    Level: 166
+    Hp: 708500
+    BaseExp: 154736
+    JobExp: 116052
+    Attack: 4091
+    Attack2: 5969
+    Defense: 188
+    MagicDefense: 18
+    Str: 169
+    Agi: 111
+    Vit: 89
+    Int: 55
+    Dex: 214
+    Luk: 42
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 1332
+    AttackMotion: 1332
+    DamageMotion: 672
+    Ai: 10
+    Drops:
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Pot_Stone
+        Rate: 3000
+      - Item: Elunium_Stone
+        Rate: 207
+      - Item: Zargon
+        Rate: 100
+      - Item: Elunium
+        Rate: 61
+      - Item: Stone
+        Rate: 1000
+      - Item: Token_Of_Bigstone
+        Rate: 2000
+      - Item: Ancient_Megalith_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20273
+    AegisName: ILL_TAO_GUNKA
+    Name: Ancient Tao Gunka
+    Level: 169
+    Hp: 19280000
+    BaseExp: 8003504
+    JobExp: 6002628
+    MvpExp: 100000
+    Attack: 6081
+    Attack2: 8914
+    Defense: 905
+    MagicDefense: 143
+    Str: 245
+    Agi: 216
+    Vit: 100
+    Int: 111
+    Dex: 212
+    Luk: 42
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    Element: Neutral
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 1020
+    AttackMotion: 288
+    DamageMotion: 144
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Oridecon
+        Rate: 5000
+      - Item: Old_Violet_Box
+        Rate: 3000
+      - Item: Blue_Potion
+        Rate: 5000
+    Drops:
+      - Item: Golden_Jewel
+        Rate: 1000
+      - Item: Stone_Piece
+        Rate: 4850
+      - Item: Gemstone
+        Rate: 4850
+      - Item: Runstone_Rare
+        Rate: 200
+      - Item: Goibne's_Armor
+        Rate: 50
+      - Item: Goibne's_Shoulder_Arms
+        Rate: 50
+      - Item: Token_Of_Bigstone
+        Rate: 5000
+      - Item: Fragment_Of_Rock
+        Rate: 10000
+        StealProtected: true
+      - Item: Ancient_Tao_Gunka_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20274
+    AegisName: ILL_STONE_SHOOTER
+    Name: Ancient Stone Shooter
+    Level: 166
+    Hp: 692500
+    BaseExp: 151242
+    JobExp: 113432
+    Attack: 3997
+    Attack2: 5828
+    Defense: 184
+    MagicDefense: 15
+    Str: 170
+    Agi: 86
+    Vit: 68
+    Int: 44
+    Dex: 215
+    Luk: 54
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Fire
+    ElementLevel: 3
+    WalkSpeed: 175
+    AttackDelay: 2413
+    AttackMotion: 1248
+    DamageMotion: 768
+    Ai: 04
+    Drops:
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Oridecon_Stone
+        Rate: 100
+      - Item: Wooden_Block
+        Rate: 2000
+      - Item: Token_Of_Wootan
+        Rate: 2000
+      - Item: Browny_Root
+        Rate: 1000
+      - Item: Log
+        Rate: 5000
+      - Item: Solid_Twig
+        Rate: 5000
+      - Item: Hair_Leaf
+        Rate: 2500
+        StealProtected: true
+      - Item: Ancient_Stone_Shooter_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20275
+    AegisName: ILL_WOOTAN_SHOOTER
+    Name: Ancient Wootan Shooter
+    Level: 164
+    Hp: 702100
+    BaseExp: 153338
+    JobExp: 115004
+    Attack: 4116
+    Attack2: 6008
+    Defense: 142
+    MagicDefense: 21
+    Str: 171
+    Agi: 97
+    Vit: 74
+    Int: 53
+    Dex: 220
+    Luk: 45
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 857
+    AttackMotion: 1056
+    DamageMotion: 576
+    Ai: 04
+    Drops:
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Banana
+        Rate: 1000
+      - Item: Hunter_Bow
+        Rate: 5
+      - Item: Cacao
+        Rate: 100
+      - Item: Air_Rifle
+        Rate: 4500
+      - Item: Flexible_String
+        Rate: 3500
+      - Item: Elder_Branch
+        Rate: 100
+      - Item: Shooting_Stone
+        Rate: 3000
+        StealProtected: true
+      - Item: Token_Of_Wootan
+        Rate: 1500
+        StealProtected: true
+      - Item: Ancient_Wootan_Shooter_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20276
+    AegisName: ILL_WOOTAN_FIGHTER
+    Name: Ancient Wootan Fighter
+    Level: 167
+    Hp: 725000
+    BaseExp: 158450
+    JobExp: 118836
+    Attack: 4007
+    Attack2: 5828
+    Defense: 205
+    MagicDefense: 8
+    Str: 198
+    Agi: 115
+    Vit: 90
+    Int: 42
+    Dex: 158
+    Luk: 42
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 912
+    AttackMotion: 1344
+    DamageMotion: 480
+    Ai: 04
+    Drops:
+      - Item: IllusionStone
+        Rate: 4000
+      - Item: Elder_Branch
+        Rate: 100
+      - Item: Meat
+        Rate: 4500
+      - Item: Shoulder_Protection
+        Rate: 4000
+      - Item: Great_Leaf
+        Rate: 1000
+      - Item: Token_Of_Wootan
+        Rate: 1500
+      - Item: Waghnakh
+        Rate: 3
+      - Item: Wootan_F_Fur
+        Rate: 3000
+        StealProtected: true
+      - Item: Ancient_Wootan_Fighter_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20277
+    AegisName: ILL_WOOTAN_DEFENDER
+    Name: Ancient Wootan Defender
+    Level: 169
+    Hp: 20154000
+    BaseExp: 8003104
+    JobExp: 6002238
+    MvpExp: 100000
+    Attack: 6225
+    Attack2: 9143
+    Defense: 874
+    MagicDefense: 143
+    Str: 220
+    Agi: 198
+    Vit: 102
+    Int: 105
+    Dex: 215
+    Luk: 165
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 912
+    AttackMotion: 1344
+    DamageMotion: 420
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Blue_Potion
+        Rate: 5000
+      - Item: Old_Violet_Box
+        Rate: 3000
+      - Item: Oridecon
+        Rate: 5000
+    Drops:
+      - Item: Wootan_D_S_Piece
+        Rate: 10000
+      - Item: Shoulder_Protection
+        Rate: 3000
+      - Item: Token_Of_Wootan
+        Rate: 2000
+      - Item: Banana_Hat
+        Rate: 100
+      - Item: Great_Leaf
+        Rate: 1500
+      - Item: Goibne's_Helmet
+        Rate: 50
+      - Item: Goibne's_Combat_Boots
+        Rate: 50
+      - Item: Elder_Branch
+        Rate: 950
+        StealProtected: true
+      - Item: Ancient_Wootan_Defender_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 20278
+    AegisName: G_ILL_MEGALITH
+    Name: Ancient Megalith
+    Level: 166
+    Hp: 708500
+    Attack: 4091
+    Attack2: 5969
+    Defense: 188
+    MagicDefense: 18
+    Str: 169
+    Agi: 111
+    Vit: 89
+    Int: 55
+    Dex: 214
+    Luk: 42
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 200
+    AttackDelay: 1332
+    AttackMotion: 1332
+    DamageMotion: 672
+    Ai: 10
+  - Id: 20279
+    AegisName: G_ILL_WOOTAN_SHOOTER
+    Name: Ancient Wootan Shooter
+    Level: 164
+    Hp: 702100
+    Attack: 4116
+    Attack2: 6008
+    Defense: 142
+    MagicDefense: 21
+    Str: 171
+    Agi: 97
+    Vit: 74
+    Int: 53
+    Dex: 220
+    Luk: 45
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 857
+    AttackMotion: 1056
+    DamageMotion: 576
+    Ai: 09
+  - Id: 20280
+    AegisName: G_ILL_WOOTAN_FIGHTER
+    Name: Ancient Wootan Fighter
+    Level: 167
+    Hp: 725000
+    BaseExp: 158450
+    JobExp: 118836
+    Attack: 4007
+    Attack2: 5828
+    Defense: 205
+    MagicDefense: 8
+    Str: 198
+    Agi: 115
+    Vit: 90
+    Int: 42
+    Dex: 158
+    Luk: 42
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 912
+    AttackMotion: 1344
+    DamageMotion: 480
+    Ai: 04
 #  - Id: 20281
 #    AegisName: E_DANDY_STAR
 #  - Id: 20282

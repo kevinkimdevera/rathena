@@ -27,6 +27,7 @@ menu	"Last Warp ^777777["+lastwarp$+"]^000000",-,
     	" ~ Towns",Towns,
     	" ~ Fields",Fields,
     	" ~ Dungeons",Dungeons,
+			" ~ Illusion Dungeon", Illusion_Dungeons,
     	" ~ Guild Castles",Castles,
     	" ~ Guild Dungeons",Guild_Dungeons,
     	" ~ Instances",Instances,
@@ -392,6 +393,27 @@ D41: Restrict("Pre-RE",1,2);
 D42: Restrict("RE");
 	 setarray @c[2],57,13,64,88,45,14,26,23;
 	 Disp("Bifrost Tower",1,4); Pick("ecl_tdun");
+
+// --------------------------------------------------
+	Illusion_Dungeons:
+// --------------------------------------------------
+
+menu "Illusion of Moonlight", IL1,
+ "Illusion of Vampire", IL2,
+ "Illusion of Abyss", IL3,
+ "Illusion of Teddy Bear", IL4,
+ "Illusion of Luanda", IL5;
+
+IL1: Restrict("RE");
+	Go("pay_d03_i",143,44);
+IL2: Restrict("RE");
+	Go("gef_d01_i",115,235);
+IL3: Restrict("RE");
+	Go("tur_d03_i",131,190);
+IL4: Restrict("RE");
+	Go("ein_d02_i",165,189);
+IL5: Restrict("RE");
+	Go("com_d02_i",252,246);
 
 // --------------------------------------------------
 	Castles:

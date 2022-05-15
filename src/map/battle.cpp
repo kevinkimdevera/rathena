@@ -2799,7 +2799,6 @@ static bool is_attack_critical(struct Damage* wd, struct block_list *src, struct
 #ifdef RENEWAL
 			case ASC_BREAKER:
 #endif
-			//case LG_CANNONSPEAR:
 			case GC_CROSSIMPACT:
 			case SHC_SAVAGE_IMPACT:
 			case SHC_ETERNAL_SLASH:
@@ -4217,7 +4216,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 #endif
 		case ASC_METEORASSAULT:
 #ifdef RENEWAL
-			skillratio += 200 + 120 * skill_lv;
+			skillratio += 200 + 120 * skill_lv + (sstatus->str * 5);
 			RE_LVL_DMOD(100);
 #else
 			skillratio += -60 + 40 * skill_lv;
@@ -4786,7 +4785,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 			break;
 		case WM_SEVERE_RAINSTORM_MELEE:
 			//ATK [{(Caster DEX / 300 + AGI / 200)} x Caster Base Level / 100] %
-			skillratio += -100 + 100 * skill_lv + (sstatus->dex / 300 + sstatus->agi / 200);
+			skillratio += -100 + 100 * skill_lv + (sstatus->dex + sstatus->agi);
 			if (wd->miscflag&4) // Whip/Instrument equipped
 				skillratio += 20 * skill_lv;
 			RE_LVL_DMOD(100);
@@ -5056,7 +5055,7 @@ static int battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list *
 				skillratio += skillratio * sc->data[SC_LIGHTOFSTAR]->val2 / 100;
 			break;
 		case DK_SERVANTWEAPON_ATK:
-			skillratio += 50 + 80 * skill_lv + 5 * sstatus->pow;
+			skillratio += 100 + 50 * skill_lv + 5 * sstatus->pow;
 			RE_LVL_DMOD(100);
 			break;
 		case DK_SERVANT_W_PHANTOM:
@@ -9027,7 +9026,7 @@ enum damage_lv battle_weapon_attack(struct block_list* src, struct block_list* t
 		if( sc ){
 			// It has a success chance of triggering even tho the description says nothing about it.
 			// TODO: Need to find out what the official success chance is. [Rytech]
-			if( sc->data[SC_SERVANTWEAPON] && sd->servantball > 0 && rnd() % 100 < 20 ){
+			if( sc->data[SC_SERVANTWEAPON] && sd->servantball > 0 && rnd() % 100 < 15 ){
 				uint16 skill_id = DK_SERVANTWEAPON_ATK;
 				uint16 skill_lv = sc->data[SC_SERVANTWEAPON]->val1;
 

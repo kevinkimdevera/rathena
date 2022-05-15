@@ -12509,3 +12509,113 @@ Body:
     Targets:
       - Mob: NEO_PUNK
         Count: 150
+  - Id: 100001
+    Title: "Bounty Board Kathryne Keyron"
+    Targets:
+      - Mob: V_KATRINN
+        Count: 150
+  - Id: 100002
+    Title: "Bounty Board Margaretha Sorin"
+    Targets:
+      - Mob: V_MAGALETA
+        Count: 150
+  - Id: 100003
+    Title: "Bounty Board Cecil Damon"
+    Targets:
+      - Mob: V_SHECIL
+        Count: 150
+  - Id: 100004
+    Title: "Bounty Board Eremes Guile"
+    Targets:
+      - Mob: V_EREMES
+        Count: 150
+  - Id: 100005
+    Title: "Bounty Board Seyren Windsor"
+    Targets:
+      - Mob: V_SEYREN
+        Count: 150
+  - Id: 100006
+    Title: "Bounty Board Howard Alt-Eisen"
+    Targets:
+      - Mob: V_HARWORD
+        Count: 150
+  - Id: 100007
+    Title: "Bounty Board Trentini"
+    Targets:
+      - Mob: V_TRENTINI
+        Count: 150
+  - Id: 100008
+    Title: "Bounty Board Celia Alde"
+    Targets:
+      - Mob: V_CELIA
+        Count: 150
+  - Id: 100009
+    Title: "Bounty Board Alphoccio"
+    Targets:
+      - Mob: V_ALPHOCCIO
+        Count: 150
+  - Id: 100010
+    Title: "Bounty Board Gertie"
+    Targets:
+      - Mob: V_GERTIE
+        Count: 150
+  - Id: 100011
+    Title: "Bounty Board Chen Lio"
+    Targets:
+      - Mob: V_CHEN
+        Count: 150
+  - Id: 100012
+    Title: "Bounty Board Flamel Emure"
+    Targets:
+      - Mob: V_FLAMEL
+        Count: 150
+  - Id: 100013
+    Title: "Bounty Board Randel Lawrence"
+    Targets:
+      - Mob: V_RANDEL
+        Count: 150
+  - Id: 100014
+    Title: "Bounty Board Angry Nine Tail"
+    Targets:
+      - Mob: ILL_NINE_TAIL
+        Count: 150
+  - Id: 100015
+    Title: "Bounty Board Resentful Munak"
+    Targets:
+      - Mob: ILL_MUNAK
+        Count: 150
+  - Id: 100016
+    Title: "Bounty Board Resentful Bongun"
+    Targets:
+      - Mob: ILL_BON_GUN
+        Count: 150
+  - Id: 100017
+    Title: "Bounty Board Resentful Sohee"
+    Targets:
+      - Mob: ILL_SOHEE
+        Count: 150
+  - Id: 100018
+    Title: "Bounty Board Resentful Soldier"
+    Targets:
+      - Mob: ILL_ARCHER_SKELETON
+        Count: 150
+  - Id: 100019
+    Title: "Bounty Board Deranged Adventurer"
+    Targets:
+      - Mob: ILL_FURY_HERO
+        Count: 150
+  - Id: 100020
+    Title: "Bounty Board Charge Basilisk"
+    Targets:
+      - Mob: DR_BASILISK3
+        Count: 150
+  - Id: 100021
+    Title: "Bounty Board Combat Basilisk"
+    Targets:
+      - Mob: DR_BASILISK2
+        Count: 150
+  - Id: 100022
+    Title: "Bounty Board Jungle Mandragora"
+    Targets:
+      - Mob: DR_MANDRAGORA
+        Count: 150

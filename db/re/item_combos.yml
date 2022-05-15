@@ -19401,18 +19401,21 @@ Body:
       - Combo:
           - Bloody_Dress
           - Celine_Brooch_K
+      - Combo:
+          - Bloody_Dress
+          - Celine_Brooch
     Script: |
-      .@sum = getequiprefinerycnt(EQI_ARMOR);
+      .@r = getequiprefinerycnt(EQI_ARMOR);
       bonus bMatk,10*.@r;
-      if (.@sum >= 9) {
+      if (.@r >= 9) {
          bonus bVariableCastrate,-5;
-         if (.@sum >= 11) {
+         if (.@r >= 11) {
             bonus2 bMagicAtkEle,Ele_Neutral,10;
             bonus2 bMagicAtkEle,Ele_Fire,10;
             bonus2 bMagicAtkEle,Ele_Earth,10;
             bonus2 bMagicAtkEle,Ele_Water,10;
             bonus2 bMagicAtkEle,Ele_Wind,10;
-            if (.@sum >= 13) {
+            if (.@r >= 13) {
                bonus bUnbreakableArmor;
             }
          }
@@ -21019,7 +21022,7 @@ Body:
       if (eaclass()&EAJL_THIRD && BaseJob == JOB_MONK) {
          bonus2 bSkillCooldown,"SR_SKYNETBLOW",-200;
          autobonus3 "{ bonus bFlee2,100; }",50,3000,"SR_SKYNETBLOW";
-      
+
       }
       /*Unknow Rate*/
   - Combos:
@@ -24672,7 +24675,7 @@ Body:
       - Combo:
           - Orcish_Hero_Of_Anger     # 29140
           - Orcish_Axe     # 1304
-          - Orcish_Sword     # 1124        
+          - Orcish_Sword     # 1124
       - Combo:
           - Orcish_Hero_Of_Anger     # 29140
           - Orcish_Axe     # 1304
@@ -24966,7 +24969,7 @@ Body:
           - Gray_Range2
           - Thanos_Violin_AD
       - Combo:
-          - Gray_Range2 
+          - Gray_Range2
           - Thanos_Whip_AD
     Script: |
       .@r = getequiprefinerycnt(EQI_HAND_R);

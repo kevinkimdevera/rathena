@@ -1,0 +1,2 @@
+tur_d03_i,218,70,0	warp	t_ill01	1,1,tur_d04_i,99,192
+tur_d04_i,99,197,0	warp	t_ill02	1,1,tur_d03_i,218,75

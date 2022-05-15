@@ -2454,9 +2454,11 @@ Body:
       - Item: Gelerdria_IL
       - Item: Thorn_Staff_IL
       - Item: Dea_Staff_IL
-#  - Item: Joy_Of_Victory
-#    TargetItems:
-#      - Item: Victory_Wing_Ear_
+  - Item: Joy_Of_Victory
+    RandomOptionGroup: JOY_OF_VICTORY
+    CardsAllowed: true
+    TargetItems:
+      - Item: Victory_Wing_Ear_
   - Item: Ancient_Hero_Bravery
     RandomOptionGroup: ANCIENT_HERO_BRAVERY
     CardsAllowed: true
@@ -4137,80 +4139,84 @@ Body:
 #      - Item: Nurse_Cap_IL
 #      - Item: Puente_Robe_IL
 #      - Item: Apple_Of_Archer_IL
-#  - Item: Great_Hero_Bravery
-#    TargetItems:
-#      - Item: Up_Oriental_Sword
-#      - Item: Up_Dragonic_Slayer
-#      - Item: Up_Shiver_Katar_K
-#      - Item: Up_Blade_Katar
-#      - Item: Up_Sword_Of_Bluefire
-#      - Item: Up_Slate_Sword
-#      - Item: Up_Narcis_Bow
-#      - Item: Up_Trumpet_Shell_K
-#      - Item: Up_Barb_Wire_K
-#      - Item: Up_Avenger
-#      - Item: Up_Magic_Sword
-#      - Item: Up_Fatalist
-#      - Item: Up_Meteor_Striker
-#      - Item: Up_Royal_Bow_K
-#      - Item: Up_Scalet_Dragon_L_Bow
-#      - Item: Up_Shadow_Staff_K
-#      - Item: Up_Freezing_Rod
-#      - Item: Up_Iron_Nail_K
-#      - Item: Up_Ray_Knuckle
-#      - Item: Up_Undine_Spear_K
-#      - Item: Up_Light_Blade
-#      - Item: Up_Iron_Staff
-#      - Item: Up_Blue_Crystal_Staff
-#      - Item: Up_Demon_Hunting_Bible
-#      - Item: Up_Saint_Hall
-#      - Item: Up_MeawFoxtail
-#      - Item: Up_Fog_Dew_Sword
-#      - Item: Up_Humma_Clear
-#      - Item: Up_Master_Soul_Rifle
-#      - Item: Up_Golden_Lord_Launcher
-#      - Item: Up_The_Black
-#      - Item: Up_Demon_Slayer_Shot
-#      - Item: Up_Crimson_Rose
-#      - Item: Up_Thousand_Sun
-#      - Item: Up_Spirit_Pendulum_
-#  - Item: Great_Hero_Wisdom
-#    TargetItems:
-#      - Item: Up_Oriental_Sword
-#      - Item: Up_Dragonic_Slayer
-#      - Item: Up_Shiver_Katar_K
-#      - Item: Up_Blade_Katar
-#      - Item: Up_Sword_Of_Bluefire
-#      - Item: Up_Slate_Sword
-#      - Item: Up_Narcis_Bow
-#      - Item: Up_Trumpet_Shell_K
-#      - Item: Up_Barb_Wire_K
-#      - Item: Up_Avenger
-#      - Item: Up_Magic_Sword
-#      - Item: Up_Fatalist
-#      - Item: Up_Meteor_Striker
-#      - Item: Up_Royal_Bow_K
-#      - Item: Up_Scalet_Dragon_L_Bow
-#      - Item: Up_Shadow_Staff_K
-#      - Item: Up_Freezing_Rod
-#      - Item: Up_Iron_Nail_K
-#      - Item: Up_Ray_Knuckle
-#      - Item: Up_Undine_Spear_K
-#      - Item: Up_Light_Blade
-#      - Item: Up_Iron_Staff
-#      - Item: Up_Blue_Crystal_Staff
-#      - Item: Up_Demon_Hunting_Bible
-#      - Item: Up_Saint_Hall
-#      - Item: Up_MeawFoxtail
-#      - Item: Up_Fog_Dew_Sword
-#      - Item: Up_Humma_Clear
-#      - Item: Up_Master_Soul_Rifle
-#      - Item: Up_Golden_Lord_Launcher
-#      - Item: Up_The_Black
-#      - Item: Up_Demon_Slayer_Shot
-#      - Item: Up_Crimson_Rose
-#      - Item: Up_Thousand_Sun
-#      - Item: Up_Spirit_Pendulum_
+  - Item: Great_Hero_Bravery
+    RandomOptionGroup: GREAT_HERO_BRAVERY
+    CardsAllowed: true
+    TargetItems:
+      - Item: Up_Oriental_Sword
+      - Item: Up_Dragonic_Slayer
+      - Item: Up_Shiver_Katar_K
+      - Item: Up_Blade_Katar
+      - Item: Up_Sword_Of_Bluefire
+      - Item: Up_Slate_Sword
+      - Item: Up_Narcis_Bow
+      - Item: Up_Trumpet_Shell_K
+      - Item: Up_Barb_Wire_K
+      - Item: Up_Avenger
+      - Item: Up_Magic_Sword
+      - Item: Up_Fatalist
+      - Item: Up_Meteor_Striker
+      - Item: Up_Royal_Bow_K
+      - Item: Up_Scalet_Dragon_L_Bow
+      - Item: Up_Shadow_Staff_K
+      - Item: Up_Freezing_Rod
+      - Item: Up_Iron_Nail_K
+      - Item: Up_Ray_Knuckle
+      - Item: Up_Undine_Spear_K
+      - Item: Up_Light_Blade
+      - Item: Up_Iron_Staff
+      - Item: Up_Blue_Crystal_Staff
+      - Item: Up_Demon_Hunting_Bible
+      - Item: Up_Saint_Hall
+      - Item: Up_MeawFoxtail
+      - Item: Up_Fog_Dew_Sword
+      - Item: Up_Humma_Clear
+      - Item: Up_Master_Soul_Rifle
+      - Item: Up_Golden_Lord_Launcher
+      - Item: Up_The_Black
+      - Item: Up_Demon_Slayer_Shot
+      - Item: Up_Crimson_Rose
+      - Item: Up_Thousand_Sun
+      - Item: Up_Spirit_Pendulum_
+  - Item: Great_Hero_Wisdom
+    RandomOptionGroup: GREAT_HERO_WISDOM
+    CardsAllowed: true
+    TargetItems:
+      - Item: Up_Oriental_Sword
+      - Item: Up_Dragonic_Slayer
+      - Item: Up_Shiver_Katar_K
+      - Item: Up_Blade_Katar
+      - Item: Up_Sword_Of_Bluefire
+      - Item: Up_Slate_Sword
+      - Item: Up_Narcis_Bow
+      - Item: Up_Trumpet_Shell_K
+      - Item: Up_Barb_Wire_K
+      - Item: Up_Avenger
+      - Item: Up_Magic_Sword
+      - Item: Up_Fatalist
+      - Item: Up_Meteor_Striker
+      - Item: Up_Royal_Bow_K
+      - Item: Up_Scalet_Dragon_L_Bow
+      - Item: Up_Shadow_Staff_K
+      - Item: Up_Freezing_Rod
+      - Item: Up_Iron_Nail_K
+      - Item: Up_Ray_Knuckle
+      - Item: Up_Undine_Spear_K
+      - Item: Up_Light_Blade
+      - Item: Up_Iron_Staff
+      - Item: Up_Blue_Crystal_Staff
+      - Item: Up_Demon_Hunting_Bible
+      - Item: Up_Saint_Hall
+      - Item: Up_MeawFoxtail
+      - Item: Up_Fog_Dew_Sword
+      - Item: Up_Humma_Clear
+      - Item: Up_Master_Soul_Rifle
+      - Item: Up_Golden_Lord_Launcher
+      - Item: Up_The_Black
+      - Item: Up_Demon_Slayer_Shot
+      - Item: Up_Crimson_Rose
+      - Item: Up_Thousand_Sun
+      - Item: Up_Spirit_Pendulum_
 #  - Item: Vampire_Box_IL
 #    MinimumRefine: 4
 #    MaximumRefine: 9
@@ -4490,9 +4496,11 @@ Body:
 #      - Item: Poenitentia_Ramus
 #      - Item: Poenitentia_Planta
 #      - Item: Poenitentia_Ferrum
-#  - Item: Overclocker
-#    TargetItems:
-#      - Item: Battle_Processor_
+  - Item: Overclocker
+    RandomOptionGroup: OVERCLOCKER
+    CardsAllowed: true
+    TargetItems:
+      - Item: Battle_Processor_
 #  - Item: Sakray_Regret
 #    TargetItems:
 #      - Item: Poenitentia_Ensis
@@ -4961,9 +4969,11 @@ Body:
 #      - Item: MeawFoxtail_LT
 #      - Item: OneSkyOneSun_LT
 #      - Item: SoulWeight_LT
-#  - Item: Lens_Craft_Stone
-#    TargetItems:
-#      - Item: Deepblue_Sunglasses_
+  - Item: Lens_Craft_Stone
+    CardsAllowed: true
+    RandomOptionGroup: LENS_CRAFT_STONE
+    TargetItems:
+      - Item: Deepblue_Sunglasses_
 #  - Item: FullPenest_Shadow_Up
 #    MaximumRefine: 10
 #    TargetItems:

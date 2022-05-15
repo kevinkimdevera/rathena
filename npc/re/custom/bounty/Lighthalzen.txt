@@ -14,12 +14,12 @@
 //= npc on cities.
 //= The function arguments are this:
 //= 	callfunc "F_Bounty_Board", MinLevel, MaxLevel, MsgHuntPlace, MsgOutLevel,
-//=			MonsterID, 		QuestID, 	BaseExp, 	JobExp{, 
+//=			MonsterID, 		QuestID, 	BaseExp, 	JobExp{,
 //=			MonsterID, 		QuestID, 	BaseExp, 	JobExp};
 //============================================================
 
-lighthalzen,194,161,3	script	Bounty Board 81-100#lz1	837,{
-	callfunc "F_Bounty_Board", 81, 100, 9, 1,
+lighthalzen,194,161,3	script	Bounty Board 80-100#lz1	837,{
+	callfunc "F_Bounty_Board", 80, 100, 9, 1,
 		1613,	62745,	107325,		120825,	// METALING
 		1162,	62746,	131625,		148050,	// RAFFLESIA
 		1215,	62747,	121500,		136575,	// STEM_WORM
@@ -28,8 +28,8 @@ lighthalzen,194,161,3	script	Bounty Board 81-100#lz1	837,{
 	end;
 }
 
-lighthalzen,192,161,3	script	Bounty Board 101-150#lz2	837,{
-	callfunc "F_Bounty_Board", 101, 150, 4, 1,
+lighthalzen,192,161,3	script	Bounty Board 100-120#lz2	837,{
+	callfunc "F_Bounty_Board", 100, 120, 4, 1,
 		1133,	62750,	255825,		191925,	// KOBOLD_1
 		1134,	62751,	218700,		164025,	// KOBOLD_2
 		1135,	62752,	205425,		154125,	// KOBOLD_3
@@ -37,8 +37,8 @@ lighthalzen,192,161,3	script	Bounty Board 101-150#lz2	837,{
 	end;
 }
 
-lighthalzen,190,161,3	script	Bounty Board 121-175#lz3	837,{
-	callfunc "F_Bounty_Board", 121, 0, 10, 1,
+lighthalzen,190,161,3	script	Bounty Board 120-140#lz3	837,{
+	callfunc "F_Bounty_Board", 120, 140, 10, 1,
 		1682,	62754,	424350,		318150,	// REMOVAL
 		1657,	62755,	506250,		503550,	// RAWREL
 		1655,	62756,	546750,		511200,	// EREND
@@ -49,8 +49,8 @@ lighthalzen,190,161,3	script	Bounty Board 121-175#lz3	837,{
 	end;
 }
 
-lighthalzen,188,162,3	script	Bounty Board 141#lz4	837,{
-	callfunc "F_Bounty_Board", 141, 0, 1, 4,
+lighthalzen,188,162,3	script	Bounty Board 140#lz4	837,{
+	callfunc "F_Bounty_Board", 140, 0, 1, 4,
 		1639,	62761,	1516950,	1997550,	// KATRINN
 		1637,	62762,	1736100,	1738912,	// MAGALETA
 		1638,	62763,	1863225,	1861312,	// SHECIL
@@ -66,3 +66,23 @@ lighthalzen,188,162,3	script	Bounty Board 141#lz4	837,{
 		2221,	62773,	3641175,	2706075;	// RANDEL
 	end;
 }
+
+lighthalzen,186,164,3	script	Bounty Board 141#lz5	837,{
+	callfunc "F_Bounty_Board", 160, 0, 1, 4,
+		3210,	100001,	9000000,	4500000,	// KATRINN
+		3209,	100002,	12000000,	6000000,	// MAGALETA
+		3211,	100003,	10500000,	5250000,	// SHECIL
+		3208,	100004,	10500000,	5250000,	// EREMES
+		3213,	100005,	15000000,	7500000,	// SEYREN
+		3212,	100006,	15000000,	7500000,	// HARWORD
+		3232,	100007,	9000000,	4500000,	// TRENTINI
+		3228,	100008,	13500000,	6750000,	// CELIA
+		3231,	100009,	9000000,	4500000,	// ALPHOCCIO
+		3230,	100010,	10500000,	5250000,	// GERTIE
+		3229,	100011,	10500000,	5250000,	// CHEN
+		3227,	100012,	12000000,	6000000,	// FLAMEL
+		3226,	100013,	15000000,	7500000;	// RANDEL
+	end;
+}
+
+

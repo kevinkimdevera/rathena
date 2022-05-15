@@ -1,0 +1,7 @@
+lasagna,163,139,3	script	Bounty Board 140-160#lasagna2	837,{
+	callfunc "F_Bounty_Board", 140, 160, 1, 4,
+		3504,	100020,	1922250,	2432550,	// DR_BASILISK3
+		3503,	100021,	1601850,	2027100,	// DR_BASILISK2
+		3506,	100022,	1665000,	2130000;	// DR_MANDRAGORA
+	end;
+}
