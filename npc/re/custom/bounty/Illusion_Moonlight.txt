@@ -1,5 +1,5 @@
-pay_d03_i,164,44,3	script	Bounty Board 75-175#ilm1	837,{
-	callfunc "F_Bounty_Board", 75, 175, 1, 4,
+pay_d03_i,164,44,3	script	Bounty Board 100#ilm1	837,{
+	callfunc "F_Bounty_Board", 100, 0, 1, 4,
 		3759,	100014,	694500,	650700,	// ILL_NINE_TAIL
 		3760,	100015,	552900,	562800,	// ILL_MUNAK
 		3761,	100016,	641100,	560700,	// BONGUN

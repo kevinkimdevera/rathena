@@ -12619,3 +12619,93 @@ Body:
     Targets:
       - Mob: DR_MANDRAGORA
         Count: 150
+  - Id: 100023
+    Title: "Bounty Board Sweet Nightmare"
+    Targets:
+      - Mob: ILL_NIGHTMARE
+        Count: 150
+  - Id: 100024
+    Title: "Bounty Board Matt Drainliar"
+    Targets:
+      - Mob: ILL_DRAINLIAR
+        Count: 150
+  - Id: 100025
+    Title: "Bounty Board Living Dead"
+    Targets:
+      - Mob: ILL_ZOMBIE_C
+        Count: 150
+  - Id: 100026
+    Title: "Bounty Board Starving Living Dead"
+    Targets:
+      - Mob: ILL_ZOMBIE
+        Count: 150
+  - Id: 100027
+    Title: "Bounty Board Living Dead"
+    Targets:
+      - Mob: ILL_GHOUL
+        Count: 150
+  - Id: 100028
+    Title: "Bounty Board Angry Gazeti"
+    Targets:
+      - Mob: ILL_GAZETI
+        Count: 150
+  - Id: 100029
+    Title: "Bounty Board Angry Snowier"
+    Targets:
+      - Mob: ILL_SNOWIER
+        Count: 150
+  - Id: 100030
+    Title: "Bounty Board Angry Ice Titan"
+    Targets:
+      - Mob: ILL_ICE_TITAN
+        Count: 150
+  - Id: 100031
+    Title: "Bounty Board Ominous Assaulter"
+    Targets:
+      - Mob: ILL_ASSULTER
+        Count: 150
+  - Id: 100032
+    Title: "Bounty Board Ominous Permeter"
+    Targets:
+      - Mob: ILL_PERMETER
+        Count: 150
+  - Id: 100033
+    Title: "Bounty Board Ominous Freezer"
+    Targets:
+      - Mob: ILL_FREEZER
+        Count: 150
+  - Id: 100034
+    Title: "Bounty Board Ominous Solider"
+    Targets:
+      - Mob: ILL_SOLIDER
+        Count: 150
+  - Id: 100035
+    Title: "Bounty Board Ominous Heater"
+    Targets:
+      - Mob: ILL_HEATER
+        Count: 150
+  - Id: 100036
+    Title: "Bounty Board Red Teddy Bear"
+    Targets:
+      - Mob: ILL_TEDDY_BEAR_R
+        Count: 150
+  - Id: 100037
+    Title: "Bounty Board Yellow Teddy Bear"
+    Targets:
+      - Mob: ILL_TEDDY_BEAR_Y
+        Count: 150
+  - Id: 100038
+    Title: "Bounty Board Green Teddy Bear"
+    Targets:
+      - Mob: ILL_TEDDY_BEAR_G
+        Count: 150
+  - Id: 100039
+    Title: "Bounty Board White Teddy Bear"
+    Targets:
+      - Mob: ILL_TEDDY_BEAR_W
+        Count: 150
+  - Id: 100040
+    Title: "Bounty Board Blue Teddy Bear"
+    Targets:
+      - Mob: ILL_TEDDY_BEAR_B
+        Count: 150

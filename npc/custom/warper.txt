@@ -400,19 +400,22 @@ D42: Restrict("RE");
 
 menu "Illusion of Moonlight", IL1,
  "Illusion of Vampire", IL2,
- "Illusion of Abyss", IL3,
- "Illusion of Teddy Bear", IL4,
- "Illusion of Luanda", IL5;
+ "Illusion of Frozen", IL3,
+ "Illusion of Abyss", IL4,
+ "Illusion of Teddy Bear", IL5,
+ "Illusion of Luanda", IL6;
 
 IL1: Restrict("RE");
 	Go("pay_d03_i",143,44);
 IL2: Restrict("RE");
 	Go("gef_d01_i",115,235);
 IL3: Restrict("RE");
-	Go("tur_d03_i",131,190);
+	Go("ice_d03_i",149,24);
 IL4: Restrict("RE");
-	Go("ein_d02_i",165,189);
+	Go("tur_d03_i",131,190);
 IL5: Restrict("RE");
+	Go("ein_d02_i",165,189);
+IL6: Restrict("RE");
 	Go("com_d02_i",252,246);
 
 // --------------------------------------------------

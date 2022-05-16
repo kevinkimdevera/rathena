@@ -90168,16 +90168,274 @@ Body:
         Rate: 7000
 #  - Id: 3791
 #    AegisName: JP_E_MONSTER_73
-#  - Id: 3792
-#    AegisName: ILL_GAZETI
-#  - Id: 3793
-#    AegisName: ILL_SNOWIER
-#  - Id: 3794
-#    AegisName: ILL_ICE_TITAN
-#  - Id: 3795
-#    AegisName: ILL_ICEICLE
-#  - Id: 3796
-#    AegisName: ILL_KTULLANUX
+  - Id: 3792
+    AegisName: ILL_GAZETI
+    Name: Furious Gazeti
+    Level: 126
+    Hp: 117139
+    BaseExp: 6755
+    JobExp: 6454
+    Attack: 2083
+    Attack2: 2999
+    Defense: 141
+    MagicDefense: 42
+    Str: 125
+    Agi: 54
+    Vit: 64
+    Int: 56
+    Dex: 144
+    Luk: 62
+    AttackRange: 10
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 190
+    AttackDelay: 576
+    AttackMotion: 370
+    DamageMotion: 270
+    Ai: 10
+    Modes:
+      CastSensorChase: true
+      CastSensorIdle: true
+      ChangeChase: true
+      ChangeTargetMelee: true
+      ChangeTargetChase: true
+    Drops:
+      - Item: Ice_Piece
+        Rate: 3000
+      - Item: Carnium
+        Rate: 20
+      - Item: Frozen_Bow
+        Rate: 1
+      - Item: Cold_Ice
+        Rate: 100
+      - Item: Ice_Fragment
+        Rate: 200
+      - Item: Ice_Heart
+        Rate: 3000
+      - Item: Frozen_Stone_Fragment
+        Rate: 3000
+      - Item: IllusionStone
+        Rate: 4000
+        StealProtected: true
+      - Item: AngerGazeti_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3793
+    AegisName: ILL_SNOWIER
+    Name: Furious Snowier
+    Level: 129
+    Hp: 105290
+    BaseExp: 7106
+    JobExp: 6711
+    Attack: 1665
+    Attack2: 2365
+    Defense: 195
+    MagicDefense: 78
+    Str: 136
+    Agi: 88
+    Vit: 97
+    Int: 78
+    Dex: 103
+    Luk: 71
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 220
+    AttackDelay: 936
+    AttackMotion: 1020
+    DamageMotion: 420
+    Ai: 04
+    Drops:
+      - Item: White_Herb
+        Rate: 500
+      - Item: Blue_Herb
+        Rate: 50
+      - Item: Elunium
+        Rate: 100
+      - Item: Crystal_Blue
+        Rate: 100
+      - Item: Combo_Battle_Glove
+        Rate: 3
+      - Item: Ice_Piece
+        Rate: 1000
+      - Item: Ice_Heart
+        Rate: 3000
+      - Item: Snowball
+        Rate: 3000
+        StealProtected: true
+      - Item: IllusionStone
+        Rate: 4000
+        StealProtected: true
+      - Item: AngerSnowier_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3794
+    AegisName: ILL_ICE_TITAN
+    Name: Furious Ice Titan
+    Level: 133
+    Hp: 137656
+    BaseExp: 7519
+    JobExp: 7132
+    Attack: 1904
+    Attack2: 2699
+    Defense: 644
+    MagicDefense: 44
+    Str: 181
+    Agi: 70
+    Vit: 119
+    Int: 61
+    Dex: 124
+    Luk: 56
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Formless
+    Element: Water
+    ElementLevel: 3
+    WalkSpeed: 250
+    AttackDelay: 861
+    AttackMotion: 660
+    DamageMotion: 144
+    Ai: 04
+    Drops:
+      - Item: Frozen_Rose
+        Rate: 100
+      - Item: Bradium
+        Rate: 10
+      - Item: Carnium
+        Rate: 30
+      - Item: Mistic_Frozen
+        Rate: 100
+      - Item: Huuma_Fluttering_Snow
+        Rate: 30
+      - Item: Ice_Piece
+        Rate: 3000
+      - Item: Ice_Heart
+        Rate: 5000
+      - Item: Spirit_Jewel
+        Rate: 3000
+        StealProtected: true
+      - Item: IllusionStone
+        Rate: 4000
+        StealProtected: true
+      - Item: AngerIceTitan_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 3795
+    AegisName: ILL_ICEICLE
+    Name: Solid Icicle
+    Level: 135
+    Hp: 1012
+    BaseExp: 280
+    JobExp: 280
+    Attack: 1576
+    Attack2: 2197
+    Defense: 50
+    MagicDefense: 35
+    Str: 199
+    Dex: 244
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 190
+    AttackDelay: 576
+    AttackMotion: 370
+    DamageMotion: 270
+    Ai: 10
+    Drops:
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+      - Item: Frozen_Stone_Fragment
+        Rate: 200
+  - Id: 3796
+    AegisName: ILL_KTULLANUX
+    Name: Awaken Ktullanux
+    Level: 135
+    Hp: 13521442
+    BaseExp: 2777284
+    JobExp: 1937023
+    MvpExp: 1517788
+    Attack: 4863
+    Attack2: 7164
+    Defense: 129
+    MagicDefense: 78
+    Str: 125
+    Agi: 156
+    Vit: 70
+    Int: 165
+    Dex: 262
+    Luk: 142
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Water
+    ElementLevel: 4
+    WalkSpeed: 400
+    AttackDelay: 432
+    AttackMotion: 840
+    DamageMotion: 216
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
+    MvpDrops:
+      - Item: Yggdrasilberry
+        Rate: 5500
+      - Item: Old_Violet_Box
+        Rate: 5000
+      - Item: Old_Violet_Box
+        Rate: 5000
+    Drops:
+      - Item: Old_Card_Album
+        Rate: 3000
+      - Item: Yggdrasilberry
+        Rate: 5000
+      - Item: Old_Violet_Box
+        Rate: 5000
+      - Item: Herald_Of_GOD
+        Rate: 5000
+      - Item: Clack_Of_Servival
+        Rate: 3000
+      - Item: Ice_Scale
+        Rate: 9000
+      - Item: Ktullanux_Eye
+        Rate: 10000
+      - Item: Ktullanux_Eye
+        Rate: 10000
+        StealProtected: true
+      - Item: Illusion_Survivor_Manteau
+        Rate: 2
+        StealProtected: true
+      - Item: AwakenKtullanux_Card
+        Rate: 1
+        StealProtected: true
 #  - Id: 3797
 #    AegisName: ILL_FROZEN_KN
 #  - Id: 3798

@@ -1,0 +1,7 @@
+ice_d03_i,145,39,3	script	Bounty Board 120#ilf1	837,{
+	callfunc "F_Bounty_Board", 120, 0, 1, 4,
+		3792,	100028,	1013250,	968100,	// ILL_GAZETI
+		3793,	100029,	1065900,	1006650,	// ILL_SNOWIER
+		3794,	100030,	1127850,	1069800;	// ILL_ICE_TITAN
+	end;
+}
