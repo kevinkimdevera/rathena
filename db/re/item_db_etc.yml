@@ -6828,8 +6828,6 @@ Body:
       DropEffect: CLIENT
     Script: |
       bonus3 bAutoSpellWhenHit,"CR_AUTOGUARD",3+7*(getskilllv("CR_AUTOGUARD") == 10),30;
-    UnEquipScript: |
-      sc_end SC_AUTOGUARD;
   - Id: 4300
     AegisName: Chimera_Card
     Name: Chimera Card
@@ -18517,7 +18515,7 @@ Body:
     Flags:
       BuyingStore: true
   - Id: 6327
-    AegisName: Limited_High_Density_Bradium
+    AegisName: LI_HD_Bradium
     Name: (Limited)High Density Bradium
     Type: Usable
     Buy: 20
@@ -23101,7 +23099,7 @@ Body:
       NoMail: true
       NoAuction: true
   - Id: 6906
-    AegisName: Limited_High_Density_Kalunium
+    AegisName: LI_HD_Carnium
     Name: (Limited)High Density Kalunium
     Type: Usable
     Buy: 20
@@ -23153,7 +23151,7 @@ Body:
       NoMail: true
       NoAuction: true
   - Id: 6910
-    AegisName: Limited_Purified_Oridecon
+    AegisName: LI_HD_Oridecon
     Name: (Limited) Purified Oridecon
     Type: Etc
     Buy: 10
@@ -23167,7 +23165,7 @@ Body:
       NoMail: true
       NoAuction: true
   - Id: 6911
-    AegisName: Limited_Purified_Eluminium
+    AegisName: LI_HD_Elunium
     Name: (Limited) Purified Eluminium
     Type: Etc
     Buy: 10

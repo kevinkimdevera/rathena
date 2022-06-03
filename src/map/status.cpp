@@ -2935,6 +2935,7 @@ static unsigned int status_calc_maxhpsp_pc(struct map_session_data* sd, unsigned
 	if (isHP) { //Calculates MaxHP
 		double equip_bonus = 0, item_bonus = 0;
 		dmax = job->base_hp[level-1] * (1 + (umax(stat,1) * 0.01)) * ((sd->class_&JOBL_UPPER)?1.25:(pc_is_taekwon_ranker(sd))?3:1);
+		dmax += sd->indexed_bonus.param_equip[PARAM_VIT]; //Vit from equip gives +1 additional HP
 		dmax += status_get_hpbonus(&sd->bl,STATUS_BONUS_FIX);
 		equip_bonus = (dmax * status_get_hpbonus_equip(sd) / 100);
 		item_bonus = (dmax * status_get_hpbonus_item(&sd->bl) / 100);
@@ -2944,6 +2945,7 @@ static unsigned int status_calc_maxhpsp_pc(struct map_session_data* sd, unsigned
 	else { //Calculates MaxSP
 		double equip_bonus = 0, item_bonus = 0;
 		dmax = job->base_sp[level-1] * (1 + (umax(stat,1) * 0.01)) * ((sd->class_&JOBL_UPPER)?1.25:(pc_is_taekwon_ranker(sd))?3:1);
+		dmax += sd->indexed_bonus.param_equip[PARAM_INT]; //Int from equip gives +1 additional SP
 		dmax += status_get_spbonus(&sd->bl,STATUS_BONUS_FIX);
 		equip_bonus = (dmax * status_get_spbonus_equip(sd) / 100);
 		item_bonus = (dmax * status_get_spbonus_item(&sd->bl) / 100);
@@ -3596,17 +3598,17 @@ int status_calc_pc_sub(struct map_session_data* sd, uint8 opt)
 		base_status->int_ += 20;
 
 	// Bonuses from cards and equipment as well as base stat, remember to avoid overflows.
-	i = base_status->str + sd->status.str + sd->indexed_bonus.param_bonus[0] + sd->indexed_bonus.param_equip[0];
+	i = base_status->str + sd->status.str + sd->indexed_bonus.param_bonus[PARAM_STR] + sd->indexed_bonus.param_equip[PARAM_STR];
 	base_status->str = cap_value(i,0,USHRT_MAX);
-	i = base_status->agi + sd->status.agi + sd->indexed_bonus.param_bonus[1] + sd->indexed_bonus.param_equip[1];
+	i = base_status->agi + sd->status.agi + sd->indexed_bonus.param_bonus[PARAM_AGI] + sd->indexed_bonus.param_equip[PARAM_AGI];
 	base_status->agi = cap_value(i,0,USHRT_MAX);
-	i = base_status->vit + sd->status.vit + sd->indexed_bonus.param_bonus[2] + sd->indexed_bonus.param_equip[2];
+	i = base_status->vit + sd->status.vit + sd->indexed_bonus.param_bonus[PARAM_VIT] + sd->indexed_bonus.param_equip[PARAM_VIT];
 	base_status->vit = cap_value(i,0,USHRT_MAX);
-	i = base_status->int_+ sd->status.int_+ sd->indexed_bonus.param_bonus[3] + sd->indexed_bonus.param_equip[3];
+	i = base_status->int_+ sd->status.int_+ sd->indexed_bonus.param_bonus[PARAM_INT] + sd->indexed_bonus.param_equip[PARAM_INT];
 	base_status->int_ = cap_value(i,0,USHRT_MAX);
-	i = base_status->dex + sd->status.dex + sd->indexed_bonus.param_bonus[4] + sd->indexed_bonus.param_equip[4];
+	i = base_status->dex + sd->status.dex + sd->indexed_bonus.param_bonus[PARAM_DEX] + sd->indexed_bonus.param_equip[PARAM_DEX];
 	base_status->dex = cap_value(i,0,USHRT_MAX);
-	i = base_status->luk + sd->status.luk + sd->indexed_bonus.param_bonus[5] + sd->indexed_bonus.param_equip[5];
+	i = base_status->luk + sd->status.luk + sd->indexed_bonus.param_bonus[PARAM_LUK] + sd->indexed_bonus.param_equip[PARAM_LUK];
 	base_status->luk = cap_value(i,0,USHRT_MAX);
 	i = base_status->pow + sd->status.pow + sd->indexed_bonus.param_bonus[PARAM_POW] + sd->indexed_bonus.param_equip[PARAM_POW];
 	base_status->pow = cap_value(i, 0, USHRT_MAX);
@@ -8737,7 +8739,6 @@ t_tick status_get_sc_def(struct block_list *src, struct block_list *bl, enum sc_
 			return 0;
 	}
 
-	rate = cap_value(rate, 0, 10000);
 	sd = BL_CAST(BL_PC,bl);
 	status = status_get_status_data(bl);
 	status_src = status_get_status_data(src);
@@ -9726,8 +9727,6 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 
 	// Check for overlapping fails
 	if( (sce = sc->data[type]) ) {
-		if (scdb->flag[SCF_OVERLAPFAIL])
-			return 0;
 		switch( type ) {
 			case SC_MERC_FLEEUP:
 			case SC_MERC_ATKUP:
@@ -11086,7 +11085,6 @@ int status_change_start(struct block_list* src, struct block_list* bl,enum sc_ty
 			break;
 		case SC_REFLECTDAMAGE:
 			val2 = 10 * val1; // Reflect reduction amount
-			val3 = val1*5 + 25; // Number of reflects
 			val4 = tick/1000; // Number of SP cycles (duration)
 			tick_time = 1000; // [GodLesZ] tick time
 			break;
@@ -13249,6 +13247,7 @@ TIMER_FUNC(status_change_timer) {
 			map_freeblock_lock();
 			dounlock = true;
 			status_fix_damage(bl, bl, 100, clif_damage(bl, bl, tick, status->amotion, status->dmotion + 500, 100, 1, DMG_NORMAL, 0, false),0);
+			unit_skillcastcancel(bl, 2);
 		}
 		break;
 
