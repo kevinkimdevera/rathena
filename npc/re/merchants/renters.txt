@@ -186,7 +186,7 @@ prontera,125,208,5	script	Peco Peco Remover	105,{
 				mes "Please remove your cash mount.";
 				close;
 			}
-			setmadogear;
+			setmadogear true,MADO_SUIT;
 			mes "[Mado Gear Armorer]";
 			mes "Have fun, and please come again!";
 			close;
