@@ -236,7 +236,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 12
             Bonus: 2400
             BlacksmithBlessingAmount: 11
@@ -255,7 +255,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 13
             Bonus: 2800
             BlacksmithBlessingAmount: 16
@@ -274,7 +274,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 14
             Bonus: 3200
             BlacksmithBlessingAmount: 22
@@ -293,7 +293,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 15
             Bonus: 3600
             Chances:
@@ -311,7 +311,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 16
             Bonus: 4000
             Chances:
@@ -329,7 +329,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 17
             Bonus: 4500
             Chances:
@@ -347,7 +347,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 18
             Bonus: 5000
             Chances:
@@ -365,7 +365,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 19
             Bonus: 5500
             Chances:
@@ -383,7 +383,7 @@ Body:
               - Type: Enriched
                 Rate: 500
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
           - Level: 20
             Bonus: 6000
             Chances:
@@ -401,7 +401,7 @@ Body:
               - Type: Enriched
                 Rate: 500
                 Price: 100000
-                Material: Limited_High_Density_Kalunium
+                Material: LI_HD_Carnium
       - Level: 2
         RefineLevels:
           - Level: 1
@@ -845,7 +845,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 12
             Bonus: 2400
             RandomBonus: 1500
@@ -865,7 +865,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 13
             Bonus: 2600
             RandomBonus: 1800
@@ -885,7 +885,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 14
             Bonus: 2800
             RandomBonus: 2100
@@ -905,7 +905,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 15
             Bonus: 3000
             RandomBonus: 2400
@@ -924,7 +924,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 16
             Bonus: 4800
             RandomBonus: 2700
@@ -943,7 +943,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 17
             Bonus: 5100
             RandomBonus: 3000
@@ -962,7 +962,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 18
             Bonus: 5400
             RandomBonus: 3300
@@ -981,7 +981,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 19
             Bonus: 5700
             RandomBonus: 3600
@@ -1000,7 +1000,7 @@ Body:
               - Type: Enriched
                 Rate: 1500
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 20
             Bonus: 6000
             RandomBonus: 3900
@@ -1019,7 +1019,7 @@ Body:
               - Type: Enriched
                 Rate: 1500
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
       - Level: 2
         RefineLevels:
           - Level: 1
@@ -1209,7 +1209,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 12
             Bonus: 3600
             RandomBonus: 3000
@@ -1229,7 +1229,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 13
             Bonus: 3900
             RandomBonus: 3500
@@ -1249,7 +1249,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 14
             Bonus: 4200
             RandomBonus: 4000
@@ -1269,7 +1269,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 15
             Bonus: 4500
             RandomBonus: 4500
@@ -1288,7 +1288,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 16
             Bonus: 8000
             RandomBonus: 5000
@@ -1307,7 +1307,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 17
             Bonus: 8500
             RandomBonus: 5500
@@ -1326,7 +1326,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 18
             Bonus: 9000
             RandomBonus: 6000
@@ -1345,7 +1345,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 19
             Bonus: 9500
             RandomBonus: 6500
@@ -1364,7 +1364,7 @@ Body:
               - Type: Enriched
                 Rate: 1500
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 20
             Bonus: 10000
             RandomBonus: 7000
@@ -1383,7 +1383,7 @@ Body:
               - Type: Enriched
                 Rate: 1500
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
       - Level: 3
         RefineLevels:
           - Level: 1
@@ -1573,7 +1573,7 @@ Body:
               - Type: HD
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 12
             Bonus: 6000
             RandomBonus: 5600
@@ -1593,7 +1593,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 13
             Bonus: 6500
             RandomBonus: 6400
@@ -1613,7 +1613,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 14
             Bonus: 7000
             RandomBonus: 7200
@@ -1633,7 +1633,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 15
             Bonus: 7500
             RandomBonus: 8000
@@ -1652,7 +1652,7 @@ Body:
               - Type: Enriched
                 Rate: 1800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 16
             Bonus: 11200
             RandomBonus: 8800
@@ -1671,7 +1671,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 17
             Bonus: 11900
             RandomBonus: 9600
@@ -1690,7 +1690,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 18
             Bonus: 12600
             RandomBonus: 10400
@@ -1709,7 +1709,7 @@ Body:
               - Type: Enriched
                 Rate: 1700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 19
             Bonus: 13300
             RandomBonus: 11200
@@ -1728,7 +1728,7 @@ Body:
               - Type: Enriched
                 Rate: 1500
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 20
             Bonus: 14000
             RandomBonus: 12000
@@ -1747,7 +1747,7 @@ Body:
               - Type: Enriched
                 Rate: 1500
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
       - Level: 4
         RefineLevels:
           - Level: 1
@@ -1945,7 +1945,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 12
             Bonus: 8400
             RandomBonus: 11200
@@ -1965,7 +1965,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 13
             Bonus: 9100
             RandomBonus: 12600
@@ -1985,7 +1985,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 14
             Bonus: 9800
             RandomBonus: 14000
@@ -2005,7 +2005,7 @@ Body:
               - Type: Enriched
                 Rate: 800
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 15
             Bonus: 10500
             RandomBonus: 15400
@@ -2024,7 +2024,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 16
             Bonus: 16000
             RandomBonus: 16800
@@ -2043,7 +2043,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 17
             Bonus: 17000
             RandomBonus: 18200
@@ -2062,7 +2062,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 18
             Bonus: 18000
             RandomBonus: 19600
@@ -2081,7 +2081,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 19
             Bonus: 19000
             RandomBonus: 21000
@@ -2100,7 +2100,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
           - Level: 20
             Bonus: 20000
             RandomBonus: 22400
@@ -2119,7 +2119,7 @@ Body:
               - Type: Enriched
                 Rate: 700
                 Price: 100000
-                Material: Limited_High_Density_Bradium
+                Material: LI_HD_Bradium
       - Level: 5
         RefineLevels:
           - Level: 1
