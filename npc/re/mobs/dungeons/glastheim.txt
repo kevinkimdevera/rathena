@@ -14,6 +14,7 @@
 //= 1.5 Corrected MVP spawn variance. [L0ne_W0lf]
 //= 1.6 Added Nightmare Glastheim [Ridley8819]
 //= 1.7 Correct Spawn by Navigation's mob data. [attackjom]
+//= 1.8 Added Glast Heim Abyss mobs. [Capuche] [OptimusM]
 //============================================================
 
 //==================================================
@@ -184,11 +185,11 @@ gl_step,0,0	monster	Mimic	1191,6,5000
 //==================================================
 // gl_cas02_ - Nightmare Mode 2f
 //==================================================
-gl_cas02_,0,0	monster	Evil Druid (Nightmare)	2480,4,0,0,0
-gl_cas02_,0,0	monster	Chimera (Nightmare)	2485,1,0,0,0
-gl_cas02_,0,0	monster	Mimic (Nightmare)	2479,19,0,0,0
-gl_cas02_,0,0	monster	Rideword (Nightmare)	2478,10,0,0,0
-gl_cas02_,0,0	monster	Wanderer (Nightmare)	2477,60,0,0,0
+gl_cas02_,0,0	monster	Evil Druid (Nightmare)	2480,4,5000
+gl_cas02_,0,0	monster	Chimera (Nightmare)	2485,1,5000
+gl_cas02_,0,0	monster	Mimic (Nightmare)	2479,19,5000
+gl_cas02_,0,0	monster	Rideword (Nightmare)	2478,10,5000
+gl_cas02_,0,0	monster	Wanderer (Nightmare)	2477,60,5000
 gl_cas02_,0,0	monster	Mysteltainn	1203,1,7200000,3600000
 gl_cas02_,0,0	monster	Alice	1275,1,5000
 gl_cas02_,102,180	monster	Whisper	1185,1,1800000,900000
@@ -197,65 +198,22 @@ gl_cas02_,0,0	monster	Baphomet (Nightmare)	2483,1,7200000,0,0
 //==================================================
 // gl_chyard_ - Nightmare Mode Churchyard
 //==================================================
-gl_chyard_,0,0	monster	Wraith Dead (Nightmare)	2481,91,0,0,0
-gl_chyard_,0,0	monster	Wraith Dead	1291,31,0,0,0
+gl_chyard_,0,0	monster	Wraith Dead (Nightmare)	2481,91,5000
+gl_chyard_,0,0	monster	Wraith Dead	1291,31,5000
 gl_chyard_,0,0	monster	Evil Druid (Nightmare)	2480,22,60000,0,0
 gl_chyard_,0,0	monster	Mimic (Nightmare)	2479,34,60000,0,0
 gl_chyard_,0,0,0,0	boss_monster	Dark Lord	1272,1,3600000,600000,1
 
 //==================================================
-// gl_cas01_ - Abyss Glast Heim
+// gl_cas01_ - Glast Heim Abyss
 //==================================================
-gl_cas01_,0,0	monster	Contaminated Raydric	20367,80,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Contaminated Raydric Archer	20368,80,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Frozen Gargoyle	20369,30,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Contaminated Sting	20370,30,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Prison Breaker	20371,40,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Ice Ghost	20379,40,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Flame Ghost	20380,40,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	monster	Contaminated Wanderer	20420,40,5000,5000,"#AbyssGlast_Drop::OnAGHMobDead"
-
-gl_cas01_,0,0	boss_monster	Contaminated Spider Queen	20421,1,3600000,600000,"#AbyssGlast_Drop::OnAGHMobDead"
-gl_cas01_,0,0	boss_monster	Contaminated Dark Lord	20422,1,3600000,600000,"#AbyssGlast_Drop::OnAGHMobDead"
-
-//==================================================
-// Party Drop Script
-//==================================================
-gl_cas01_,0,0,0	script	#AbyssGlast_Drop	-1,{
-	OnAGHMobDead:
-		if(getcharid(1)) {
-			if(getcharid(1)) {
-				getpartymember getcharid(1),1;
-				getpartymember getcharid(1),2;
-
-				for ( .@p = 0; .@p < $@partymembercount; .@p++)
-						if(attachrid($@partymemberaid[.@p],$@partymembercid[.@p]) == 1) {
-								if(strcharinfo(3) != strnpcinfo(4)) continue;
-								if(rand(1,10000) >= (10000 - .chance))
-										getitem .drop_id[rand(getarraysize(.drop_id))],1;
-						}
-
-		} else {
-			if(rand(1,10000) >= (10000 - .chance))
-				getitem .drop_id[rand(getarraysize(.drop_id))],1;
-		}
-		end;
-
-		OnInit:
-		setarray .drop_id[0],26138, // Hellfire Staff
-							26139, // Icecle Staff
-							26016, // Royal Knight's Lance
-							21039, // Royal Knight's Broadsword
-							28619; // Prisoner's Dairy
-		// ==== Drop Settings ====
-		// Multiply the Drop Chance below with the Server Drop Chance for Equipment
-		// 1 = Yes
-		// 0 = No
-		.battleconf_drop = 0;
-		// General Drop Chance
-		.drop = 50; // 50 = 0.5%
-		// Calculation
-		.chance = .drop * ( (.battleconf_drop)?( (getbattleflag("item_rate_equip")%100 > 0)? (getbattleflag("item_rate_equip")/100):1):1);
-		end;
-	}
-}
+gl_cas01_	monster	Contaminated Raydric	20367,49
+gl_cas01_	monster	Contaminated Raydric Ar	20368,77
+gl_cas01_	monster	Frozen Gargoyle	20369,27
+gl_cas01_	monster	Contaminated Sting	20370,26
+gl_cas01_	monster	Prison Breaker	20371,32
+gl_cas01_	monster	Ice Ghost	20379,42
+gl_cas01_	monster	Flame Ghost	20380,41
+gl_cas01_	monster	Corrupted Wanderer	20420,33
+gl_cas01_	boss_monster	Corrupted Spider Queen	20421,1,7200000,600000,1
+gl_cas01_	boss_monster	Corrupted Dark Lord	20422,1,3600000,600000,1
