@@ -19897,6 +19897,16 @@ void clif_ackworldinfo(map_session_data* sd) {
 	int32 fd;
 
 	nullpo_retv(sd);
+	fd = sd->fd;
+
+	WFIFOHEAD(fd,packet_len(0x979));
+	WFIFOW(fd,0)=0x979;
+	//AID -> world name ?
+	safestrncpy(WFIFOCP(fd,2), "" /* World name */, 24);
+	safestrncpy(WFIFOCP(fd,26), sd->status.name, NAME_LENGTH);
+	WFIFOSET(fd,packet_len(0x979));
+}
+
 /// req world info (CZ_REQ_BEFORE_WORLD_INFO)
 /// 0978 <AID>.L
 void clif_parse_reqworldinfo(int32 fd,map_session_data *sd) {
@@ -21764,7 +21774,11 @@ void clif_achievement_list_all(map_session_data *sd)
 	WFIFOSET(fd, len);
 }
 
+/**
+ * Sends a single achievement's data to the client (ZC_ACH_UPDATE).
+ * 0a24 <ACHPoint>.L
  */
+void clif_achievement_update(map_session_data *sd, struct achievement *ach, int32 count)
 {
 	nullpo_retv(sd);
 

@@ -3054,7 +3054,7 @@ static bool is_attack_critical(struct Damage* wd, struct block_list *src, struct
 			case SN_SHARPSHOOTING:
 			case MA_SHARPSHOOTING:
 #ifdef RENEWAL
-				cri += (cri / 2) + 300; // !TODO: Confirm new bonus
+				cri += 300; // !TODO: Confirm new bonus
 #else
 				cri += 200;
 #endif
@@ -3527,8 +3527,8 @@ int32 battle_get_weapon_element(struct Damage* wd, struct block_list *src, struc
 			element = sstatus->lhw.ele;
 		if(is_skill_using_arrow(src, skill_id) && sd && sd->bonus.arrow_ele && weapon_position == EQI_HAND_R)
 			element = sd->bonus.arrow_ele;
-		//if(sd && sd->spiritcharm_type != CHARM_TYPE_NONE && sd->spiritcharm >= MAX_SPIRITCHARM)
-		//	element = sd->spiritcharm_type; // Summoning 10 spiritcharm will endow your weapon
+		if(sd && sd->spiritcharm_type != CHARM_TYPE_NONE && sd->spiritcharm >= MAX_SPIRITCHARM)
+			element = sd->spiritcharm_type; // Summoning 10 spiritcharm will endow your weapon
 		// on official endows override all other elements [helvetica]
 		if(sc && sc->getSCE(SC_ENCHANTARMS)) // Check for endows
 			element = sc->getSCE(SC_ENCHANTARMS)->val1;
@@ -4960,7 +4960,7 @@ static int32 battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list
 #ifdef RENEWAL
 		// Renewal: skill ratio applies to entire damage [helvetica]
 		case LK_SPIRALPIERCE:
-			skillratio += 150 + 50 * skill_lv;
+			skillratio += 50 + 50 * skill_lv;
 			RE_LVL_DMOD(100);
 			if (sc && sc->getSCE(SC_CHARGINGPIERCE_COUNT) && sc->getSCE(SC_CHARGINGPIERCE_COUNT)->val1 >= 10)
 				skillratio *= 2;
@@ -4972,7 +4972,7 @@ static int32 battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list
 #endif
 		case ASC_METEORASSAULT:
 #ifdef RENEWAL
-			skillratio += 200 + 120 * skill_lv + (sstatus->str * 5);
+			skillratio += 100 + 120 * skill_lv;
 			RE_LVL_DMOD(100);
 #else
 			skillratio += -60 + 40 * skill_lv;
@@ -5477,7 +5477,7 @@ static int32 battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list
 				skillratio += -100 + 450 * skill_lv;
 			else
 				skillratio += -100 + 300 * skill_lv;
-			skillratio += sstatus->vit; // !TODO: What's the VIT bonus?
+			skillratio += sstatus->vit / 6; // !TODO: What's the VIT bonus?
 			RE_LVL_DMOD(100);
 			break;
 		case SR_EARTHSHAKER:
@@ -5520,7 +5520,7 @@ static int32 battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list
 			break;
 		case SR_SKYNETBLOW:
 			//ATK [{(Skill Level x 200) + (Caster AGI)} x Caster Base Level / 100] %
-			skillratio += -100 + 200 * skill_lv + sstatus->agi; // !TODO: Confirm AGI bonus
+			skillratio += -100 + 200 * skill_lv + sstatus->agi / 6; // !TODO: Confirm AGI bonus
 			RE_LVL_DMOD(100);
 			break;
 
@@ -5580,7 +5580,7 @@ static int32 battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list
 			break;
 		case WM_SEVERE_RAINSTORM_MELEE:
 			//ATK [{(Caster DEX / 300 + AGI / 200)} x Caster Base Level / 100] %
-			skillratio += -100 + 100 * skill_lv + (sstatus->dex + sstatus->agi);
+			skillratio += -100 + 100 * skill_lv + (sstatus->dex / 300 + sstatus->agi / 200);
 			if (wd->miscflag&4) // Whip/Instrument equipped
 				skillratio += 20 * skill_lv;
 			RE_LVL_DMOD(100);
@@ -5782,7 +5782,7 @@ static int32 battle_calc_attack_skill_ratio(struct Damage* wd, struct block_list
 			RE_LVL_DMOD(100);
 			break;
 		case RL_R_TRIP:
-			skillratio += -100 + 500 + 200 * skill_lv;
+			skillratio += -100 + 350 * skill_lv;
 			RE_LVL_DMOD(100);
 			break;
 		case RL_R_TRIP_PLUSATK:
@@ -8492,7 +8492,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 							skillratio += 3 * pc_checkskill(sd, BA_MUSICALLESSON);
 						break;
 					case HW_GRAVITATION:
-						skillratio += -100 + 50 * skill_lv;
+						skillratio += -100 + 100 * skill_lv;
 						RE_LVL_DMOD(100);
 						break;
 					case PA_PRESSURE:
@@ -8512,7 +8512,7 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						RE_LVL_DMOD(100);
 						break;
 					case AB_ADORAMUS:
-						skillratio += -100 + 300 + 250 * skill_lv;
+						skillratio += - 100 + 300 + 250 * skill_lv;
 						RE_LVL_DMOD(100);
 						break;
 					case AB_DUPLELIGHT_MAGIC:
@@ -8595,8 +8595,6 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						skillratio += -100 + 120 * skill_lv + 60 * ((sd) ? pc_checkskill(sd, WM_LESSON) : 1);
 						if (tsc && tsc->getSCE(SC_SLEEP))
 							skillratio += 100; // !TODO: Confirm target sleeping bonus
-
-						skillratio *= 2;
 						RE_LVL_DMOD(100);
 						if (tsc && tsc->getSCE(SC_SOUNDBLEND))
 							skillratio += skillratio * 50 / 100;
@@ -8654,8 +8652,6 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						if (sc && (sc->getSCE(SC_HEATER_OPTION) || sc->getSCE(SC_COOLER_OPTION) ||
 							sc->getSCE(SC_BLAST_OPTION) || sc->getSCE(SC_CURSED_SOIL_OPTION)))
 							skillratio += 20;
-						}
-
 						break;
 					case NPC_PSYCHIC_WAVE:
 						skillratio += -100 + 500 * skill_lv;
@@ -8858,8 +8854,6 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						}
 
 						RE_LVL_DMOD(100);
-						if (sc && sc->data[SC_CLIMAX])
-							skillratio += 1250;
 						break;
 					case AG_STORM_CANNON:
 						skillratio += -100 + 1550 * skill_lv + 5 * sstatus->spl;
@@ -8869,8 +8863,6 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						}
 
 						RE_LVL_DMOD(100);
-						if (sc && sc->data[SC_CLIMAX])
-							skillratio += 1250;
 						break;
 					case AG_CRIMSON_ARROW:
 						skillratio += -100 + 400 * skill_lv + 3 * sstatus->spl;
@@ -8888,14 +8880,6 @@ struct Damage battle_calc_magic_attack(struct block_list *src,struct block_list 
 						}
 
 						RE_LVL_DMOD(100);
-						if (sc && sc->data[SC_CLIMAX])
-							skillratio *= 2;
-						break;
-					case AG_FROZEN_SLASH:
-						skillratio += -100 + 600 * skill_lv + 5 * sstatus->spl;
-						RE_LVL_DMOD(100);
-						if (sc && sc->data[SC_CLIMAX])
-							skillratio +=  1250;
 						break;
 					case IG_JUDGEMENT_CROSS:
 						skillratio += -100 + 1950 * skill_lv + 10 * sstatus->spl;

@@ -12879,6 +12879,12 @@ int32 skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, 
 			clif_skill_nodamage(src,*master_bl,skill_id,skill_lv);
 			sc_start(src, master_bl, type, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 		}
+		} break;
+	case MH_PAIN_KILLER:
+		bl = battle_get_master(src);
+		if (bl != nullptr)
+			sc_start(src, bl, type, 100, skill_lv, skill_get_time(skill_id, skill_lv));
+		break;
 	case MH_MAGMA_FLOW:
 	   sc_start(src,bl, type, 100, skill_lv, skill_get_time(skill_id, skill_lv));
 	   break;
@@ -18345,6 +18351,8 @@ static bool skill_check_condition_sc_required( map_session_data& sd, uint16 skil
 * Check SC of BL
 * @param sc
 * @param skill_id
+* @return 1 if condition is met, 0 otherwise
+**/
 
 int32 skill_check_bl_sc(struct block_list *target, va_list ap) {
 
@@ -18366,6 +18374,7 @@ int32 skill_check_bl_sc(struct block_list *target, va_list ap) {
  * For ammo, only check if the skill need ammo
  * For checking ammo requirement (type and amount) will be skill_check_condition_castend
  * @param sd Player who uses skill
+ * @param skill_id ID of used skill
  * @param skill_lv Level of used skill
  * @return true: All condition passed, false: Failed
  */
@@ -26469,4 +26478,3 @@ void do_final_skill(void)
 	db_destroy(bowling_db);
 	ers_destroy(skill_timer_ers);
 }
-

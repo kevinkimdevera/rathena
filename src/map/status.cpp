@@ -8718,8 +8718,13 @@ static uint32 status_calc_maxsp(struct block_list *bl, uint64 maxsp)
 }
 
 /**
+* Calculates a max AP based on status changes
+* Values can either be percentages or fixed, bas ed on how equations are formulated
+* @param bl: Object's block_list data
+* @param maxap: Object's current max AP
 * @return modified maxap
 */
+static uint32 status_calc_maxap(struct block_list *bl, uint64 maxap)
 {
 	int32 rate = 100;
 
@@ -12016,6 +12021,10 @@ int32 status_change_start(struct block_list* src, struct block_list* bl,enum sc_
 			} else // Monster
 				val2 += 750;
 			break;
+		case SC_PRESTIGE:
+			val2 = (status->int_ + status->luk) * val1 / 20 * status_get_lv(bl) / 200 + val1;	// Chance to evade magic damage.
+			val3 = ((val1 * 15) + (10 * (sd?pc_checkskill(sd,CR_DEFENDER):skill_get_max(CR_DEFENDER)))) * status_get_lv(bl) / 100; // Defence added
+			break;
 		case SC_SHIELDSPELL_HP:
 			val2 = 3; // 3% HP every 3 seconds
 			tick_time = status_get_sc_interval(type);
@@ -12028,10 +12037,6 @@ int32 status_change_start(struct block_list* src, struct block_list* bl,enum sc_
 			break;
 		case SC_SHIELDSPELL_ATK:
 			val2 = 150; // WATK/MATK bonus
-			break;
-		case SC_PRESTIGE:
-			val2 = (status->int_ + status->luk) * val1 / 20 * status_get_lv(bl) / 200 + val1;	// Chance to evade magic damage.
-			val3 = ((val1 * 15) + (10 * (sd?pc_checkskill(sd,CR_DEFENDER):skill_get_max(CR_DEFENDER)))) * status_get_lv(bl) / 100; // Defence added
 			break;
 		case SC_BANDING:
 			val2 = (sd ? skill_banding_count(sd) : 1);
@@ -13994,7 +13999,7 @@ int32 status_change_end( struct block_list* bl, enum sc_type type, int32 tid ){
  * @param data: Information passed through the timer call
  * @return 1: Success 0: Fail
  */
-TIMER_FUNC(status_change_timer) {
+TIMER_FUNC(status_change_timer){
 	enum sc_type type = (sc_type)data;
 	struct block_list *bl;
 	map_session_data *sd;
@@ -15182,7 +15187,11 @@ int32 status_change_timer_sub(struct block_list* bl, va_list ap)
 			clif_bladestop( *bl, tsc->getSCE(SC_CURSEDCIRCLE_TARGET)->val2, false );
 			status_change_end(bl, type);
 		}
+		break;
+	}
+
 	return 0;
+}
 
 /**
  * Clears buffs/debuffs on an object
