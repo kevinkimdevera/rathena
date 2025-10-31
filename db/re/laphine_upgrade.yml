@@ -100,6 +100,7 @@ Body:
       - Item: Ein_1H_Foxtail
   - Item: Gemstone_Of_Time
     RandomOptionGroup: GEMSTONE_OF_TIME
+    CardsAllowed: true
     TargetItems:
       - Item: Overwhelm_Str_Armor
       - Item: Overwhelm_Int_Armor
@@ -109,6 +110,7 @@ Body:
       - Item: Overwhelm_Luk_Armor
   - Item: Time_Unseal_Key
     RandomOptionGroup: TIME_UNSEAL_KEY
+    CardsAllowed: true
     TargetItems:
       - Item: Temporal_M_Str
       - Item: Temporal_M_Agi
@@ -4236,9 +4238,6 @@ Body:
 #      - Item: Nurse_Cap_IL
 #      - Item: Puente_Robe_IL
 #      - Item: Apple_Of_Archer_IL
-  - Item: Great_Hero_Bravery
-    RandomOptionGroup: GREAT_HERO_BRAVERY
-    CardsAllowed: true
   - Item: Moonlight_Box_IL
     ResultRefineMinimum: 7
     ResultRefineMaximum: 10
@@ -4273,6 +4272,7 @@ Body:
       - Item: Apple_Of_Archer_IL
   - Item: Great_Hero_Bravery
     RandomOptionGroup: GREAT_HERO_BRAVERY
+    CardsAllowed: true
     TargetItems:
       - Item: Up_Oriental_Sword
       - Item: Up_Dragonic_Slayer
@@ -4311,6 +4311,7 @@ Body:
       - Item: Up_SoulWeight
   - Item: Great_Hero_Wisdom
     RandomOptionGroup: GREAT_HERO_WISDOM
+    CardsAllowed: true
     TargetItems:
       - Item: Up_Oriental_Sword
       - Item: Up_Dragonic_Slayer

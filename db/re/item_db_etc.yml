@@ -1256,27 +1256,28 @@ Body:
     Name: Oridecon
     Type: Usable
     Buy: 1100
-    Weight: 200
+    Weight: 20
     Flags:
       BuyingStore: true
-    Script: |
-      callfunc "F_RefineUI";
-    Flags:
       NoConsume: true
       DropEffect: CLIENT
+    Script: |
+      callfunc "F_RefineUI";
   - Id: 985
     AegisName: Elunium
     Name: Elunium
-    Type: Etc
+    Type: Usable
     Buy: 1100
-    Weight: 200
+    Weight: 20
     Flags:
       BuyingStore: true
-    Script: |
-      callfunc "F_RefineUI";
       NoConsume: true
       DropEffect: CLIENT
+    Script: |
+      callfunc "F_RefineUI";
+  - Id: 986
     AegisName: Anvil
+    Name: Anvil
     Type: Etc
     Buy: 30000
     Weight: 500
@@ -17658,9 +17659,10 @@ Body:
     Name: Carnium
     Type: Usable
     Buy: 2000
-    Weight: 150
+    Weight: 20
     Flags:
       BuyingStore: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -17669,11 +17671,12 @@ Body:
   - Id: 6224
     AegisName: Bradium
     Name: Bradium
-    Type: Etc
+    Type: Usable
     Buy: 2000
-    Weight: 150
+    Weight: 20
     Flags:
       BuyingStore: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -17709,6 +17712,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -17872,6 +17876,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -17890,6 +17895,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -18629,6 +18635,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -23222,6 +23229,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -28988,6 +28996,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:
@@ -29006,6 +29015,7 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
     Flags:

@@ -223,7 +223,7 @@ Body:
                 BreakingRate: 10000
           - Level: 11
             Bonus: 2100
-            BlacksmithBlessingAmount: 7
+            BlacksmithBlessingAmount: 4
             Chances:
               - Type: Normal
                 Rate: 800
@@ -236,12 +236,12 @@ Body:
                 Price: 100000
                 Material: HD_Carnium
               - Type: Enriched
-                Rate: 800
+                Rate: 1500
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 12
             Bonus: 2400
-            BlacksmithBlessingAmount: 11
+            BlacksmithBlessingAmount: 7
             Chances:
               - Type: Normal
                 Rate: 800
@@ -255,11 +255,32 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 800
+                Rate: 1500
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 13
             Bonus: 2800
+            BlacksmithBlessingAmount: 11
+            BroadcastSuccess: true
+            BroadcastFailure: true
+            Chances:
+              - Type: Normal
+                Rate: 800
+                Price: 100000
+                Material: Carnium
+                BreakingRate: 2000
+                DowngradeAmount: 3
+              - Type: HD
+                Rate: 800
+                Price: 100000
+                Material: HD_Carnium
+                DowngradeAmount: 1
+              - Type: Enriched
+                Rate: 1500
+                Price: 100000
+                Material: LI_HD_Carnium
+          - Level: 14
+            Bonus: 3200
             BlacksmithBlessingAmount: 16
             BroadcastSuccess: true
             BroadcastFailure: true
@@ -276,36 +297,16 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 800
+                Rate: 1500
                 Price: 100000
                 Material: LI_HD_Carnium
-          - Level: 14
-            Bonus: 3200
+          - Level: 15
+            Bonus: 3600
             BlacksmithBlessingAmount: 22
             BroadcastSuccess: true
             BroadcastFailure: true
             Chances:
               - Type: Normal
-                Rate: 800
-                Price: 100000
-                Material: Carnium
-                BreakingRate: 2000
-                DowngradeAmount: 3
-              - Type: HD
-                Rate: 800
-                Price: 100000
-                Material: HD_Carnium
-                DowngradeAmount: 1
-              - Type: Enriched
-                Rate: 800
-                Price: 100000
-                Material: LI_HD_Carnium
-          - Level: 15
-            Bonus: 3600
-            BroadcastSuccess: true
-            BroadcastFailure: true
-            Chances:
-              - Type: Normal
                 Rate: 700
                 Price: 100000
                 Material: Carnium
@@ -317,7 +318,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 700
+                Rate: 1000
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 16
@@ -337,7 +338,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 700
+                Rate: 1000
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 17
@@ -357,7 +358,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 700
+                Rate: 1000
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 18
@@ -377,7 +378,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 700
+                Rate: 1000
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 19
@@ -397,7 +398,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 500
+                Rate: 700
                 Price: 100000
                 Material: LI_HD_Carnium
           - Level: 20
@@ -417,7 +418,7 @@ Body:
                 Material: HD_Carnium
                 DowngradeAmount: 1
               - Type: Enriched
-                Rate: 500
+                Rate: 700
                 Price: 100000
                 Material: LI_HD_Carnium
       - Level: 2

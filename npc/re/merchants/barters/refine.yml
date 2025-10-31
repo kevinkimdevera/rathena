@@ -220,3 +220,74 @@ Body:
           - Index: 0
             Item: Zelunium_Ore
             Amount: 20
+  - Name: barter_refine_4
+    Items:
+      - Index: 0
+        Item: HD_Elunium
+        RequiredItems:
+          - Index: 0
+            Item: Elunium
+            Amount: 10
+      - Index: 1
+        Item: LI_HD_Elunium
+        RequiredItems:
+          - Index: 0
+            Item: Elunium
+            Amount: 15
+      - Index: 2
+        Item: Enriched_Elunium
+        RequiredItems:
+          - Index: 0
+            Item: Elunium
+            Amount: 20
+      - Index: 3
+        Item: HD_Carnium
+        RequiredItems:
+          - Index: 0
+            Item: Carnium
+            Amount: 10
+      - Index: 4
+        Item: LI_HD_Carnium
+        RequiredItems:
+          - Index: 0
+            Item: Carnium
+            Amount: 20
+      - Index: 5
+        Item: HD_Oridecon
+        RequiredItems:
+          - Index: 0
+            Item: Oridecon
+            Amount: 10
+      - Index: 6
+        Item: LI_HD_Oridecon
+        RequiredItems:
+          - Index: 0
+            Item: Oridecon
+            Amount: 20
+      - Index: 7
+        Item: Enriched_Oridecon
+        RequiredItems:
+          - Index: 0
+            Item: Oridecon
+            Amount: 20
+      - Index: 8
+        Item: HD_Bradium
+        RequiredItems:
+          - Index: 0
+            Item: Bradium
+            Amount: 10
+      - Index: 9
+        Item: LI_HD_Bradium
+        RequiredItems:
+          - Index: 0
+            Item: Bradium
+            Amount: 20
+  - Name: barter_bsb
+    Items:
+      - Index: 0
+        Item: Blacksmith_Blessing
+        Amount: 1
+        RequiredItems:
+          - Index: 0
+            Item: Zelunium
+            Amount: 100

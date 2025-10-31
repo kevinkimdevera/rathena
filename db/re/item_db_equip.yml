@@ -57070,9 +57070,14 @@ Body:
       Knight: true
     Classes:
       All_Third: true
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
     EquipLevelMin: 100
     Refineable: true
     View: 1120
+    Script: |
       bonus bBaseAtk,2*(readparam(bStr)/5);
       bonus2 bSkillCooldown,"RK_WINDCUTTER",-1800;
       bonus2 bSkillUseSP,"RK_WINDCUTTER",16;
