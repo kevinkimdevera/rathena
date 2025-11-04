@@ -56443,7 +56443,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 1
-    Refineable: true
     View: 873
     Trade:
       NoDrop: true
@@ -77983,7 +77982,7 @@ Body:
       if (readparam(bInt)>=90)
          bonus2 bSkillAtk,"MO_EXTREMITYFIST",10;
       if (readparam(bDex)>=90)
-         bonus2 bVariableCastrate,MO_FINGEROFFENSIVE,-15;
+         bonus2 bVariableCastrate,"MO_FINGEROFFENSIVE",-15;
   - Id: 15850
     AegisName: STsung_Speller2_EXE
     Name: Kronika's Speller Mag (OSM)
@@ -82927,7 +82926,7 @@ Body:
              bonus2 bSubRace,RC_Player_Human,10;
              if (.@r>=9) {
                  bonus2 bSkillAtk,"RA_ARROWSTORM",20;
-                 bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20;
+                 bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",20;
              }
          }
       }
@@ -86453,7 +86452,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 20
-    Refineable: true
     View: 779
   - Id: 18621
     AegisName: Gangster_Mask_A
@@ -87198,7 +87196,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 20
-    Refineable: true
     View: 813
     Script: |
       bonus2 bResEff,Eff_Stun,1000;
@@ -87523,7 +87520,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 1
-    Refineable: true
     View: 828
     Script: |
       bonus bMaxSP,15;
@@ -91841,7 +91837,6 @@ Body:
     Locations:
       Head_Mid: true
     ArmorLevel: 1
-    Refineable: true
     View: 1072
     Script: |
       bonus bMdef,7;
@@ -93146,7 +93141,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 10
-    Refineable: true
     View: 1250
     Script: |
       bonus2 bAddRace,RC_Angel,5;
@@ -93263,7 +93257,6 @@ Body:
     Locations:
       Head_Mid: true
     ArmorLevel: 1
-    Refineable: true
     View: 875
     Script: |
       bonus2 bSubRace,RC_All,4;
@@ -93597,7 +93590,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 50
-    Refineable: true
     View: 1366
     Script: |
       bonus bHit,10;
@@ -94234,7 +94226,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 70
-    Refineable: true
     View: 1423
     Script: |
       bonus bMaxSP,50;
@@ -94450,7 +94441,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 1
-    Refineable: true
     View: 873
     Script: |
       bonus bAspd,1;
@@ -95091,7 +95081,6 @@ Body:
       Head_Mid: true
     ArmorLevel: 1
     EquipLevelMin: 40
-    Refineable: true
     View: 400
     Script: |
       bonus bBaseAtk,5;
@@ -96398,7 +96387,6 @@ Body:
     Locations:
       Head_Mid: true
     ArmorLevel: 1
-    Refineable: true
     View: 873
   - Id: 19242
     AegisName: Cat_Lace_Hairband_K
@@ -97422,7 +97410,8 @@ Body:
       bonus bBaseAtk,50;
       bonus bMatk,50;
       bonus bAspdRate,10;
-      bonus2 bSkillAtk,"AB_DUPLELIGHT",7*.@r;
+      bonus2 bSkillAtk,"AB_DUPLELIGHT_MELEE",7*.@r;
+      bonus2 bSkillAtk,"AB_DUPLELIGHT_MAGIC",7*.@r;
       if (.@r>=10) {
          bonus2 bVariableCastrate,"AB_DUPLELIGHT",-100;
          bonus2 bFixedCastrate,"AB_DUPLELIGHT",-100;
@@ -173196,6 +173185,7 @@ Body:
       bonus2 bSubClass,Class_Boss,20;
       bonus2 bSubClass,Class_Normal,20;
       bonus bMatkRate,40;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",BaseLevel/10;
       bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",BaseLevel/10;
       bonus2 bSkillAtk,"CD_PNEUMATICUS_PROCELLA",BaseLevel/10;
       bonus2 bSkillAtk,"CD_FRAMEN",BaseLevel/10;
@@ -174618,7 +174608,8 @@ Body:
       bonus bBaseAtk,20*(.@r/2);
       bonus bMatk,20*(.@r/2);
       bonus2 bSkillAtk,"SJ_FULLMOONKICK",20*(.@r/3);
-      bonus2 bSkillAtk,"SJ_FALLINGSTAR",20*(.@r/3);
+      bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK",20*(.@r/3);
+      bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK2",20*(.@r/3);
       bonus2 bSkillAtk,"SP_CURSEEXPLOSION",20*(.@r/3);
       bonus2 bSkillAtk,"SP_SPA",20*(.@r/3);
       if (.@r>=7) {
@@ -174644,7 +174635,8 @@ Body:
          bonus bFixedCast,-100*(.@r/3);
          if (.@g>=ENCHANTGRADE_C) {
              bonus2 bSkillAtk,"SJ_FULLMOONKICK",10*(.@r/3);
-             bonus2 bSkillAtk,"SJ_FALLINGSTAR",10*(.@r/3);
+             bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK",10*(.@r/3);
+             bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK2",10*(.@r/3);
              bonus2 bSkillAtk,"SP_CURSEEXPLOSION",10*(.@r/3);
              bonus2 bSkillAtk,"SP_SPA",10*(.@r/3);
              if (.@g>=ENCHANTGRADE_B) {
@@ -175207,6 +175199,7 @@ Body:
       bonus bAtkRate,40;
       bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",BaseLevel/10;
       bonus2 bSkillAtk,"TR_ROSEBLOSSOM",BaseLevel/10;
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM_ATK",BaseLevel/10;
   - Id: 400582
     AegisName: Wolf_Rayet
     Name: Wolf Rayet
@@ -176247,6 +176240,7 @@ Body:
       bonus2 bSubClass,Class_Normal,20;
       bonus bAtkRate,40;
       bonus2 bSkillAtk,"ABC_CHAIN_REACTION_SHOT",BaseLevel/10;
+      bonus2 bSkillAtk,"ABC_CHAIN_REACTION_SHOT_ATK",BaseLevel/10;
       bonus2 bSkillAtk,"ABC_FRENZY_SHOT",BaseLevel/10;
       if (.@r>=10) {
          bonus bDelayrate,-20;
@@ -181812,7 +181806,7 @@ Body:
       bonus2 bAddClass,Class_Boss,10;
       bonus2 bMagicAddClass,Class_Boss,10;
       bonus bDelayrate,-10;
-      bonus2 bSkillAtk,"WL_CHAINLIGHTNING",BaseLevel/2;
+      bonus2 bSkillAtk,"WL_CHAINLIGHTNING_ATK",BaseLevel/2;
       bonus2 bSkillAtk,"SO_VARETYR_SPEAR",BaseLevel/2;
       bonus2 bSkillAtk,"SR_RIDEINLIGHTNING",BaseLevel/2;
       if (eaclass()&EAJL_THIRD && BaseJob == Job_Monk) {
@@ -181848,7 +181842,7 @@ Body:
       bonus2 bAddClass,Class_Boss,10;
       bonus2 bMagicAddClass,Class_Boss,10;
       bonus bDelayrate,-10;
-      bonus2 bSkillAtk,"WL_CHAINLIGHTNING",BaseLevel/2;
+      bonus2 bSkillAtk,"WL_CHAINLIGHTNING_ATK",BaseLevel/2;
       bonus2 bSkillAtk,"SO_VARETYR_SPEAR",BaseLevel/2;
       bonus2 bSkillAtk,"SR_RIDEINLIGHTNING",BaseLevel/2;
       if (eaclass()&EAJL_THIRD && BaseJob == Job_Monk) {
@@ -185768,7 +185762,7 @@ Body:
       bonus2 bSkillAtk,"SO_VARETYR_SPEAR",BaseLevel/6;
       bonus2 bSkillAtk,"WL_COMET",BaseLevel/6;
       bonus2 bSkillAtk,"SN_SHARPSHOOTING",BaseLevel/6;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",BaseLevel/6;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",BaseLevel/6;
       bonus2 bSkillAtk,"AB_JUDEX",BaseLevel/6;
       bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",BaseLevel/6;
   - Id: 420369
@@ -196071,6 +196065,7 @@ Body:
       bonus2 bSubRace,RC_Player_Doram,7;
       bonus2 bSubRace,RC_Player_Human,7;
       bonus2 bSkillAtk,"AG_CRIMSON_ARROW",BaseLevel/10;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW_ATK",BaseLevel/10;
       bonus2 bSkillAtk,"AG_FROZEN_SLASH",BaseLevel/10;
       bonus2 bSkillAtk,"AG_STORM_CANNON",BaseLevel/10;
       bonus2 bSkillAtk,"AG_ROCK_DOWN",BaseLevel/10;
@@ -196693,6 +196688,7 @@ Body:
       bonus2 bSubRace,RC_Player_Doram,7;
       bonus2 bSubRace,RC_Player_Human,7;
       bonus2 bSkillAtk,"CD_ARBITRIUM",BaseLevel/10;
+      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",BaseLevel/10;
       bonus2 bSkillAtk,"CD_PNEUMATICUS_PROCELLA",BaseLevel/10;
       bonus2 bSkillAtk,"CD_FRAMEN",BaseLevel/10;
       bonus2 bMagicAddSize,Size_All,7*.@r;
@@ -196733,6 +196729,7 @@ Body:
          bonus bFlee2,20;
          if (.@r>=11) {
              bonus2 bSkillAtk,"CD_ARBITRIUM",30;
+             bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",30;
              bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",30;
              if (.@r>=12) {
                   bonus2 bMagicAtkEle,Ele_Water,20;
@@ -196753,6 +196750,7 @@ Body:
                   bonus bDelayrate,-20;
                   if (.@g>=ENCHANTGRADE_A) {
                       bonus2 bSkillAtk,"CD_ARBITRIUM",50;
+                      bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",50;
                       bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",50;
                   }
              }
@@ -205052,7 +205050,7 @@ Body:
       bonus bDex,3*(.@r/2);
       bonus bCon,.@r/2;
       bonus bSpl,.@r/2;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20*(.@r/3);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",20*(.@r/3);
       bonus2 bSkillAtk,"CG_ARROWVULCAN",20*(.@r/3);
       bonus2 bSkillAtk,"WM_METALICSOUND",20*(.@r/3);
       bonus2 bSkillAtk,"WM_REVERBERATION",20*(.@r/3);
@@ -205172,7 +205170,7 @@ Body:
       .@r = getrefine();
       bonus bBaseAtk,50+(10*(.@r/2));
       bonus bAtkRate,.@r/2;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",15*(.@r/4);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",15*(.@r/4);
       bonus2 bSkillAtk,"ASC_BREAKER",15*(.@r/4);
       if (.@r>=9)
          bonus bFixedCast,-500;
@@ -205207,7 +205205,7 @@ Body:
       .@r = getrefine();
       bonus bBaseAtk,50+(10*(.@r/2));
       bonus bAtkRate,.@r/2;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",15*(.@r/4);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",15*(.@r/4);
       bonus2 bSkillAtk,"ASC_BREAKER",15*(.@r/4);
       if (.@r>=9)
          bonus bFixedCast,-500;
@@ -205549,7 +205547,7 @@ Body:
       bonus bBaseAtk,50;
       bonus bDex,3*(.@r/3);
       bonus bAgi,3*(.@r/3);
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",12*(.@r/4);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",12*(.@r/4);
       if (.@r>=9)
          bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-500;
       if (.@r>=11)
@@ -205578,7 +205576,7 @@ Body:
       bonus bBaseAtk,50;
       bonus bDex,3*(.@r/3);
       bonus bAgi,3*(.@r/3);
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",12*(.@r/4);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",12*(.@r/4);
       if (.@r>=9)
          bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-500;
       if (.@r>=11)
@@ -213784,7 +213782,7 @@ Body:
       bonus2 bAddSize,Size_All,10;
       bonus bPerfectHitAddRate,getskilllv("SC_REPRODUCE")*10;
       bonus2 bSkillAtk,"SC_FATALMENACE",2*(BaseLevel/10);
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",2*(BaseLevel/10);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",2*(BaseLevel/10);
       if (.@r>=7)
          bonus2 bSkillUseSP,"SC_FATALMENACE",10;
       if (.@r>=9)
@@ -213822,7 +213820,7 @@ Body:
       bonus2 bAddSize,Size_All,10;
       bonus bPerfectHitAddRate,getskilllv("SC_REPRODUCE")*10;
       bonus2 bSkillAtk,"SC_FATALMENACE",2*(BaseLevel/10);
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",2*(BaseLevel/10);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",2*(BaseLevel/10);
       if (.@r>=7)
          bonus2 bSkillUseSP,"SC_FATALMENACE",10;
       if (.@r>=9)
@@ -214618,7 +214616,7 @@ Body:
                           bonus bCon,10;
                           if (.@r>=13) {
                               bonus2 bSkillAtk,"RA_ARROWSTORM",50;
-                              bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",50;
+                              bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",50;
                               if (.@r>=14) {
                                    skill "LG_SHIELDSPELL",3;
                               }
@@ -214637,7 +214635,7 @@ Body:
       if (.@g>=ENCHANTGRADE_A) {
          if (.@r>=14) {
              bonus2 bSkillAtk,"RA_ARROWSTORM",70;
-             bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",70;
+             bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",70;
          }
       }
   - Id: 480505
@@ -214958,7 +214956,7 @@ Body:
                           bonus2 bMagicAtkEle,Ele_All,20;
                           if (.@r>=13) {
                               bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",50;
-                              bonus2 bSkillAtk,"WL_CHAINLIGHTNING",50;
+                              bonus2 bSkillAtk,"WL_CHAINLIGHTNING_ATK",50;
                               if (.@r>=14) {
                                    skill "LG_SHIELDSPELL",3;
                               }
@@ -214977,7 +214975,7 @@ Body:
       if (.@g>=ENCHANTGRADE_A) {
          if (.@r>=14) {
              bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",50;
-             bonus2 bSkillAtk,"WL_CHAINLIGHTNING",50;
+             bonus2 bSkillAtk,"WL_CHAINLIGHTNING_ATK",50;
          }
       }
   - Id: 480521
@@ -221593,7 +221591,7 @@ Body:
       bonus2 bSubRace,RC_Player_Human,3;
       bonus2 bSubRace,RC_Player_Doram,3;
       skill "RA_UNLIMIT",5;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",BaseLevel/2;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",BaseLevel/2;
     UnEquipScript: |
       sc_end SC_UNLIMIT;
   - Id: 490428
@@ -221658,7 +221656,7 @@ Body:
       bonus bAspdRate,10;
       bonus2 bAddSize,Size_All,6;
       bonus2 bSkillAtk,"SN_SHARPSHOOTING",30;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",30;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",30;
   - Id: 490431
     AegisName: Comp_Record_Archer2_TH
     Name: "[Not For Sale] Record of Archer 2"
@@ -221686,7 +221684,7 @@ Body:
       bonus bAspdRate,10;
       bonus2 bAddSize,Size_All,6;
       bonus2 bSkillAtk,"SN_SHARPSHOOTING",30;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",30;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",30;
   - Id: 490432
     AegisName: Toy_Screw
     Name: Toy Screw
@@ -222653,7 +222651,8 @@ Body:
       bonus2 bSubRace,RC_Player_Human,3;
       bonus2 bSubRace,RC_Player_Doram,3;
       bonus2 bSkillAtk,"SJ_FLASHKICK",BaseLevel/5;
-      bonus2 bSkillAtk,"SJ_FALLINGSTAR",BaseLevel/5;
+      bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK",BaseLevel/5;
+      bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK2",BaseLevel/5;
       bonus2 bSkillAtk,"SKE_TWINKLING_GALAXY",BaseLevel/10;
       bonus2 bSkillAtk,"SKE_STAR_BURST",BaseLevel/10;
       bonus2 bSkillAtk,"SKE_STAR_CANNON",BaseLevel/10;
@@ -222968,7 +222967,7 @@ Body:
       bonus bAllStats,5+(getskilllv("AC_DOUBLE")/2);
       bonus2 bSkillAtk,"AC_SHOWER",BaseLevel;
       bonus2 bSkillAtk,"AC_DOUBLE",BaseLevel;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",2*(BaseLevel/10);
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",2*(BaseLevel/10);
       bonus2 bSkillAtk,"WM_REVERBERATION",2*(BaseLevel/10);
       bonus2 bSkillAtk,"TR_METALIC_FURY",BaseLevel/7;
       bonus bSpl,2*(getskilllv("AC_DOUBLE")/2);
@@ -222992,6 +222991,7 @@ Body:
       bonus2 bSkillAtk,"BA_MUSICALSTRIKE",BaseLevel;
       bonus2 bSkillAtk,"WM_METALICSOUND",2*(BaseLevel/5);
       bonus2 bSkillAtk,"TR_ROSEBLOSSOM",BaseLevel/7;
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM_ATK",BaseLevel/7;
       bonus bCon,2*(getskilllv("WM_LESSON")/2);
       bonus bBaseAtk,20*(getskilllv("WM_LESSON")/2);
       bonus bMatk,20*(getskilllv("WM_LESSON")/2);
@@ -224134,7 +224134,7 @@ Body:
       bonus bDelayrate,-10;
       bonus2 bAddSize,Size_All,10;
       bonus2 bSkillAtk,"SN_SHARPSHOOTING",30;
-      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",30;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",30;
       if (eaclass()&EAJL_THIRD && BaseJob == Job_Hunter) {
          bonus2 bSkillCooldown,"RA_UNLIMIT",-90000;
          bonus2 bVariableCastrate,"SN_SHARPSHOOTING",-100;
@@ -244185,14 +244185,14 @@ Body:
             bonus2 bSkillAtk,"TR_ROSEBLOSSOM_ATK",10;
             bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",15;
             bonus2 bSkillUseSP,"TR_ROSEBLOSSOM",-25;
-            bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM_MELEE",-25;
+            bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",-25;
             if (.@r>=11) {
                bonus bDelayrate,-15;
                bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-2000;
                bonus2 bSkillAtk,"TR_ROSEBLOSSOM",10;
                bonus2 bSkillAtk,"TR_ROSEBLOSSOM_ATK",10;
                bonus2 bSkillUseSP,"TR_ROSEBLOSSOM",-25;
-               bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM_MELEE",-25;
+               bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",-25;
             }
          }
       }
@@ -244699,7 +244699,7 @@ Body:
              bonus2 bMagicAddSize,Size_All,15;
              if (.@r>=11) {
                   bonus2 bSkillAtk,"WM_METALICSOUND",20;
-                  bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20;
+                  bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",20;
              }
          }
       }
@@ -245137,7 +245137,7 @@ Body:
          bonus2 bSkillAtk,"WM_METALICSOUND",10;
       }
       if (.@r>=9) {
-         bonus2 bSkillFixedCast,WM_REVERBERATION,-500;
+         bonus2 bSkillFixedCast,"WM_REVERBERATION",-500;
       }
       if (.@r>=11) {
          bonus bMatkRate,7;
@@ -245858,14 +245858,14 @@ Body:
             bonus2 bSkillAtk,"TR_ROSEBLOSSOM_ATK",10;
             bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",15;
             bonus2 bSkillUseSP,"TR_ROSEBLOSSOM",-25;
-            bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM_MELEE",-25;
+            bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",-25;
             if (.@r>=11) {
                bonus bDelayrate,-15;
                bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-2000;
                bonus2 bSkillAtk,"TR_ROSEBLOSSOM",10;
                bonus2 bSkillAtk,"TR_ROSEBLOSSOM_ATK",10;
                bonus2 bSkillUseSP,"TR_ROSEBLOSSOM",-25;
-               bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM_MELEE",-25;
+               bonus2 bSkillUseSP,"WM_SEVERE_RAINSTORM",-25;
             }
          }
       }
@@ -246373,7 +246373,7 @@ Body:
              bonus2 bMagicAddSize,Size_All,15;
              if (.@r>=11) {
                   bonus2 bSkillAtk,"WM_METALICSOUND",20;
-                  bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20;
+                  bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM_MELEE",20;
              }
          }
       }
@@ -246956,12 +246956,14 @@ Body:
       if (.@r>=7) {
          bonus bVariableCastrate,-10;
          bonus2 bMagicAtkEle,Ele_Holy,10;
-      }
-      if (.@r>=9) {
-         bonus2 bMagicAddRace,RC_All,15;
-      }
-      if (.@r>=11) {
-         bonus2 bSkillAtk,"AB_ADORAMUS",15;
+         if (.@r>=9) {
+            bonus2 bMagicAddRace,RC_All,15;
+            bonus2 bMagicAddRace,RC_Player_Human,-15;
+            bonus2 bMagicAddRace,RC_Player_Doram,-15;
+            if (.@r>=11) {
+               bonus2 bSkillAtk,"AB_ADORAMUS",15;
+            }
+         }
       }
   - Id: 590014
     AegisName: Meer_Sceptre
@@ -247718,8 +247720,10 @@ Body:
       .@g = getenchantgrade();
       .@r = getrefine();
       bonus bUnbreakableWeapon;
-      bonus2 bSkillAtk,"CD_FRAMEN",7*(.@r/3);
+      bonus2 bSkillAtk,"CD_FRAMEN",7*(.@r/2);
+      bonus bHealPower,6*(.@r/2);
       bonus2 bSkillAtk,"CD_ARBITRIUM",7*(.@r/3);
+      /* bonus2 bSkillAtk,"CD_ARBITRIUM_ATK",7*(.@r/3); undefined on official? */
       bonus2 bMagicAtkEle,Ele_All,3*(.@r/4);
       if (.@g >= ENCHANTGRADE_D) {
          bonus bSpl,2;
@@ -256932,6 +256936,7 @@ Body:
       bonus bBaseAtk,3*.@r+3*(min(BaseLevel,195)/15);
       if (.@r>=7) {
          bonus bLongAtkRate,2*getskilllv("BA_MUSICALLESSON");
+         bonus bLongAtkRate,2*getskilllv("DC_DANCINGLESSON");
       }
       if (.@r>=9) {
          bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-1000;
