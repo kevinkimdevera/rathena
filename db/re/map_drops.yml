@@ -45,6 +45,10 @@ Header:
 
 Body:
   - Map: tur_d03_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_ASSULTER
         Drops:
@@ -141,6 +145,10 @@ Body:
             Item: S_Turtle_Is_Box_IL
             Rate: 150
   - Map: tur_d04_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_ASSULTER
         Drops:
@@ -237,6 +245,10 @@ Body:
             Item: S_Turtle_Is_Box_IL
             Rate: 150
   - Map: gef_d01_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_DRAINLIAR
         Drops:
@@ -343,6 +355,10 @@ Body:
             Item: S_Vampire_Box_IL
             Rate: 150
   - Map: pay_d03_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_MOONLIGHT
         Drops:
@@ -455,6 +471,10 @@ Body:
             Item: Moonlight_Box_IL
             Rate: 5
   - Map: ice_d03_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_GAZETI
         Drops:
@@ -531,6 +551,10 @@ Body:
             Item: S_Frozen_Box_IL
             Rate: 150
   - Map: com_d02_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_TRI_JOINT
         Drops:
@@ -641,6 +665,10 @@ Body:
             Item: S_Luanda_Box_IL
             Rate: 150
   - Map: iz_d04_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_SROPHO
         Drops:
@@ -733,6 +761,10 @@ Body:
             Item: S_Underwater_Box_IL
             Rate: 150
   - Map: iz_d05_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_SEDORA
         Drops:
@@ -819,6 +851,10 @@ Body:
             Item: S_Underwater_Box_IL
             Rate: 150
   - Map: amicitia2
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 50000
     SpecificDrops:
       - Monster: CHIMERA_LAVA
         Drops:
@@ -969,6 +1005,10 @@ Body:
             Item: Fourth_1h_Wand
             Rate: 750
   - Map: amicitia1
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 50000
     SpecificDrops:
       - Monster: CHIMERA_AMITERA
         Drops:
@@ -1039,6 +1079,10 @@ Body:
             Item: Fourth_Bh_Staff
             Rate: 150
   - Map: sp_rudus4
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 50000
     SpecificDrops:
       - Monster: GIANT_CAPUT
         Drops:
@@ -1254,6 +1298,10 @@ Body:
             Item: Fourth_1h_Whip
             Rate: 750
   - Map: nif_dun01
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 50000
     SpecificDrops:
       - Monster: GAN_CEANN
         Drops:
@@ -1336,6 +1384,10 @@ Body:
             Item: Fourth_Bh_Katar
             Rate: 150
   - Map: nif_dun02
+    GlobalDrops:
+      - Index: 0
+        Item: Etel_Dust
+        Rate: 50000
     SpecificDrops:
       - Monster: DISGUISER
         Drops:
@@ -1920,6 +1972,10 @@ Body:
             Item: Sanctuary_Sudarium
             Rate: 1500
   - Map: ant_d02_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
       - Monster: ILL_ANDRE
         Drops:
@@ -2429,8 +2485,12 @@ Body:
             Item: Evilspirit_Gloves
             Rate: 50
   - Map: ein_d02_i
+    GlobalDrops:
+      - Index: 0
+        Item: IllusionStone
+        Rate: 50000
     SpecificDrops:
-      - Monster: ILL_TEDDY_BEAR_B 
+      - Monster: ILL_TEDDY_BEAR_B
         Drops:
           - Index: 0
             Item: IllusionStone

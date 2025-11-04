@@ -12285,7 +12285,8 @@ Body:
             MinValue: 1
             MaxValue: 5
             Chance: 769
-# Note: this group is left empty. It can be used to remove the current options, when applied.
+  - Id: 145
+    Group: Group_0    # Note: this group is left empty. It can be used to remove the current options, when applied.
 # Abyss ogh enchants. Source: https://ro.gnjoy.in.th/abyss-glastheim-1st-floor/
   - Id: 146
     Group: AGW1

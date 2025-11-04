@@ -84551,7 +84551,7 @@ Body:
         Rate: 200
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Sticky_Mucus
         Rate: 2000
@@ -84593,7 +84593,7 @@ Body:
         Rate: 200
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Wedding_Veil
         Rate: 200
@@ -84603,7 +84603,7 @@ Body:
         Rate: 1000
   - Id: 3141
     AegisName: MG_GHOUL_H
-    Name: Grand Chamberlain in pain
+    Name: Grand Chamberlain
     Level: 162
     Hp: 416200
     BaseExp: 14222
@@ -84637,7 +84637,7 @@ Body:
         Rate: 200
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Oridecon_Stone
         Rate: 200
@@ -84681,7 +84681,7 @@ Body:
         Rate: 200
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Glast_Horrendous_Mouth
         Rate: 200
@@ -84689,7 +84689,7 @@ Body:
         Rate: 5000
       - Item: Great_Nature
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 500
   - Id: 3143
     AegisName: MG_RAYDRIC_H
@@ -84727,7 +84727,7 @@ Body:
         Rate: 200
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Brigan
         Rate: 5000
@@ -84773,7 +84773,7 @@ Body:
         Rate: 200
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Brigan
         Rate: 5000
@@ -84784,7 +84784,7 @@ Body:
   - Id: 3145
     AegisName: MG_KNIGHT_OF_ABYSS_H
     Name: Corrupted Abysmal Knight
-    JapaneseName: Corrupted Knight of Abyss
+    JapaneseName: Corrupted Abysmal Knight
     Level: 172
     Hp: 451578
     BaseExp: 18584
@@ -84819,7 +84819,7 @@ Body:
         Rate: 400
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Reins
         Rate: 5000
@@ -84863,7 +84863,7 @@ Body:
         Rate: 400
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Elunium
         Rate: 100
@@ -84908,7 +84908,7 @@ Body:
         Rate: 400
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Brigan
         Rate: 5000
@@ -84953,7 +84953,7 @@ Body:
         Rate: 500
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Alca_Bringer
         Rate: 20
@@ -85001,7 +85001,7 @@ Body:
         Rate: 500
       - Item: Coagulated_Spell
         Rate: 200
-      - Item: Contaminated_Magic
+      - Item: Polluted_Spell
         Rate: 200
       - Item: Claymore
         Rate: 200

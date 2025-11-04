@@ -17663,11 +17663,9 @@ Body:
     Flags:
       BuyingStore: true
       NoConsume: true
+      DropEffect: CLIENT
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
-      DropEffect: CLIENT
   - Id: 6224
     AegisName: Bradium
     Name: Bradium
@@ -17677,11 +17675,9 @@ Body:
     Flags:
       BuyingStore: true
       NoConsume: true
+      DropEffect: CLIENT
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
-      DropEffect: CLIENT
   - Id: 6225
     AegisName: HD_Carnium
     Name: HD Carnium
@@ -17695,10 +17691,9 @@ Body:
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
+      NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 6226
     AegisName: HD_Bradium
     Name: HD Bradium
@@ -17715,8 +17710,6 @@ Body:
       NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 6228
     AegisName: Guarantee_Weapon_9Up
     Name: +9 Weapon Refine Ticket
@@ -17879,8 +17872,6 @@ Body:
       NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 6241
     AegisName: HD_Elunium
     Name: HD Elunium
@@ -17898,8 +17889,6 @@ Body:
       NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 6242
     AegisName: Midgard_Coin
     Name: Midgard Coin
@@ -18638,8 +18627,6 @@ Body:
       NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 6328
     AegisName: Calender_January
     Name: Calender January
@@ -23232,8 +23219,6 @@ Body:
       NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 6907
     AegisName: Horse_Soul_Piece
     Name: Piece Of Soul Horse
@@ -29018,8 +29003,6 @@ Body:
       NoConsume: true
     Script: |
       callfunc "F_RefineUI";
-    Flags:
-      NoConsume: true
   - Id: 7621
     AegisName: Token_Of_Siegfried
     Name: Token Of Siegfried

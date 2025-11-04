@@ -8,8 +8,8 @@ prontera,119,191,4	script	Costume Enchant	408,{
 	next;
 	mes .n$;
 	mes "To apply an random properity to your Costumes, you need to have it equipped.";
-	mes "Costumes can have 2 enchants.";
-	mes "And i need 1,000,000 per enchantment.";
+	mes "Costumes can have 3 enchants.";
+	mes "And i need 100,000z per enchantment.";
 	mes "Also be warned, that what you get and with which value is completely random!";
 	next;
 	mes .n$;
@@ -46,31 +46,36 @@ prontera,119,191,4	script	Costume Enchant	408,{
 
 	switch (.@part) {
 		case EQI_COSTUME_HEAD_TOP: {
-			set .@opt1$, ".top";
-			set .@opt2$, ".top";
+			set .@opt1$, ".top1";
+			set .@opt2$, ".top1";
+      set .@opt3$, ".top2";
 			break;
 		}
 		case EQI_COSTUME_HEAD_MID: {
-			set .@opt1$, ".mid";
-			set .@opt2$, ".mid";
+			set .@opt1$, ".mid1";
+			set .@opt2$, ".mid1";
+      set .@opt3$, ".mid2";
 			break;
 		}
 		case EQI_COSTUME_HEAD_LOW: {
-			set .@opt1$, ".low";
-			set .@opt2$, ".low";
+			set .@opt1$, ".low1";
+			set .@opt2$, ".low1";
+      set .@opt3$, ".low2";
 			break;
 		}
 		case EQI_COSTUME_GARMENT: {
-			set .@opt1$, ".garment";
-			set .@opt2$, ".element";
+			set .@opt1$, ".garment1";
+			set .@opt2$, ".garment2";
+      set .@opt3$, ".element";
 			break;
 		}
 	}
 
 	set .@ropt1, getequiprandomoption(.@part, 0, ROA_ID);
 	set .@ropt2, getequiprandomoption(.@part, 1, ROA_ID);
+  set .@ropt3, getequiprandomoption(.@part, 2, ROA_ID);
 
-	if (.@ropt1 && .@ropt2) {
+	if (.@ropt1 && .@ropt2 && .@ropt3) {
 		// re-roll
 		mes "Your " + getitemname(getequipid(.@part)) + " is already fully enchanted.";
 		mes "You can choose to re-roll specific enchantment.";
@@ -78,6 +83,7 @@ prontera,119,191,4	script	Costume Enchant	408,{
 		.@slot = select(
 			"Re-roll Slot 1",
 			"Re-roll Slot 2",
+      "Re-roll Slot 3",
 			"Cancel" );
 
 		switch (.@slot) {
@@ -95,6 +101,13 @@ prontera,119,191,4	script	Costume Enchant	408,{
 				set .@slot, 1;
 				break;
 			}
+      case 3: {
+        set .@count, getarraysize(getd(.@opt3$));
+        set .@enc, rand((.@count / 3));
+        set .@opt$, .@opt3$;
+        set .@slot, 2;
+        break;
+      }
 			default: {
 				mes "Come back anytime you want.";
 				close;
@@ -108,12 +121,18 @@ prontera,119,191,4	script	Costume Enchant	408,{
 			set .@opt$, .@opt1$;
 			set .@slot, 0;
 		}
-		else {
-			set .@count, getarraysize(getd(.@opt2$));
-			set .@enc, rand((.@count / 3));
-			set .@opt$, .@opt2$;
-			set .@slot, 1;
-		}
+    else if (!.@ropt2) {
+      set .@count, getarraysize(getd(.@opt2$));
+      set .@enc, rand((.@count / 3));
+      set .@opt$, .@opt2$;
+      set .@slot, 1;
+    }
+    else {
+      set .@count, getarraysize(getd(.@opt3$));
+      set .@enc, rand((.@count / 3));
+      set .@opt$, .@opt3$;
+      set .@slot, 2;
+    }
 	}
 
 	.@index = 0;
@@ -143,11 +162,10 @@ prontera,119,191,4	script	Costume Enchant	408,{
 	set .n$,"[Costume Enchant]";
 
 	// Required Items
-	set .cost, 1000000;
-
+	set .cost, 100000;
 
 	// Options
-	setarray .top,
+	setarray .top1,
 		RDMOPT_VAR_MAXHPAMOUNT, 1000, 5000,
 		RDMOPT_VAR_MAXSPAMOUNT, 25, 500,
 		RDMOPT_VAR_MAXHPPERCENT, 1, 5,
@@ -155,18 +173,25 @@ prontera,119,191,4	script	Costume Enchant	408,{
 		RDMOPT_VAR_ITEMDEFPOWER, 1, 10,
 		RDMOPT_VAR_MDEFPOWER, 1, 10;
 
-	setarray .mid,
+  setarray .top2,
+    RDMOPT_VAR_RESAMOUNT, 10, 100,
+    RDMOPT_VAR_MRESAMOUNT, 10, 100;
+
+	setarray .mid1,
 		RDMOPT_VAR_ATTPOWER, 10, 50,
 		RDMOPT_VAR_ATTMPOWER, 10, 50,
-		RDMOPT_CLASS_DAMAGE_NORMAL_TARGET, 1, 5,
-		RDMOPT_CLASS_DAMAGE_BOSS_TARGET, 1 ,5,
-		RDMOPT_CLASS_MDAMAGE_NORMAL, 1, 5,
-		RDMOPT_CLASS_MDAMAGE_BOSS, 1, 5,
-		RDMOPT_DAMAGE_CRI_TARGET, 5, 15,
-		RDMOPT_VAR_ATKPERCENT, 1, 5,
-		RDMOPT_VAR_MAGICATKPERCENT, 1, 5;
+    RDMOPT_VAR_ATKPERCENT, 1, 5,
+		RDMOPT_VAR_MAGICATKPERCENT, 1, 5,
+		RDMOPT_MELEE_ATTACK_DAMAGE_TARGET, 1, 5,
+		RDMOPT_RANGE_ATTACK_DAMAGE_TARGET, 1 ,5,
+		RDMOPT_ADDSKILLMDAMAGE_ALL, 1, 5,
+		RDMOPT_DAMAGE_CRI_TARGET, 5, 15;
 
-	setarray .low,
+  setarray .mid2,
+    RDMOPT_VAR_PATKAMOUNT, 1, 10,
+    RDMOPT_VAR_SMATKAMOUNT, 1, 10;
+
+	setarray .low1,
 		RDMOPT_HEAL_MODIFY_PERCENT, 5, 15,
 		RDMOPT_DEC_SPELL_DELAY_TIME, 3, 10,
 		RDMOPT_DEC_SPELL_CAST_TIME, 5, 15,
@@ -176,7 +201,18 @@ prontera,119,191,4	script	Costume Enchant	408,{
 		RDMOPT_VAR_HITSUCCESSVALUE, 15, 30,
 		RDMOPT_VAR_AVOIDSUCCESSVALUE, 15, 30;
 
-	setarray .garment,
+  setarray .low2,
+    RDMOPT_VAR_CRTAMOUNT, 1, 10,
+    RDMOPT_VAR_HEAL_PLUS, 1, 10;
+
+  setarray .garment1,
+    RDMOPT_DAMAGE_SIZE_SMALL_USER, 1, 5,
+    RDMOPT_DAMAGE_SIZE_MIDIUM_USER, 1, 5,
+    RDMOPT_DAMAGE_SIZE_LARGE_USER, 1, 5,
+    RDMOPT_DAMAGE_CRI_TARGET, 3, 10,
+    RDMOPT_RANGE_ATTACK_DAMAGE_TARGET, 3, 10;
+
+	setarray .garment2,
 		RDMOPT_VAR_STRAMOUNT, 1, 5,
 		RDMOPT_VAR_AGIAMOUNT, 1, 5,
 		RDMOPT_VAR_VITAMOUNT, 1, 5,
@@ -185,14 +221,14 @@ prontera,119,191,4	script	Costume Enchant	408,{
 		RDMOPT_VAR_LUKAMOUNT, 1, 5;
 
 	setarray .element,
-		RDMOPT_BODY_ATTR_WATER,1,1,
-		RDMOPT_BODY_ATTR_GROUND,1,1,
-		RDMOPT_BODY_ATTR_FIRE,1,1,
-		RDMOPT_BODY_ATTR_WIND,1,1,
-		RDMOPT_BODY_ATTR_POISON,1,1,
-		RDMOPT_BODY_ATTR_SAINT,1,1,
-		RDMOPT_BODY_ATTR_DARKNESS,1,1,
-		RDMOPT_BODY_ATTR_TELEKINESIS,1,1;
+		RDMOPT_BODY_ATTR_WATER,1,10,
+		RDMOPT_BODY_ATTR_GROUND,1,10,
+		RDMOPT_BODY_ATTR_FIRE,1,10,
+		RDMOPT_BODY_ATTR_WIND,1,10,
+		RDMOPT_BODY_ATTR_POISON,1,10,
+		RDMOPT_BODY_ATTR_SAINT,1,10,
+		RDMOPT_BODY_ATTR_DARKNESS,1,10,
+		RDMOPT_BODY_ATTR_TELEKINESIS,1,10;
 
 	end;
 }

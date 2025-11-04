@@ -503,7 +503,9 @@ menu "Illusion of Moonlight", IL1,
  "Illusion of Frozen", IL3,
  "Illusion of Abyss", IL4,
  "Illusion of Teddy Bear", IL5,
- "Illusion of Luanda", IL6;
+ "Illusion of Luanda", IL6,
+ "Illusion of Twins", IL7,
+ "Illusion of Underwater", IL8;
 
 IL1: Restrict("RE");
 	Go("pay_d03_i",143,44);
@@ -517,6 +519,10 @@ IL5: Restrict("RE");
 	Go("ein_d02_i",165,189);
 IL6: Restrict("RE");
 	Go("com_d02_i",252,246);
+IL7: Restrict("RE");
+  Go("ant_d02_i",172,185);
+IL8: Restrict("RE");
+  Go("iz_d04_i",130,226);
 
 // --------------------------------------------------
 	Castles:

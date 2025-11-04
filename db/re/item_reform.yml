@@ -55,7 +55,7 @@ Body:
         RemoveEnchantgrade: true
       - BaseItem: C_Valkyrie_Circlet
         MaximumRefine: 0
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Club_
         ChangeRefine: 2
         RandomOptionGroup: Group_0
@@ -85,7 +85,7 @@ Body:
         ClearSlots: true
         RemoveEnchantgrade: true
       - BaseItem: Tsurugi_
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Tsurugi
         ChangeRefine: -20
         RandomOptionGroup: Group_0
@@ -109,7 +109,7 @@ Body:
         ChangeRefine: 1
       - BaseItem: Ora_Ora
         MaximumRefine: 0
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Animal_Blood
             Amount: 3
@@ -1726,7 +1726,7 @@ Body:
     BaseItems:
       - BaseItem: Thanos_Helm_1
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1736,7 +1736,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Thanos_Helm_2
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1746,7 +1746,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Thanos_Helm_3
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1756,7 +1756,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Great_Hero_Boots
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1768,7 +1768,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Smoky_TransformHat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1778,7 +1778,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Whikebain_Ears_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1788,7 +1788,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Survive_Circlet_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1798,7 +1798,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: GoldFish_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1808,7 +1808,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Imp_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1818,7 +1818,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Thanos_Helm_4
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1828,7 +1828,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Whikebain_Ears
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1838,7 +1838,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Mad_Bunny_K_
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1850,7 +1850,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: King_Tiger_Doll_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1860,7 +1860,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Zaha_Doll_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1872,7 +1872,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Sagittarius_DiademK
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1884,7 +1884,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Scorpio_Diadem_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1896,7 +1896,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Large_Sorcerer_Crown
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1908,7 +1908,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Stripe_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1920,7 +1920,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Phantom_Cap
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1932,7 +1932,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Ignis_CapK
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1944,7 +1944,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Clock_Casket_RD
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1956,7 +1956,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Officer_Cap
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_1
             Amount: 100
@@ -1980,7 +1980,7 @@ Body:
     BaseItems:
       - BaseItem: Thanos_Helm_1
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -1990,7 +1990,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Thanos_Helm_2
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2000,7 +2000,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Thanos_Helm_3
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2010,7 +2010,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Great_Hero_Boots
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2022,7 +2022,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Smoky_TransformHat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2032,7 +2032,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Whikebain_Ears_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2042,7 +2042,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Survive_Circlet_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2052,7 +2052,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: GoldFish_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2062,7 +2062,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Imp_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2072,7 +2072,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Thanos_Helm_4
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2082,7 +2082,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Whikebain_Ears
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2092,7 +2092,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Mad_Bunny_K_
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2104,7 +2104,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: King_Tiger_Doll_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2114,7 +2114,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Zaha_Doll_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2126,7 +2126,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Sagittarius_DiademK
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2138,7 +2138,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Scorpio_Diadem_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2150,7 +2150,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Large_Sorcerer_Crown
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2162,7 +2162,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Stripe_Hat
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2174,7 +2174,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Phantom_Cap
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2186,7 +2186,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Ignis_CapK
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2198,7 +2198,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Clock_Casket_RD
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2210,7 +2210,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Officer_Cap
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_2
             Amount: 100
@@ -2234,7 +2234,7 @@ Body:
     BaseItems:
       - BaseItem: SurviveOrb_K
         MaximumRefine: 0
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Armor_Stone_3
             Amount: 100
@@ -2243,7 +2243,7 @@ Body:
         ResultItem: SurviveOrb_K_LT
       - BaseItem: SeeOtter_Fan
         MaximumRefine: 0
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Acc_Stone_3
             Amount: 100
@@ -2252,7 +2252,7 @@ Body:
         ResultItem: SeeOtter_Fan_LT
       - BaseItem: FurSeal_Fan
         MaximumRefine: 0
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Acc_Stone_3
             Amount: 100
@@ -2317,7 +2317,7 @@ Body:
     BaseItems:
       - BaseItem: Up_Saint_Hall
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2329,7 +2329,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Undine_Spear_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2341,7 +2341,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Demon_Hunting_Bible
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2353,7 +2353,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Light_Blade
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2365,7 +2365,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Magic_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2377,7 +2377,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Fatalist
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2389,7 +2389,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Iron_Staff
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2401,7 +2401,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Blue_Crystal_Staff
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2413,7 +2413,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Shadow_Staff_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2425,7 +2425,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Freezing_Rod
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2437,7 +2437,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Iron_Nail_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2449,7 +2449,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Ray_Knuckle
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2461,7 +2461,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Sword_Of_Bluefire
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2473,7 +2473,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Slate_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2485,7 +2485,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Royal_Bow_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2497,7 +2497,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Scalet_Dragon_L_Bow
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2509,7 +2509,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Trumpet_Shell_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2521,7 +2521,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Barb_Wire_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2533,7 +2533,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Narcis_Bow
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2545,7 +2545,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Avenger
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2557,7 +2557,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Meteor_Striker
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2569,7 +2569,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Blade_Katar
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2581,7 +2581,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Shiver_Katar_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2593,7 +2593,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Dragonic_Slayer
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2605,7 +2605,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Oriental_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2617,7 +2617,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Fog_Dew_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2629,7 +2629,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Humma_Clear
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2641,7 +2641,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_The_Black_Gatling
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2653,7 +2653,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Crimson_Rose
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2665,7 +2665,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Demon_S_Shot
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2677,7 +2677,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_OneSkyOneSun
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2689,7 +2689,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Golden_L_Launcher
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2701,7 +2701,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Master_Soul_Rifle
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2713,7 +2713,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_SoulWeight
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2725,7 +2725,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_MeawFoxtail
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2737,7 +2737,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Freedom_Stick
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2749,7 +2749,7 @@ Body:
         ChangeRefine: -5
       - BaseItem: Up_Blessed_Knife
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 100
@@ -2763,7 +2763,7 @@ Body:
     BaseItems:
       - BaseItem: Up_Saint_Hall
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2775,7 +2775,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Undine_Spear_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2787,7 +2787,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Demon_Hunting_Bible
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2799,7 +2799,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Light_Blade
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2811,7 +2811,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Magic_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2823,7 +2823,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Fatalist
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2835,7 +2835,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Iron_Staff
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2847,7 +2847,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Blue_Crystal_Staff
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2859,7 +2859,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Shadow_Staff_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2871,7 +2871,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Freezing_Rod
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2883,7 +2883,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Iron_Nail_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2895,7 +2895,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Ray_Knuckle
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2907,7 +2907,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Sword_Of_Bluefire
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2919,7 +2919,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Slate_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2931,7 +2931,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Royal_Bow_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2943,7 +2943,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Scalet_Dragon_L_Bow
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2955,7 +2955,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Trumpet_Shell_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2967,7 +2967,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Barb_Wire_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2979,7 +2979,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Narcis_Bow
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -2991,7 +2991,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Avenger
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3003,7 +3003,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Meteor_Striker
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3015,7 +3015,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Blade_Katar
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3027,7 +3027,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Shiver_Katar_K
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3039,7 +3039,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Dragonic_Slayer
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3051,7 +3051,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Oriental_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3063,7 +3063,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Fog_Dew_Sword
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3075,7 +3075,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Humma_Clear
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3087,7 +3087,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_The_Black_Gatling
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3099,7 +3099,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Crimson_Rose
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3111,7 +3111,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Demon_S_Shot
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3123,7 +3123,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_OneSkyOneSun
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3135,7 +3135,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Golden_L_Launcher
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3147,7 +3147,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Master_Soul_Rifle
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3159,7 +3159,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_SoulWeight
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3171,7 +3171,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_MeawFoxtail
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3183,7 +3183,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Freedom_Stick
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3195,7 +3195,7 @@ Body:
         ChangeRefine: -1
       - BaseItem: Up_Blessed_Knife
         MinimumRefine: 9
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_2
             Amount: 100
@@ -3210,7 +3210,7 @@ Body:
       - BaseItem: Up_Saint_Hall
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3224,7 +3224,7 @@ Body:
       - BaseItem: Up_Undine_Spear_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3238,7 +3238,7 @@ Body:
       - BaseItem: Up_Demon_Hunting_Bible
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3252,7 +3252,7 @@ Body:
       - BaseItem: Up_Light_Blade
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3266,7 +3266,7 @@ Body:
       - BaseItem: Up_Magic_Sword
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3280,7 +3280,7 @@ Body:
       - BaseItem: Up_Fatalist
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3294,7 +3294,7 @@ Body:
       - BaseItem: Up_Iron_Staff
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3308,7 +3308,7 @@ Body:
       - BaseItem: Up_Blue_Crystal_Staff
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3322,7 +3322,7 @@ Body:
       - BaseItem: Up_Shadow_Staff_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3336,7 +3336,7 @@ Body:
       - BaseItem: Up_Freezing_Rod
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3350,7 +3350,7 @@ Body:
       - BaseItem: Up_Iron_Nail_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3364,7 +3364,7 @@ Body:
       - BaseItem: Up_Ray_Knuckle
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3378,7 +3378,7 @@ Body:
       - BaseItem: Up_Sword_Of_Bluefire
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3392,7 +3392,7 @@ Body:
       - BaseItem: Up_Slate_Sword
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3406,7 +3406,7 @@ Body:
       - BaseItem: Up_Royal_Bow_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3420,7 +3420,7 @@ Body:
       - BaseItem: Up_Scalet_Dragon_L_Bow
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3434,7 +3434,7 @@ Body:
       - BaseItem: Up_Trumpet_Shell_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3448,7 +3448,7 @@ Body:
       - BaseItem: Up_Barb_Wire_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3462,7 +3462,7 @@ Body:
       - BaseItem: Up_Narcis_Bow
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3476,7 +3476,7 @@ Body:
       - BaseItem: Up_Avenger
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3490,7 +3490,7 @@ Body:
       - BaseItem: Up_Meteor_Striker
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3504,7 +3504,7 @@ Body:
       - BaseItem: Up_Blade_Katar
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3518,7 +3518,7 @@ Body:
       - BaseItem: Up_Shiver_Katar_K
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3532,7 +3532,7 @@ Body:
       - BaseItem: Up_Dragonic_Slayer
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3546,7 +3546,7 @@ Body:
       - BaseItem: Up_Oriental_Sword
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3560,7 +3560,7 @@ Body:
       - BaseItem: Up_Fog_Dew_Sword
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3574,7 +3574,7 @@ Body:
       - BaseItem: Up_Humma_Clear
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3588,7 +3588,7 @@ Body:
       - BaseItem: Up_The_Black_Gatling
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3602,7 +3602,7 @@ Body:
       - BaseItem: Up_Crimson_Rose
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3616,7 +3616,7 @@ Body:
       - BaseItem: Up_Demon_S_Shot
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3630,7 +3630,7 @@ Body:
       - BaseItem: Up_OneSkyOneSun
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3644,7 +3644,7 @@ Body:
       - BaseItem: Up_Golden_L_Launcher
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3658,7 +3658,7 @@ Body:
       - BaseItem: Up_Master_Soul_Rifle
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3672,7 +3672,7 @@ Body:
       - BaseItem: Up_SoulWeight
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3686,7 +3686,7 @@ Body:
       - BaseItem: Up_MeawFoxtail
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3700,7 +3700,7 @@ Body:
       - BaseItem: Up_Freedom_Stick
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3714,7 +3714,7 @@ Body:
       - BaseItem: Up_Blessed_Knife
         MinimumRefine: 9
         MaximumRefine: 19
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_3
             Amount: 100
@@ -3729,192 +3729,192 @@ Body:
     BaseItems:
       - BaseItem: Royal_Bow_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Royal_Bow_K
         ChangeRefine: -2
       - BaseItem: Narcis_Bow
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Narcis_Bow
         ChangeRefine: -2
       - BaseItem: Shadow_Staff_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Shadow_Staff_K
         ChangeRefine: -2
       - BaseItem: Iron_Nail_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Iron_Nail_K
         ChangeRefine: -2
       - BaseItem: Magic_Sword
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Magic_Sword
         ChangeRefine: -2
       - BaseItem: Sword_Of_Bluefire
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Sword_Of_Bluefire
         ChangeRefine: -2
       - BaseItem: Avenger
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Avenger
         ChangeRefine: -2
       - BaseItem: Iron_Staff
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Iron_Staff
         ChangeRefine: -2
       - BaseItem: Oriental_Sword
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Oriental_Sword
         ChangeRefine: -2
       - BaseItem: Undine_Spear_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Undine_Spear_K
         ChangeRefine: -2
       - BaseItem: Demon_Hunting_Bible_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Demon_Hunting_Bible
         ChangeRefine: -2
       - BaseItem: Shiver_Katar_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Shiver_Katar_K
         ChangeRefine: -2
       - BaseItem: OneSkyOneSun
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_OneSkyOneSun
         ChangeRefine: -2
       - BaseItem: SoulWeight
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_SoulWeight
         ChangeRefine: -2
       - BaseItem: MeawFoxtail
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_MeawFoxtail
         ChangeRefine: -2
       - BaseItem: Crimson_Rose
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Crimson_Rose
         ChangeRefine: -2
       - BaseItem: Master_Soul_Rifle
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Master_Soul_Rifle
         ChangeRefine: -2
       - BaseItem: Demon_S_Shot
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Demon_S_Shot
         ChangeRefine: -2
       - BaseItem: Golden_L_Launcher
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Golden_L_Launcher
         ChangeRefine: -2
       - BaseItem: The_Black_Gatling
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_The_Black_Gatling
         ChangeRefine: -2
       - BaseItem: Fog_Dew_Sword
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Fog_Dew_Sword
         ChangeRefine: -2
       - BaseItem: Humma_Clear
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Humma_Clear
         ChangeRefine: -2
       - BaseItem: Dragonic_Slayer
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Dragonic_Slayer
         ChangeRefine: -2
       - BaseItem: Light_Blade
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Light_Blade
         ChangeRefine: -2
       - BaseItem: Slate_Sword
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Slate_Sword
         ChangeRefine: -2
       - BaseItem: Trumpet_Shell_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Trumpet_Shell_K
         ChangeRefine: -2
       - BaseItem: Barb_Wire_K
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Barb_Wire_K
         ChangeRefine: -2
       - BaseItem: Meteor_Striker
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Meteor_Striker
         ChangeRefine: -2
       - BaseItem: Saint_Hall
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Saint_Hall
         ChangeRefine: -2
       - BaseItem: Ray_Knuckle
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Ray_Knuckle
         ChangeRefine: -2
       - BaseItem: Blade_Katar
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Blade_Katar
         ChangeRefine: -2
       - BaseItem: Fatalist
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Fatalist
         ChangeRefine: -2
       - BaseItem: Scalet_Dragon_L_Bow
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Scalet_Dragon_L_Bow
         ChangeRefine: -2
       - BaseItem: Blue_Crystal_Staff
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Blue_Crystal_Staff
         ChangeRefine: -2
       - BaseItem: Freezing_Rod
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Freezing_Rod
         ChangeRefine: -2
       - BaseItem: Ancient_Hero_Boots
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Great_Hero_Boots
         ChangeRefine: -2
       - BaseItem: Freedom_Stick
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Freedom_Stick
         ChangeRefine: -2
       - BaseItem: Blessed_Knife
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         ResultItem: Up_Blessed_Knife
         ChangeRefine: -2
   - Item: Shadow_Changer_W_Shi
@@ -4890,301 +4890,301 @@ Body:
     BaseItems:
       - BaseItem: S_FullPene_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullPene_Earring
       - BaseItem: S_FullPene_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullPene_Shoes
       - BaseItem: S_FullPene_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullPene_Pendant
       - BaseItem: S_FullPene_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullPene_Armor
       - BaseItem: S_FullTemp_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullTemp_Earring
       - BaseItem: S_FullTemp_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullTemp_Shoes
       - BaseItem: S_FullTemp_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullTemp_Pendant
       - BaseItem: S_FullTemp_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_FullTemp_Armor
       - BaseItem: S_TrueGem_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_TrueGem_Earring
       - BaseItem: S_TrueGem_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_TrueGem_Shoes
       - BaseItem: S_TrueGem_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_TrueGem_Pendant
       - BaseItem: S_TrueGem_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_TrueGem_Armor
       - BaseItem: S_CriticalHit_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_CriticalHit_Armor
       - BaseItem: S_CriticalHit_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_CriticalHit_Weapon
       - BaseItem: S_M_AutoSpell_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_AutoSpell_Earring
       - BaseItem: S_M_AutoSpell_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_AutoSpell_Shoes
       - BaseItem: S_M_AutoSpell_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_AutoSpell_Pendant
       - BaseItem: S_M_AutoSpell_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_AutoSpell_Armor
       - BaseItem: S_Clever_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Clever_Shield
       - BaseItem: S_Clever_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Clever_Weapon
       - BaseItem: S_Durable_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Durable_Shield
       - BaseItem: S_Durable_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Durable_Weapon
       - BaseItem: S_Infinity_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Infinity_Shield
       - BaseItem: S_Infinity_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Infinity_Weapon
       - BaseItem: S_Hasty_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Hasty_Shield
       - BaseItem: S_Hasty_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Hasty_Weapon
       - BaseItem: S_PerfectSize_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_PerfectSize_Armor
       - BaseItem: S_PerfectSize_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_PerfectSize_Weapon
       - BaseItem: S_R_Bearers_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_R_Bearers_Earring
       - BaseItem: S_R_Bearers_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_R_Bearers_Shoes
       - BaseItem: S_R_Bearers_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_R_Bearers_Pendant
       - BaseItem: S_R_Bearers_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_R_Bearers_Armor
       - BaseItem: S_SpellCaster_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_SpellCaster_Earring
       - BaseItem: S_SpellCaster_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_SpellCaster_Shoes
       - BaseItem: S_SpellCaster_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_SpellCaster_Pendant
       - BaseItem: S_SpellCaster_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_SpellCaster_Armor
       - BaseItem: S_Mega_Blitz_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Mega_Blitz_Weapon
       - BaseItem: S_Mega_Blitz_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Mega_Blitz_Shield
       - BaseItem: S_Absorb_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Absorb_Weapon
       - BaseItem: S_Absorb_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_Absorb_Shield
       - BaseItem: S_M_Mammoth_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_Mammoth_Earring
       - BaseItem: S_M_Mammoth_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_Mammoth_Shoes
       - BaseItem: S_M_Mammoth_Shoes
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_Mammoth_Pendant
       - BaseItem: S_M_Mammoth_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_M_Mammoth_Armor
       - BaseItem: S_AllMighty_Pendant
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_AllMighty_Earring
       - BaseItem: S_AllMighty_Earring
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_AllMighty_Pendant
       - BaseItem: S_KingbirdAnc_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_KingbirdAncient_Armor
       - BaseItem: S_KingbirdAncient_Armor
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_KingbirdAnc_Weapon
       - BaseItem: S_EXP_Shield
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_EXP_Weapon
       - BaseItem: S_EXP_Weapon
         MaximumRefine: 10
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Shadow_Exchange_Ticket
         ResultItem: S_EXP_Shield
@@ -5654,7 +5654,7 @@ Body:
     BaseItems:
       - BaseItem: Beam_Claymore_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5666,7 +5666,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Meuchler_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5678,7 +5678,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Blasti_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5690,7 +5690,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Virtual_Bow_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5702,7 +5702,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: MH_P89_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5714,7 +5714,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: AC_B44_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5726,7 +5726,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: HR_S55_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5738,7 +5738,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Burning_Knuckle_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5750,7 +5750,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Cannon_Rapier_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5762,7 +5762,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Saphir_Hall_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5774,7 +5774,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Ultio_Spes_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5786,7 +5786,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Rutilus_Stick_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5798,7 +5798,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: ElectricFox_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5810,7 +5810,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Circuit_Board_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5822,7 +5822,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Kuroiro_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70
@@ -5834,7 +5834,7 @@ Body:
         RandomOptionGroup: Group_0
       - BaseItem: Boost_Lance_OS
         MinimumRefine: 7
-        CardsAllowed: false
+        CardsAllowed: true
         Materials:
           - Material: Weapon_Stone_1
             Amount: 70

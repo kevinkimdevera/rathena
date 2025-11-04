@@ -1035,7 +1035,7 @@ OnInit:
 	end;
 OnTimer5000:
 	specialeffect EF_REFINEOK,AREA,"Suhnmi#eden";
-	specialeffect EF_REFINEOK,AREA,"Mighty Hammer#ed";
+	// specialeffect EF_REFINEOK,AREA,"Mighty Hammer#ed";
 	initnpctimer;
 	end;
 }
